@@ -4,92 +4,152 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed, maxspeed, setspeed;
-    public float radius;
-    private Vector3 defPosition,vec;
+    public float speed;
+    private float radius;
+    public float inradius,outradius;
+    private Vector3 defPosition;
     private float x;
     private float z;
-    private float x2, z2;
-    public GameObject center;
-    private float time;
-    public int changeflag;
+    public GameObject center,inobj,outobj;
+    private Vector3 invec, outvec;
+    private int changeflag,saveflag,ren;
     private Rigidbody rigidbody;
-    private float angle;
+    public float jumppower;
+    private bool jumpflag;
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        radius = inradius;
         defPosition = transform.position;
+        changeflag = 0;
+        saveflag = 0;
+        rigidbody = gameObject.transform.GetComponent<Rigidbody>();
+        ren = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
+        Jump();
     }
     void Move()
     {
         radius = Vector3.Distance(transform.position, center.transform.position);
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.D))
         {
             changeflag = 0;
         }
         else
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.A))
         {
             changeflag = 1;
-        }else
-        if(Input.GetKeyDown(KeyCode.D))
+
+        }
+        else
+        if (Input.GetKeyDown(KeyCode.W)&&ren!=0)
         {
             changeflag = 2;
-        }else
-        if(Input.GetKeyDown(KeyCode.A))
+        }
+        else
+        if (Input.GetKeyDown(KeyCode.S)&&ren!=1)
         {
             changeflag = 3;
         }
-        if (changeflag==0)
+        if (changeflag == 0)
         {
             //RotateAround(円運動の中心,進行方向,速度)
             transform.RotateAround(center.transform.position,
-            transform.forward, speed/radius);
+            transform.forward, speed / radius);
         }
-        else if(changeflag==1)
+        else if (changeflag == 1)
         {
             //RotateAround(円運動の中心,進行方向,速度)
             transform.RotateAround(center.transform.position,
-            -transform.forward,speed/radius);
-        }else if (changeflag == 2)
+            -transform.forward, speed / radius);
+        }
+        else if (changeflag == 2)
         {
-            radius = 1;
+            radius = inradius;
         }
         else if (changeflag == 3)
         {
-            radius = 2;
+            radius = outradius;
         }
 
-
-        if (changeflag == 2 || changeflag == 3)
+        if(changeflag==0||changeflag==1)
         {
-            defPosition =center.transform.position - transform.position;
-            angle = Vector3.Angle(defPosition, -transform.up);
-            if(changeflag==2)
+            invec = inobj.transform.position;
+            outvec = outobj.transform.position;
+            saveflag = changeflag;
+        }else
+        {
+            if(saveflag==0)
             {
-                //movex(Sin波）・moveZ座標(Cos波）の指定をしておく。わからないときは三角関数を調べる。
-                x = radius * Mathf.Sin(angle * Mathf.Deg2Rad);
-                z = radius * Mathf.Cos(angle * Mathf.Deg2Rad);
-            }
-            if(changeflag==3)
+                if(changeflag==2)
+                {
+                    transform.position = Vector3.Lerp(transform.position, invec, 0.1f);
+                    if ((transform.position.x > invec.x&& transform.position.x <= invec.x + 0.1f)
+                        ||(transform.position.x < invec.x&& transform.position.x >= invec.x - 0.1f))
+                    {
+                        transform.position = invec;
+                        changeflag = 0;
+                        ren = 0;
+                    }
+                }
+                else
+                {
+                    transform.position = Vector3.Lerp(transform.position, outvec, 0.1f);
+                    if ((transform.position.x > outvec.x && transform.position.x <= outvec.x + 0.1f)
+                        || (transform.position.x < outvec.x && transform.position.x >= outvec.x - 0.1f))
+                    {
+                        transform.position = outvec;
+                        changeflag = 0;
+                        ren = 1;
+                    }
+                }
+            }else
             {
-                //movex(Sin波）・moveZ座標(Cos波）の指定をしておく。わからないときは三角関数を調べる。
-                x = radius * Mathf.Sin(-angle*Mathf.Deg2Rad);
-                z = radius * Mathf.Cos(-angle * Mathf.Deg2Rad);
+                if (changeflag == 2)
+                {
+                    transform.position = Vector3.Lerp(transform.position, invec, 0.1f);
+                    if ((transform.position.x > invec.x && transform.position.x <= invec.x + 0.1f)
+                        || (transform.position.x < invec.x && transform.position.x >= invec.x - 0.1f))
+                    {
+                        transform.position = invec;
+                        changeflag = 1;
+                        ren = 0;
+                    }
+                }
+                else
+                {
+                    transform.position = Vector3.Lerp(transform.position, outvec, 0.1f);
+                    if ((transform.position.x > outvec.x && transform.position.x <= outvec.x + 0.1f)
+                        || (transform.position.x < outvec.x && transform.position.x >= outvec.x - 0.1f))
+                    {
+                        transform.position = outvec;
+                        changeflag = 1;
+                        ren = 1;
+                    }
+                }
             }
+        }
+    }
 
-            transform.position = Vector3.Lerp(transform.position, new Vector3(x, transform.position.y, z), 1);
-            if (transform.position == new Vector3(x, transform.position.y, z))
-            {
-                changeflag = 0;
-            }
+    void Jump()
+    {
+        if(Input.GetKeyDown(KeyCode.Space)&&!jumpflag)
+        {
+            rigidbody.velocity += new Vector3(0, jumppower, 0);
+            jumpflag = true;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(jumpflag)
+        {
+            jumpflag = false;
         }
     }
 }

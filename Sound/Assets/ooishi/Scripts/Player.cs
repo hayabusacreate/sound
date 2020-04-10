@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PlayerType
+{
+    Nomal,
+    Fire
+}
 public class Player : MonoBehaviour
 {
     public float speed;
@@ -16,6 +21,8 @@ public class Player : MonoBehaviour
     private Rigidbody rigidbody;
     public float jumppower;
     private bool jumpflag;
+    public PlayerType type;
+    private Block block;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +32,7 @@ public class Player : MonoBehaviour
         saveflag = 0;
         rigidbody = gameObject.transform.GetComponent<Rigidbody>();
         ren = 0;
+        type = PlayerType.Nomal;
     }
 
     // Update is called once per frame
@@ -150,6 +158,20 @@ public class Player : MonoBehaviour
         if(jumpflag)
         {
             jumpflag = false;
+        }
+        if(collision.gameObject.tag=="Block")
+        {
+            if(type==PlayerType.Nomal&&collision.gameObject.GetComponent<Block>().block==BlockType.Fire)
+            {
+                type = PlayerType.Fire;
+                block.hp++;
+            }
+            if (type == PlayerType.Fire && collision.gameObject.GetComponent<Block>().block == BlockType.Nomal)
+            {
+                type = PlayerType.Nomal;
+                block.hp++;
+            }
+            block = collision.gameObject.GetComponent<Block>();
         }
     }
 }

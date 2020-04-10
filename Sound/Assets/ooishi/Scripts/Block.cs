@@ -19,6 +19,9 @@ public class Block : MonoBehaviour
     private int count;
     public bool damageflag;
     private Player player;
+    public bool moveflag;
+    private GameObject center;
+    private float radius;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +51,7 @@ public class Block : MonoBehaviour
             blocks.Add(count, gameObject.GetComponent<Block>());
             count++;
         }
+        center = GameObject.Find("Center");
         player = GameObject.Find("Player").gameObject.GetComponent<Player>();
     }
 
@@ -62,10 +66,36 @@ public class Block : MonoBehaviour
             }
         }
         Damage();
+        Move();
     }
     void Move()
     {
+        radius = Vector3.Distance(transform.position, center.transform.position);
+        if (linkBlocks[0].attackflag)
+        {
+            if(!linkBlocks[1].hitflag)
+            {
+                //RotateAround(円運動の中心,進行方向,速度)
+                transform.RotateAround(center.transform.position,
+                transform.forward, speed / radius);
 
+            }
+            moveflag = true;
+
+
+        }
+        else if(linkBlocks[1].attackflag)
+        {
+            if (!linkBlocks[0].hitflag)
+            {
+                //RotateAround(円運動の中心,進行方向,速度)
+                transform.RotateAround(center.transform.position,
+                transform.forward, speed / radius);
+                moveflag = true;
+            }
+            moveflag = true;
+
+        }
     }
 
     void Damage()

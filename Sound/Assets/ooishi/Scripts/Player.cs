@@ -23,6 +23,9 @@ public class Player : MonoBehaviour
     private bool jumpflag;
     public PlayerType type;
     private Block block;
+    public bool attackflag;
+    private float attacktime;
+    public float tackeletime;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +43,26 @@ public class Player : MonoBehaviour
     {
         Move();
         Jump();
+        Attack();
     }
+
+    void Attack()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            attackflag = true;
+        }
+        if(attackflag)
+        {
+            attacktime += Time.deltaTime;
+            if(tackeletime<attacktime)
+            {
+                attacktime = 0;
+                attackflag = false;
+            }
+        }
+    }
+
     void Move()
     {
         radius = Vector3.Distance(transform.position, center.transform.position);
@@ -164,12 +186,12 @@ public class Player : MonoBehaviour
             if(type==PlayerType.Nomal&&collision.gameObject.GetComponent<Block>().block==BlockType.Fire)
             {
                 type = PlayerType.Fire;
-                block.hp++;
+                //block.hp++;
             }
             if (type == PlayerType.Fire && collision.gameObject.GetComponent<Block>().block == BlockType.Nomal)
             {
                 type = PlayerType.Nomal;
-                block.hp++;
+                //block.hp++;
             }
             block = collision.gameObject.GetComponent<Block>();
         }

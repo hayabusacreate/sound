@@ -58,7 +58,7 @@ public class Block : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for(int i=0;i<linkBlocks.Count-1;i++)
+        for(int i=0;i<linkBlocks.Count-5;i++)
         {
             if(linkBlocks[i].hitflag)
             {
@@ -77,7 +77,7 @@ public class Block : MonoBehaviour
             {
                 //RotateAround(円運動の中心,進行方向,速度)
                 transform.RotateAround(center.transform.position,
-                transform.forward, speed / radius);
+                -transform.forward, speed / radius);
 
             }
             moveflag = true;
@@ -100,7 +100,7 @@ public class Block : MonoBehaviour
 
     void Damage()
     {
-        for(int i=0;i<blocks.Count-1;i++)
+        for(int i=0;i<3;i++)
         {
             if(blocks[i].damageflag&&!damageflag)
             {
@@ -128,8 +128,8 @@ public class Block : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            hitflag = true;
-            color.material.color = Color.red;
+
+            //color.material.color = Color.red;
         }
     }
 
@@ -139,8 +139,8 @@ public class Block : MonoBehaviour
         {
 
                 damageflag = true;
-                hitflag = false;
-               // color.material.color = Color.white;
+            hitflag = true;
+            // color.material.color = Color.white;
         }
     }
 }

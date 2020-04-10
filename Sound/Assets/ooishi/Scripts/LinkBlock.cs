@@ -1,7 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+public enum HitArea
+{
+    Up,
+    Down,
+    Side
+}
 public class LinkBlock : MonoBehaviour
 {
     public bool hitflag;
@@ -11,6 +16,8 @@ public class LinkBlock : MonoBehaviour
     private bool check;
     private Player player;
     public bool attackflag;
+    private float time;
+    public HitArea area;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,43 +35,64 @@ public class LinkBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(attackflag)
+        {
+            time += Time.deltaTime;
+            if(time>1)
+            {
+                attackflag = false;
+                time = 0;
+            }
+        }
+        else
+        {
+            time = 0;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (attackflag)
+        if(area==HitArea.Side)
         {
-            attackflag = false;
-        }
-        if (other.transform.tag=="Block")
-        {
-            save = other.transform.gameObject.GetComponent<Block>();
-            if(block.block==save.block)
-            {
-                other.transform.gameObject.GetComponent<Renderer>().material.color = Color.black;
-                hitflag = true;
-                hitblock = other.transform.GetComponent<Block>();
-            }
-        }
-        if (other.transform.tag == "Player")
-        {
-            if(other.transform.gameObject.GetComponent<Player>().attackflag)
-            {
-                attackflag = true;
-            }
 
+            if (other.transform.tag == "Block")
+            {
+                save = other.transform.gameObject.GetComponent<Block>();
+                if (block.block == save.block)
+                {
+                    other.transform.gameObject.GetComponent<Renderer>().material.color = Color.black;
+                    hitflag = true;
+                    hitblock = other.transform.GetComponent<Block>();
+                }
+                if (attackflag)
+                {
+                    attackflag = false;
+                }
+            }
+            if (other.transform.tag == "Player")
+            {
+                if (other.transform.gameObject.GetComponent<Player>().attackflag)
+                {
+                    attackflag = true;
+                }
+
+            }
         }
+
 
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.tag == "Block")
+        if(area==HitArea.Side)
         {
-            hitflag = false;
+            if (other.transform.tag == "Block")
+            {
+                hitflag = false;
+            }
+            if (other.transform.tag == "Player")
+            {
+            }
         }
-        if(other.transform.tag=="Player")
-        {
-        }
+
     }
 }

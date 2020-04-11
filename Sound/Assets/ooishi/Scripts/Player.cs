@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     public bool attackflag;
     private float attacktime;
     public float tackeletime;
+    public bool endflag;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +55,18 @@ public class Player : MonoBehaviour
         }
         if(attackflag)
         {
+            if(changeflag==0)
+            {
+                //RotateAround(円運動の中心,進行方向,速度)
+                transform.RotateAround(center.transform.position,
+                transform.forward, (speed * 2) / radius);
+            }else if(changeflag==1)
+            {
+                //RotateAround(円運動の中心,進行方向,速度)
+                transform.RotateAround(center.transform.position,
+                -transform.forward, (speed * 2) / radius);
+            }
+
             attacktime += Time.deltaTime;
             if(tackeletime<attacktime)
             {
@@ -86,13 +99,13 @@ public class Player : MonoBehaviour
         {
             changeflag = 3;
         }
-        if (changeflag == 0)
+        if (changeflag == 0&&!attackflag)
         {
             //RotateAround(円運動の中心,進行方向,速度)
             transform.RotateAround(center.transform.position,
             transform.forward, speed / radius);
         }
-        else if (changeflag == 1)
+        else if (changeflag == 1 && !attackflag)
         {
             //RotateAround(円運動の中心,進行方向,速度)
             transform.RotateAround(center.transform.position,
@@ -194,6 +207,10 @@ public class Player : MonoBehaviour
                 //block.hp++;
             }
             block = collision.gameObject.GetComponent<Block>();
+        }
+        if(collision.gameObject.tag=="Ground")
+        {
+            endflag = true;
         }
     }
 }

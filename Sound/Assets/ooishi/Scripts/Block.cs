@@ -77,7 +77,7 @@ public class Block : MonoBehaviour
             {
                 //RotateAround(円運動の中心,進行方向,速度)
                 transform.RotateAround(center.transform.position,
-                -transform.forward, speed / radius);
+                transform.forward, speed / radius);
 
             }
             moveflag = true;
@@ -90,7 +90,7 @@ public class Block : MonoBehaviour
             {
                 //RotateAround(円運動の中心,進行方向,速度)
                 transform.RotateAround(center.transform.position,
-                transform.forward, speed / radius);
+                -transform.forward, speed / radius);
                 moveflag = true;
             }
             moveflag = true;
@@ -137,7 +137,6 @@ public class Block : MonoBehaviour
     {
         if(collision.transform.tag=="Player")
         {
-
                 damageflag = true;
             hitflag = true;
             // color.material.color = Color.white;

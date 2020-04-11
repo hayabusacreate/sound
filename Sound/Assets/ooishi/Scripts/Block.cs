@@ -6,12 +6,17 @@ public enum BlockType
     Nomal,
     Fire
 }
+public enum InOut
+{
+    In,
+    Out,
+}
 public class Block : MonoBehaviour
 {
     public BlockType block;
     public int hp;
     private int sethp;
-    public float speed;
+    public int speed;
     private bool hitflag;
     private Renderer color,savecolor;
     private Dictionary<int,Block> blocks;
@@ -22,6 +27,10 @@ public class Block : MonoBehaviour
     public bool moveflag;
     private GameObject center;
     private float radius;
+    private bool changeflag;
+    private MapCreate mapCreate;
+    public InOut inout;
+    private bool link;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +62,8 @@ public class Block : MonoBehaviour
         }
         center = GameObject.Find("Center");
         player = GameObject.Find("Player").gameObject.GetComponent<Player>();
+        count = 0;
+        mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
     }
 
     // Update is called once per frame
@@ -64,35 +75,105 @@ public class Block : MonoBehaviour
             {
                 blocks[i]=linkBlocks[i].hitblock;
             }
+            if(i<=1)
+            {
+                if (linkBlocks[i].playerhit)
+                {
+                    player.moveflag = false;
+                }
+            }
         }
         Damage();
         Move();
+        
     }
     void Move()
     {
         radius = Vector3.Distance(transform.position, center.transform.position);
         if (linkBlocks[0].attackflag)
         {
-            if(!linkBlocks[1].hitflag)
+            if(player.startflag)
+            {
+                player.startflag = false;
+                link = true;
+            }
+            if(!linkBlocks[1].hitflag&&link)
             {
                 //RotateAround(円運動の中心,進行方向,速度)
                 transform.RotateAround(center.transform.position,
-                transform.forward, speed / radius);
-
+                transform.forward, speed);
+                count+=speed;
+                
             }
+            else
+            {
+                if (!linkBlocks[1].hitblock.linkBlocks[0].hitblock.link)
+                {
+                    linkBlocks[1].hitblock.linkBlocks[0].attackflag = true;
+                    linkBlocks[1].hitblock.linkBlocks[0].hitblock.link = true;
+                }
+            }
+            if (inout==InOut.In)
+            {
+                if (count > 360/mapCreate.inblock)
+                {
+                    linkBlocks[0].attackflag = false;
+                    count = 0;
+                    link = false;
+                }
+            }
+            else
+            {
+                if (count > 360 / mapCreate.outblock)
+                {
+                    linkBlocks[0].attackflag = false;
+                    count = 0;
+                    link = false;
+                }
+            }
+
             moveflag = true;
 
 
         }
         else if(linkBlocks[1].attackflag)
         {
-            if (!linkBlocks[0].hitflag)
+            if (!linkBlocks[0].hitflag&&link)
             {
                 //RotateAround(円運動の中心,進行方向,速度)
                 transform.RotateAround(center.transform.position,
-                -transform.forward, speed / radius);
+                -transform.forward, speed);
                 moveflag = true;
+                count+=speed;
+            }else
+            {
+                if (!linkBlocks[0].hitblock.linkBlocks[1].hitblock.link)
+                {
+                    linkBlocks[0].hitblock.linkBlocks[1].attackflag = true;
+                    linkBlocks[0].hitblock.linkBlocks[1].hitblock.link = true;
+                }
             }
+            if (inout == InOut.In)
+            {
+                if (count > 360  / mapCreate.inblock)
+                {
+                    linkBlocks[1].attackflag = false;
+                    count = 0;
+                    link = false;
+
+                }
+            }
+            else
+            {
+                if (count > 360 / mapCreate.outblock)
+                {
+                    linkBlocks[1].attackflag = false;
+                    count = 0;
+                    link = false;
+
+                }
+            }
+
             moveflag = true;
 
         }
@@ -120,7 +201,15 @@ public class Block : MonoBehaviour
         }
         if (hp < 0)
         {
-            Destroy(gameObject);
+            if(linkBlocks[0].hitblock != gameObject.transform.GetComponent<Block>())
+            {
+                linkBlocks[0].hitblock.linkBlocks[1].hitblock = linkBlocks[0].hitblock.linkBlocks[1].hitblock.transform.root.gameObject.transform.GetComponent<Block>();
+            }
+            if (linkBlocks[1].hitblock != gameObject.transform.GetComponent<Block>())
+            {
+                linkBlocks[1].hitblock.linkBlocks[0].hitblock = linkBlocks[1].hitblock.linkBlocks[0].transform.root.gameObject.transform.GetComponent<Block>();
+            }
+                Destroy(gameObject);
         }
     }
 

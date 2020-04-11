@@ -18,6 +18,7 @@ public class LinkBlock : MonoBehaviour
     public bool attackflag;
     private float time;
     public HitArea area;
+    public bool playerhit;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,7 @@ public class LinkBlock : MonoBehaviour
         {
             block = transform.root.gameObject.transform.gameObject.GetComponent<Block>();
             check = true;
+            hitblock = transform.root.gameObject.transform.GetComponent<Block>();
         }
     }
     // Update is called once per frame
@@ -38,7 +40,7 @@ public class LinkBlock : MonoBehaviour
         if(attackflag)
         {
             time += Time.deltaTime;
-            if(time>1)
+            if(time>6)
             {
                 attackflag = false;
                 time = 0;
@@ -54,7 +56,6 @@ public class LinkBlock : MonoBehaviour
     {
         if(area==HitArea.Side)
         {
-
             if (other.transform.tag == "Block")
             {
                 save = other.transform.gameObject.GetComponent<Block>();
@@ -64,18 +65,14 @@ public class LinkBlock : MonoBehaviour
                     hitflag = true;
                     hitblock = other.transform.GetComponent<Block>();
                 }
-                if (attackflag)
-                {
-                    attackflag = false;
-                }
             }
             if (other.transform.tag == "Player")
             {
+                playerhit = true;
                 if (other.transform.gameObject.GetComponent<Player>().attackflag)
                 {
                     attackflag = true;
                 }
-
             }
         }
 
@@ -88,9 +85,11 @@ public class LinkBlock : MonoBehaviour
             if (other.transform.tag == "Block")
             {
                 hitflag = false;
+                hitblock =transform.root.gameObject.transform.GetComponent<Block>();
             }
             if (other.transform.tag == "Player")
             {
+                playerhit = false;
             }
         }
 

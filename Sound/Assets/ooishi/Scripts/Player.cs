@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     private float attacktime;
     public float tackeletime;
     public bool endflag;
+    public bool moveflag;
+    public bool startflag;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,7 @@ public class Player : MonoBehaviour
         rigidbody = gameObject.transform.GetComponent<Rigidbody>();
         ren = 0;
         type = PlayerType.Nomal;
+        moveflag = true;
     }
 
     // Update is called once per frame
@@ -49,8 +52,9 @@ public class Player : MonoBehaviour
 
     void Attack()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E)&&!attackflag)
         {
+            startflag = true;
             attackflag = true;
         }
         if(attackflag)
@@ -79,15 +83,16 @@ public class Player : MonoBehaviour
     void Move()
     {
         radius = Vector3.Distance(transform.position, center.transform.position);
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D)&&changeflag==1)
         {
             changeflag = 0;
+            moveflag = true;
         }
         else
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) && changeflag == 0)
         {
             changeflag = 1;
-
+            moveflag = true;
         }
         else
         if (Input.GetKeyDown(KeyCode.W)&&ren!=0)
@@ -99,17 +104,17 @@ public class Player : MonoBehaviour
         {
             changeflag = 3;
         }
-        if (changeflag == 0&&!attackflag)
+        if (changeflag == 0&&!attackflag&&moveflag)
         {
             //RotateAround(円運動の中心,進行方向,速度)
             transform.RotateAround(center.transform.position,
-            transform.forward, speed / radius);
+            transform.forward, speed);
         }
-        else if (changeflag == 1 && !attackflag)
+        else if (changeflag == 1 && !attackflag && moveflag)
         {
             //RotateAround(円運動の中心,進行方向,速度)
             transform.RotateAround(center.transform.position,
-            -transform.forward, speed / radius);
+            -transform.forward, speed);
         }
         else if (changeflag == 2)
         {

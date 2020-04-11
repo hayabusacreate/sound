@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MapCreate : MonoBehaviour
 {
+    public int inblock, outblock;
     // Start is called before the first frame update
     void Start()
     {

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Block
   - Ground
+  - Side
   layers:
   - Default
   - TransparentFX

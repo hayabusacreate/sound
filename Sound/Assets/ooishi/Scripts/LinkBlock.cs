@@ -10,7 +10,7 @@ public enum HitArea
 public class LinkBlock : MonoBehaviour
 {
     public bool hitflag;
-    public Block hitblock;
+    //public Block hitblock;
     private Block block,save;
     private Renderer renderer;
     private bool check;
@@ -31,24 +31,34 @@ public class LinkBlock : MonoBehaviour
         {
             block = transform.root.gameObject.transform.gameObject.GetComponent<Block>();
             check = true;
-            hitblock = transform.root.gameObject.transform.GetComponent<Block>();
+            //hitblock = transform.root.gameObject.transform.GetComponent<Block>();
         }
     }
     // Update is called once per frame
     void Update()
     {
-        if(attackflag)
+        //if(attackflag)
+        //{
+        //    time += Time.deltaTime;
+        //    if(time>6)
+        //    {
+        //        attackflag = false;
+        //        time = 0;
+        //    }
+        //}
+        //else
+        //{
+        //    time = 0;
+        //}
+        if(playerhit)
         {
-            time += Time.deltaTime;
-            if(time>6)
+            if (player.attackflag)
+            {
+                attackflag = true;
+            }else
             {
                 attackflag = false;
-                time = 0;
             }
-        }
-        else
-        {
-            time = 0;
         }
     }
 
@@ -56,16 +66,16 @@ public class LinkBlock : MonoBehaviour
     {
         if(area==HitArea.Side)
         {
-            if (other.transform.tag == "Block")
-            {
-                save = other.transform.gameObject.GetComponent<Block>();
-                if (block.block == save.block)
-                {
-                    other.transform.gameObject.GetComponent<Renderer>().material.color = Color.black;
-                    hitflag = true;
-                    hitblock = other.transform.GetComponent<Block>();
-                }
-            }
+            //if (other.transform.tag == "Block")
+            //{
+            //    save = other.transform.gameObject.GetComponent<Block>();
+            //    if (block.block == save.block)
+            //    {
+            //        other.transform.gameObject.GetComponent<Renderer>().material.color = Color.black;
+            //        hitflag = true;
+            //        hitblock = other.gameObject.transform.GetComponent<Block>();
+            //    }
+            //}else
             if (other.transform.tag == "Player")
             {
                 playerhit = true;
@@ -82,11 +92,11 @@ public class LinkBlock : MonoBehaviour
     {
         if(area==HitArea.Side)
         {
-            if (other.transform.tag == "Block")
-            {
-                hitflag = false;
-                hitblock =transform.root.gameObject.transform.GetComponent<Block>();
-            }
+            //if (other.transform.tag == "Block")
+            //{
+            //    hitflag = false;
+            //    hitblock =transform.root.gameObject.transform.GetComponent<Block>();
+            //}else
             if (other.transform.tag == "Player")
             {
                 playerhit = false;

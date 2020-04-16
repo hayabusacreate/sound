@@ -115,16 +115,16 @@ public class Player : MonoBehaviour
         radius = Vector3.Distance(transform.position, center.transform.position);
         if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
         {
-            changeflag = 0;
+            //changeflag = 0;
             moveflag = false;
         }
-        if (Input.GetKey(KeyCode.W) && changeflag == 1)
+        if (Input.GetKey(KeyCode.W) )
         {
             changeflag = 0;
             moveflag = true;
         }
         else
-        if (Input.GetKey(KeyCode.S) && changeflag == 0)
+        if (Input.GetKey(KeyCode.S) )
         {
             changeflag = 1;
             moveflag = true;

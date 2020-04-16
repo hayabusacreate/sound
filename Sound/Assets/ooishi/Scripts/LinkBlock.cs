@@ -55,7 +55,8 @@ public class LinkBlock : MonoBehaviour
             if (player.attackflag)
             {
                 attackflag = true;
-            }else
+            }
+            else
             {
                 attackflag = false;
             }
@@ -100,6 +101,7 @@ public class LinkBlock : MonoBehaviour
             if (other.transform.tag == "Player")
             {
                 playerhit = false;
+                attackflag = false;
             }
         }
 

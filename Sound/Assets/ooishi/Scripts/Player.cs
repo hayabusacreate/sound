@@ -99,38 +99,44 @@ public class Player : MonoBehaviour
         //degree -= (360 / map.inblock);
         if (ren == 0)
         {
-            if (map.inmap[hight * 100 + (int)(degree / (360 / map.inblock))])
+            if (map.inmap[hight * 100 + (int)(degree / (360 /( map.inblock)))])
             {
                 moveflag = false;
             }
         }
         else
         {
-            if (map.outmap[hight * 100 + (int)(degree / (360 / map.outblock))])
+            if (map.outmap[hight * 100 + (int)(degree / ((360 / map.outblock)))])
             {
                 moveflag = false;
             }
 
         }
         radius = Vector3.Distance(transform.position, center.transform.position);
-        if (Input.GetKey(KeyCode.D) && changeflag == 1)
+        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+        {
+            changeflag = 0;
+            moveflag = false;
+        }
+        if (Input.GetKey(KeyCode.W) && changeflag == 1)
         {
             changeflag = 0;
             moveflag = true;
         }
         else
-        if (Input.GetKey(KeyCode.A) && changeflag == 0)
+        if (Input.GetKey(KeyCode.S) && changeflag == 0)
         {
             changeflag = 1;
             moveflag = true;
+
         }
         else
-        if (Input.GetKeyDown(KeyCode.W) && ren != 0)
+        if (Input.GetKeyDown(KeyCode.A) && ren != 0)
         {
             changeflag = 2;
         }
         else
-        if (Input.GetKeyDown(KeyCode.S) && ren != 1)
+        if (Input.GetKeyDown(KeyCode.D) && ren != 1)
         {
             changeflag = 3;
         }
@@ -213,6 +219,13 @@ public class Player : MonoBehaviour
                     }
                 }
             }
+        }
+        if(moveflag)
+        {
+            speed = 3;
+        }else
+        {
+            speed = 0;
         }
     }
 

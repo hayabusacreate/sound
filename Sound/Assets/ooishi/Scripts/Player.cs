@@ -69,13 +69,13 @@ public class Player : MonoBehaviour
             {
                 //RotateAround(円運動の中心,進行方向,速度)
                 transform.RotateAround(center.transform.position,
-                transform.forward, (speed * 4) / radius);
+                transform.up, (speed * 4) / radius);
             }
             else if (changeflag == 1)
             {
                 //RotateAround(円運動の中心,進行方向,速度)
                 transform.RotateAround(center.transform.position,
-                -transform.forward, (speed * 4) / radius);
+                -transform.up, (speed * 4) / radius);
             }
 
             attacktime += Time.deltaTime;
@@ -97,21 +97,7 @@ public class Player : MonoBehaviour
             degree += 360;
         }
         //degree -= (360 / map.inblock);
-        if (ren == 0)
-        {
-            if (map.inmap[hight * 100 + (int)(degree / (360 /( map.inblock)))])
-            {
-                moveflag = false;
-            }
-        }
-        else
-        {
-            if (map.outmap[hight * 100 + (int)(degree / ((360 / map.outblock)))])
-            {
-                moveflag = false;
-            }
 
-        }
         radius = Vector3.Distance(transform.position, center.transform.position);
         if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
         {
@@ -140,17 +126,32 @@ public class Player : MonoBehaviour
         {
             changeflag = 3;
         }
+        if (ren == 0)
+        {
+            if (map.inmap[hight * 100 + (int)(degree / (360 / (map.inblock)))])
+            {
+                moveflag = false;
+            }
+        }
+        else
+        {
+            if (map.outmap[hight * 100 + (int)(degree / (360 / map.outblock))])
+            {
+                moveflag = false;
+            }
+
+        }
         if (changeflag == 0 && !attackflag && moveflag)
         {
             //RotateAround(円運動の中心,進行方向,速度)
             transform.RotateAround(center.transform.position,
-            transform.forward, speed);
+            transform.up, speed);
         }
         else if (changeflag == 1 && !attackflag && moveflag)
         {
             //RotateAround(円運動の中心,進行方向,速度)
             transform.RotateAround(center.transform.position,
-            -transform.forward, speed);
+            -transform.up, speed);
         }
         else if (changeflag == 2)
         {
@@ -220,7 +221,8 @@ public class Player : MonoBehaviour
                 }
             }
         }
-        if(moveflag)
+
+        if (moveflag)
         {
             speed = 3;
         }else
@@ -269,14 +271,14 @@ public class Player : MonoBehaviour
     {
         if (other.tag == "Side")
         {
-            moveflag = false;
+           // moveflag = false;
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Side")
         {
-            moveflag = true;
+           // moveflag = true;
         }
     }
 }

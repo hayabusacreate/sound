@@ -34,7 +34,7 @@ public class Block : MonoBehaviour
     public int hight, tyle;
     private Vector3 pos;
     private float rad, degree;
-    private Quaternion quaternion;
+    private Quaternion quaternion, savequaternion;
     private float z;
     private bool savetyle;
     private int change;
@@ -42,6 +42,7 @@ public class Block : MonoBehaviour
     void Start()
     {
         quaternion = this.transform.rotation;
+        savequaternion = this.transform.rotation;
         blocks = new Dictionary<int, Block>();
         linkBlocks = new Dictionary<int, LinkBlock>();
         color = gameObject.transform.GetComponent<Renderer>();
@@ -108,7 +109,7 @@ public class Block : MonoBehaviour
         //    {
         //        if (mapCreate.inmap[hight * 100])
         //        {
-        //            if (mapCreate.intype[hight * 100].moveflag)
+        //            if (mapCreate.intype[hight * 100 + 1].moveflag)
         //            {
         //                moveflag = true;
         //            }
@@ -187,34 +188,50 @@ public class Block : MonoBehaviour
         //}
         //radius = Vector3.Distance(transform.position, center.transform.position);
         quaternion = this.transform.rotation;
-        z = quaternion.eulerAngles.y;
+
+        if (change == 1)
+        {
+            z = quaternion.eulerAngles.y % 360 - ((int)((360 / mapCreate.inblock)) / 2);
+        }
+        if (change == 2)
+        {
+            z = quaternion.eulerAngles.y % 360 + ((int)((360 / mapCreate.inblock)) / 2);
+        }
         if (moveflag)
         {
+            mapCreate.inmap[hight * 100 + tyle] = false;
             if (inout == InOut.In)
             {
-                if ((int)(z / (360 / mapCreate.inblock)) != tyle)
+                if ((int)(z / (360 / mapCreate.inblock)) != tyle && count > 15)
                 {
 
-                    tyle = (int)(z / (360 / (mapCreate.inblock)));
+                    tyle = (int)(z / (360 / (mapCreate.inblock)))-1;
                     linkBlocks[0].attackflag = false;
                     linkBlocks[1].attackflag = false;
                     moveflag = false;
                     player.attackflag = false;
                     change = 0;
+                    count = 0;
+                    mapCreate.inmap[hight * 100 + tyle] = true;
                 }
             }
             else
             {
-                if ((int)(z / (360 / (mapCreate.outblock))) != tyle)
+                if ((int)(z / (360 / (mapCreate.outblock))) != tyle
+                    && count > 15
+                    )
                 {
-                    tyle = (int)(z / (360 / mapCreate.outblock));
+                    tyle = (int)(z / (360 / mapCreate.outblock))-1;
                     linkBlocks[0].attackflag = false;
                     linkBlocks[1].attackflag = false;
                     moveflag = false;
                     player.attackflag = false;
                     change = 0;
+                    count = 0;
+                    mapCreate.inmap[hight * 100 + tyle] = true;
                 }
             }
+            count++;
             if (change == 1)
             {
                 //RotateAround(円運動の中心,進行方向,速度)
@@ -240,7 +257,7 @@ public class Block : MonoBehaviour
 if (linkBlocks[1].attackflag)
             {
                 moveflag = true;
-                change = 1;
+                change = 2;
             }
         }
 

@@ -69,13 +69,13 @@ public class Player : MonoBehaviour
             {
                 //RotateAround(円運動の中心,進行方向,速度)
                 transform.RotateAround(center.transform.position,
-                transform.forward, (speed * 4) / radius);
+                transform.up, (speed * 4) / radius);
             }
             else if (changeflag == 1)
             {
                 //RotateAround(円運動の中心,進行方向,速度)
                 transform.RotateAround(center.transform.position,
-                -transform.forward, (speed * 4) / radius);
+                -transform.up, (speed * 4) / radius);
             }
 
             attacktime += Time.deltaTime;
@@ -97,9 +97,38 @@ public class Player : MonoBehaviour
             degree += 360;
         }
         //degree -= (360 / map.inblock);
+
+        radius = Vector3.Distance(transform.position, center.transform.position);
+        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+        {
+            //changeflag = 0;
+            moveflag = false;
+        }
+        if (Input.GetKey(KeyCode.W) )
+        {
+            changeflag = 0;
+            moveflag = true;
+        }
+        else
+        if (Input.GetKey(KeyCode.S) )
+        {
+            changeflag = 1;
+            moveflag = true;
+
+        }
+        else
+        if (Input.GetKeyDown(KeyCode.A) && ren != 0)
+        {
+            changeflag = 2;
+        }
+        else
+        if (Input.GetKeyDown(KeyCode.D) && ren != 1)
+        {
+            changeflag = 3;
+        }
         if (ren == 0)
         {
-            if (map.inmap[hight * 100 + (int)(degree / (360 / map.inblock))])
+            if (map.inmap[hight * 100 + (int)(degree / (360 / (map.inblock)))])
             {
                 moveflag = false;
             }
@@ -112,39 +141,17 @@ public class Player : MonoBehaviour
             }
 
         }
-        radius = Vector3.Distance(transform.position, center.transform.position);
-        if (Input.GetKey(KeyCode.D) && changeflag == 1)
-        {
-            changeflag = 0;
-            moveflag = true;
-        }
-        else
-        if (Input.GetKey(KeyCode.A) && changeflag == 0)
-        {
-            changeflag = 1;
-            moveflag = true;
-        }
-        else
-        if (Input.GetKeyDown(KeyCode.W) && ren != 0)
-        {
-            changeflag = 2;
-        }
-        else
-        if (Input.GetKeyDown(KeyCode.S) && ren != 1)
-        {
-            changeflag = 3;
-        }
         if (changeflag == 0 && !attackflag && moveflag)
         {
             //RotateAround(円運動の中心,進行方向,速度)
             transform.RotateAround(center.transform.position,
-            transform.forward, speed);
+            transform.up, speed);
         }
         else if (changeflag == 1 && !attackflag && moveflag)
         {
             //RotateAround(円運動の中心,進行方向,速度)
             transform.RotateAround(center.transform.position,
-            -transform.forward, speed);
+            -transform.up, speed);
         }
         else if (changeflag == 2)
         {
@@ -214,6 +221,14 @@ public class Player : MonoBehaviour
                 }
             }
         }
+
+        if (moveflag)
+        {
+            speed = 3;
+        }else
+        {
+            speed = 0;
+        }
     }
 
     void Jump()
@@ -256,14 +271,14 @@ public class Player : MonoBehaviour
     {
         if (other.tag == "Side")
         {
-            moveflag = false;
+           // moveflag = false;
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Side")
         {
-            moveflag = true;
+           // moveflag = true;
         }
     }
 }

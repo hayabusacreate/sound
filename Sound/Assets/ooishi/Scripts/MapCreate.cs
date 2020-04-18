@@ -25,8 +25,10 @@ public class MapCreate : MonoBehaviour
         }
         for (int i=1; i<maps.Length;i++)
         {
-            Instantiate(maps[i],new Vector3(transform.position.x,i*5,transform.position.z), new Quaternion(0,-60,0,0));
+
             maps[i].GetComponent<Map>().hight = i;
+            GameObject gameObject = Instantiate(maps[i], new Vector3(transform.position.x, i * (-5), transform.position.z), new Quaternion(0, 0.3f, 0, 0));
+            gameObject.transform.rotation = Quaternion.Euler(0, 109, 0);
         }
     }
 

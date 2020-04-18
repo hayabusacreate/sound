@@ -128,14 +128,22 @@ public class Player : MonoBehaviour
         }
         if (ren == 0)
         {
-            if (map.inmap[hight * 100 + (int)(degree / (360 / (map.inblock)))])
+            if (map.inmap[hight * 100 + (int)(((degree+10)%360) / (360 / (map.inblock)))]&&changeflag==0)
+            {
+                moveflag = false;
+            }
+            if (map.inmap[hight * 100 + (int)(((degree - 10)%360) / (360 / (map.inblock)))] && changeflag == 1)
             {
                 moveflag = false;
             }
         }
         else
         {
-            if (map.outmap[hight * 100 + (int)(degree / (360 / map.outblock))])
+            if (map.outmap[hight * 100 + (int)(((degree+10)%360) / (360 / map.outblock))] && changeflag == 0)
+            {
+                moveflag = false;
+            }
+            if (map.outmap[hight * 100 + (int)(((degree - 10)%360) / (360 / map.outblock))] && changeflag == 1)
             {
                 moveflag = false;
             }
@@ -228,6 +236,10 @@ public class Player : MonoBehaviour
         }else
         {
             speed = 0;
+        }
+        if(moveflag&&attackflag)
+        {
+            speed = 3;
         }
     }
 

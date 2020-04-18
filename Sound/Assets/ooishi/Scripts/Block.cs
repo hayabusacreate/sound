@@ -260,6 +260,14 @@ if (linkBlocks[1].attackflag)
                 change = 2;
             }
         }
+        if(linkBlocks[3].hitblock.hight!=hight)
+        {
+            hight = linkBlocks[3].hitblock.hight;
+        }
+        if (linkBlocks[2].hitblock.hight != hight)
+        {
+            hight = linkBlocks[2].hitblock.hight;
+        }
 
 
     }

@@ -19,6 +19,7 @@ public class LinkBlock : MonoBehaviour
     private float time;
     public HitArea area;
     public bool playerhit;
+    public Block hitblock;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +32,7 @@ public class LinkBlock : MonoBehaviour
         {
             block = transform.root.gameObject.transform.gameObject.GetComponent<Block>();
             check = true;
-            //hitblock = transform.root.gameObject.transform.GetComponent<Block>();
+            hitblock = transform.root.gameObject.transform.GetComponent<Block>();
         }
     }
     // Update is called once per frame
@@ -67,16 +68,15 @@ public class LinkBlock : MonoBehaviour
     {
         if(area==HitArea.Side)
         {
-            //if (other.transform.tag == "Block")
-            //{
-            //    save = other.transform.gameObject.GetComponent<Block>();
-            //    if (block.block == save.block)
-            //    {
-            //        other.transform.gameObject.GetComponent<Renderer>().material.color = Color.black;
-            //        hitflag = true;
-            //        hitblock = other.gameObject.transform.GetComponent<Block>();
-            //    }
-            //}else
+            if (other.transform.tag == "Block")
+            {
+
+                    other.transform.gameObject.GetComponent<Renderer>().material.color = Color.black;
+                    hitflag = true;
+                    hitblock = other.gameObject.transform.GetComponent<Block>();
+                
+            }
+            else
             if (other.transform.tag == "Player")
             {
                 playerhit = true;

@@ -32,7 +32,7 @@ public class Map : MonoBehaviour
             }
 
         }
-        //transform.DetachChildren();
+        transform.DetachChildren();
     }
     // Update is called once per frame
     void Update()

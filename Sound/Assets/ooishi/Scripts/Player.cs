@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     private Vector3 pos;
     private float rad, degree;
     private MapCreate map;
+    private Renderer renderer;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +45,7 @@ public class Player : MonoBehaviour
         type = PlayerType.Nomal;
         moveflag = true;
         map = GameObject.Find("MapCreate").GetComponent<MapCreate>();
+        renderer = gameObject.transform.GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -116,13 +118,14 @@ public class Player : MonoBehaviour
             moveflag = true;
 
         }
-        else
-        if (Input.GetKeyDown(KeyCode.A) && ren != 0)
+        if (Input.GetKeyDown(KeyCode.A) && ren != 0&&!map.inmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.inblock)))])
         {
             changeflag = 2;
         }
         else
-        if (Input.GetKeyDown(KeyCode.D) && ren != 1)
+        if (Input.GetKeyDown(KeyCode.D) && ren != 1
+            &&! map.outmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.outblock)))]
+            )
         {
             changeflag = 3;
         }
@@ -233,12 +236,16 @@ public class Player : MonoBehaviour
         if (moveflag)
         {
             speed = 3;
-        }else
+            renderer.material.color = Color.white;
+        }
+        else
         {
             speed = 0;
+            renderer.material.color = Color.white;
         }
         if(moveflag&&attackflag)
         {
+            renderer.material.color = Color.red;
             speed = 3;
         }
     }

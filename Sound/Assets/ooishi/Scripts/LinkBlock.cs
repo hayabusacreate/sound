@@ -71,7 +71,7 @@ public class LinkBlock : MonoBehaviour
             if (other.transform.tag == "Block")
             {
 
-                    other.transform.gameObject.GetComponent<Renderer>().material.color = Color.black;
+                    //other.transform.gameObject.GetComponent<Renderer>().material.color = Color.black;
                     hitflag = true;
                     hitblock = other.gameObject.transform.GetComponent<Block>();
                 

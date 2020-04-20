@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 4947952772850148}
   - component: {fileID: 6158798141882574109}
   - component: {fileID: 1045690489183826624}
+  - component: {fileID: 565915855194060887}
   m_Layer: 9
   m_Name: yuka_naisyu_1_5 (3)
   m_TagString: Block
@@ -389,6 +390,20 @@ MonoBehaviour:
   inout: 0
   hight: 0
   tyle: 0
+--- !u!114 &565915855194060887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279674198650490044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a916c1a58a41943acd7391bfbded40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
+  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
 --- !u!1 &325299618126772915
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,6 +855,7 @@ GameObject:
   - component: {fileID: 2713374191432046902}
   - component: {fileID: 5530096257827452615}
   - component: {fileID: 3891919644647330580}
+  - component: {fileID: 4178002941767672526}
   m_Layer: 10
   m_Name: yuka_gaisyu_1_9 (3)
   m_TagString: Block
@@ -964,6 +980,20 @@ MonoBehaviour:
   inout: 1
   hight: 0
   tyle: 0
+--- !u!114 &4178002941767672526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955680773938613263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a916c1a58a41943acd7391bfbded40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
+  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
 --- !u!1 &1196328363847915531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,6 +1071,7 @@ GameObject:
   - component: {fileID: 5381468614394677566}
   - component: {fileID: 1161108399691367791}
   - component: {fileID: 3587392727348098259}
+  - component: {fileID: 3682771048004845491}
   m_Layer: 9
   m_Name: yuka_naisyu_1_5 (2)
   m_TagString: Block
@@ -1165,6 +1196,20 @@ MonoBehaviour:
   inout: 0
   hight: 0
   tyle: 0
+--- !u!114 &3682771048004845491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245016942989381990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a916c1a58a41943acd7391bfbded40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
+  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
 --- !u!1 &1465417607427657550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,6 +1287,7 @@ GameObject:
   - component: {fileID: 7555849789109465893}
   - component: {fileID: 3470562634325833205}
   - component: {fileID: 5475205162649061655}
+  - component: {fileID: 1469784721926799204}
   m_Layer: 10
   m_Name: yuka_gaisyu_1_9 (1)
   m_TagString: Block
@@ -1366,6 +1412,20 @@ MonoBehaviour:
   inout: 1
   hight: 0
   tyle: 0
+--- !u!114 &1469784721926799204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573541102983770599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a916c1a58a41943acd7391bfbded40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
+  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
 --- !u!1 &1582733160548224264
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,6 +2130,7 @@ GameObject:
   - component: {fileID: 1438540759212559779}
   - component: {fileID: 8595068319131629913}
   - component: {fileID: 6382991021409258023}
+  - component: {fileID: 1906065016313429969}
   m_Layer: 10
   m_Name: yuka_gaisyu_1_9
   m_TagString: Block
@@ -2194,6 +2255,20 @@ MonoBehaviour:
   inout: 1
   hight: 0
   tyle: 0
+--- !u!114 &1906065016313429969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2474688702888458541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a916c1a58a41943acd7391bfbded40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
+  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
 --- !u!1 &2523388300330724295
 GameObject:
   m_ObjectHideFlags: 0
@@ -3084,6 +3159,7 @@ GameObject:
   - component: {fileID: 862423799585114676}
   - component: {fileID: 2065576163459454764}
   - component: {fileID: 1427441851886452266}
+  - component: {fileID: 8407954333520454943}
   m_Layer: 9
   m_Name: yuka_naisyu_1_5
   m_TagString: Block
@@ -3208,6 +3284,20 @@ MonoBehaviour:
   inout: 0
   hight: 0
   tyle: 0
+--- !u!114 &8407954333520454943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560118615289875442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a916c1a58a41943acd7391bfbded40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
+  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
 --- !u!1 &3679413192954940311
 GameObject:
   m_ObjectHideFlags: 0
@@ -5223,6 +5313,7 @@ GameObject:
   - component: {fileID: 1791371548470173186}
   - component: {fileID: 6097024655289888968}
   - component: {fileID: 2605449789265120782}
+  - component: {fileID: 4051666761889322718}
   m_Layer: 10
   m_Name: yuka_gaisyu_1_9 (4)
   m_TagString: Block
@@ -5347,6 +5438,20 @@ MonoBehaviour:
   inout: 1
   hight: 0
   tyle: 0
+--- !u!114 &4051666761889322718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5886896226704181079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a916c1a58a41943acd7391bfbded40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
+  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
 --- !u!1 &5965156125857063751
 GameObject:
   m_ObjectHideFlags: 0
@@ -5861,6 +5966,7 @@ GameObject:
   - component: {fileID: 7476872692459033158}
   - component: {fileID: 5327775323979869810}
   - component: {fileID: 1356929352962833648}
+  - component: {fileID: 1040495422026907364}
   m_Layer: 10
   m_Name: yuka_gaisyu_1_9 (5)
   m_TagString: Block
@@ -5985,6 +6091,20 @@ MonoBehaviour:
   inout: 1
   hight: 0
   tyle: 0
+--- !u!114 &1040495422026907364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6452685209981177936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a916c1a58a41943acd7391bfbded40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
+  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
 --- !u!1 &6492971980222710024
 GameObject:
   m_ObjectHideFlags: 0
@@ -6124,6 +6244,7 @@ GameObject:
   - component: {fileID: 8975802935884377959}
   - component: {fileID: 8607221805352132339}
   - component: {fileID: 8954390127819655768}
+  - component: {fileID: 2038147012516539837}
   m_Layer: 10
   m_Name: yuka_gaisyu_1_9 (8)
   m_TagString: Block
@@ -6248,6 +6369,20 @@ MonoBehaviour:
   inout: 1
   hight: 0
   tyle: 0
+--- !u!114 &2038147012516539837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6617851659389995745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a916c1a58a41943acd7391bfbded40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
+  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
 --- !u!1 &6677187756689480565
 GameObject:
   m_ObjectHideFlags: 0
@@ -6639,6 +6774,7 @@ GameObject:
   - component: {fileID: 1491134517018861815}
   - component: {fileID: 4176370089319598565}
   - component: {fileID: 1173244880000258790}
+  - component: {fileID: 5866504002936272900}
   m_Layer: 10
   m_Name: yuka_gaisyu_1_9 (2)
   m_TagString: Block
@@ -6763,6 +6899,20 @@ MonoBehaviour:
   inout: 1
   hight: 0
   tyle: 0
+--- !u!114 &5866504002936272900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7216256524765361302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a916c1a58a41943acd7391bfbded40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
+  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
 --- !u!1 &7315766106076082005
 GameObject:
   m_ObjectHideFlags: 0
@@ -6978,7 +7128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: af084dadef5b91c4b81c5766220be6da, type: 2}
+  defaultMat: {fileID: 2100000, guid: 2e8d1953c1c65694b8cbbff3d21fba41, type: 2}
 --- !u!1 &7419779265673258447
 GameObject:
   m_ObjectHideFlags: 0
@@ -7491,6 +7641,7 @@ GameObject:
   - component: {fileID: 8143923140901128991}
   - component: {fileID: 5282220987756396154}
   - component: {fileID: 6430729140398031903}
+  - component: {fileID: 2260916040629191832}
   m_Layer: 10
   m_Name: yuka_gaisyu_1_9 (7)
   m_TagString: Block
@@ -7615,6 +7766,20 @@ MonoBehaviour:
   inout: 1
   hight: 0
   tyle: 0
+--- !u!114 &2260916040629191832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7867473494027693780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a916c1a58a41943acd7391bfbded40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
+  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
 --- !u!1 &7882570857033891150
 GameObject:
   m_ObjectHideFlags: 0
@@ -7816,6 +7981,7 @@ GameObject:
   - component: {fileID: 2067324194063878245}
   - component: {fileID: 6897629572673176871}
   - component: {fileID: 1090425264986367265}
+  - component: {fileID: 6194471029251566582}
   m_Layer: 10
   m_Name: yuka_gaisyu_1_9 (6)
   m_TagString: Block
@@ -7940,6 +8106,20 @@ MonoBehaviour:
   inout: 1
   hight: 0
   tyle: 0
+--- !u!114 &6194471029251566582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8056813575755222000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a916c1a58a41943acd7391bfbded40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
+  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
 --- !u!1 &8060791817375647561
 GameObject:
   m_ObjectHideFlags: 0
@@ -8081,6 +8261,7 @@ GameObject:
   - component: {fileID: 3574661576092487251}
   - component: {fileID: 5509190628095314579}
   - component: {fileID: 2270261193141344947}
+  - component: {fileID: 6552737393039570228}
   m_Layer: 9
   m_Name: yuka_naisyu_1_5 (4)
   m_TagString: Block
@@ -8205,6 +8386,20 @@ MonoBehaviour:
   inout: 0
   hight: 0
   tyle: 0
+--- !u!114 &6552737393039570228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8126844029441103763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a916c1a58a41943acd7391bfbded40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
+  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
 --- !u!1 &8161471509074899741
 GameObject:
   m_ObjectHideFlags: 0

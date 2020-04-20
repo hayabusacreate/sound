@@ -82,6 +82,14 @@ public class Block : MonoBehaviour
         {
             mapCreate.outtype.Add(hight * 100 + tyle, gameObject.GetComponent<Block>());
         }
+
+        if(block==BlockType.Nomal)
+        {
+            color.material.color = Color.green;
+        }else
+        {
+            color.material.color = Color.yellow;
+        }
     }
 
     // Update is called once per frame
@@ -214,6 +222,57 @@ public class Block : MonoBehaviour
                     count = 0;
                     mapCreate.inmap[hight * 100 + tyle] = true;
                 }
+                if(tyle+1<mapCreate.inblock)
+                {
+                    if (mapCreate.inmap[hight * 100 + tyle + 1] && linkBlocks[0].attackflag)
+                    {
+                        linkBlocks[0].attackflag = false;
+                        linkBlocks[1].attackflag = false;
+                        moveflag = false;
+                        player.attackflag = false;
+                        change = 0;
+                        count = 0;
+                        mapCreate.inmap[hight * 100 + tyle] = true;
+                    }
+                }else
+                {
+                    if (mapCreate.inmap[hight * 100] && linkBlocks[0].attackflag)
+                    {
+                        linkBlocks[0].attackflag = false;
+                        linkBlocks[1].attackflag = false;
+                        moveflag = false;
+                        player.attackflag = false;
+                        change = 0;
+                        count = 0;
+                        mapCreate.inmap[hight * 100 + tyle] = true;
+                    }
+                }
+                if(tyle-1>0)
+                {
+                    if (mapCreate.inmap[hight * 100 + tyle - 1] && linkBlocks[1].attackflag)
+                    {
+                        linkBlocks[0].attackflag = false;
+                        linkBlocks[1].attackflag = false;
+                        moveflag = false;
+                        player.attackflag = false;
+                        change = 0;
+                        count = 0;
+                        mapCreate.inmap[hight * 100 + tyle] = true;
+                    }
+                }else
+                {
+                    if (mapCreate.inmap[hight * 100 + mapCreate.inblock-1] && linkBlocks[1].attackflag)
+                    {
+                        linkBlocks[0].attackflag = false;
+                        linkBlocks[1].attackflag = false;
+                        moveflag = false;
+                        player.attackflag = false;
+                        change = 0;
+                        count = 0;
+                        mapCreate.inmap[hight * 100 + tyle] = true;
+                    }
+                }
+
             }
             else
             {
@@ -229,6 +288,58 @@ public class Block : MonoBehaviour
                     change = 0;
                     count = 0;
                     mapCreate.inmap[hight * 100 + tyle] = true;
+                }
+                if (tyle + 1 < mapCreate.outblock)
+                {
+                    if (mapCreate.outmap[hight * 100 + tyle + 1] && linkBlocks[0].attackflag)
+                    {
+                        linkBlocks[0].attackflag = false;
+                        linkBlocks[1].attackflag = false;
+                        moveflag = false;
+                        player.attackflag = false;
+                        change = 0;
+                        count = 0;
+                        mapCreate.outmap[hight * 100 + tyle] = true;
+                    }
+                }
+                else
+                {
+                    if (mapCreate.outmap[hight * 100] && linkBlocks[0].attackflag)
+                    {
+                        linkBlocks[0].attackflag = false;
+                        linkBlocks[1].attackflag = false;
+                        moveflag = false;
+                        player.attackflag = false;
+                        change = 0;
+                        count = 0;
+                        mapCreate.outmap[hight * 100 + tyle] = true;
+                    }
+                }
+                if (tyle - 1 > 0)
+                {
+                    if (mapCreate.outmap[hight * 100 + tyle - 1] && linkBlocks[1].attackflag)
+                    {
+                        linkBlocks[0].attackflag = false;
+                        linkBlocks[1].attackflag = false;
+                        moveflag = false;
+                        player.attackflag = false;
+                        change = 0;
+                        count = 0;
+                        mapCreate.outmap[hight * 100 + tyle] = true;
+                    }
+                }
+                else
+                {
+                    if (mapCreate.outmap[hight * 100 + mapCreate.outblock - 1] && linkBlocks[1].attackflag)
+                    {
+                        linkBlocks[0].attackflag = false;
+                        linkBlocks[1].attackflag = false;
+                        moveflag = false;
+                        player.attackflag = false;
+                        change = 0;
+                        count = 0;
+                        mapCreate.outmap[hight * 100 + tyle] = true;
+                    }
                 }
             }
             count++;
@@ -259,6 +370,14 @@ if (linkBlocks[1].attackflag)
                 moveflag = true;
                 change = 2;
             }
+        }
+        if(linkBlocks[3].hitblock.hight!=hight)
+        {
+            hight = linkBlocks[3].hitblock.hight;
+        }
+        if (linkBlocks[2].hitblock.hight != hight)
+        {
+            hight = linkBlocks[2].hitblock.hight;
         }
 
 
@@ -354,7 +473,7 @@ if (linkBlocks[1].attackflag)
                     }
                 }
             }
-            color.material.color = Color.red;
+            //color.material.color = Color.red;
         }
 
         if ((block == BlockType.Nomal && player.type == PlayerType.Fire)

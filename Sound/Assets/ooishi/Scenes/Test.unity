@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 568552948}
   - component: {fileID: 568552947}
   - component: {fileID: 568552950}
+  - component: {fileID: 568552951}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -316,6 +317,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Cinemachine.CinemachineBrain+VcamEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &568552951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568552946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea9cef67705f4db4db983d9b5ab5fc63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &694143647
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,9 +483,9 @@ MonoBehaviour:
   outblock: 9
   maps:
   - {fileID: 8858401953452617257, guid: 5cf92538343d7fe4080425e11ca49d0b, type: 3}
+  - {fileID: 8858401953452617257, guid: 218dd6dc3ad7ab847bedac93de2ccacb, type: 3}
   - {fileID: 8858401953452617257, guid: 5cf92538343d7fe4080425e11ca49d0b, type: 3}
-  - {fileID: 8858401953452617257, guid: 5cf92538343d7fe4080425e11ca49d0b, type: 3}
-  - {fileID: 8858401953452617257, guid: 5cf92538343d7fe4080425e11ca49d0b, type: 3}
+  - {fileID: 8858401953452617257, guid: 218dd6dc3ad7ab847bedac93de2ccacb, type: 3}
   - {fileID: 8858401953452617257, guid: 5cf92538343d7fe4080425e11ca49d0b, type: 3}
 --- !u!4 &732174380
 Transform:
@@ -866,17 +879,17 @@ PrefabInstance:
     - target: {fileID: 7614219387160868559, guid: 55f858ad3d84a3b4c9bf0c8321f76132,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7614219387780818171, guid: 55f858ad3d84a3b4c9bf0c8321f76132,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7614219386898738457, guid: 55f858ad3d84a3b4c9bf0c8321f76132,
         type: 3}
       propertyPath: m_Radius
-      value: 0.4074134
+      value: 0.29078683
       objectReference: {fileID: 0}
     - target: {fileID: 7614219386898738457, guid: 55f858ad3d84a3b4c9bf0c8321f76132,
         type: 3}
@@ -886,17 +899,17 @@ PrefabInstance:
     - target: {fileID: 7614219386898738457, guid: 55f858ad3d84a3b4c9bf0c8321f76132,
         type: 3}
       propertyPath: m_Center.x
-      value: -0.1698935
+      value: 0.043556333
       objectReference: {fileID: 0}
     - target: {fileID: 7614219386898738457, guid: 55f858ad3d84a3b4c9bf0c8321f76132,
         type: 3}
       propertyPath: m_Center.y
-      value: -9.150333e-17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7614219386898738457, guid: 55f858ad3d84a3b4c9bf0c8321f76132,
         type: 3}
       propertyPath: m_Center.z
-      value: 0.0060277483
+      value: 0.006027749
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55f858ad3d84a3b4c9bf0c8321f76132, type: 3}

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CheckObject : MonoBehaviour
 {
-    
 
+    Vector3 pos;
     
     Camera mainCamera;
     
@@ -14,25 +14,27 @@ public class CheckObject : MonoBehaviour
 
     bool a = false;
 
+    void Start()
+    {
+        
+    }
+
     void Update()
     {
-     
-        Vector3 center = new Vector3(Screen.width / 2, Screen.height / 2 -5);
-        Ray ray = Camera.main.ScreenPointToRay(center);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 100.0f))
-        {
-            if(hit.collider.tag == "Block")
+        pos = transform.GetComponent<Transform>().position;
+        Ray ray = new Ray(pos,pos +new Vector3(100,10));
+        // RaycastHit hit;
+        foreach (RaycastHit hit in Physics.CapsuleCastAll(pos + new Vector3(1, 2,1), pos + new Vector3(1, 2,-1), 2, new Vector3(10, 0,0)))
             {
-                gameObj = hit.collider.gameObject;
+                if (hit.collider.tag == "Block")
+                {
+                    gameObj = hit.collider.gameObject;
 
-                gameObj.GetComponent<ChangeMat>().CMat();
+                    gameObj.GetComponent<ChangeMat>().CMat();
+                }
             }
-        }
-        else
-        {
-            
-        }
+        
+        
 
 
 

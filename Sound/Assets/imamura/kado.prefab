@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 4947952772850148}
   - component: {fileID: 6158798141882574109}
   - component: {fileID: 1045690489183826624}
-  - component: {fileID: 1568794101269447511}
+  - component: {fileID: 1786738147225320497}
   m_Layer: 9
   m_Name: yuka_naisyu_1_5 (3)
   m_TagString: Block
@@ -277,7 +277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279674198650490044}
   m_LocalRotation: {x: -0.5720614, y: -0.4156269, z: -0.4156269, w: 0.5720614}
-  m_LocalPosition: {x: 0, y: 1.8928, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 138.91693, y: 138.91693, z: 55.56678}
   m_Children:
   - {fileID: 6018074902178254847}
@@ -289,7 +289,7 @@ Transform:
   - {fileID: 4393249441865144284}
   - {fileID: 6297972351905929579}
   m_Father: {fileID: 6694813047016377455}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -72}
 --- !u!33 &7088565800634599314
 MeshFilter:
@@ -386,7 +386,7 @@ MonoBehaviour:
   inout: 0
   hight: 0
   tyle: 0
---- !u!114 &1568794101269447511
+--- !u!114 &1786738147225320497
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: af084dadef5b91c4b81c5766220be6da, type: 2}
+  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
 --- !u!1 &325299618126772915
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,7 +844,7 @@ GameObject:
   - component: {fileID: 2713374191432046902}
   - component: {fileID: 5530096257827452615}
   - component: {fileID: 3891919644647330580}
-  - component: {fileID: 1668009578185178927}
+  - component: {fileID: 3498684736054463579}
   m_Layer: 10
   m_Name: yuka_gaisyu_1_9 (3)
   m_TagString: Block
@@ -859,8 +859,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955680773938613263}
-  m_LocalRotation: {x: -0.35355335, y: 0.61237246, z: 0.61237246, w: 0.35355335}
-  m_LocalPosition: {x: 0, y: 1.8928, z: 0}
+  m_LocalRotation: {x: -0.24161427, y: 0.6645474, z: 0.6645468, w: 0.24161316}
+  m_LocalPosition: {x: -0.0035357773, y: 0.0013096434, z: -0.02629924}
   m_LocalScale: {x: 111.13356, y: 111.13363, z: 55.566814}
   m_Children:
   - {fileID: 8236764327900801514}
@@ -873,7 +873,7 @@ Transform:
   - {fileID: 4470563197181621797}
   m_Father: {fileID: 6694813047016377455}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 120}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 140.04001}
 --- !u!33 &4049625736374547035
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -969,7 +969,7 @@ MonoBehaviour:
   inout: 1
   hight: 0
   tyle: 0
---- !u!114 &1668009578185178927
+--- !u!114 &3498684736054463579
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -982,7 +982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: af084dadef5b91c4b81c5766220be6da, type: 2}
+  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
 --- !u!1 &1196328363847915531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,7 +1059,7 @@ GameObject:
   - component: {fileID: 5381468614394677566}
   - component: {fileID: 1161108399691367791}
   - component: {fileID: 3587392727348098259}
-  - component: {fileID: 4294746571933282069}
+  - component: {fileID: 5693152136509197741}
   m_Layer: 9
   m_Name: yuka_naisyu_1_5 (2)
   m_TagString: Block
@@ -1075,7 +1075,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245016942989381990}
   m_LocalRotation: {x: -0.21850802, y: 0.6724985, z: 0.6724985, w: 0.21850802}
-  m_LocalPosition: {x: 0, y: 1.8928, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 138.91699, y: 138.91698, z: 55.56678}
   m_Children:
   - {fileID: 2319103989819930032}
@@ -1176,7 +1176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d71f370dadef949b4ed86cb4625326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: 0
+  block: 1
   hp: 0
   speed: 5
   damageflag: 0
@@ -1184,7 +1184,7 @@ MonoBehaviour:
   inout: 0
   hight: 0
   tyle: 0
---- !u!114 &4294746571933282069
+--- !u!114 &5693152136509197741
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1197,7 +1197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: af084dadef5b91c4b81c5766220be6da, type: 2}
+  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
 --- !u!1 &1465417607427657550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,7 +1274,7 @@ GameObject:
   - component: {fileID: 7555849789109465893}
   - component: {fileID: 3470562634325833205}
   - component: {fileID: 5475205162649061655}
-  - component: {fileID: 5522530793651262198}
+  - component: {fileID: 1910327157899349511}
   m_Layer: 10
   m_Name: yuka_gaisyu_1_9 (1)
   m_TagString: Block
@@ -1289,8 +1289,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1573541102983770599}
-  m_LocalRotation: {x: -0.66446304, y: 0.24184473, z: 0.24184473, w: 0.66446304}
-  m_LocalPosition: {x: 0, y: 1.8928, z: 0}
+  m_LocalRotation: {x: -0.61225027, y: 0.35376605, z: 0.35376555, w: 0.61224926}
+  m_LocalPosition: {x: -0.0035357773, y: 0.0013096434, z: -0.02629924}
   m_LocalScale: {x: 111.13356, y: 111.13363, z: 55.566814}
   m_Children:
   - {fileID: 6827639199120577235}
@@ -1303,7 +1303,7 @@ Transform:
   - {fileID: 708874493395773041}
   m_Father: {fileID: 6694813047016377455}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 40}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 60.040005}
 --- !u!33 &9032689502187029691
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1399,7 +1399,7 @@ MonoBehaviour:
   inout: 1
   hight: 0
   tyle: 0
---- !u!114 &5522530793651262198
+--- !u!114 &1910327157899349511
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1412,7 +1412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: af084dadef5b91c4b81c5766220be6da, type: 2}
+  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
 --- !u!1 &1582733160548224264
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,7 +2106,7 @@ GameObject:
   - component: {fileID: 1438540759212559779}
   - component: {fileID: 8595068319131629913}
   - component: {fileID: 6382991021409258023}
-  - component: {fileID: 5966661807737354367}
+  - component: {fileID: 8171772685430472031}
   m_Layer: 10
   m_Name: yuka_gaisyu_1_9
   m_TagString: Block
@@ -2121,8 +2121,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2474688702888458541}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.8928, z: 0}
+  m_LocalRotation: {x: -0.69632155, y: 0.12303002, z: 0.123030126, w: 0.6963214}
+  m_LocalPosition: {x: -0.0035357773, y: 0.0013096434, z: -0.02629924}
   m_LocalScale: {x: 111.13356, y: 111.13363, z: 55.566814}
   m_Children:
   - {fileID: 6099165224576169141}
@@ -2135,7 +2135,7 @@ Transform:
   - {fileID: 1664750374569693538}
   m_Father: {fileID: 6694813047016377455}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 20.04}
 --- !u!33 &5917902735260502422
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2231,7 +2231,7 @@ MonoBehaviour:
   inout: 1
   hight: 0
   tyle: 0
---- !u!114 &5966661807737354367
+--- !u!114 &8171772685430472031
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2244,7 +2244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: af084dadef5b91c4b81c5766220be6da, type: 2}
+  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
 --- !u!1 &2523388300330724295
 GameObject:
   m_ObjectHideFlags: 0
@@ -3121,7 +3121,7 @@ GameObject:
   - component: {fileID: 862423799585114676}
   - component: {fileID: 2065576163459454764}
   - component: {fileID: 1427441851886452266}
-  - component: {fileID: 7300335760888269108}
+  - component: {fileID: 2581609008948173115}
   m_Layer: 9
   m_Name: yuka_naisyu_1_5
   m_TagString: Block
@@ -3137,7 +3137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3560118615289875442}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.85, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 138.91695, y: 138.917, z: 55.566814}
   m_Children:
   - {fileID: 4077441999203583027}
@@ -3246,7 +3246,7 @@ MonoBehaviour:
   inout: 0
   hight: 0
   tyle: 0
---- !u!114 &7300335760888269108
+--- !u!114 &2581609008948173115
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3259,7 +3259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: af084dadef5b91c4b81c5766220be6da, type: 2}
+  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
 --- !u!1 &3679413192954940311
 GameObject:
   m_ObjectHideFlags: 0
@@ -5243,7 +5243,7 @@ GameObject:
   - component: {fileID: 1791371548470173186}
   - component: {fileID: 6097024655289888968}
   - component: {fileID: 2605449789265120782}
-  - component: {fileID: 8431667048690262029}
+  - component: {fileID: 6237190333578010380}
   m_Layer: 10
   m_Name: yuka_gaisyu_1_9 (4)
   m_TagString: Block
@@ -5258,8 +5258,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5886896226704181079}
-  m_LocalRotation: {x: -0.66446304, y: -0.24184473, z: -0.24184473, w: 0.66446304}
-  m_LocalPosition: {x: 0, y: 1.8928, z: 0}
+  m_LocalRotation: {x: -0.6964072, y: -0.122546, z: -0.12254508, w: 0.69640666}
+  m_LocalPosition: {x: -0.0035357773, y: 0.0013096434, z: -0.02629924}
   m_LocalScale: {x: 111.13356, y: 111.13363, z: 55.566814}
   m_Children:
   - {fileID: 2988501212068287195}
@@ -5271,8 +5271,8 @@ Transform:
   - {fileID: 448454563475479704}
   - {fileID: 5052388710999027444}
   m_Father: {fileID: 6694813047016377455}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -40}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -19.960001}
 --- !u!33 &2200076952130073133
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5360,15 +5360,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d71f370dadef949b4ed86cb4625326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: 0
-  hp: 0
+  block: 1
+  hp: 10
   speed: 5
   damageflag: 0
   moveflag: 0
   inout: 1
   hight: 0
   tyle: 0
---- !u!114 &8431667048690262029
+--- !u!114 &6237190333578010380
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5381,7 +5381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: af084dadef5b91c4b81c5766220be6da, type: 2}
+  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
 --- !u!1 &5965156125857063751
 GameObject:
   m_ObjectHideFlags: 0
@@ -5888,7 +5888,7 @@ GameObject:
   - component: {fileID: 7476872692459033158}
   - component: {fileID: 5327775323979869810}
   - component: {fileID: 1356929352962833648}
-  - component: {fileID: 4413288417521513121}
+  - component: {fileID: 5012902427500155575}
   m_Layer: 10
   m_Name: yuka_gaisyu_1_9 (5)
   m_TagString: Block
@@ -5903,8 +5903,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6452685209981177936}
-  m_LocalRotation: {x: -0.54167527, y: -0.45451945, z: -0.45451945, w: 0.54167527}
-  m_LocalPosition: {x: 0, y: 1.8928, z: 0}
+  m_LocalRotation: {x: -0.6124953, y: -0.35334134, z: -0.35333994, w: 0.61249524}
+  m_LocalPosition: {x: -0.0035357773, y: 0.0013096434, z: -0.02629924}
   m_LocalScale: {x: 111.13356, y: 111.13363, z: 55.566814}
   m_Children:
   - {fileID: 9149582385202817632}
@@ -5916,8 +5916,8 @@ Transform:
   - {fileID: 7852002188046047641}
   - {fileID: 5201864040429549018}
   m_Father: {fileID: 6694813047016377455}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -80}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -59.960003}
 --- !u!33 &2842838807485072571
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6005,15 +6005,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d71f370dadef949b4ed86cb4625326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: 0
-  hp: 0
+  block: 1
+  hp: 10
   speed: 5
   damageflag: 0
   moveflag: 0
   inout: 1
   hight: 0
   tyle: 0
---- !u!114 &4413288417521513121
+--- !u!114 &5012902427500155575
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6026,7 +6026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: af084dadef5b91c4b81c5766220be6da, type: 2}
+  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
 --- !u!1 &6492971980222710024
 GameObject:
   m_ObjectHideFlags: 0
@@ -6164,7 +6164,7 @@ GameObject:
   - component: {fileID: 8975802935884377959}
   - component: {fileID: 8607221805352132339}
   - component: {fileID: 8954390127819655768}
-  - component: {fileID: 324923456177542522}
+  - component: {fileID: 3009263430674658578}
   m_Layer: 10
   m_Name: yuka_gaisyu_1_9 (8)
   m_TagString: Block
@@ -6179,8 +6179,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6617851659389995745}
-  m_LocalRotation: {x: -0.122787856, y: -0.6963643, z: -0.6963643, w: 0.122787856}
-  m_LocalPosition: {x: 0, y: 1.8928, z: 0}
+  m_LocalRotation: {x: -0.2420755, y: -0.6643793, z: -0.66437876, w: 0.24207552}
+  m_LocalPosition: {x: -0.0035357773, y: 0.0013096434, z: -0.02629924}
   m_LocalScale: {x: 111.13356, y: 111.13363, z: 55.566814}
   m_Children:
   - {fileID: 6122961016533276183}
@@ -6192,8 +6192,8 @@ Transform:
   - {fileID: 4018506379771143117}
   - {fileID: 844207451172696177}
   m_Father: {fileID: 6694813047016377455}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -160}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -139.96}
 --- !u!33 &2721132285760212414
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6289,7 +6289,7 @@ MonoBehaviour:
   inout: 1
   hight: 0
   tyle: 0
---- !u!114 &324923456177542522
+--- !u!114 &3009263430674658578
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6302,7 +6302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: af084dadef5b91c4b81c5766220be6da, type: 2}
+  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
 --- !u!1 &6677187756689480565
 GameObject:
   m_ObjectHideFlags: 0
@@ -6688,7 +6688,7 @@ GameObject:
   - component: {fileID: 1491134517018861815}
   - component: {fileID: 4176370089319598565}
   - component: {fileID: 1173244880000258790}
-  - component: {fileID: 8428085465782324530}
+  - component: {fileID: 957518349976221038}
   m_Layer: 10
   m_Name: yuka_gaisyu_1_9 (2)
   m_TagString: Block
@@ -6703,8 +6703,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7216256524765361302}
-  m_LocalRotation: {x: -0.54167527, y: 0.45451945, z: 0.45451945, w: 0.54167527}
-  m_LocalPosition: {x: 0, y: 1.8928, z: 0}
+  m_LocalRotation: {x: -0.45433176, y: 0.5418334, z: 0.54183286, w: 0.4543307}
+  m_LocalPosition: {x: -0.0035357773, y: 0.0013096434, z: -0.02629924}
   m_LocalScale: {x: 111.13356, y: 111.13363, z: 55.566814}
   m_Children:
   - {fileID: 7618410044571863393}
@@ -6717,7 +6717,7 @@ Transform:
   - {fileID: 6844787985015098439}
   m_Father: {fileID: 6694813047016377455}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 80}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 100.04001}
 --- !u!33 &981982183043295729
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6813,7 +6813,7 @@ MonoBehaviour:
   inout: 1
   hight: 0
   tyle: 0
---- !u!114 &8428085465782324530
+--- !u!114 &957518349976221038
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6826,7 +6826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: af084dadef5b91c4b81c5766220be6da, type: 2}
+  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
 --- !u!1 &7315766106076082005
 GameObject:
   m_ObjectHideFlags: 0
@@ -6903,7 +6903,7 @@ GameObject:
   - component: {fileID: 7784672419083319307}
   - component: {fileID: 817638799039381877}
   - component: {fileID: 8269275704779611523}
-  - component: {fileID: 7308093028777949140}
+  - component: {fileID: 1424950210033164983}
   m_Layer: 9
   m_Name: yuka_naisyu_1_5 (1)
   m_TagString: Block
@@ -6919,7 +6919,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7416883714045907917}
   m_LocalRotation: {x: -0.5720614, y: 0.4156269, z: 0.4156269, w: 0.5720614}
-  m_LocalPosition: {x: 0, y: 1.8928, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 138.91693, y: 138.91693, z: 55.56678}
   m_Children:
   - {fileID: 2149009753910739648}
@@ -6958,7 +6958,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
+  - {fileID: 2100000, guid: 2e8d1953c1c65694b8cbbff3d21fba41, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7020,7 +7020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d71f370dadef949b4ed86cb4625326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: 0
+  block: 1
   hp: 0
   speed: 5
   damageflag: 0
@@ -7028,7 +7028,7 @@ MonoBehaviour:
   inout: 0
   hight: 0
   tyle: 0
---- !u!114 &7308093028777949140
+--- !u!114 &1424950210033164983
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7041,7 +7041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: af084dadef5b91c4b81c5766220be6da, type: 2}
+  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
 --- !u!1 &7419779265673258447
 GameObject:
   m_ObjectHideFlags: 0
@@ -7546,7 +7546,7 @@ GameObject:
   - component: {fileID: 8143923140901128991}
   - component: {fileID: 5282220987756396154}
   - component: {fileID: 6430729140398031903}
-  - component: {fileID: 3070055995341347425}
+  - component: {fileID: 5395219534909607140}
   m_Layer: 10
   m_Name: yuka_gaisyu_1_9 (7)
   m_TagString: Block
@@ -7561,8 +7561,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7867473494027693780}
-  m_LocalRotation: {x: -0.122787856, y: 0.6963643, z: 0.6963643, w: 0.122787856}
-  m_LocalPosition: {x: 0, y: 1.8928, z: 0}
+  m_LocalRotation: {x: 0.0002454481, y: 0.70710754, z: 0.707106, w: -0.0002459474}
+  m_LocalPosition: {x: -0.0035357773, y: 0.0013096434, z: -0.02629924}
   m_LocalScale: {x: 111.13356, y: 111.13363, z: 55.566814}
   m_Children:
   - {fileID: 5789137873619537232}
@@ -7574,8 +7574,8 @@ Transform:
   - {fileID: 2384427250304635322}
   - {fileID: 5269949784010772085}
   m_Father: {fileID: 6694813047016377455}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 160}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 180.04}
 --- !u!33 &6008877986757948103
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7671,7 +7671,7 @@ MonoBehaviour:
   inout: 1
   hight: 0
   tyle: 0
---- !u!114 &3070055995341347425
+--- !u!114 &5395219534909607140
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7684,7 +7684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: af084dadef5b91c4b81c5766220be6da, type: 2}
+  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
 --- !u!1 &7882570857033891150
 GameObject:
   m_ObjectHideFlags: 0
@@ -7883,7 +7883,7 @@ GameObject:
   - component: {fileID: 2067324194063878245}
   - component: {fileID: 6897629572673176871}
   - component: {fileID: 1090425264986367265}
-  - component: {fileID: 1062591444357955675}
+  - component: {fileID: 5466017619000355235}
   m_Layer: 10
   m_Name: yuka_gaisyu_1_9 (6)
   m_TagString: Block
@@ -7898,8 +7898,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8056813575755222000}
-  m_LocalRotation: {x: -0.35355335, y: -0.61237246, z: -0.61237246, w: 0.35355335}
-  m_LocalPosition: {x: 0, y: 1.8928, z: 0}
+  m_LocalRotation: {x: -0.45470878, y: -0.5415171, z: -0.54151666, w: 0.45470756}
+  m_LocalPosition: {x: -0.0035357773, y: 0.0013096434, z: -0.02629924}
   m_LocalScale: {x: 111.13356, y: 111.13363, z: 55.566814}
   m_Children:
   - {fileID: 2286196079403477827}
@@ -7912,7 +7912,7 @@ Transform:
   - {fileID: 7043817516304606342}
   m_Father: {fileID: 6694813047016377455}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -120}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -99.96001}
 --- !u!33 &4203598768332395199
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8000,15 +8000,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d71f370dadef949b4ed86cb4625326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: 0
-  hp: 0
+  block: 1
+  hp: 10
   speed: 5
   damageflag: 0
   moveflag: 0
   inout: 1
   hight: 0
   tyle: 0
---- !u!114 &1062591444357955675
+--- !u!114 &5466017619000355235
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8021,7 +8021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: af084dadef5b91c4b81c5766220be6da, type: 2}
+  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
 --- !u!1 &8060791817375647561
 GameObject:
   m_ObjectHideFlags: 0
@@ -8161,7 +8161,7 @@ GameObject:
   - component: {fileID: 3574661576092487251}
   - component: {fileID: 5509190628095314579}
   - component: {fileID: 2270261193141344947}
-  - component: {fileID: 3503617348452227115}
+  - component: {fileID: 8935253515711434774}
   m_Layer: 9
   m_Name: yuka_naisyu_1_5 (4)
   m_TagString: Block
@@ -8177,7 +8177,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8126844029441103763}
   m_LocalRotation: {x: -0.21850799, y: -0.6724985, z: -0.6724985, w: 0.21850799}
-  m_LocalPosition: {x: 0, y: 1.8928, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 138.91695, y: 138.91695, z: 55.56678}
   m_Children:
   - {fileID: 1603783027460757139}
@@ -8189,7 +8189,7 @@ Transform:
   - {fileID: 3277838932413852330}
   - {fileID: 3526270870476122244}
   m_Father: {fileID: 6694813047016377455}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -144}
 --- !u!33 &2128208535264583054
 MeshFilter:
@@ -8286,7 +8286,7 @@ MonoBehaviour:
   inout: 0
   hight: 0
   tyle: 0
---- !u!114 &3503617348452227115
+--- !u!114 &8935253515711434774
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8299,7 +8299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: af084dadef5b91c4b81c5766220be6da, type: 2}
+  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
 --- !u!1 &8161471509074899741
 GameObject:
   m_ObjectHideFlags: 0
@@ -8819,27 +8819,27 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8858401953452617257}
-  m_LocalRotation: {x: 0, y: 0.86602545, z: 0, w: 0.49999994}
-  m_LocalPosition: {x: 0, y: 12.78, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.006645255, y: 0, z: -0.0016224235}
   m_LocalScale: {x: 4.0229073, y: 4.0229073, z: 4.0229073}
   m_Children:
   - {fileID: 2540721845997350569}
   - {fileID: 6855232204551294183}
-  - {fileID: 2207671740973226644}
   - {fileID: 4238677287907492603}
+  - {fileID: 2207671740973226644}
   - {fileID: 2478730912943266771}
   - {fileID: 5461799767196165480}
   - {fileID: 5452994753737123624}
   - {fileID: 6837782272890045749}
   - {fileID: 6554402645366530507}
-  - {fileID: 6151274393640057918}
-  - {fileID: 8333700290269845007}
-  - {fileID: 4196231839723033389}
   - {fileID: 422165842287699894}
   - {fileID: 2772133661789486470}
+  - {fileID: 4196231839723033389}
+  - {fileID: 8333700290269845007}
+  - {fileID: 6151274393640057918}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 120, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7029467659340996521
 MonoBehaviour:
   m_ObjectHideFlags: 0

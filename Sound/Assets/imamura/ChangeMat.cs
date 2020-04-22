@@ -25,7 +25,6 @@ public class ChangeMat : MonoBehaviour
         if (change == true)
         {
             transform.GetComponent<Renderer>().material = alphaMat;
-            Debug.Log(mat);
         }
         else
         {

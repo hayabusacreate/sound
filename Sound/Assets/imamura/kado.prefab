@@ -61,6 +61,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &97106481890866028
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +125,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &194435876749136933
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +188,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &217411149728212400
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +250,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &279674198650490044
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
+  defaultMat: {fileID: 2100000, guid: b9cddfe5836a66c44add7ca10b833324, type: 2}
 --- !u!1 &325299618126772915
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +465,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &492814342446124957
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,6 +527,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &508938649648800171
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,6 +589,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &638899829869131613
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +651,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &682194787944662712
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,6 +714,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &718428990565135307
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,6 +778,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &780772856855242237
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,6 +840,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &955680773938613263
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,7 +993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
+  defaultMat: {fileID: 2100000, guid: b9cddfe5836a66c44add7ca10b833324, type: 2}
 --- !u!1 &1196328363847915531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,6 +1056,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &1245016942989381990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,7 +1209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
+  defaultMat: {fileID: 2100000, guid: b9cddfe5836a66c44add7ca10b833324, type: 2}
 --- !u!1 &1465417607427657550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,6 +1272,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &1573541102983770599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,7 +1425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
+  defaultMat: {fileID: 2100000, guid: b9cddfe5836a66c44add7ca10b833324, type: 2}
 --- !u!1 &1582733160548224264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,6 +1488,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &1597575247502419502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,6 +1551,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &1692064097496783535
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,6 +1615,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &1837356862512437906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,6 +1678,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &1860096631440116698
 GameObject:
   m_ObjectHideFlags: 0
@@ -1723,6 +1740,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &2023211971388703974
 GameObject:
   m_ObjectHideFlags: 0
@@ -1784,6 +1802,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &2045576900408203621
 GameObject:
   m_ObjectHideFlags: 0
@@ -1846,6 +1865,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &2052083525242085324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1907,6 +1927,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &2103481062582334443
 GameObject:
   m_ObjectHideFlags: 0
@@ -1968,6 +1989,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &2323638382412097758
 GameObject:
   m_ObjectHideFlags: 0
@@ -2030,6 +2052,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &2425875564595807765
 GameObject:
   m_ObjectHideFlags: 0
@@ -2092,6 +2115,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &2474688702888458541
 GameObject:
   m_ObjectHideFlags: 0
@@ -2244,7 +2268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
+  defaultMat: {fileID: 2100000, guid: b9cddfe5836a66c44add7ca10b833324, type: 2}
 --- !u!1 &2523388300330724295
 GameObject:
   m_ObjectHideFlags: 0
@@ -2306,6 +2330,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &2722150091781967892
 GameObject:
   m_ObjectHideFlags: 0
@@ -2367,6 +2392,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &2723434933604491595
 GameObject:
   m_ObjectHideFlags: 0
@@ -2429,6 +2455,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &2736924807107948200
 GameObject:
   m_ObjectHideFlags: 0
@@ -2491,6 +2518,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &2798028032221593630
 GameObject:
   m_ObjectHideFlags: 0
@@ -2552,6 +2580,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &2885689086901956850
 GameObject:
   m_ObjectHideFlags: 0
@@ -2613,6 +2642,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &2980303223021233504
 GameObject:
   m_ObjectHideFlags: 0
@@ -2674,6 +2704,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &2988305713327929992
 GameObject:
   m_ObjectHideFlags: 0
@@ -2735,6 +2766,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &3054322622720149594
 GameObject:
   m_ObjectHideFlags: 0
@@ -2798,6 +2830,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &3160722435883950254
 GameObject:
   m_ObjectHideFlags: 0
@@ -2860,6 +2893,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &3457000680837610197
 GameObject:
   m_ObjectHideFlags: 0
@@ -2921,6 +2955,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &3508562411385084711
 GameObject:
   m_ObjectHideFlags: 0
@@ -2984,6 +3019,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &3512983869846693358
 GameObject:
   m_ObjectHideFlags: 0
@@ -3045,6 +3081,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &3528774184602917364
 GameObject:
   m_ObjectHideFlags: 0
@@ -3107,6 +3144,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &3560118615289875442
 GameObject:
   m_ObjectHideFlags: 0
@@ -3259,7 +3297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
+  defaultMat: {fileID: 2100000, guid: b9cddfe5836a66c44add7ca10b833324, type: 2}
 --- !u!1 &3679413192954940311
 GameObject:
   m_ObjectHideFlags: 0
@@ -3321,6 +3359,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &3785912544370576310
 GameObject:
   m_ObjectHideFlags: 0
@@ -3382,6 +3421,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &3791064388997712042
 GameObject:
   m_ObjectHideFlags: 0
@@ -3444,6 +3484,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &3804412867212471005
 GameObject:
   m_ObjectHideFlags: 0
@@ -3505,6 +3546,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &3808566768340608819
 GameObject:
   m_ObjectHideFlags: 0
@@ -3567,6 +3609,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &3811503701100976158
 GameObject:
   m_ObjectHideFlags: 0
@@ -3629,6 +3672,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &3900332911462033727
 GameObject:
   m_ObjectHideFlags: 0
@@ -3691,6 +3735,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &3925361861967849271
 GameObject:
   m_ObjectHideFlags: 0
@@ -3753,6 +3798,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &4039028893637187519
 GameObject:
   m_ObjectHideFlags: 0
@@ -3816,6 +3862,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &4073546913252767303
 GameObject:
   m_ObjectHideFlags: 0
@@ -3878,6 +3925,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &4094112082439210510
 GameObject:
   m_ObjectHideFlags: 0
@@ -3939,6 +3987,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &4158388011365202919
 GameObject:
   m_ObjectHideFlags: 0
@@ -4001,6 +4050,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &4160539932983906696
 GameObject:
   m_ObjectHideFlags: 0
@@ -4062,6 +4112,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &4187655361287383926
 GameObject:
   m_ObjectHideFlags: 0
@@ -4123,6 +4174,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &4235386707139095984
 GameObject:
   m_ObjectHideFlags: 0
@@ -4184,6 +4236,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &4489975818151464657
 GameObject:
   m_ObjectHideFlags: 0
@@ -4246,6 +4299,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &4517893090725206738
 GameObject:
   m_ObjectHideFlags: 0
@@ -4307,6 +4361,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &4525753378020159695
 GameObject:
   m_ObjectHideFlags: 0
@@ -4369,6 +4424,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &4688677157308146110
 GameObject:
   m_ObjectHideFlags: 0
@@ -4431,6 +4487,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &4769535976368271181
 GameObject:
   m_ObjectHideFlags: 0
@@ -4492,6 +4549,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &5006766169230510446
 GameObject:
   m_ObjectHideFlags: 0
@@ -4553,6 +4611,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &5031985979680654683
 GameObject:
   m_ObjectHideFlags: 0
@@ -4614,6 +4673,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &5115147935391654607
 GameObject:
   m_ObjectHideFlags: 0
@@ -4675,6 +4735,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &5128760338841635117
 GameObject:
   m_ObjectHideFlags: 0
@@ -4736,6 +4797,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &5215149704509281836
 GameObject:
   m_ObjectHideFlags: 0
@@ -4799,6 +4861,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &5373967424203838196
 GameObject:
   m_ObjectHideFlags: 0
@@ -4861,6 +4924,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &5472120406067975556
 GameObject:
   m_ObjectHideFlags: 0
@@ -4922,6 +4986,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &5570270045921926498
 GameObject:
   m_ObjectHideFlags: 0
@@ -4983,6 +5048,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &5605579353181941518
 GameObject:
   m_ObjectHideFlags: 0
@@ -5044,6 +5110,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &5638906873926206357
 GameObject:
   m_ObjectHideFlags: 0
@@ -5105,6 +5172,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &5657882627111208841
 GameObject:
   m_ObjectHideFlags: 0
@@ -5168,6 +5236,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &5724735555540568214
 GameObject:
   m_ObjectHideFlags: 0
@@ -5229,6 +5298,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &5886896226704181079
 GameObject:
   m_ObjectHideFlags: 0
@@ -5381,7 +5451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
+  defaultMat: {fileID: 2100000, guid: b9cddfe5836a66c44add7ca10b833324, type: 2}
 --- !u!1 &5965156125857063751
 GameObject:
   m_ObjectHideFlags: 0
@@ -5444,6 +5514,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &6036072568015399029
 GameObject:
   m_ObjectHideFlags: 0
@@ -5506,6 +5577,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &6042942538609819402
 GameObject:
   m_ObjectHideFlags: 0
@@ -5567,6 +5639,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &6096518897653284261
 GameObject:
   m_ObjectHideFlags: 0
@@ -5628,6 +5701,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &6273801478060540350
 GameObject:
   m_ObjectHideFlags: 0
@@ -5689,6 +5763,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &6315518951838593737
 GameObject:
   m_ObjectHideFlags: 0
@@ -5751,6 +5826,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &6367909802829097259
 GameObject:
   m_ObjectHideFlags: 0
@@ -5812,6 +5888,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &6405474599464988390
 GameObject:
   m_ObjectHideFlags: 0
@@ -5874,6 +5951,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &6452685209981177936
 GameObject:
   m_ObjectHideFlags: 0
@@ -6026,7 +6104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
+  defaultMat: {fileID: 2100000, guid: b9cddfe5836a66c44add7ca10b833324, type: 2}
 --- !u!1 &6492971980222710024
 GameObject:
   m_ObjectHideFlags: 0
@@ -6089,6 +6167,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &6554136407051456690
 GameObject:
   m_ObjectHideFlags: 0
@@ -6150,6 +6229,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &6617851659389995745
 GameObject:
   m_ObjectHideFlags: 0
@@ -6302,7 +6382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
+  defaultMat: {fileID: 2100000, guid: b9cddfe5836a66c44add7ca10b833324, type: 2}
 --- !u!1 &6677187756689480565
 GameObject:
   m_ObjectHideFlags: 0
@@ -6365,6 +6445,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &6714143761717247741
 GameObject:
   m_ObjectHideFlags: 0
@@ -6427,6 +6508,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &6876727730317516280
 GameObject:
   m_ObjectHideFlags: 0
@@ -6488,6 +6570,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &6883312388539896244
 GameObject:
   m_ObjectHideFlags: 0
@@ -6550,6 +6633,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &6928094559457819012
 GameObject:
   m_ObjectHideFlags: 0
@@ -6612,6 +6696,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &7108273504346818990
 GameObject:
   m_ObjectHideFlags: 0
@@ -6674,6 +6759,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &7216256524765361302
 GameObject:
   m_ObjectHideFlags: 0
@@ -6826,7 +6912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
+  defaultMat: {fileID: 2100000, guid: b9cddfe5836a66c44add7ca10b833324, type: 2}
 --- !u!1 &7315766106076082005
 GameObject:
   m_ObjectHideFlags: 0
@@ -6889,6 +6975,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &7416883714045907917
 GameObject:
   m_ObjectHideFlags: 0
@@ -7041,7 +7128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
+  defaultMat: {fileID: 2100000, guid: b9cddfe5836a66c44add7ca10b833324, type: 2}
 --- !u!1 &7419779265673258447
 GameObject:
   m_ObjectHideFlags: 0
@@ -7104,6 +7191,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &7479148655589168104
 GameObject:
   m_ObjectHideFlags: 0
@@ -7166,6 +7254,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &7518425876271488379
 GameObject:
   m_ObjectHideFlags: 0
@@ -7227,6 +7316,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &7522940613967563318
 GameObject:
   m_ObjectHideFlags: 0
@@ -7288,6 +7378,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &7567946559054352245
 GameObject:
   m_ObjectHideFlags: 0
@@ -7349,6 +7440,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &7699145229562235762
 GameObject:
   m_ObjectHideFlags: 0
@@ -7410,6 +7502,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &7705059185516308095
 GameObject:
   m_ObjectHideFlags: 0
@@ -7471,6 +7564,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &7729986767188210897
 GameObject:
   m_ObjectHideFlags: 0
@@ -7532,6 +7626,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &7867473494027693780
 GameObject:
   m_ObjectHideFlags: 0
@@ -7684,7 +7779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
+  defaultMat: {fileID: 2100000, guid: b9cddfe5836a66c44add7ca10b833324, type: 2}
 --- !u!1 &7882570857033891150
 GameObject:
   m_ObjectHideFlags: 0
@@ -7746,6 +7841,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &7945111379938824420
 GameObject:
   m_ObjectHideFlags: 0
@@ -7808,6 +7904,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &8019182456385802938
 GameObject:
   m_ObjectHideFlags: 0
@@ -7869,6 +7966,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &8056813575755222000
 GameObject:
   m_ObjectHideFlags: 0
@@ -8021,7 +8119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
+  defaultMat: {fileID: 2100000, guid: b9cddfe5836a66c44add7ca10b833324, type: 2}
 --- !u!1 &8060791817375647561
 GameObject:
   m_ObjectHideFlags: 0
@@ -8085,6 +8183,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &8074573717234013702
 GameObject:
   m_ObjectHideFlags: 0
@@ -8147,6 +8246,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &8126844029441103763
 GameObject:
   m_ObjectHideFlags: 0
@@ -8299,7 +8399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: d40de95d44eb8c244bd231631d7add15, type: 2}
+  defaultMat: {fileID: 2100000, guid: b9cddfe5836a66c44add7ca10b833324, type: 2}
 --- !u!1 &8161471509074899741
 GameObject:
   m_ObjectHideFlags: 0
@@ -8362,6 +8462,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &8216955084440337117
 GameObject:
   m_ObjectHideFlags: 0
@@ -8424,6 +8525,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &8276418111261328870
 GameObject:
   m_ObjectHideFlags: 0
@@ -8485,6 +8587,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &8646130754388391998
 GameObject:
   m_ObjectHideFlags: 0
@@ -8547,6 +8650,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &8696942536126622224
 GameObject:
   m_ObjectHideFlags: 0
@@ -8609,6 +8713,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &8721823688689034673
 GameObject:
   m_ObjectHideFlags: 0
@@ -8670,6 +8775,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &8789981068106170775
 GameObject:
   m_ObjectHideFlags: 0
@@ -8732,6 +8838,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &8826136221902737645
 GameObject:
   m_ObjectHideFlags: 0
@@ -8795,6 +8902,7 @@ MonoBehaviour:
   attackflag: 0
   area: 0
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &8858401953452617257
 GameObject:
   m_ObjectHideFlags: 0
@@ -8914,6 +9022,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &8990821872899313201
 GameObject:
   m_ObjectHideFlags: 0
@@ -8976,6 +9085,7 @@ MonoBehaviour:
   attackflag: 0
   area: 1
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &9063429012557584829
 GameObject:
   m_ObjectHideFlags: 0
@@ -9037,6 +9147,7 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}
 --- !u!1 &9103304725098603957
 GameObject:
   m_ObjectHideFlags: 0
@@ -9098,3 +9209,4 @@ MonoBehaviour:
   attackflag: 0
   area: 2
   playerhit: 0
+  hitblock: {fileID: 0}

@@ -36,10 +36,6 @@ public class CheckObject : MonoBehaviour
         
         
 
-
-
-        Debug.DrawRay(ray.origin, ray.direction * 10, Color.red, 5);
-
     }
 
     

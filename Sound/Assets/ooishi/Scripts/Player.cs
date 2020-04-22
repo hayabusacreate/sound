@@ -281,10 +281,6 @@ public class Player : MonoBehaviour
             hight = collision.gameObject.GetComponent<Block>().hight-1;
             tyle = collision.gameObject.GetComponent<Block>().tyle;
         }
-        if (collision.gameObject.tag == "Ground")
-        {
-            endflag = true;
-        }
     }
     private void OnTriggerEnter(Collider other)
     {

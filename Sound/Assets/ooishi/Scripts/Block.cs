@@ -38,6 +38,9 @@ public class Block : MonoBehaviour
     private float z;
     private bool savetyle;
     private int change;
+
+    public GameObject bubble;
+    private float bubbletime;
     // Start is called before the first frame update
     void Start()
     {
@@ -485,6 +488,27 @@ if (linkBlocks[1].attackflag)
                 damageflag = false;
             }
         }
+        else
+        {
+            if (damageflag)
+            {
+                bubbletime += Time.deltaTime;
+
+            }
+            if (bubbletime > 1)
+            {
+                GameObject gameObject = Instantiate(bubble,new Vector3(transform.position.x,transform.position.y+5,transform.position.z), Quaternion.identity);
+                if(inout==InOut.In)
+                {
+                    gameObject.transform.rotation = Quaternion.Euler(-90, 0, (360 / mapCreate.inblock) * (tyle+3));
+                }else
+                {
+                    gameObject.transform.rotation = Quaternion.Euler(-90, 0, (360 / mapCreate.outblock) * (tyle+3));
+                }
+
+                bubbletime = 0;
+            }
+        }
         if (hp < 0)
         {
             if (inout == InOut.In)
@@ -506,6 +530,7 @@ if (linkBlocks[1].attackflag)
             damageflag = true;
             //color.material.color = Color.red;
         }
+
     }
 
     private void OnCollisionExit(Collision collision)
@@ -515,6 +540,13 @@ if (linkBlocks[1].attackflag)
 
             hitflag = true;
             // color.material.color = Color.white;
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == "Bubble")
+        {
+            hp--;
         }
     }
 }

@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     private float rad, degree;
     private MapCreate map;
     private Renderer renderer;
-    public ParticleSystem takle, jump;
+    public GameObject takle, jump;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
         {
             startflag = true;
             attackflag = true;
-            takle.Play();
+            Instantiate(takle, transform.position, Quaternion.identity);
         }
         if (attackflag)
         {
@@ -257,7 +257,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !jumpflag)
         {
             rigidbody.velocity += new Vector3(0, jumppower, 0);
-            jump.Play();
+            Instantiate(jump, transform.position, Quaternion.identity);
             jumpflag = true;
         }
     }

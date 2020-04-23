@@ -104,92 +104,104 @@ public class Block : MonoBehaviour
     }
     void Move()
     {
-        //if (inout == InOut.In)
-        //{
-        //    if (tyle + 1 < mapCreate.inblock)
-        //    {
-        //        if (mapCreate.inmap[hight * 100 + tyle + 1])
-        //        {
-        //            if (mapCreate.intype[hight * 100 + tyle + 1].moveflag)
-        //            {
-        //                moveflag = true;
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        if (mapCreate.inmap[hight * 100])
-        //        {
-        //            if (mapCreate.intype[hight * 100 + 1].moveflag)
-        //            {
-        //                moveflag = true;
-        //            }
-        //        }
-        //    }
-        //    if (tyle - 1 >= 0)
-        //    {
-        //        if (mapCreate.inmap[hight * 100 + tyle - 1])
-        //        {
-        //            if (mapCreate.intype[hight * 100 + tyle - 1].moveflag)
-        //            {
-        //                moveflag = true;
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        if (mapCreate.inmap[hight * 100 + mapCreate.inblock - 1])
-        //        {
-        //            if (mapCreate.intype[hight * 100 + mapCreate.inblock - 1].moveflag)
-        //            {
-        //                moveflag = true;
-        //            }
-        //        }
-        //    }
-        //}
-        //if (inout == InOut.Out)
-        //{
-        //    if (tyle + 1 < mapCreate.outblock)
-        //    {
-        //        if (mapCreate.outmap[hight * 100 + tyle + 1])
-        //        {
-        //            if (mapCreate.outtype[hight * 100 + tyle + 1].moveflag)
-        //            {
-        //                moveflag = true;
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        if (mapCreate.outmap[hight * 100])
-        //        {
-        //            if (mapCreate.outtype[hight * 100].moveflag)
-        //            {
-        //                moveflag = true;
-        //            }
-        //        }
-        //    }
-        //    if (tyle - 1 > 0)
-        //    {
-        //        if (mapCreate.outmap[hight * 100 + tyle - 1])
-        //        {
-        //            if (mapCreate.outtype[hight * 100 + tyle - 1].moveflag)
-        //            {
-        //                moveflag = true;
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        if (mapCreate.outmap[hight * 100 + mapCreate.inblock])
-        //        {
-        //            if (mapCreate.outtype[hight * 100 + mapCreate.inblock].moveflag)
-        //            {
-        //                moveflag = true;
-        //            }
-        //        }
-        //    }
-        //}
+        if(change==0)
+        {
+            if (inout == InOut.In)
+            {
+                if (tyle + 1 < mapCreate.inblock)
+                {
+                    if (mapCreate.inmap[hight * 100 + tyle + 1])
+                    {
+                        if (mapCreate.intype[hight * 100 + tyle + 1].moveflag)
+                        {
+                            moveflag = true;
+                            change = 2;
+                        }
+                    }
+                }
+                else
+                {
+                    if (mapCreate.inmap[hight * 100])
+                    {
+                        if (mapCreate.intype[hight * 100 + 1].moveflag)
+                        {
+                            moveflag = true;
+                            change = 2;
+                        }
+                    }
+                }
+                if (tyle - 1 >= 0)
+                {
+                    if (mapCreate.inmap[hight * 100 + tyle - 1])
+                    {
+                        if (mapCreate.intype[hight * 100 + tyle - 1].moveflag)
+                        {
+                            moveflag = true;
+                            change = 1;
+                        }
+                    }
+                }
+                else
+                {
+                    if (mapCreate.inmap[hight * 100 + mapCreate.inblock - 1])
+                    {
+                        if (mapCreate.intype[hight * 100 + mapCreate.inblock - 1].moveflag)
+                        {
+                            moveflag = true;
+                            change = 1;
+                        }
+                    }
+                }
+            }
+            if (inout == InOut.Out)
+            {
+                if (tyle + 1 < mapCreate.outblock)
+                {
+                    if (mapCreate.outmap[hight * 100 + tyle + 1])
+                    {
+                        if (mapCreate.outtype[hight * 100 + tyle + 1].moveflag)
+                        {
+                            moveflag = true;
+                            change = 2;
+                        }
+                    }
+                }
+                else
+                {
+                    if (mapCreate.outmap[hight * 100])
+                    {
+                        if (mapCreate.outtype[hight * 100].moveflag)
+                        {
+                            moveflag = true;
+                            change = 2;
+                        }
+                    }
+                }
+                if (tyle - 1 > 0)
+                {
+                    if (mapCreate.outmap[hight * 100 + tyle - 1])
+                    {
+                        if (mapCreate.outtype[hight * 100 + tyle - 1].moveflag)
+                        {
+                            moveflag = true;
+                            change = 1;
+                        }
+                    }
+                }
+                else
+                {
+                    if (mapCreate.outmap[hight * 100 + mapCreate.inblock])
+                    {
+                        if (mapCreate.outtype[hight * 100 + mapCreate.inblock].moveflag)
+                        {
+                            moveflag = true;
+                            change = 1;
+                        }
+                    }
+                }
+            }
+        }
+ 
         //pos = new Vector3(transform.position.x, 0, transform.position.z) - new Vector3(center.transform.position.x, 0, center.transform.position.z);
         //rad = Mathf.Atan2(pos.x, pos.z);
         //degree = transform.rotation.z * Mathf.Rad2Deg;
@@ -225,56 +237,56 @@ public class Block : MonoBehaviour
                     count = 0;
                     mapCreate.inmap[hight * 100 + tyle] = true;
                 }
-                if(tyle+1<mapCreate.inblock)
-                {
-                    if (mapCreate.inmap[hight * 100 + tyle + 1] && linkBlocks[0].attackflag)
-                    {
-                        linkBlocks[0].attackflag = false;
-                        linkBlocks[1].attackflag = false;
-                        moveflag = false;
-                        player.attackflag = false;
-                        change = 0;
-                        count = 0;
-                        mapCreate.inmap[hight * 100 + tyle] = true;
-                    }
-                }else
-                {
-                    if (mapCreate.inmap[hight * 100] && linkBlocks[0].attackflag)
-                    {
-                        linkBlocks[0].attackflag = false;
-                        linkBlocks[1].attackflag = false;
-                        moveflag = false;
-                        player.attackflag = false;
-                        change = 0;
-                        count = 0;
-                        mapCreate.inmap[hight * 100 + tyle] = true;
-                    }
-                }
-                if(tyle-1>0)
-                {
-                    if (mapCreate.inmap[hight * 100 + tyle - 1] && linkBlocks[1].attackflag)
-                    {
-                        linkBlocks[0].attackflag = false;
-                        linkBlocks[1].attackflag = false;
-                        moveflag = false;
-                        player.attackflag = false;
-                        change = 0;
-                        count = 0;
-                        mapCreate.inmap[hight * 100 + tyle] = true;
-                    }
-                }else
-                {
-                    if (mapCreate.inmap[hight * 100 + mapCreate.inblock-1] && linkBlocks[1].attackflag)
-                    {
-                        linkBlocks[0].attackflag = false;
-                        linkBlocks[1].attackflag = false;
-                        moveflag = false;
-                        player.attackflag = false;
-                        change = 0;
-                        count = 0;
-                        mapCreate.inmap[hight * 100 + tyle] = true;
-                    }
-                }
+                //if(tyle+1<mapCreate.inblock)
+                //{
+                //    if (mapCreate.inmap[hight * 100 + tyle + 1] && linkBlocks[0].attackflag)
+                //    {
+                //        linkBlocks[0].attackflag = false;
+                //        linkBlocks[1].attackflag = false;
+                //        moveflag = false;
+                //        player.attackflag = false;
+                //        change = 0;
+                //        count = 0;
+                //        mapCreate.inmap[hight * 100 + tyle] = true;
+                //    }
+                //}else
+                //{
+                //    if (mapCreate.inmap[hight * 100] && linkBlocks[0].attackflag)
+                //    {
+                //        linkBlocks[0].attackflag = false;
+                //        linkBlocks[1].attackflag = false;
+                //        moveflag = false;
+                //        player.attackflag = false;
+                //        change = 0;
+                //        count = 0;
+                //        mapCreate.inmap[hight * 100 + tyle] = true;
+                //    }
+                //}
+                //if(tyle-1>0)
+                //{
+                //    if (mapCreate.inmap[hight * 100 + tyle - 1] && linkBlocks[1].attackflag)
+                //    {
+                //        linkBlocks[0].attackflag = false;
+                //        linkBlocks[1].attackflag = false;
+                //        moveflag = false;
+                //        player.attackflag = false;
+                //        change = 0;
+                //        count = 0;
+                //        mapCreate.inmap[hight * 100 + tyle] = true;
+                //    }
+                //}else
+                //{
+                //    if (mapCreate.inmap[hight * 100 + mapCreate.inblock-1] && linkBlocks[1].attackflag)
+                //    {
+                //        linkBlocks[0].attackflag = false;
+                //        linkBlocks[1].attackflag = false;
+                //        moveflag = false;
+                //        player.attackflag = false;
+                //        change = 0;
+                //        count = 0;
+                //        mapCreate.inmap[hight * 100 + tyle] = true;
+                //    }
+                //}
 
             }
             else
@@ -292,58 +304,58 @@ public class Block : MonoBehaviour
                     count = 0;
                     mapCreate.inmap[hight * 100 + tyle] = true;
                 }
-                if (tyle + 1 < mapCreate.outblock)
-                {
-                    if (mapCreate.outmap[hight * 100 + tyle + 1] && linkBlocks[0].attackflag)
-                    {
-                        linkBlocks[0].attackflag = false;
-                        linkBlocks[1].attackflag = false;
-                        moveflag = false;
-                        player.attackflag = false;
-                        change = 0;
-                        count = 0;
-                        mapCreate.outmap[hight * 100 + tyle] = true;
-                    }
-                }
-                else
-                {
-                    if (mapCreate.outmap[hight * 100] && linkBlocks[0].attackflag)
-                    {
-                        linkBlocks[0].attackflag = false;
-                        linkBlocks[1].attackflag = false;
-                        moveflag = false;
-                        player.attackflag = false;
-                        change = 0;
-                        count = 0;
-                        mapCreate.outmap[hight * 100 + tyle] = true;
-                    }
-                }
-                if (tyle - 1 > 0)
-                {
-                    if (mapCreate.outmap[hight * 100 + tyle - 1] && linkBlocks[1].attackflag)
-                    {
-                        linkBlocks[0].attackflag = false;
-                        linkBlocks[1].attackflag = false;
-                        moveflag = false;
-                        player.attackflag = false;
-                        change = 0;
-                        count = 0;
-                        mapCreate.outmap[hight * 100 + tyle] = true;
-                    }
-                }
-                else
-                {
-                    if (mapCreate.outmap[hight * 100 + mapCreate.outblock - 1] && linkBlocks[1].attackflag)
-                    {
-                        linkBlocks[0].attackflag = false;
-                        linkBlocks[1].attackflag = false;
-                        moveflag = false;
-                        player.attackflag = false;
-                        change = 0;
-                        count = 0;
-                        mapCreate.outmap[hight * 100 + tyle] = true;
-                    }
-                }
+                //if (tyle + 1 < mapCreate.outblock)
+                //{
+                //    if (mapCreate.outmap[hight * 100 + tyle + 1] && linkBlocks[0].attackflag)
+                //    {
+                //        linkBlocks[0].attackflag = false;
+                //        linkBlocks[1].attackflag = false;
+                //        moveflag = false;
+                //        player.attackflag = false;
+                //        change = 0;
+                //        count = 0;
+                //        mapCreate.outmap[hight * 100 + tyle] = true;
+                //    }
+                //}
+                //else
+                //{
+                //    if (mapCreate.outmap[hight * 100] && linkBlocks[0].attackflag)
+                //    {
+                //        linkBlocks[0].attackflag = false;
+                //        linkBlocks[1].attackflag = false;
+                //        moveflag = false;
+                //        player.attackflag = false;
+                //        change = 0;
+                //        count = 0;
+                //        mapCreate.outmap[hight * 100 + tyle] = true;
+                //    }
+                //}
+                //if (tyle - 1 > 0)
+                //{
+                //    if (mapCreate.outmap[hight * 100 + tyle - 1] && linkBlocks[1].attackflag)
+                //    {
+                //        linkBlocks[0].attackflag = false;
+                //        linkBlocks[1].attackflag = false;
+                //        moveflag = false;
+                //        player.attackflag = false;
+                //        change = 0;
+                //        count = 0;
+                //        mapCreate.outmap[hight * 100 + tyle] = true;
+                //    }
+                //}
+                //else
+                //{
+                //    if (mapCreate.outmap[hight * 100 + mapCreate.outblock - 1] && linkBlocks[1].attackflag)
+                //    {
+                //        linkBlocks[0].attackflag = false;
+                //        linkBlocks[1].attackflag = false;
+                //        moveflag = false;
+                //        player.attackflag = false;
+                //        change = 0;
+                //        count = 0;
+                //        mapCreate.outmap[hight * 100 + tyle] = true;
+                //    }
+                //}
             }
             count++;
             if (change == 1)
@@ -477,6 +489,22 @@ if (linkBlocks[1].attackflag)
                 }
             }
             //color.material.color = Color.red;
+        }else
+        {
+            if (inout == InOut.In)
+            {
+                if(mapCreate.outtype[hight*100+ (int)(z / (360 / mapCreate.outblock))].damageflag)
+                {
+                    damageflag = true;
+                }
+            }
+            if (inout == InOut.Out)
+            {
+                if (mapCreate.intype[hight * 100 + (int)(z / (360 / mapCreate.inblock))].damageflag)
+                {
+                    damageflag = true;
+                }
+            }
         }
 
         if ((block == BlockType.Nomal && player.type == PlayerType.Fire)

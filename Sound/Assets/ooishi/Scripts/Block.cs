@@ -14,7 +14,7 @@ public enum InOut
 public class Block : MonoBehaviour
 {
     public BlockType block;
-    public int hp;
+    public float hp;
     private int sethp;
     public int speed;
     private bool hitflag;
@@ -484,7 +484,6 @@ if (linkBlocks[1].attackflag)
         {
             if (damageflag)
             {
-                hp--;
                 damageflag = false;
             }
         }
@@ -492,6 +491,7 @@ if (linkBlocks[1].attackflag)
         {
             if (damageflag)
             {
+                hp -= Time.deltaTime;
                 bubbletime += Time.deltaTime;
 
             }

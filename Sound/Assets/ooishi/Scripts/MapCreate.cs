@@ -31,11 +31,23 @@ public class MapCreate : MonoBehaviour
         {
 
             maps[i].GetComponent<Map>().hight = i;
-            rout[i] = false;
+            rout.Add(i, false);
             GameObject gameObject = Instantiate(maps[i], new Vector3(transform.position.x, i * (-5), transform.position.z), new Quaternion(0, 0.3f, 0, 0));
             gameObject.transform.rotation = Quaternion.Euler(0, 109, 0);
         }
         player = GameObject.Find("Player").GetComponent<Player>();
+
+        for(int y=-100;y<0;y++)
+        {
+            for (int x =0; x <inblock+1; x++)
+            {
+                inmap.Add(y * 100 + x, false);
+            }
+            for (int z = 0; z<outblock+1; z++)
+            {
+                outmap.Add(y * 100 + z, false);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -49,14 +61,14 @@ public class MapCreate : MonoBehaviour
                 {
                     if (x + 1 < inblock)
                     {
-                        if (!inmap[y * 100 + x + 1])
+                        if (!inmap[(y-1) * 100 + x])
                         {
                             rout[y] = true;
                         }
                     }
                     else
                     {
-                        if (!inmap[y * 100])
+                        if (!inmap[(y-1) * 100])
                         {
                             rout[y] = true;
                         }
@@ -71,14 +83,14 @@ public class MapCreate : MonoBehaviour
 
                     if (z + 1 < outblock)
                     {
-                        if (!outmap[y * 100 + z + 1])
+                        if (!outmap[(y-1) * 100 + z])
                         {
                             rout[y] = true;
                         }
                     }
                     else
                     {
-                        if (!outmap[y * 100])
+                        if (!outmap[(y-1) * 100])
                         {
                             rout[y] = true;
                         }

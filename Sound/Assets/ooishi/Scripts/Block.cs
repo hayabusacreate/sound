@@ -41,6 +41,8 @@ public class Block : MonoBehaviour
 
     public GameObject bubble;
     private float bubbletime;
+
+    public bool bubbleflag;
     // Start is called before the first frame update
     void Start()
     {
@@ -93,6 +95,7 @@ public class Block : MonoBehaviour
         {
             color.material.color = Color.yellow;
         }
+
     }
 
     // Update is called once per frame
@@ -386,13 +389,65 @@ if (linkBlocks[1].attackflag)
                 change = 2;
             }
         }
-        if(linkBlocks[3].hitblock.hight!=hight)
+        if (linkBlocks[3].hitblock.hight != hight)
         {
+            if (inout == InOut.In)
+            {
+                mapCreate.inmap[hight * 100 + tyle] = false;
+                mapCreate.inmap[linkBlocks[3].hitblock.hight * 100 + tyle] = true;
+            }
+            else
+            {
+                mapCreate.outmap[hight * 100 + tyle] = false;
+                mapCreate.outmap[linkBlocks[3].hitblock.hight * 100 + tyle] = true;
+            }
             hight = linkBlocks[3].hitblock.hight;
         }
+        else
         if (linkBlocks[2].hitblock.hight != hight)
         {
+            if (inout == InOut.In)
+            {
+                mapCreate.inmap[hight * 100 + tyle] = false;
+                mapCreate.inmap[linkBlocks[2].hitblock.hight * 100 + tyle] = true;
+            }
+            else
+            {
+                mapCreate.outmap[hight * 100 + tyle] = false;
+                mapCreate.outmap[linkBlocks[2].hitblock.hight * 100 + tyle] = true;
+            }
             hight = linkBlocks[2].hitblock.hight;
+        }
+        //Debug.Log(linkBlocks[6].hitblock.hight);
+        //}else
+        if (linkBlocks[6].hitblock.hight - 1 != hight && linkBlocks[6].hitblock.hight != hight)
+        {
+            if (inout == InOut.In)
+            {
+                mapCreate.inmap[hight * 100 + tyle] = false;
+                mapCreate.inmap[linkBlocks[6].hitblock.hight * 100 + tyle] = true;
+            }
+            else
+            {
+                mapCreate.outmap[hight * 100 + tyle] = false;
+                mapCreate.outmap[linkBlocks[6].hitblock.hight * 100 + tyle] = true;
+            }
+            hight = linkBlocks[6].hitblock.hight-1;
+        }
+        else
+        if (linkBlocks[7].hitblock.hight - 1 != hight&& linkBlocks[7].hitblock.hight!=hight)
+        {
+            if (inout == InOut.In)
+            {
+                mapCreate.inmap[hight * 100 + tyle] = false;
+                mapCreate.inmap[linkBlocks[7].hitblock.hight * 100 + tyle] = true;
+            }
+            else
+            {
+                mapCreate.outmap[hight * 100 + tyle] = false;
+                mapCreate.outmap[linkBlocks[7].hitblock.hight * 100 + tyle] = true;
+            }
+            hight = linkBlocks[7].hitblock.hight-1;
         }
 
 
@@ -491,18 +546,21 @@ if (linkBlocks[1].attackflag)
             //color.material.color = Color.red;
         }else
         {
-            if (inout == InOut.In)
+            if(hight>0)
             {
-                if(mapCreate.outtype[hight*100+ (int)(z / (360 / mapCreate.outblock))].damageflag)
+                if (inout == InOut.In)
                 {
-                    damageflag = true;
+                    if (mapCreate.outtype[hight * 100 + (int)(z / (360 / mapCreate.outblock))].damageflag)
+                    {
+                        damageflag = true;
+                    }
                 }
-            }
-            if (inout == InOut.Out)
-            {
-                if (mapCreate.intype[hight * 100 + (int)(z / (360 / mapCreate.inblock))].damageflag)
+                if (inout == InOut.Out)
                 {
-                    damageflag = true;
+                    if (mapCreate.intype[hight * 100 + (int)(z / (360 / mapCreate.inblock))].damageflag)
+                    {
+                        damageflag = true;
+                    }
                 }
             }
         }
@@ -553,6 +611,13 @@ if (linkBlocks[1].attackflag)
 
     private void OnCollisionEnter(Collision collision)
     {
+        if(bubbleflag)
+        {
+            if(collision.gameObject.tag=="Block")
+            {
+                bubbleflag = false;
+            }
+        }
         if (collision.transform.tag == "Player")
         {
             damageflag = true;

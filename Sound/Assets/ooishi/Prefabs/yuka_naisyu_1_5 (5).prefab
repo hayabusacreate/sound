@@ -139,6 +139,8 @@ MonoBehaviour:
   inout: 0
   hight: 0
   tyle: 0
+  bubble: {fileID: 0}
+  bubbleflag: 1
 --- !u!114 &4959243580351668248
 MonoBehaviour:
   m_ObjectHideFlags: 0

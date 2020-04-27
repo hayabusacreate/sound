@@ -20,7 +20,7 @@
 
         void surf (Input IN, inout SurfaceOutput o)
         {
-			o.Albedo = fixed4(0.1f, 0.4f, 0.1f, 1);
+			o.Albedo = tex2D(_MainTex, IN.uv_MainTex);
         }
 
 		half4 LightingSimplePhong(SurfaceOutput s, half3 lightDir, half3 viewDir, half atten)
@@ -30,7 +30,7 @@
 			float3 spec = pow(max(0, dot(R, viewDir)), 10.0);
 
 			half4 c;
-			c.rgb = s.Albedo * _LightColor0.rgb * NdotL + spec + fixed4(0.1f, 0.7f, 0.1f, 0.1f);
+			c.rgb = s.Albedo * _LightColor0.rgb * NdotL + spec + fixed4(0.1f, 0.1f, 0.1f, 1);
 			c.a = s.Alpha;
 			return c;
 		}

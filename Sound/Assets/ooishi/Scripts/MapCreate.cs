@@ -32,8 +32,9 @@ public class MapCreate : MonoBehaviour
 
             maps[i].GetComponent<Map>().hight = i;
             rout.Add(i, false);
-            GameObject gameObject = Instantiate(maps[i], new Vector3(transform.position.x, i * (-5), transform.position.z), new Quaternion(0, 0.3f, 0, 0));
-            gameObject.transform.rotation = Quaternion.Euler(0, 109, 0);
+            GameObject gameObject = Instantiate(maps[i], new Vector3(transform.position.x, i * (-5), transform.position.z), Quaternion.identity);
+            //gameObject.transform.rotation = Quaternion.Euler(0, 109, 0);
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         player = GameObject.Find("Player").GetComponent<Player>();
 
@@ -53,9 +54,9 @@ public class MapCreate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int y = 0; y < maps.Length; y++)
+        for (int y = 1; y < maps.Length; y++)
         {
-            for (int x = 0; x < inblock; x++)
+            for (int x = 0; x < inblock-1; x++)
             {
                 if (!inmap[y * 100 + x])
                 {
@@ -100,7 +101,7 @@ public class MapCreate : MonoBehaviour
 
             }
         }
-        for (int i = 0; i < rout.Count; i++)
+        for (int i = 1; i <= rout.Count; i++)
         {
             if (rout[i])
             {

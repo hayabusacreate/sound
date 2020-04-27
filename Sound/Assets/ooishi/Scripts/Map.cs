@@ -21,18 +21,23 @@ public class Map : MonoBehaviour
             if (child.GetComponent<Block>().inout == InOut.In)
             {
                 map.inmap.Add(hight * 100 + intyle, true);
-                child.GetComponent<Block>().tyle = intyle;
-                intyle++;
+                //child.GetComponent<Block>().tyle = intyle;
+               // intyle++;
             }
             else
             {
                 map.outmap.Add(hight * 100 + outtyle, true);
-                child.GetComponent<Block>().tyle = outtyle;
-                outtyle++;
+                //child.GetComponent<Block>().tyle = outtyle;
+               // outtyle++;
             }
 
         }
-        transform.DetachChildren();
+
+    }
+
+    private void FixedUpdate()
+    {
+        //transform.DetachChildren();
     }
     // Update is called once per frame
     void Update()

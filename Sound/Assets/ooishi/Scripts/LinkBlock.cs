@@ -43,6 +43,7 @@ public class LinkBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //if(attackflag)
         //{
         //    time += Time.deltaTime;
@@ -56,7 +57,7 @@ public class LinkBlock : MonoBehaviour
         //{
         //    time = 0;
         //}
-        if(playerhit)
+        if (playerhit)
         {
             if (player.attackflag)
             {

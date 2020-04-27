@@ -1,5 +1,8 @@
 ﻿Shader "Custom/PhongG"
 {
+	Properties{
+		_MainTex("Main Texture", 2D) = "white" {}
+	}
     SubShader
     {
         Tags { "RenderType"="Opaque" }
@@ -11,6 +14,8 @@
 
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 3.0
+
+		sampler2D _MainTex;
 
         struct Input
         {

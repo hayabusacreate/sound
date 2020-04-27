@@ -45,6 +45,10 @@ public class Block : MonoBehaviour
     public bool bubbleflag;
 
     private bool moveendflag;
+
+    private bool fallflag, noneflag, rightflag, leftflag;
+    private int savehight;
+    public Rigidbody rigidbody;
     // Start is called before the first frame update
     void Start()
     {
@@ -85,6 +89,8 @@ public class Block : MonoBehaviour
 
         quaternion = this.transform.rotation;
         hight = transform.root.gameObject.GetComponent<Map>().hight;
+        savehight = hight;
+        rigidbody = gameObject.GetComponent<Rigidbody>();
         z = Mathf.Round(quaternion.eulerAngles.y);
 
         if (inout == InOut.In)
@@ -138,6 +144,260 @@ public class Block : MonoBehaviour
     }
     void Move()
     {
+        if(inout==InOut.In)
+        {
+            if(mapCreate.maps.Length<hight)
+            {
+                if (!mapCreate.inmap[(hight + 1) * 100 + tyle])
+                {
+                    noneflag = true;
+                }
+                else if (mapCreate.inmap[(hight + 1) * 100 + tyle])
+                {
+                    noneflag = false;
+                }
+            }
+
+            if(noneflag)
+            {
+                if (tyle + 1 <= mapCreate.inblock - 1)
+                {
+                    if (mapCreate.inmap[hight * 100 + tyle + 1])
+                    {
+                        if(mapCreate.intype[hight * 100 + tyle + 1].block != block)
+                        {
+                            rightflag = true;
+                        }else
+                        {
+                            if(mapCreate.intype[hight * 100 + tyle + 1].rightflag)
+                            {
+                                rightflag = true;
+                            }else
+                            {
+                                rightflag = false;
+                            }
+                        }
+                    }else if(!mapCreate.inmap[hight * 100 + tyle + 1])
+                    {
+                        rightflag = true;
+                    }
+                }
+                if (tyle + 1 == mapCreate.inblock)
+                {
+                    if (mapCreate.inmap[hight * 100])
+                    {
+                        if (mapCreate.intype[hight * 100 + 1].block != block)
+                        {
+                            rightflag = true;
+                        }
+                        else
+                        {
+                            if(mapCreate.intype[hight * 100 + 1].rightflag)
+                            {
+                                rightflag = true;
+                            }
+                            else
+                            {
+                                rightflag = false;
+                            }
+
+                        }
+                    } 
+                    else if(!mapCreate.inmap[hight * 100])
+                    {
+                        rightflag = true;
+                    }
+                }
+                if (tyle - 1 >= 0)
+                {
+                    if (mapCreate.inmap[hight * 100 + tyle - 1])
+                    {
+                        if(mapCreate.intype[hight * 100 + tyle - 1].block != block)
+                        {
+                            leftflag = true;
+                        }else
+                        {
+                            if(mapCreate.intype[hight * 100 + tyle - 1].leftflag)
+                            {
+                                leftflag = true;
+                            }
+                            else
+                            {
+                                leftflag = false;
+                            }
+                        }
+                    }
+                    else if(!mapCreate.inmap[hight * 100 + tyle - 1])
+                    {
+                        leftflag = true;
+                    }
+                }
+                if (tyle - 1 == -1)
+                {
+                    if (mapCreate.inmap[hight * 100 + mapCreate.inblock - 1])
+                    {
+                        if(mapCreate.intype[hight * 100 + mapCreate.inblock - 1].block != block)
+                        {
+                            leftflag=true;
+                        }else if(mapCreate.intype[hight * 100 + mapCreate.inblock - 1].block == block)
+                        {
+                            if(mapCreate.intype[hight * 100 + mapCreate.inblock - 1].leftflag)
+                            {
+                                leftflag = true;
+                            }else
+                            {
+                                leftflag = false;
+                            }
+                        }
+                    }
+                    else if(!mapCreate.inmap[hight * 100 + mapCreate.inblock - 1])
+                    {
+                        leftflag = true;
+                    }
+                }
+            }
+            if(rightflag&&leftflag)
+            {
+                fallflag = true;
+                rigidbody.isKinematic = false;
+            }
+        }
+        else
+        if(inout == InOut.Out)
+        {
+            //if (!mapCreate.outmap[(hight + 1) * 100 + tyle])
+            //{
+            //    noneflag = true;
+            //}
+            //else if (mapCreate.outmap[(hight + 1) * 100 + tyle])
+            //{
+            //    noneflag = false;
+            //}
+            if (noneflag)
+            {
+                if (tyle + 1 <= mapCreate.outblock - 1)
+                {
+                    if (mapCreate.outmap[hight * 100 + tyle + 1])
+                    {
+                        if (mapCreate.outtype[hight * 100 + tyle + 1].block != block)
+                        {
+                            rightflag = true;
+                        }
+                        else
+                        {
+                            if (mapCreate.outtype[hight * 100 + tyle + 1].rightflag)
+                            {
+                                rightflag = true;
+                            }
+                            else
+                            {
+                                rightflag = false;
+                            }
+                        }
+                    }
+                    else if(!mapCreate.outmap[hight * 100 + tyle + 1])
+                    {
+                        rightflag = true;
+                    }
+                }
+                if (tyle + 1 == mapCreate.outblock)
+                {
+                    if (mapCreate.outmap[hight * 100])
+                    {
+                        if (mapCreate.outtype[hight * 100 + 1].block != block)
+                        {
+                            rightflag = true;
+                        }
+                        else
+                        {
+                            if (mapCreate.outtype[hight * 100 + 1].rightflag)
+                            {
+                                rightflag = true;
+                            }
+                            else
+                            {
+                                rightflag = false;
+                            }
+
+                        }
+                    }
+                    else if(!mapCreate.outmap[hight * 100])
+                    {
+                        rightflag = true;
+                    }
+                }
+                if (tyle - 1 >= 0)
+                {
+                    if (mapCreate.outmap[hight * 100 + tyle - 1])
+                    {
+                        if (mapCreate.outtype[hight * 100 + tyle - 1].block != block)
+                        {
+                            leftflag = true;
+                        }
+                        else
+                        {
+                            if (mapCreate.outtype[hight * 100 + tyle - 1].leftflag)
+                            {
+                                leftflag = true;
+                            }
+                            else
+                            {
+                                leftflag = false;
+                            }
+                        }
+                    }
+                    else if(!mapCreate.outmap[hight * 100 + tyle - 1])
+                    {
+                        leftflag = true;
+                    }
+                }
+                if (tyle - 1 == -1)
+                {
+                    if (mapCreate.outmap[hight * 100 + mapCreate.outblock - 1])
+                    {
+                        if (mapCreate.outtype[hight * 100 + mapCreate.outblock - 1].block != block)
+                        {
+                            leftflag = true;
+                        }
+                        else if (mapCreate.outtype[hight * 100 + mapCreate.outblock - 1].block == block)
+                        {
+                            if (mapCreate.outtype[hight * 100 + mapCreate.outblock - 1].leftflag)
+                            {
+                                leftflag = true;
+                            }
+                            else
+                            {
+                                leftflag = false;
+                            }
+                        }
+                    }
+                    else if(!mapCreate.outmap[hight * 100 + mapCreate.outblock - 1])
+                    {
+                        leftflag = true;
+                    }
+                }
+            }
+            if (rightflag && leftflag)
+            {
+                fallflag = true;
+                rigidbody.isKinematic = false;
+            }
+        }
+
+        if(fallflag)
+        {
+            if (hight != savehight)
+            {
+                fallflag = false;
+                leftflag = false;
+                rightflag = false;
+                savehight = hight;
+                rigidbody.isKinematic = true;
+            }
+        }
+        else
+        {
+        }
         //Debug.Log(inout + "" + tyle + "" + block);
         if (change == 0)
         {

@@ -32,7 +32,7 @@ public class MapCreate : MonoBehaviour
 
             maps[i].GetComponent<Map>().hight = i;
             rout.Add(i, false);
-            GameObject gameObject = Instantiate(maps[i], new Vector3(transform.position.x, i * (-5), transform.position.z), Quaternion.identity);
+            GameObject gameObject = Instantiate(maps[i], new Vector3(transform.position.x, i * (-3), transform.position.z), Quaternion.identity);
             //gameObject.transform.rotation = Quaternion.Euler(0, 109, 0);
             gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         }

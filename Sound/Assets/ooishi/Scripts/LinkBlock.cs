@@ -43,6 +43,7 @@ public class LinkBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //if(attackflag)
         //{
         //    time += Time.deltaTime;
@@ -56,7 +57,7 @@ public class LinkBlock : MonoBehaviour
         //{
         //    time = 0;
         //}
-        if(playerhit)
+        if (playerhit)
         {
             if (player.attackflag)
             {
@@ -89,6 +90,14 @@ public class LinkBlock : MonoBehaviour
             hitflag = true;
             hitblock = other.gameObject.transform.GetComponent<Block>();
 
+        }if(area == HitArea.Up)
+        {
+            if (other.transform.tag == "Block")
+            {
+
+                other.transform.gameObject.GetComponent<Block>().rigidbody.isKinematic = true;
+
+            }
         }
 
 

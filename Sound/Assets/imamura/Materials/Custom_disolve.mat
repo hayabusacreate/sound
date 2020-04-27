@@ -24,7 +24,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DisolveTex:
-        m_Texture: {fileID: 2800000, guid: 25e0f19f57f7d214bac03116f3c622a3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 31723fba94752b843a334de25e5315f6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -32,8 +32,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Glossiness: 0.18
-    - _Metallic: 1
+    - _Glossiness: 1
+    - _Metallic: 0.38
     - _Threshold: 0
     m_Colors:
     - _Color: {r: 0.9056604, g: 0.13243146, b: 0.13243146, a: 1}

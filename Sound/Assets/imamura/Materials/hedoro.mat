@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: blend
+  m_Name: hedoro
   m_Shader: {fileID: 4800000, guid: 064ddcfd2de712543851ae789296561e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4

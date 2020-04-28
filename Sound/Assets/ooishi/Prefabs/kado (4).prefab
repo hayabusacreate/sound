@@ -658,7 +658,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
+  HedroMat: {fileID: 2100000, guid: 575b3e9c2801c3947a70918d247b93da, type: 2}
+  BejitablMat: {fileID: 2100000, guid: 100ca488dc2a37a4288265f9d7453aca, type: 2}
 --- !u!1 &1060288477472924780
 GameObject:
   m_ObjectHideFlags: 0
@@ -1319,7 +1320,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
+  HedroMat: {fileID: 2100000, guid: 575b3e9c2801c3947a70918d247b93da, type: 2}
+  BejitablMat: {fileID: 2100000, guid: 100ca488dc2a37a4288265f9d7453aca, type: 2}
 --- !u!1 &2545147419838743211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,7 +1481,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
+  HedroMat: {fileID: 2100000, guid: 575b3e9c2801c3947a70918d247b93da, type: 2}
+  BejitablMat: {fileID: 2100000, guid: 100ca488dc2a37a4288265f9d7453aca, type: 2}
 --- !u!1 &2642392005646935450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1890,7 +1893,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
+  HedroMat: {fileID: 2100000, guid: 575b3e9c2801c3947a70918d247b93da, type: 2}
+  BejitablMat: {fileID: 2100000, guid: 100ca488dc2a37a4288265f9d7453aca, type: 2}
 --- !u!1 &3197839658719974817
 GameObject:
   m_ObjectHideFlags: 0
@@ -2238,7 +2242,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
+  HedroMat: {fileID: 2100000, guid: 575b3e9c2801c3947a70918d247b93da, type: 2}
+  BejitablMat: {fileID: 2100000, guid: 100ca488dc2a37a4288265f9d7453aca, type: 2}
 --- !u!1 &3585729715610717802
 GameObject:
   m_ObjectHideFlags: 0
@@ -3021,7 +3026,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
+  HedroMat: {fileID: 2100000, guid: 575b3e9c2801c3947a70918d247b93da, type: 2}
+  BejitablMat: {fileID: 2100000, guid: 100ca488dc2a37a4288265f9d7453aca, type: 2}
 --- !u!1 &4516426227783829457
 GameObject:
   m_ObjectHideFlags: 0
@@ -3243,7 +3249,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
+  HedroMat: {fileID: 2100000, guid: 575b3e9c2801c3947a70918d247b93da, type: 2}
+  BejitablMat: {fileID: 2100000, guid: 100ca488dc2a37a4288265f9d7453aca, type: 2}
 --- !u!1 &4625615032610824536
 GameObject:
   m_ObjectHideFlags: 0
@@ -3654,7 +3661,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
+  HedroMat: {fileID: 2100000, guid: 575b3e9c2801c3947a70918d247b93da, type: 2}
+  BejitablMat: {fileID: 2100000, guid: 100ca488dc2a37a4288265f9d7453aca, type: 2}
 --- !u!1 &4812619871587894235
 GameObject:
   m_ObjectHideFlags: 0
@@ -4754,7 +4762,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
+  HedroMat: {fileID: 2100000, guid: 575b3e9c2801c3947a70918d247b93da, type: 2}
+  BejitablMat: {fileID: 2100000, guid: 100ca488dc2a37a4288265f9d7453aca, type: 2}
 --- !u!1 &6510322803720075573
 GameObject:
   m_ObjectHideFlags: 0
@@ -6653,4 +6662,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaMat: {fileID: 2100000, guid: 503dae027335e3542a971f47c0b07fc2, type: 2}
-  defaultMat: {fileID: 2100000, guid: cd7e5a480e7dfbe448752f449781eeb6, type: 2}
+  HedroMat: {fileID: 2100000, guid: 575b3e9c2801c3947a70918d247b93da, type: 2}
+  BejitablMat: {fileID: 2100000, guid: 100ca488dc2a37a4288265f9d7453aca, type: 2}

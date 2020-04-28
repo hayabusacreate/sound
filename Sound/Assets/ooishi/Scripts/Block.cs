@@ -917,7 +917,7 @@ if (linkBlocks[1].attackflag)
         }
 
         if ((block == BlockType.Nomal && player.type == PlayerType.Fire)
-            || (block == BlockType.Fire && player.type == PlayerType.Nomal))
+            || (block == BlockType.Fire && player.type == PlayerType.Nomal)||player.hight+1!=hight)
         {
             if (damageflag)
             {
@@ -991,7 +991,7 @@ if (linkBlocks[1].attackflag)
     {
         if (other.transform.tag == "Bubble")
         {
-            hp--;
+            hp-=0.1f;
         }
     }
 }

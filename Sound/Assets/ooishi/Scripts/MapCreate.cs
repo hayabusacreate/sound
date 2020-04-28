@@ -11,9 +11,11 @@ public class MapCreate : MonoBehaviour
     private Dictionary<int, bool> rout;
     private Player player;
     private bool endflag;
+    private SceneChange sceneChange;
     // Start is called before the first frame update
     void Start()
     {
+        sceneChange = GameObject.Find("SceneChange").gameObject.GetComponent<SceneChange>();
         inmap = new Dictionary<int, bool>();
         outmap = new Dictionary<int, bool>();
         intype = new Dictionary<int, Block>();
@@ -115,7 +117,10 @@ public class MapCreate : MonoBehaviour
 
         if (endflag)
         {
-            player.endflag = true;
+            sceneChange.clearflag = true;
+        }else
+        {
+            sceneChange.clearflag = false;
         }
     }
 }

@@ -18,10 +18,14 @@ public class PlayerDeath : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag=="Block")
+
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Block")
         {
             player.endflag = true;
         }
-
     }
 }

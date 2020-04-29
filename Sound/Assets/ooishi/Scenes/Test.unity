@@ -1230,5 +1230,25 @@ PrefabInstance:
       propertyPath: m_Direction
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6475218439341021569, guid: 55f858ad3d84a3b4c9bf0c8321f76132,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 5919326272158558110, guid: 55f858ad3d84a3b4c9bf0c8321f76132,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911571343957717432, guid: 55f858ad3d84a3b4c9bf0c8321f76132,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7993934735579665899, guid: 55f858ad3d84a3b4c9bf0c8321f76132,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 122
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55f858ad3d84a3b4c9bf0c8321f76132, type: 3}

@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
         degree = rad * Mathf.Rad2Deg;
         if (ren == 0)
         {
-            degree += (360 / (map.inblock))*2.5f;
+            degree += (360 / (map.inblock))*2.35f;
         }
         else if (ren == 1)
         {
@@ -328,6 +328,10 @@ public class Player : MonoBehaviour
             block = collision.gameObject.GetComponent<Block>();
             hight = collision.gameObject.GetComponent<Block>().hight-1;
             tyle = collision.gameObject.GetComponent<Block>().tyle;
+        }
+        if(collision.gameObject.tag=="Ground")
+        {
+            hight = map.maps.Length - 1;
         }
     }
     private void OnTriggerEnter(Collider other)

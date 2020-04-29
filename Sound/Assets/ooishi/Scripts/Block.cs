@@ -937,11 +937,11 @@ if (linkBlocks[1].attackflag)
                 GameObject gameObject = Instantiate(bubble, new Vector3(transform.position.x, transform.position.y + 10, transform.position.z), Quaternion.identity);
                 if (inout == InOut.In)
                 {
-                    gameObject.transform.rotation = Quaternion.Euler(-90, 0, (360 / mapCreate.inblock) * (tyle));
+                    gameObject.transform.rotation = Quaternion.Euler(0, (360 / mapCreate.inblock) * (tyle),0);
                 }
                 else
                 {
-                    gameObject.transform.rotation = Quaternion.Euler(-90, 0, (360 / mapCreate.outblock) * (tyle));
+                    gameObject.transform.rotation = Quaternion.Euler(0, (360 / mapCreate.outblock) * (tyle),0);
                 }
 
                 bubbletime = 0;

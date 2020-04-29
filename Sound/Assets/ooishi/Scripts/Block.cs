@@ -43,6 +43,8 @@ public class Block : MonoBehaviour
     private float bubbletime;
 
     public bool bubbleflag;
+    public GameObject kati;
+    public ParticleSystem syuwa;
 
     private bool moveendflag;
 
@@ -811,6 +813,7 @@ if (linkBlocks[1].attackflag)
                 mapCreate.outmap[(linkBlocks[6].hitblock.hight - 1) * 100 + tyle] = true;
                 mapCreate.outtype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
             }
+            Instantiate(kati, transform.position, Quaternion.identity);
             hight = linkBlocks[6].hitblock.hight - 1;
         }
         else
@@ -828,6 +831,7 @@ if (linkBlocks[1].attackflag)
                 mapCreate.outmap[(linkBlocks[7].hitblock.hight - 1) * 100 + tyle] = true;
                 mapCreate.outtype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
             }
+            Instantiate(kati, transform.position, Quaternion.identity);
             hight = linkBlocks[7].hitblock.hight - 1;
         }
         //if(inout==InOut.In)
@@ -938,6 +942,7 @@ if (linkBlocks[1].attackflag)
                         if (mapCreate.outtype[hight * 100 + (int)(z / (360 / mapCreate.outblock))].damageflag)
                         {
                             damageflag = true;
+                            syuwa.Play();
                         }
                     }
                 }
@@ -948,6 +953,7 @@ if (linkBlocks[1].attackflag)
                         if (mapCreate.intype[hight * 100 + (int)(z / (360 / mapCreate.inblock))].damageflag)
                         {
                             damageflag = true;
+                            syuwa.Play();
                         }
                     }
                 }
@@ -960,6 +966,7 @@ if (linkBlocks[1].attackflag)
             if (damageflag)
             {
                 damageflag = false;
+                syuwa.Stop();
             }
         }
         else

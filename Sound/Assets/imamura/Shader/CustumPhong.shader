@@ -2,7 +2,6 @@
 {
 	Properties{
 		_MainTex("Main Texture", 2D) = "white" {}
-	_RampTex("Ramp",2D) = " white"{}
 	}
     SubShader
     {

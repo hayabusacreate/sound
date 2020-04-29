@@ -1,9 +1,12 @@
-﻿Shader "Custom/Toon"
+﻿Shader "Custom/hedoroToon"
 {
     Properties
     {
-        _Color ("Color", Color) = (1,1,1,1)
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
+		_SubTex("Sub Texture", 2D) = "white" {}
+		_MaskTex("Mask Texture", 2D) = "white" {}
+		_DisolveTex("DisolveTex (RGB)", 2D) = "white" {}
+		_Threshold("Threshold", Range(0,1)) = 0.0
         _RampTex("Ramp",2D) = " white"{}
 		_BumpMap("Normal Map"  , 2D) = "bump" {}
 		_BumpScale("Normal Scale", Range(0, 1)) = 1.0
@@ -21,7 +24,12 @@
         #pragma target 3.0
 
         sampler2D _MainTex;
+
+	sampler2D _SubTex;
+	sampler2D _MaskTex;
+	sampler2D _DisolveTex;
 		sampler2D _RampTex;
+
 		sampler2D _BumpMap;
 		half _BumpScale;
 
@@ -30,7 +38,7 @@
             float2 uv_MainTex;
         };
 
-        fixed4 _Color;
+		half _Threshold;
 
 		fixed4 LightingToonRamp(SurfaceOutput s, fixed3 lightDir, fixed atten)
 		{
@@ -44,11 +52,23 @@
 
         void surf (Input IN, inout SurfaceOutput o)
         {
-			fixed4 c = tex2D(_MainTex, IN.uv_MainTex)* _Color;
-			o.Albedo = c.rgb;
-			o.Alpha = c.a;
+			fixed4 m = tex2D(_DisolveTex, IN.uv_MainTex);
+			half g = m.r * 0.2 + m.g * 0.7 + m.b * 0.1;
+			if (g < _Threshold) {
+				discard;
+			}
+			fixed2 uv = IN.uv_MainTex;
+			uv.x -= 0.4* _Time;
+			uv.y -= 0.0* _Time;
+			fixed2 uv2 = IN.uv_MainTex;
+			uv2.x -= 0.5* _Time;
+			uv2.y -= 0.0* _Time;
+			fixed4 c1 = tex2D(_MainTex, uv);
+			fixed4 c2 = tex2D(_SubTex, uv);
+			fixed4 p = tex2D(_MaskTex, uv2);
+			o.Albedo = lerp(c1, c2, p);
 
-			fixed4 n = tex2D(_BumpMap, IN.uv_MainTex);
+			fixed4 n = tex2D(_BumpMap, uv2);
 
 			o.Normal = UnpackScaleNormal(n, _BumpScale);
         }

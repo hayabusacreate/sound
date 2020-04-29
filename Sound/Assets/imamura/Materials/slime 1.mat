@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: slime 1
-  m_Shader: {fileID: 4800000, guid: e9a7d357b7ad79448a69e5a803ccd1da, type: 3}
+  m_Shader: {fileID: 4800000, guid: 209ee7f339fa14340bc63c80b84742cf, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -28,4 +28,5 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
-    m_Colors: []
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}

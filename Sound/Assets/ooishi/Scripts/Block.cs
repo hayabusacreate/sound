@@ -520,7 +520,7 @@ public class Block : MonoBehaviour
                         mapCreate.inmap[hight * 100 + tyle] = true;
                         mapCreate.intype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
                     }
-                    else if ((int)((z - 5) / (360 / mapCreate.inblock)) == mapCreate.inblock - 2)
+                    else if ((int)((z-5) / (360 / mapCreate.inblock)) == mapCreate.inblock - 2)
                     {
                         if (moveendflag)
                         {
@@ -577,7 +577,24 @@ public class Block : MonoBehaviour
                     mapCreate.inmap[hight * 100 + tyle] = true;
                     mapCreate.intype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
                 }
-                else if ((int)((z) / (360 / mapCreate.inblock)) < tyle - 1)
+                else if ((int)((z-5) / (360 / mapCreate.inblock)) == tyle - 1&&tyle!=1)
+                {
+                    if (moveendflag)
+                    {
+                        mapCreate.inmap[hight * 100 + tyle] = false;
+                        moveendflag = false;
+                    }
+                    tyle = (int)(z / (360 / mapCreate.inblock));
+                    linkBlocks[0].attackflag = false;
+                    linkBlocks[1].attackflag = false;
+                    moveflag = false;
+                    player.attackflag = false;
+                    change = 0;
+                    count = 0;
+                    mapCreate.inmap[hight * 100 + tyle] = true;
+                    mapCreate.intype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
+                }
+                if(tyle==1&&z-speed<=0)
                 {
                     if (moveendflag)
                     {
@@ -677,7 +694,24 @@ public class Block : MonoBehaviour
                     mapCreate.outmap[hight * 100 + tyle] = true;
                     mapCreate.outtype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
                 }
-                else if ((int)((z) / (360 / mapCreate.outblock)) < tyle - 1)
+                else if ((int)((z - 5) / (360 / mapCreate.outblock)) == tyle - 1 && tyle != 1)
+                {
+                    if (moveendflag)
+                    {
+                        mapCreate.outmap[hight * 100 + tyle] = false;
+                        moveendflag = false;
+                    }
+                    tyle = (int)(z / (360 / mapCreate.outblock));
+                    linkBlocks[0].attackflag = false;
+                    linkBlocks[1].attackflag = false;
+                    moveflag = false;
+                    player.attackflag = false;
+                    change = 0;
+                    count = 0;
+                    mapCreate.outmap[hight * 100 + tyle] = true;
+                    mapCreate.outtype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
+                }
+                if (tyle == 1 && z - speed <= 0)
                 {
                     if (moveendflag)
                     {

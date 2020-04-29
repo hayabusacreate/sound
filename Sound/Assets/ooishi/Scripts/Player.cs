@@ -144,7 +144,7 @@ public class Player : MonoBehaviour
         {
             if(changeflag==0)
             {
-                if (map.inmap[hight * 100 + (int)((degree+(360/map.inblock)/2 )%360  / (360 / (map.inblock)))] && changeflag == 0)
+                if (map.inmap[hight * 100 + (int)((degree+(360/map.inblock)/4 )%360  / (360 / (map.inblock)))] && changeflag == 0)
                 {
                     moveflag = false;
                 }
@@ -152,13 +152,13 @@ public class Player : MonoBehaviour
             {
                 if((degree - (360 / (map.inblock) / 2)) % 360>0)
                 {
-                    if (map.inmap[hight * 100 + (int)((degree-(360 / map.inblock) / 2) % 360) / (360 / (map.inblock))] && changeflag == 1)
+                    if (map.inmap[hight * 100 + (int)((degree-(360 / map.inblock) / 4) % 360) / (360 / (map.inblock))] && changeflag == 1)
                     {
                         moveflag = false;
                     }
                 }else
                 {
-                    if (map.inmap[hight * 100 + (int)((360+degree- (360 / map.inblock) / 2) % 360) / (360 / (map.inblock))] && changeflag == 1)
+                    if (map.inmap[hight * 100 + (int)((360+degree- (360 / map.inblock) / 4) % 360) / (360 / (map.inblock))] && changeflag == 1)
                     {
                         moveflag = false;
                     }
@@ -189,7 +189,7 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
-                    if (map.inmap[hight * 100 + (int)(((360 + degree) - (360 / (map.outblock) / 8) % 360) / (360 / (map.outblock)))] && changeflag == 1)
+                    if (map.outmap[hight * 100 + (int)(((360 + degree) - (360 / (map.outblock) / 8) % 360) / (360 / (map.outblock)))] && changeflag == 1)
                     {
                         moveflag = false;
                     }

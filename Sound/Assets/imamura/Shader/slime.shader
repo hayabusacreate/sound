@@ -1,4 +1,4 @@
-﻿Shader "Custom/PhongG"
+﻿Shader "Custom/slime"
 {
 	Properties{
 		_MainTex("Main Texture", 2D) = "white" {}

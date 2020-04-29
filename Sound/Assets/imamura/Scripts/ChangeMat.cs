@@ -11,12 +11,15 @@ public class ChangeMat : MonoBehaviour
     Material alphaMat;
 
     [SerializeField]
-    Material defaultMat;
+    Material HedroMat;
+    [SerializeField]
+    Material BejitablMat;
 
-
+    private Block block;
     // Start is called before the first frame update
     void Start()
     {
+        block = gameObject.GetComponent<Block>();
     }
 
     // Update is called once per frame
@@ -28,7 +31,15 @@ public class ChangeMat : MonoBehaviour
         }
         else
         {
-            transform.GetComponent<Renderer>().material = defaultMat;
+            if(block.block==BlockType.Fire)
+            {
+                transform.GetComponent<Renderer>().material = HedroMat;
+            }
+            else
+            {
+                transform.GetComponent<Renderer>().material = BejitablMat;
+            }
+
         }
 
         change = false;

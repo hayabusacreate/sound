@@ -8,6 +8,8 @@ public enum Scene
     Title,
     GamePlay,
     StageSelect,
+    GameOver,
+    GameCrear,
 }
 
 public class SceneChange : MonoBehaviour
@@ -17,6 +19,7 @@ public class SceneChange : MonoBehaviour
     private float time;
     public float setTime;
     private Text timeText;
+    public bool clearflag;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,8 @@ public class SceneChange : MonoBehaviour
         {
             player=GameObject.Find("Player").GetComponent<Player>();
             timeText = GameObject.Find("Time").GetComponent<Text>();
+            time = setTime;
+            Physics.gravity = new Vector3(0, -5, 0);
         }
     }
 
@@ -42,18 +47,45 @@ public class SceneChange : MonoBehaviour
                 break;
             case Scene.GamePlay:
                 timeText.text = "" + time;
-                time += Time.deltaTime;
-                if(setTime<time)
+                time -= Time.deltaTime;
+                if(time<0)
                 {
-                    SceneManager.LoadScene("Test");
+                    if (clearflag)
+                    {
+                        SceneManager.LoadScene("Clear");
+                    }
+                    else
+                    {
+                        SceneManager.LoadScene("GameOver");
+                    }
+
                 }
-                if(Input.GetKeyDown(KeyCode.R)||player.endflag)
+                if (player.endflag)
+                {
+                    SceneManager.LoadScene("GameOver");
+                }
+                if (Input.GetKeyDown(KeyCode.R))
                 {
                     
                     SceneManager.LoadScene("Test");
                 }
+
                 break;
             case Scene.StageSelect:
+                break;
+            case Scene.GameOver:
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+
+                    SceneManager.LoadScene("Test");
+                }
+                break;
+            case Scene.GameCrear:
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+
+                    SceneManager.LoadScene("Test");
+                }
                 break;
         }
 

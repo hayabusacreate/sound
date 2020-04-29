@@ -20,6 +20,7 @@ public class LinkBlock : MonoBehaviour
     public HitArea area;
     public bool playerhit;
     public Block hitblock;
+    private MapCreate map;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,7 @@ public class LinkBlock : MonoBehaviour
                 block = transform.root.gameObject.transform.gameObject.GetComponent<Block>();
                 check = true;
                 hitblock = transform.root.gameObject.transform.GetComponent<Block>();
+                map = GameObject.Find("MapCreate").gameObject.GetComponent<MapCreate>();
             }
 
         }
@@ -98,6 +100,13 @@ public class LinkBlock : MonoBehaviour
                 other.transform.gameObject.GetComponent<Block>().rigidbody.isKinematic = true;
 
             }
+        }
+        if (other.transform.tag == "Ground")
+        {
+
+            //other.transform.gameObject.GetComponent<Block>().rigidbody.isKinematic = true;
+            block.hight = map.maps.Length-1;
+
         }
 
 

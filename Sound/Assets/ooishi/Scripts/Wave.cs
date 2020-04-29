@@ -25,7 +25,7 @@ public class Wave : MonoBehaviour
         if(time>wavetime&&wave.Length>count)
         {
             GameObject gameObject= Instantiate(wave[count], transform.position, Quaternion.identity);
-            gameObject.transform.rotation = Quaternion.Euler(-90,0, (360 / map.inblock) * tyle[count]);
+            gameObject.transform.rotation = Quaternion.Euler(0, (360 / map.inblock) * tyle[count],0);
             gameObject.GetComponent<Block>().tyle = tyle[count];
             gameObject.GetComponent<Block>().hight = -count-1;
             count++;

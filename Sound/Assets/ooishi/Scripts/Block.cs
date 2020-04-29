@@ -146,6 +146,14 @@ public class Block : MonoBehaviour
     }
     void Move()
     {
+        if(inout==InOut.In)
+        {
+            mapCreate.intype[hight * 100 + (int)(z / (360 / mapCreate.inblock))] = gameObject.transform.GetComponent<Block>();
+        }
+        else
+        {
+            mapCreate.outtype[hight * 100 + (int)(z / (360 / mapCreate.outblock))] = gameObject.transform.GetComponent<Block>();
+        }
         if (inout == InOut.In)
         {
             if (mapCreate.maps.Length - 1 > hight)
@@ -423,8 +431,16 @@ public class Block : MonoBehaviour
                     if (mapCreate.inmap[hight * 100 + tyle + 1]
                         && mapCreate.intype[hight * 100 + tyle + 1].moveflag)
                     {
+                        if(mapCreate.intype[hight * 100 + tyle + 1].change==1)
+                        {
+                            change = 1;
+                        }
+                        else
+                        {
+                            change = 2;
+                        }
                         moveflag = true;
-                        change = 1;
+
                     }
                 }
                 if (tyle + 1 == mapCreate.inblock)
@@ -432,8 +448,16 @@ public class Block : MonoBehaviour
                     if (mapCreate.inmap[hight * 100]
                         && mapCreate.intype[hight * 100 + 1].moveflag)
                     {
+                        if (mapCreate.intype[hight * 100  + 1].change == 1)
+                        {
+                            change = 1;
+                        }
+                        else
+                        {
+                            change = 2;
+                        }
                         moveflag = true;
-                        change = 1;
+                        //change = 1;
                     }
                 }
                 if (tyle - 1 >= 0)
@@ -441,8 +465,16 @@ public class Block : MonoBehaviour
                     if (mapCreate.inmap[hight * 100 + tyle - 1]
                         && mapCreate.intype[hight * 100 + tyle - 1].moveflag)
                     {
+                        if (mapCreate.intype[hight * 100 + tyle - 1].change == 1)
+                        {
+                            change = 1;
+                        }
+                        else
+                        {
+                            change = 2;
+                        }
                         moveflag = true;
-                        change = 2;
+                        //change = 2;
                     }
                 }
                 if (tyle - 1 == -1)
@@ -450,8 +482,16 @@ public class Block : MonoBehaviour
                     if (mapCreate.inmap[hight * 100 + mapCreate.inblock - 1]
                         && mapCreate.intype[hight * 100 + mapCreate.inblock - 1].moveflag)
                     {
+                        if (mapCreate.intype[hight * 100 + tyle - 1].change == 1)
+                        {
+                            change = 1;
+                        }
+                        else
+                        {
+                            change = 2;
+                        }
                         moveflag = true;
-                        change = 2;
+                        //change = 2;
                     }
                 }
             }
@@ -462,17 +502,34 @@ public class Block : MonoBehaviour
                     if (mapCreate.outmap[hight * 100 + tyle + 1]
                         && mapCreate.outtype[hight * 100 + tyle + 1].moveflag)
                     {
+                                            
+                        if(mapCreate.outtype[hight * 100 + tyle + 1].change==1)
+                        {
+                            change = 1;
+                        }
+                        else
+                        {
+                            change = 2;
+                        }
                         moveflag = true;
-                        change = 1;
+                        //change = 1;
                     }
                 }
                 if (tyle + 1 == mapCreate.outblock)
                 {
-                    if (mapCreate.outmap[hight * 100]
-                        && mapCreate.outtype[hight * 100].moveflag)
+                    if (mapCreate.outmap[hight * 100+1]
+                        && mapCreate.outtype[hight * 100+1].moveflag)
                     {
+                        if (mapCreate.outtype[hight * 100  + 1].change == 1)
+                        {
+                            change = 1;
+                        }
+                        else
+                        {
+                            change = 2;
+                        }
                         moveflag = true;
-                        change = 1;
+                        //change = 1;
                     }
                 }
                 if (tyle - 1 >= 0)
@@ -480,8 +537,16 @@ public class Block : MonoBehaviour
                     if (mapCreate.outmap[hight * 100 + tyle - 1]
                         && mapCreate.outtype[hight * 100 + tyle - 1].moveflag)
                     {
+                        if (mapCreate.outtype[hight * 100 + tyle - 1].change == 1)
+                        {
+                            change = 1;
+                        }
+                        else
+                        {
+                            change = 2;
+                        }
                         moveflag = true;
-                        change = 2;
+                        //change = 2;
                     }
                 }
                 if (tyle - 1 == -1)
@@ -489,8 +554,16 @@ public class Block : MonoBehaviour
                     if (mapCreate.outmap[hight * 100 + mapCreate.outblock - 1]
                         && mapCreate.outtype[hight * 100 + mapCreate.outblock - 1].moveflag)
                     {
+                        if (mapCreate.outtype[hight * 100 + mapCreate.outblock - 1].change == 1)
+                        {
+                            change = 1;
+                        }
+                        else
+                        {
+                            change = 2;
+                        }
                         moveflag = true;
-                        change = 2;
+                        //change = 2;
                     }
                 }
             }
@@ -1036,7 +1109,7 @@ if (linkBlocks[1].attackflag)
     {
         if (other.transform.tag == "Bubble")
         {
-            hp -= 0.1f;
+            hp -= 0.05f;
         }
     }
 }

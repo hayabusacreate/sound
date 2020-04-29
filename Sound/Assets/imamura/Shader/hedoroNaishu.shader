@@ -1,4 +1,4 @@
-﻿Shader "Custom/hedoroToon"
+﻿Shader "Custom/hedoroNaishu"
 {
     Properties
     {
@@ -58,11 +58,11 @@
 				discard;
 			}
 			fixed2 uv = IN.uv_MainTex;
-			uv.x -= 0.4* _Time;
-			uv.y -= 0.0* _Time;
+			uv.x -= 0.0* _Time;
+			uv.y -= 0.4* _Time;
 			fixed2 uv2 = IN.uv_MainTex;
-			uv2.x -= 0.5* _Time;
-			uv2.y -= 0.0* _Time;
+			uv2.x -= 0.0* _Time;
+			uv2.y -= 0.5* _Time;
 			fixed4 c1 = tex2D(_MainTex, uv);
 			fixed4 c2 = tex2D(_SubTex, uv);
 			fixed4 p = tex2D(_MaskTex, uv2);

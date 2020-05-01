@@ -71,7 +71,17 @@ public class LinkBlock : MonoBehaviour
             }
         }
     }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.transform.tag == "Block")
+        {
 
+            //other.transform.gameObject.GetComponent<Renderer>().material.color = Color.black;
+            hitflag = true;
+            hitblock = other.gameObject.transform.GetComponent<Block>();
+
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(area==HitArea.Side)
@@ -98,6 +108,7 @@ public class LinkBlock : MonoBehaviour
             {
 
                 other.transform.gameObject.GetComponent<Block>().rigidbody.isKinematic = true;
+                //block.hight = other.transform.gameObject.GetComponent<Block>().hight - 1;
 
             }
         }

@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitflag: 0
   attackflag: 0
-  area: 0
+  area: 1
   playerhit: 0
   hitblock: {fileID: 0}
 --- !u!1 &217411149728212400
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitflag: 0
   attackflag: 0
-  area: 0
+  area: 1
   playerhit: 0
   hitblock: {fileID: 0}
 --- !u!1 &508938649648800171
@@ -911,7 +911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitflag: 0
   attackflag: 0
-  area: 0
+  area: 1
   playerhit: 0
   hitblock: {fileID: 0}
 --- !u!1 &1822267259443661753
@@ -1163,7 +1163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitflag: 0
   attackflag: 0
-  area: 0
+  area: 1
   playerhit: 0
   hitblock: {fileID: 0}
 --- !u!1 &2474688702888458541
@@ -1552,7 +1552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitflag: 0
   attackflag: 0
-  area: 0
+  area: 1
   playerhit: 0
   hitblock: {fileID: 0}
 --- !u!1 &2950357019622464257
@@ -1740,7 +1740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitflag: 0
   attackflag: 0
-  area: 0
+  area: 1
   playerhit: 0
   hitblock: {fileID: 0}
 --- !u!1 &3167705459991249858
@@ -1966,7 +1966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitflag: 0
   attackflag: 0
-  area: 0
+  area: 1
   playerhit: 0
   hitblock: {fileID: 0}
 --- !u!1 &3210003636514584594
@@ -2029,7 +2029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitflag: 0
   attackflag: 0
-  area: 0
+  area: 1
   playerhit: 0
   hitblock: {fileID: 0}
 --- !u!1 &3397150184249689162
@@ -2442,7 +2442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitflag: 0
   attackflag: 0
-  area: 0
+  area: 1
   playerhit: 0
   hitblock: {fileID: 0}
 --- !u!1 &3967674146495615699
@@ -2567,7 +2567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitflag: 0
   attackflag: 0
-  area: 0
+  area: 1
   playerhit: 0
   hitblock: {fileID: 0}
 --- !u!1 &4070077343387344489
@@ -3393,7 +3393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitflag: 0
   attackflag: 0
-  area: 0
+  area: 1
   playerhit: 0
   hitblock: {fileID: 0}
 --- !u!1 &4662944424812618223
@@ -3519,7 +3519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitflag: 0
   attackflag: 0
-  area: 0
+  area: 1
   playerhit: 0
   hitblock: {fileID: 0}
 --- !u!1 &4784049448979645190
@@ -4434,7 +4434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitflag: 0
   attackflag: 0
-  area: 0
+  area: 1
   playerhit: 0
   hitblock: {fileID: 0}
 --- !u!1 &5988181078641038325
@@ -4497,7 +4497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitflag: 0
   attackflag: 0
-  area: 0
+  area: 1
   playerhit: 0
   hitblock: {fileID: 0}
 --- !u!1 &6056869333837242226
@@ -4560,7 +4560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitflag: 0
   attackflag: 0
-  area: 0
+  area: 1
   playerhit: 0
   hitblock: {fileID: 0}
 --- !u!1 &6202015946651095824
@@ -4912,7 +4912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitflag: 0
   attackflag: 0
-  area: 0
+  area: 1
   playerhit: 0
   hitblock: {fileID: 0}
 --- !u!1 &6670399746488154310
@@ -5162,7 +5162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitflag: 0
   attackflag: 0
-  area: 0
+  area: 1
   playerhit: 0
   hitblock: {fileID: 0}
 --- !u!1 &7140077923244955703
@@ -5413,7 +5413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitflag: 0
   attackflag: 0
-  area: 0
+  area: 1
   playerhit: 0
   hitblock: {fileID: 0}
 --- !u!1 &7388772033866611714
@@ -5725,7 +5725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitflag: 0
   attackflag: 0
-  area: 0
+  area: 1
   playerhit: 0
   hitblock: {fileID: 0}
 --- !u!1 &7961300842953759139
@@ -6287,7 +6287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitflag: 0
   attackflag: 0
-  area: 0
+  area: 1
   playerhit: 0
   hitblock: {fileID: 0}
 --- !u!1 &8645092968636434484

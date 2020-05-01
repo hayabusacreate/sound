@@ -228,36 +228,11 @@ public class Block : MonoBehaviour
                     {
                         if (mapCreate.intype[hight * 100].block != block)
                         {
-                            rightflag = true;
-                        }
-                        else
-                        {
-                            if (mapCreate.intype[hight * 100].rightflag)
-                            {
-                                rightflag = true;
-                            }
-                            else
-                            {
-                                rightflag = false;
-                            }
-                        }
-                    }
-                    else if (!mapCreate.inmap[hight * 100])
-                    {
-                        rightflag = true;
-                    }
-                }
-                if (tyle != 0)
-                {
-                    if (mapCreate.inmap[hight * 100 + tyle - 1])
-                    {
-                        if (mapCreate.intype[hight * 100 + tyle - 1].block != block)
-                        {
                             leftflag = true;
                         }
                         else
                         {
-                            if (mapCreate.intype[hight * 100 + tyle - 1].leftflag)
+                            if (mapCreate.intype[hight * 100].leftflag)
                             {
                                 leftflag = true;
                             }
@@ -270,6 +245,31 @@ public class Block : MonoBehaviour
                     else if (!mapCreate.inmap[hight * 100])
                     {
                         leftflag = true;
+                    }
+                }
+                if (tyle != 0)
+                {
+                    if (mapCreate.inmap[hight * 100 + tyle - 1])
+                    {
+                        if (mapCreate.intype[hight * 100 + tyle - 1].block != block)
+                        {
+                            rightflag = true;
+                        }
+                        else
+                        {
+                            if (mapCreate.intype[hight * 100 + tyle - 1].rightflag)
+                            {
+                                rightflag = true;
+                            }
+                            else
+                            {
+                                rightflag = false;
+                            }
+                        }
+                    }
+                    else if (!mapCreate.inmap[hight * 100])
+                    {
+                       rightflag= true;
                     }
                 }
             }

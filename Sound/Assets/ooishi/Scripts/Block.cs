@@ -146,7 +146,8 @@ public class Block : MonoBehaviour
     }
     void Move()
     {
-        if(inout==InOut.In)
+
+        if (inout==InOut.In)
         {
             mapCreate.intype[hight * 100 + (int)(z / (360 / mapCreate.inblock))] = gameObject.transform.GetComponent<Block>();
         }
@@ -573,6 +574,24 @@ public class Block : MonoBehaviour
 
         if (inout == InOut.In)
         {
+            //if (tyle == 4 && (int)((z - speed) / (360 / mapCreate.inblock)) == mapCreate.inblock - 2)
+            //{
+            //    if (moveendflag)
+            //    {
+            //        mapCreate.inmap[hight * 100 + tyle] = false;
+            //        moveendflag = false;
+            //    }
+            //    tyle = (int)(z / (360 / mapCreate.inblock));
+            //    linkBlocks[0].attackflag = false;
+            //    linkBlocks[1].attackflag = false;
+            //    moveflag = false;
+            //    player.attackflag = false;
+            //    change = 0;
+            //    count = 0;
+            //    mapCreate.inmap[hight * 100 + tyle] = true;
+            //    mapCreate.intype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
+            //    transform.rotation = Quaternion.Euler(0, tyle * (360 / mapCreate.inblock), 0);
+            //}
             if ((int)(z / (360 / mapCreate.inblock)) > tyle)
             {
                 if (tyle == 0)
@@ -594,15 +613,16 @@ public class Block : MonoBehaviour
                         count = 0;
                         mapCreate.inmap[hight * 100 + tyle] = true;
                         mapCreate.intype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
+                        transform.rotation = Quaternion.Euler(0, tyle * (360 / mapCreate.inblock), 0);
                     }
-                    else if ((int)((z-5) / (360 / mapCreate.inblock)) == mapCreate.inblock - 2)
+                    if ((int)((z- 5) / (360 / mapCreate.inblock)) == mapCreate.inblock - 2)
                     {
                         if (moveendflag)
                         {
                             mapCreate.inmap[hight * 100 + tyle] = false;
                             moveendflag = false;
                         }
-                        tyle = (int)(z / (360 / mapCreate.inblock));
+                        tyle = 4;
                         linkBlocks[0].attackflag = false;
                         linkBlocks[1].attackflag = false;
                         moveflag = false;
@@ -611,6 +631,7 @@ public class Block : MonoBehaviour
                         count = 0;
                         mapCreate.inmap[hight * 100 + tyle] = true;
                         mapCreate.intype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
+                        transform.rotation = Quaternion.Euler(0, tyle * (360 / mapCreate.inblock), 0);
                     }
 
                 }
@@ -630,9 +651,10 @@ public class Block : MonoBehaviour
                     count = 0;
                     mapCreate.inmap[hight * 100 + tyle] = true;
                     mapCreate.intype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
+                    transform.rotation = Quaternion.Euler(0, tyle * (360 / mapCreate.inblock), 0);
                 }
 
-            }
+            }else
             if ((int)(z / (360 / mapCreate.inblock)) < tyle)
             {
                 if ((int)((z) / (360 / mapCreate.inblock)) == 0 && tyle == 4)
@@ -651,8 +673,9 @@ public class Block : MonoBehaviour
                     count = 0;
                     mapCreate.inmap[hight * 100 + tyle] = true;
                     mapCreate.intype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
+                    transform.rotation = Quaternion.Euler(0, tyle * (360 / mapCreate.inblock), 0);
                 }
-                else if ((int)((z-5) / (360 / mapCreate.inblock)) == tyle - 1&&tyle!=1)
+                else if ((int)((z-5) / (360 / mapCreate.inblock)) == tyle - 2)
                 {
                     if (moveendflag)
                     {
@@ -668,6 +691,7 @@ public class Block : MonoBehaviour
                     count = 0;
                     mapCreate.inmap[hight * 100 + tyle] = true;
                     mapCreate.intype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
+                    transform.rotation = Quaternion.Euler(0, tyle * (360 / mapCreate.inblock), 0);
                 }
                 if(tyle==1&&z-speed<=0)
                 {
@@ -685,6 +709,7 @@ public class Block : MonoBehaviour
                     count = 0;
                     mapCreate.inmap[hight * 100 + tyle] = true;
                     mapCreate.intype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
+                    transform.rotation = Quaternion.Euler(0, tyle * (360 / mapCreate.inblock), 0);
                 }
             }
         }
@@ -712,7 +737,7 @@ public class Block : MonoBehaviour
                         mapCreate.outmap[hight * 100 + tyle] = true;
                         mapCreate.outtype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
                     }
-                    else if ((int)((z - 5) / (360 / mapCreate.outblock)) == mapCreate.outblock - 2)
+                    if ((int)((z - 5) / (360 / mapCreate.outblock)) == mapCreate.outblock - 2)
                     {
                         if (moveendflag)
                         {
@@ -749,7 +774,7 @@ public class Block : MonoBehaviour
                     mapCreate.outtype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
                 }
 
-            }
+            }else
             if ((int)(z / (360 / mapCreate.outblock)) < tyle)
             {
                 if ((int)((z) / (360 / mapCreate.outblock)) == 0 && tyle == 4)

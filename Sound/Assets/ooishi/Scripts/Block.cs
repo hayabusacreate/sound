@@ -914,24 +914,24 @@ if (linkBlocks[1].attackflag)
             Instantiate(kati, transform.position, Quaternion.identity);
             hight = linkBlocks[6].hitblock.hight - 1;
         }
-        else
-        if (linkBlocks[7].hitblock.hight - 1 != hight && linkBlocks[7].hitblock.hight != hight)
-        {
-            if (inout == InOut.In)
-            {
-                mapCreate.inmap[hight * 100 + tyle] = false;
-                mapCreate.inmap[(linkBlocks[7].hitblock.hight - 1) * 100 + tyle] = true;
-                mapCreate.intype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
-            }
-            else
-            {
-                mapCreate.outmap[hight * 100 + tyle] = false;
-                mapCreate.outmap[(linkBlocks[7].hitblock.hight - 1) * 100 + tyle] = true;
-                mapCreate.outtype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
-            }
-            Instantiate(kati, transform.position, Quaternion.identity);
-            hight = linkBlocks[7].hitblock.hight - 1;
-        }
+        //else
+        //if (linkBlocks[7].hitblock.hight - 1 != hight && linkBlocks[7].hitblock.hight != hight)
+        //{
+        //    if (inout == InOut.In)
+        //    {
+        //        mapCreate.inmap[hight * 100 + tyle] = false;
+        //        mapCreate.inmap[(linkBlocks[7].hitblock.hight - 1) * 100 + tyle] = true;
+        //        mapCreate.intype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
+        //    }
+        //    else
+        //    {
+        //        mapCreate.outmap[hight * 100 + tyle] = false;
+        //        mapCreate.outmap[(linkBlocks[7].hitblock.hight - 1) * 100 + tyle] = true;
+        //        mapCreate.outtype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
+        //    }
+        //    Instantiate(kati, transform.position, Quaternion.identity);
+        //    hight = linkBlocks[7].hitblock.hight - 1;
+        //}
         //if(inout==InOut.In)
         //{
         //    mapCreate.intype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
@@ -1031,7 +1031,7 @@ if (linkBlocks[1].attackflag)
         }
         else
         {
-            if (hight >= 0)
+            if (hight >= -5)
             {
                 if (inout == InOut.In)
                 {

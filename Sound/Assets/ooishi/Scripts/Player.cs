@@ -326,12 +326,12 @@ public class Player : MonoBehaviour
                 //block.hp++;
             }
             block = collision.gameObject.GetComponent<Block>();
-            hight = collision.gameObject.GetComponent<Block>().hight-1;
-            tyle = collision.gameObject.GetComponent<Block>().tyle;
+            //hight = collision.gameObject.GetComponent<Block>().hight-1;
+            //tyle = collision.gameObject.GetComponent<Block>().tyle;
         }
         if(collision.gameObject.tag=="Ground")
         {
-            hight = map.maps.Length - 1;
+            //hight = map.maps.Length - 1;
         }
     }
     private void OnTriggerEnter(Collider other)

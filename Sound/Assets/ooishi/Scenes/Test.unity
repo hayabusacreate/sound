@@ -671,12 +671,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inblock: 5
+  halfblock: 5
   outblock: 5
   maps:
-  - {fileID: 8858401953452617257, guid: 5cf92538343d7fe4080425e11ca49d0b, type: 3}
-  - {fileID: 8858401953452617257, guid: 5cf92538343d7fe4080425e11ca49d0b, type: 3}
-  - {fileID: 8858401953452617257, guid: 5cf92538343d7fe4080425e11ca49d0b, type: 3}
-  - {fileID: 8858401953452617257, guid: 5cf92538343d7fe4080425e11ca49d0b, type: 3}
+  - {fileID: 8858401953452617257, guid: 397072a7067ae12458140cb3556fc1f5, type: 3}
+  - {fileID: 8858401953452617257, guid: 397072a7067ae12458140cb3556fc1f5, type: 3}
+  - {fileID: 8858401953452617257, guid: 397072a7067ae12458140cb3556fc1f5, type: 3}
+  - {fileID: 8858401953452617257, guid: 397072a7067ae12458140cb3556fc1f5, type: 3}
+  - {fileID: 8858401953452617257, guid: 397072a7067ae12458140cb3556fc1f5, type: 3}
 --- !u!4 &732174380
 Transform:
   m_ObjectHideFlags: 0

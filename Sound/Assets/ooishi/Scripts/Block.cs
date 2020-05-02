@@ -11,6 +11,7 @@ public enum BlockType
 public enum InOut
 {
     In,
+    Half,
     Out,
 }
 public class Block : MonoBehaviour
@@ -126,7 +127,18 @@ public class Block : MonoBehaviour
             count = 0;
             mapCreate.inmap[hight * 100 + tyle] = true;
         }
-        else
+        else if(inout == InOut.Half)
+        {
+            tyle = (int)(z / (360 / mapCreate.halfblock));
+            linkBlocks[0].attackflag = false;
+            linkBlocks[1].attackflag = false;
+            moveflag = false;
+            player.attackflag = false;
+            change = 0;
+            count = 0;
+            mapCreate.halfmap[hight * 100 + tyle] = true;
+        }
+        else if (inout == InOut.Out)
         {
             tyle = (int)(z / (360 / mapCreate.outblock));
             linkBlocks[0].attackflag = false;
@@ -141,9 +153,13 @@ public class Block : MonoBehaviour
         {
             mapCreate.intype.Add(hight * 100 + tyle, gameObject.GetComponent<Block>());
         }
-        else
+        else if(inout == InOut.Out)
         {
             mapCreate.outtype.Add(hight * 100 + tyle, gameObject.GetComponent<Block>());
+        }
+        else if (inout == InOut.Half)
+        {
+            mapCreate.halftype.Add(hight * 100 + tyle, gameObject.GetComponent<Block>());
         }
 
         if (block == BlockType.Nomal)
@@ -171,9 +187,13 @@ public class Block : MonoBehaviour
         {
             mapCreate.intype[hight * 100 + (int)(z / (360 / mapCreate.inblock))] = gameObject.transform.GetComponent<Block>();
         }
-        else
+        else if(inout == InOut.Out)
         {
             mapCreate.outtype[hight * 100 + (int)(z / (360 / mapCreate.outblock))] = gameObject.transform.GetComponent<Block>();
+        }
+        else if (inout == InOut.Half)
+        {
+            mapCreate.halftype[hight * 100 + (int)(z / (360 / mapCreate.halfblock))] = gameObject.transform.GetComponent<Block>();
         }
         if (inout == InOut.In)
         {
@@ -427,6 +447,133 @@ public class Block : MonoBehaviour
                 rigidbody.isKinematic = false;
             }
         }
+        else
+        if (inout == InOut.Half)
+        {
+            if (mapCreate.maps.Length - 1 > hight)
+            {
+                if (!mapCreate.halfmap[(hight + 1) * 100 + tyle])
+                {
+                    noneflag = true;
+                }
+                else if (mapCreate.halfmap[(hight + 1) * 100 + tyle])
+                {
+                    noneflag = false;
+                }
+            }
+
+            if (noneflag)
+            {
+                if (tyle == 0)
+                {
+                    if (mapCreate.halfmap[hight * 100 + mapCreate.halfblock - 1])
+                    {
+                        if (mapCreate.halftype[hight * 100 + mapCreate.halfblock - 1].block != block)
+                        {
+                            rightflag = true;
+                        }
+                        else
+                        {
+                            if (mapCreate.halftype[hight * 100 + mapCreate.halfblock - 1].rightflag)
+                            {
+                                rightflag = true;
+                            }
+                            else
+                            {
+                                rightflag = false;
+                            }
+                        }
+                    }
+                    else if (!mapCreate.halfmap[hight * 100 + mapCreate.halfblock - 1])
+                    {
+                        rightflag = true;
+                    }
+
+                }
+                if (tyle != mapCreate.halfblock - 1)
+                {
+                    if (mapCreate.halfmap[hight * 100 + tyle + 1])
+                    {
+                        if (mapCreate.halftype[hight * 100 + tyle + 1].block != block)
+                        {
+                            leftflag = true;
+                        }
+                        else
+                        {
+                            if (mapCreate.halftype[hight * 100 + tyle + 1].leftflag)
+                            {
+                                leftflag = true;
+                            }
+                            else
+                            {
+                                leftflag = false;
+                            }
+                        }
+                    }
+                    else if (!mapCreate.halfmap[hight * 100 + tyle + 1])
+                    {
+                        leftflag = true;
+                    }
+
+                }
+                if (tyle == mapCreate.halfblock - 1)
+                {
+                    if (mapCreate.halfmap[hight * 100])
+                    {
+                        if (mapCreate.halftype[hight * 100].block != block)
+                        {
+                            rightflag = true;
+                        }
+                        else
+                        {
+                            if (mapCreate.halftype[hight * 100].rightflag)
+                            {
+                                rightflag = true;
+                            }
+                            else
+                            {
+                                rightflag = false;
+                            }
+                        }
+                    }
+                    else if (!mapCreate.halfmap[hight * 100])
+                    {
+                        rightflag = true;
+                    }
+                }
+                if (tyle != 0)
+                {
+                    if (mapCreate.halfmap[hight * 100 + tyle - 1])
+                    {
+                        if (mapCreate.halftype[hight * 100 + tyle - 1].block != block)
+                        {
+                            leftflag = true;
+                        }
+                        else
+                        {
+                            if (mapCreate.halftype[hight * 100 + tyle - 1].leftflag)
+                            {
+                                leftflag = true;
+                            }
+                            else
+                            {
+                                leftflag = false;
+                            }
+                        }
+                    }
+                    else if (!mapCreate.halfmap[hight * 100])
+                    {
+                        leftflag = true;
+                    }
+                }
+            }
+
+            if (rightflag && leftflag)
+            {
+                fallflag = true;
+                rigidbody.isKinematic = false;
+            }
+        }
 
         if (fallflag)
         {
@@ -588,30 +735,84 @@ public class Block : MonoBehaviour
                     }
                 }
             }
+            if (inout == InOut.Half)
+            {
+                if (tyle + 1 <= mapCreate.halfblock - 1)
+                {
+                    if (mapCreate.halfmap[hight * 100 + tyle + 1]
+                        && mapCreate.halftype[hight * 100 + tyle + 1].moveflag)
+                    {
+
+                        if (mapCreate.halftype[hight * 100 + tyle + 1].change == 1)
+                        {
+                            change = 1;
+                        }
+                        else
+                        {
+                            change = 2;
+                        }
+                        moveflag = true;
+                        //change = 1;
+                    }
+                }
+                if (tyle + 1 == mapCreate.halfblock)
+                {
+                    if (mapCreate.halfmap[hight * 100 + 1]
+                        && mapCreate.halftype[hight * 100 + 1].moveflag)
+                    {
+                        if (mapCreate.halftype[hight * 100 + 1].change == 1)
+                        {
+                            change = 1;
+                        }
+                        else
+                        {
+                            change = 2;
+                        }
+                        moveflag = true;
+                        //change = 1;
+                    }
+                }
+                if (tyle - 1 >= 0)
+                {
+                    if (mapCreate.halfmap[hight * 100 + tyle - 1]
+                        && mapCreate.halftype[hight * 100 + tyle - 1].moveflag)
+                    {
+                        if (mapCreate.halftype[hight * 100 + tyle - 1].change == 1)
+                        {
+                            change = 1;
+                        }
+                        else
+                        {
+                            change = 2;
+                        }
+                        moveflag = true;
+                        //change = 2;
+                    }
+                }
+                if (tyle - 1 == -1)
+                {
+                    if (mapCreate.halfmap[hight * 100 + mapCreate.halfblock - 1]
+                        && mapCreate.halftype[hight * 100 + mapCreate.halfblock - 1].moveflag)
+                    {
+                        if (mapCreate.halftype[hight * 100 + mapCreate.halfblock - 1].change == 1)
+                        {
+                            change = 1;
+                        }
+                        else
+                        {
+                            change = 2;
+                        }
+                        moveflag = true;
+                        //change = 2;
+                    }
+                }
+            }
         }
         quaternion = this.transform.rotation;
         z = Mathf.Round(quaternion.eulerAngles.y);
 
         if (inout == InOut.In)
         {
-            //if (tyle == 4 && (int)((z - speed) / (360 / mapCreate.inblock)) == mapCreate.inblock - 2)
-            //{
-            //    if (moveendflag)
-            //    {
-            //        mapCreate.inmap[hight * 100 + tyle] = false;
-            //        moveendflag = false;
-            //    }
-            //    tyle = (int)(z / (360 / mapCreate.inblock));
-            //    linkBlocks[0].attackflag = false;
-            //    linkBlocks[1].attackflag = false;
-            //    moveflag = false;
-            //    player.attackflag = false;
-            //    change = 0;
-            //    count = 0;
-            //    mapCreate.inmap[hight * 100 + tyle] = true;
-            //    mapCreate.intype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
-            //    transform.rotation = Quaternion.Euler(0, tyle * (360 / mapCreate.inblock), 0);
-            //}
             if ((int)(z / (360 / mapCreate.inblock)) > tyle)
             {
                 if (tyle == 0)
@@ -733,7 +934,7 @@ public class Block : MonoBehaviour
                 }
             }
         }
-        else
+        else if(inout==InOut.Out)
         {
             if ((int)(z / (360 / mapCreate.outblock)) > tyle)
             {
@@ -850,6 +1051,124 @@ public class Block : MonoBehaviour
                 }
             }
         }
+        else if (inout == InOut.Half)
+        {
+            if ((int)(z / (360 / mapCreate.halfblock)) > tyle)
+            {
+                if (tyle == 0)
+                {
+                    //動作環境によって変わる可能性あり今後修正するべし
+                    if ((int)(z / (360 / mapCreate.halfblock)) == 1)
+                    {
+                        if (moveendflag)
+                        {
+                            mapCreate.halfmap[hight * 100 + tyle] = false;
+                            moveendflag = false;
+                        }
+                        tyle = (int)(z / (360 / mapCreate.halfblock));
+                        linkBlocks[0].attackflag = false;
+                        linkBlocks[1].attackflag = false;
+                        moveflag = false;
+                        player.attackflag = false;
+                        change = 0;
+                        count = 0;
+                        mapCreate.halfmap[hight * 100 + tyle] = true;
+                        mapCreate.halftype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
+                    }
+                    if ((int)((z - 5) / (360 / mapCreate.halfblock)) == mapCreate.halfblock - 2)
+                    {
+                        if (moveendflag)
+                        {
+                            mapCreate.halfmap[hight * 100 + tyle] = false;
+                            moveendflag = false;
+                        }
+                        tyle = (int)(z / (360 / mapCreate.halfblock));
+                        linkBlocks[0].attackflag = false;
+                        linkBlocks[1].attackflag = false;
+                        moveflag = false;
+                        player.attackflag = false;
+                        change = 0;
+                        count = 0;
+                        mapCreate.halfmap[hight * 100 + tyle] = true;
+                        mapCreate.halftype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
+                    }
+
+                }
+                else
+                {
+                    if (moveendflag)
+                    {
+                        mapCreate.halfmap[hight * 100 + tyle] = false;
+                        moveendflag = false;
+                    }
+                    tyle = (int)(z / (360 / mapCreate.halfblock));
+                    linkBlocks[0].attackflag = false;
+                    linkBlocks[1].attackflag = false;
+                    moveflag = false;
+                    player.attackflag = false;
+                    change = 0;
+                    count = 0;
+                    mapCreate.halfmap[hight * 100 + tyle] = true;
+                    mapCreate.halftype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
+                }
+
+            }
+            else
+            if ((int)(z / (360 / mapCreate.halfblock)) < tyle)
+            {
+                if ((int)((z) / (360 / mapCreate.halfblock)) == 0 && tyle == 4)
+                {
+                    if (moveendflag)
+                    {
+                        mapCreate.halfmap[hight * 100 + tyle] = false;
+                        moveendflag = false;
+                    }
+                    tyle = (int)(z / (360 / mapCreate.halfblock));
+                    linkBlocks[0].attackflag = false;
+                    linkBlocks[1].attackflag = false;
+                    moveflag = false;
+                    player.attackflag = false;
+                    change = 0;
+                    count = 0;
+                    mapCreate.halfmap[hight * 100 + tyle] = true;
+                    mapCreate.halftype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
+                }
+                else if ((int)((z - 5) / (360 / mapCreate.halfblock)) == tyle - 1 && tyle != 1)
+                {
+                    if (moveendflag)
+                    {
+                        mapCreate.halfmap[hight * 100 + tyle] = false;
+                        moveendflag = false;
+                    }
+                    tyle = (int)(z / (360 / mapCreate.halfblock));
+                    linkBlocks[0].attackflag = false;
+                    linkBlocks[1].attackflag = false;
+                    moveflag = false;
+                    player.attackflag = false;
+                    change = 0;
+                    count = 0;
+                    mapCreate.halfmap[hight * 100 + tyle] = true;
+                    mapCreate.halftype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
+                }
+                if (tyle == 1 && z - speed <= 0)
+                {
+                    if (moveendflag)
+                    {
+                        mapCreate.halfmap[hight * 100 + tyle] = false;
+                        moveendflag = false;
+                    }
+                    tyle = (int)(z / (360 / mapCreate.halfblock));
+                    linkBlocks[0].attackflag = false;
+                    linkBlocks[1].attackflag = false;
+                    moveflag = false;
+                    player.attackflag = false;
+                    change = 0;
+                    count = 0;
+                    mapCreate.halfmap[hight * 100 + tyle] = true;
+                    mapCreate.halftype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
+                }
+            }
+        }
         if (moveflag)
         {
             //mapCreate.inmap[hight * 100 + tyle] = false;
@@ -925,11 +1244,17 @@ if (linkBlocks[1].attackflag)
                 mapCreate.inmap[(linkBlocks[6].hitblock.hight - 1) * 100 + tyle] = true;
                 mapCreate.intype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
             }
-            else
+            else if(inout==InOut.Out)
             {
                 mapCreate.outmap[hight * 100 + tyle] = false;
                 mapCreate.outmap[(linkBlocks[6].hitblock.hight - 1) * 100 + tyle] = true;
                 mapCreate.outtype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
+            }
+            else if (inout == InOut.Half)
+            {
+                mapCreate.halfmap[hight * 100 + tyle] = false;
+                mapCreate.halfmap[(linkBlocks[6].hitblock.hight - 1) * 100 + tyle] = true;
+                mapCreate.halftype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
             }
             Instantiate(kati, transform.position, Quaternion.identity);
             hight = linkBlocks[6].hitblock.hight - 1;
@@ -1046,6 +1371,45 @@ if (linkBlocks[1].attackflag)
                 }
             }
         }
+        if (inout == InOut.Half)
+        {
+            if (tyle + 1 <= mapCreate.halfblock - 1)
+            {
+                if (mapCreate.halfmap[hight * 100 + tyle + 1]
+                    && mapCreate.halftype[hight * 100 + tyle + 1].block == block
+                    && mapCreate.halftype[hight * 100 + tyle + 1].damageflag)
+                {
+                    damageflag = true;
+                }
+            }
+            if (tyle + 1 == mapCreate.halfblock)
+            {
+                if (mapCreate.halfmap[hight * 100]
+                    && mapCreate.halftype[hight * 100].block == block
+                    && mapCreate.halftype[hight * 100].damageflag)
+                {
+                    damageflag = true;
+                }
+            }
+            if (tyle - 1 >= 0)
+            {
+                if (mapCreate.halfmap[hight * 100 + (tyle - 1)]
+                    && mapCreate.halftype[hight * 100 + (tyle - 1)].block == block
+                    && mapCreate.halftype[hight * 100 + (tyle - 1)].damageflag)
+                {
+                    damageflag = true;
+                }
+            }
+            if (tyle - 1 == -1)
+            {
+                if (mapCreate.halfmap[hight * 100 + (mapCreate.halfblock - 1)]
+                    && mapCreate.halftype[hight * 100 + (mapCreate.halfblock - 1)].block == block
+                    && mapCreate.halftype[hight * 100 + (mapCreate.halfblock - 1)].damageflag)
+                {
+                    damageflag = true;
+                }
+            }
+        }
         if (damageflag)
         {
         }
@@ -1055,9 +1419,9 @@ if (linkBlocks[1].attackflag)
             {
                 if (inout == InOut.In)
                 {
-                    if (mapCreate.outmap[hight * 100 + (int)(z / (360 / mapCreate.outblock))])
+                    if (mapCreate.halfmap[hight * 100 + (int)(z / (360 / mapCreate.halfblock))])
                     {
-                        if (mapCreate.outtype[hight * 100 + (int)(z / (360 / mapCreate.outblock))].damageflag)
+                        if (mapCreate.halftype[hight * 100 + (int)(z / (360 / mapCreate.halfblock))].damageflag)
                         {
                             damageflag = true;
                             syuwa.Play();
@@ -1066,9 +1430,28 @@ if (linkBlocks[1].attackflag)
                 }
                 if (inout == InOut.Out)
                 {
+                    if (mapCreate.halfmap[hight * 100 + (int)(z / (360 / mapCreate.halfblock))])
+                    {
+                        if (mapCreate.halftype[hight * 100 + (int)(z / (360 / mapCreate.halfblock))].damageflag)
+                        {
+                            damageflag = true;
+                            syuwa.Play();
+                        }
+                    }
+                }
+                if (inout == InOut.Half)
+                {
                     if (mapCreate.inmap[hight * 100 + (int)(z / (360 / mapCreate.inblock))])
                     {
                         if (mapCreate.intype[hight * 100 + (int)(z / (360 / mapCreate.inblock))].damageflag)
+                        {
+                            damageflag = true;
+                            syuwa.Play();
+                        }
+                    }
+                    if (mapCreate.outmap[hight * 100 + (int)(z / (360 / mapCreate.outblock))])
+                    {
+                        if (mapCreate.outtype[hight * 100 + (int)(z / (360 / mapCreate.outblock))].damageflag)
                         {
                             damageflag = true;
                             syuwa.Play();
@@ -1104,9 +1487,13 @@ if (linkBlocks[1].attackflag)
                 {
                     gameObject.transform.rotation = Quaternion.Euler(0, (360 / mapCreate.inblock) * (tyle), 0);
                 }
-                else
+                else if(inout==InOut.Out)
                 {
                     gameObject.transform.rotation = Quaternion.Euler(0, (360 / mapCreate.outblock) * (tyle), 0);
+                }
+                else if (inout == InOut.Half)
+                {
+                    gameObject.transform.rotation = Quaternion.Euler(0, (360 / mapCreate.halfblock) * (tyle), 0);
                 }
 
                 bubbletime = 0;
@@ -1118,9 +1505,13 @@ if (linkBlocks[1].attackflag)
             {
                 mapCreate.inmap[hight * 100 + tyle] = false;
             }
-            else
+            else if(inout==InOut.Out)
             {
                 mapCreate.outmap[hight * 100 + tyle] = false;
+            }
+            else if (inout == InOut.Half)
+            {
+                mapCreate.halfmap[hight * 100 + tyle] = false;
             }
             Destroy(gameObject);
         }

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: slime 1
+  m_Name: eye
   m_Shader: {fileID: 4800000, guid: 209ee7f339fa14340bc63c80b84742cf, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -19,6 +19,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 4b2dbe8f4083f144aa76d713fb589610, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -27,6 +31,8 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats: []
+    m_Floats:
+    - _Alpha: 1
+    - _BumpScale: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

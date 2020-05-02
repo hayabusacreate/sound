@@ -5,7 +5,9 @@ using UnityEngine;
 public enum PlayerType
 {
     Nomal,
-    Fire
+    Fire,
+    Fish,
+    Etc,
 }
 public class Player : MonoBehaviour
 {
@@ -315,19 +317,29 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.tag == "Block")
         {
-            if (type == PlayerType.Nomal && collision.gameObject.GetComponent<Block>().block == BlockType.Fire)
+            if (type != PlayerType.Fire && collision.gameObject.GetComponent<Block>().block == BlockType.Fire)
             {
                 type = PlayerType.Fire;
                 //block.hp++;
             }
-            if (type == PlayerType.Fire && collision.gameObject.GetComponent<Block>().block == BlockType.Nomal)
+            if (type != PlayerType.Nomal && collision.gameObject.GetComponent<Block>().block == BlockType.Nomal)
             {
                 type = PlayerType.Nomal;
                 //block.hp++;
             }
+            if (type != PlayerType.Fish && collision.gameObject.GetComponent<Block>().block == BlockType.Fish)
+            {
+                type = PlayerType.Fish;
+                //block.hp++;
+            }
+            if (type != PlayerType.Etc && collision.gameObject.GetComponent<Block>().block == BlockType.Etc)
+            {
+                type = PlayerType.Etc;
+                //block.hp++;
+            }
             block = collision.gameObject.GetComponent<Block>();
             //hight = collision.gameObject.GetComponent<Block>().hight-1;
-            //tyle = collision.gameObject.GetComponent<Block>().tyle;
+            tyle = collision.gameObject.GetComponent<Block>().tyle;
         }
         if(collision.gameObject.tag=="Ground")
         {

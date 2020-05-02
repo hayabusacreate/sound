@@ -4,7 +4,9 @@ using UnityEngine;
 public enum BlockType
 {
     Nomal,
-    Fire
+    Fire,
+    Fish,
+    Etc,
 }
 public enum InOut
 {
@@ -15,7 +17,7 @@ public class Block : MonoBehaviour
 {
     public BlockType block;
     public float hp;
-    private int sethp;
+    private float sethp;
     public int speed;
     private bool hitflag;
     private Renderer color, savecolor;
@@ -51,10 +53,12 @@ public class Block : MonoBehaviour
     public bool fallflag, noneflag, rightflag, leftflag;
     private int savehight;
     public Rigidbody rigidbody;
+
+    private Manager manager;
     // Start is called before the first frame update
     void Start()
     {
-
+        manager = GameObject.Find("Manager").gameObject.GetComponent<Manager>();
         quaternion = this.transform.rotation;
         savequaternion = this.transform.rotation;
         blocks = new Dictionary<int, Block>();
@@ -63,15 +67,31 @@ public class Block : MonoBehaviour
         savecolor = color;
         if (block == BlockType.Nomal)
         {
-            sethp = 1;
+            sethp = manager.nomalHp;
             if (hp <= sethp)
             {
                 hp = sethp;
             }
         }
-        else
+        if (block == BlockType.Fire)
         {
-            sethp = 2;
+            sethp = manager.FireHp;
+            if (hp <= sethp)
+            {
+                hp = sethp;
+            }
+        }
+        if (block == BlockType.Fish)
+        {
+            sethp = manager.FishHp;
+            if (hp <= sethp)
+            {
+                hp = sethp;
+            }
+        }
+        if (block == BlockType.Etc)
+        {
+            sethp = manager.EtcHp;
             if (hp <= sethp)
             {
                 hp = sethp;
@@ -1058,8 +1078,10 @@ if (linkBlocks[1].attackflag)
             }
         }
 
-        if ((block == BlockType.Nomal && player.type == PlayerType.Fire)
-            || (block == BlockType.Fire && player.type == PlayerType.Nomal) || player.hight + 1 != hight)
+        if ((block == BlockType.Nomal && player.type != PlayerType.Nomal)||
+            (block == BlockType.Fire && player.type != PlayerType.Fire) ||
+            (block == BlockType.Fish && player.type != PlayerType.Fish) ||
+            (block == BlockType.Etc && player.type != PlayerType.Etc) || player.hight + 1 != hight)
         {
             if (damageflag)
             {

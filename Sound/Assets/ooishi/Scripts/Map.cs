@@ -5,7 +5,7 @@ using UnityEngine;
 public class Map : MonoBehaviour
 {
     public int hight;
-    private int intyle, outtyle;
+    private int intyle,halftyle, outtyle;
     private MapCreate map;
     private bool check;
     // Start is called before the first frame update
@@ -15,6 +15,7 @@ public class Map : MonoBehaviour
         map = GameObject.Find("MapCreate").GetComponent<MapCreate>();
         intyle = 0;
         outtyle = 0;
+        halftyle = 0;
         foreach (Transform child in transform)
         {
             child.GetComponent<Block>().hight = hight;
@@ -24,11 +25,17 @@ public class Map : MonoBehaviour
                 //child.GetComponent<Block>().tyle = intyle;
                // intyle++;
             }
-            else
+            else if(child.GetComponent<Block>().inout == InOut.Out)
             {
                 map.outmap.Add(hight * 100 + outtyle, true);
                 //child.GetComponent<Block>().tyle = outtyle;
                // outtyle++;
+            }
+            else if (child.GetComponent<Block>().inout == InOut.Half)
+            {
+                map.halfmap.Add(hight * 100 + halftyle, true);
+                //child.GetComponent<Block>().tyle = outtyle;
+                // outtyle++;
             }
 
         }

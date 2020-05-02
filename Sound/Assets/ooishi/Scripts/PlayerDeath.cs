@@ -14,7 +14,7 @@ public class PlayerDeath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = new Vector3(player.transform.position.x,player.transform.position.y+1,player.transform.position.z);
     }
     private void OnCollisionEnter(Collision collision)
     {

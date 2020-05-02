@@ -5,7 +5,9 @@ using UnityEngine;
 public enum PlayerType
 {
     Nomal,
-    Fire
+    Fire,
+    Fish,
+    Etc,
 }
 public class Player : MonoBehaviour
 {
@@ -99,11 +101,14 @@ public class Player : MonoBehaviour
         degree = rad * Mathf.Rad2Deg;
         if (ren == 0)
         {
-            degree += (360 / (map.inblock))*2.35f;
+            degree += (360 / (map.inblock)) * 2.35f;
         }
         else if (ren == 1)
         {
-            degree += (360 / (map.outblock))*2.5f;
+            degree += (360 / (map.halfblock))*2.5f;
+        }else if(ren==2)
+        {
+            degree += (360 / (map.outblock))*2;
         }
         if (degree < 0)
         {
@@ -117,48 +122,63 @@ public class Player : MonoBehaviour
             //changeflag = 0;
             moveflag = false;
         }
-        if (Input.GetKey(KeyCode.W) )
+        if (Input.GetKey(KeyCode.W))
         {
             changeflag = 0;
             moveflag = true;
         }
         else
-        if (Input.GetKey(KeyCode.S) )
+        if (Input.GetKey(KeyCode.S))
         {
             changeflag = 1;
             moveflag = true;
 
         }
-        if (Input.GetKeyDown(KeyCode.A) && ren != 0&&!map.inmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.inblock)))])
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            changeflag = 2;
+            if (ren == 1 && !map.inmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.inblock)))])
+            {
+                changeflag = 2;
+            }
+            else if (ren == 2 && !map.halfmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.halfblock)))])
+            {
+                changeflag = 2;
+            }
+
         }
         else
-        if (Input.GetKeyDown(KeyCode.D) && ren != 1
-            &&! map.outmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.outblock)))]
-            )
+        if (Input.GetKeyDown(KeyCode.D))
         {
-            changeflag = 3;
+            if (ren == 1 && !map.outmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.outblock)))])
+            {
+                changeflag = 3;
+            }
+            else if (ren == 0 && !map.halfmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.halfblock)))])
+            {
+                changeflag = 3;
+            }
         }
         if (ren == 0)
         {
-            if(changeflag==0)
+            if (changeflag == 0)
             {
-                if (map.inmap[hight * 100 + (int)((degree+(360/map.inblock)/4 )%360  / (360 / (map.inblock)))] && changeflag == 0)
+                if (map.inmap[hight * 100 + (int)((degree + (360 / map.inblock) / 4) % 360 / (360 / (map.inblock)))] && changeflag == 0)
                 {
                     moveflag = false;
                 }
-            }else if(changeflag==1)
+            }
+            else if (changeflag == 1)
             {
-                if((degree - (360 / (map.inblock) / 2)) % 360>0)
+                if ((degree - (360 / (map.inblock) / 4)) % 360 > 0)
                 {
-                    if (map.inmap[hight * 100 + (int)((degree-(360 / map.inblock) / 4) % 360) / (360 / (map.inblock))] && changeflag == 1)
+                    if (map.inmap[hight * 100 + (int)((degree - (360 / map.inblock) / 4) % 360) / (360 / (map.inblock))] && changeflag == 1)
                     {
                         moveflag = false;
                     }
-                }else
+                }
+                else
                 {
-                    if (map.inmap[hight * 100 + (int)((360+degree- (360 / map.inblock) / 4) % 360) / (360 / (map.inblock))] && changeflag == 1)
+                    if (map.inmap[hight * 100 + (int)((360 + degree - (360 / map.inblock) / 4) % 360) / (360 / (map.inblock))] && changeflag == 1)
                     {
                         moveflag = false;
                     }
@@ -169,7 +189,37 @@ public class Player : MonoBehaviour
 
 
         }
-        else
+        else if (ren == 1)
+        {
+            if (changeflag == 0)
+            {
+                if (map.halfmap[hight * 100 + (int)(((degree + (360 / (map.halfblock) / 4)) % 360) / (360 / (map.halfblock)))] && changeflag == 0)
+                {
+                    moveflag = false;
+                }
+            }
+            else if (changeflag == 1)
+            {
+                if ((degree - (360 / (map.halfblock) / 4)) % 360 > 0)
+                {
+                    if (map.halfmap[hight * 100 + (int)((degree - (360 / (map.halfblock) / 4) % 360) / (360 / (map.halfblock)))] && changeflag == 1)
+                    {
+                        moveflag = false;
+                    }
+                }
+                else
+                {
+                    if (map.halfmap[hight * 100 + (int)(((360 + degree) - (360 / (map.halfblock) / 4) % 360) / (360 / (map.halfblock)))] && changeflag == 1)
+                    {
+                        moveflag = false;
+                    }
+                }
+
+
+            }
+
+        }
+        else if (ren == 2)
         {
             if (changeflag == 0)
             {
@@ -180,16 +230,16 @@ public class Player : MonoBehaviour
             }
             else if (changeflag == 1)
             {
-                if ((degree - (360 / (map.outblock) / 2)) % 360 > 0)
+                if ((degree - (360 / (map.outblock) / 4)) % 360 > 0)
                 {
-                    if (map.outmap[hight * 100 + (int)((degree - (360 / (map.outblock) / 8) % 360) / (360 / (map.outblock)))] && changeflag == 1)
+                    if (map.outmap[hight * 100 + (int)((degree - (360 / (map.outblock) / 4) % 360) / (360 / (map.outblock)))] && changeflag == 1)
                     {
                         moveflag = false;
                     }
                 }
                 else
                 {
-                    if (map.outmap[hight * 100 + (int)(((360 + degree) - (360 / (map.outblock) / 8) % 360) / (360 / (map.outblock)))] && changeflag == 1)
+                    if (map.outmap[hight * 100 + (int)(((360 + degree) - (360 / (map.outblock) / 4) % 360) / (360 / (map.outblock)))] && changeflag == 1)
                     {
                         moveflag = false;
                     }
@@ -228,56 +278,54 @@ public class Player : MonoBehaviour
         }
         else
         {
-            if (saveflag == 0)
+
+            if (changeflag == 2)
             {
-                if (changeflag == 2)
+                transform.position = Vector3.Lerp(transform.position, invec, 0.1f);
+                if ((transform.position.x > invec.x && transform.position.x <= invec.x + 0.1f)
+                    || (transform.position.x < invec.x && transform.position.x >= invec.x - 0.1f))
                 {
-                    transform.position = Vector3.Lerp(transform.position, invec, 0.1f);
-                    if ((transform.position.x > invec.x && transform.position.x <= invec.x + 0.1f)
-                        || (transform.position.x < invec.x && transform.position.x >= invec.x - 0.1f))
-                    {
-                        transform.position = invec;
-                        changeflag = 0;
-                        ren = 0;
-                    }
-                }
-                else
-                {
-                    transform.position = Vector3.Lerp(transform.position, outvec, 0.1f);
-                    if ((transform.position.x > outvec.x && transform.position.x <= outvec.x + 0.1f)
-                        || (transform.position.x < outvec.x && transform.position.x >= outvec.x - 0.1f))
-                    {
-                        transform.position = outvec;
-                        changeflag = 0;
-                        ren = 1;
-                    }
+                    transform.position = invec;
+                    changeflag = 0;
+                    ren -=1 ;
                 }
             }
-            else
+            else if(changeflag==3)
             {
-                if (changeflag == 2)
+                transform.position = Vector3.Lerp(transform.position, outvec, 0.1f);
+                if ((transform.position.x > outvec.x && transform.position.x <= outvec.x + 0.1f)
+                    || (transform.position.x < outvec.x && transform.position.x >= outvec.x - 0.1f))
                 {
-                    transform.position = Vector3.Lerp(transform.position, invec, 0.1f);
-                    if ((transform.position.x > invec.x && transform.position.x <= invec.x + 0.1f)
-                        || (transform.position.x < invec.x && transform.position.x >= invec.x - 0.1f))
-                    {
-                        transform.position = invec;
-                        changeflag = 1;
-                        ren = 0;
-                    }
-                }
-                else
-                {
-                    transform.position = Vector3.Lerp(transform.position, outvec, 0.1f);
-                    if ((transform.position.x > outvec.x && transform.position.x <= outvec.x + 0.1f)
-                        || (transform.position.x < outvec.x && transform.position.x >= outvec.x - 0.1f))
-                    {
-                        transform.position = outvec;
-                        changeflag = 1;
-                        ren = 1;
-                    }
+                    transform.position = outvec;
+                    changeflag = 0;
+                    ren += 1;
                 }
             }
+
+
+            //if (changeflag == 2)
+            //{
+            //    transform.position = Vector3.Lerp(transform.position, invec, 0.1f);
+            //    if ((transform.position.x > invec.x && transform.position.x <= invec.x + 0.1f)
+            //        || (transform.position.x < invec.x && transform.position.x >= invec.x - 0.1f))
+            //    {
+            //        transform.position = invec;
+            //        changeflag = 1;
+            //        ren = 0;
+            //    }
+            //}
+            //else
+            //{
+            //    transform.position = Vector3.Lerp(transform.position, outvec, 0.1f);
+            //    if ((transform.position.x > outvec.x && transform.position.x <= outvec.x + 0.1f)
+            //        || (transform.position.x < outvec.x && transform.position.x >= outvec.x - 0.1f))
+            //    {
+            //        transform.position = outvec;
+            //        changeflag = 1;
+            //        ren = 1;
+            //    }
+            //}
+
         }
 
         if (moveflag)
@@ -290,7 +338,7 @@ public class Player : MonoBehaviour
             speed = 0;
             renderer.material.color = Color.white;
         }
-        if(moveflag&&attackflag)
+        if (moveflag && attackflag)
         {
             renderer.material.color = Color.red;
             speed = 3;
@@ -315,37 +363,47 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.tag == "Block")
         {
-            if (type == PlayerType.Nomal && collision.gameObject.GetComponent<Block>().block == BlockType.Fire)
+            if (type != PlayerType.Fire && collision.gameObject.GetComponent<Block>().block == BlockType.Fire)
             {
                 type = PlayerType.Fire;
                 //block.hp++;
             }
-            if (type == PlayerType.Fire && collision.gameObject.GetComponent<Block>().block == BlockType.Nomal)
+            if (type != PlayerType.Nomal && collision.gameObject.GetComponent<Block>().block == BlockType.Nomal)
             {
                 type = PlayerType.Nomal;
                 //block.hp++;
             }
+            if (type != PlayerType.Fish && collision.gameObject.GetComponent<Block>().block == BlockType.Fish)
+            {
+                type = PlayerType.Fish;
+                //block.hp++;
+            }
+            if (type != PlayerType.Etc && collision.gameObject.GetComponent<Block>().block == BlockType.Etc)
+            {
+                type = PlayerType.Etc;
+                //block.hp++;
+            }
             block = collision.gameObject.GetComponent<Block>();
-            hight = collision.gameObject.GetComponent<Block>().hight-1;
+            //hight = collision.gameObject.GetComponent<Block>().hight-1;
             tyle = collision.gameObject.GetComponent<Block>().tyle;
         }
-        if(collision.gameObject.tag=="Ground")
+        if (collision.gameObject.tag == "Ground")
         {
-            hight = map.maps.Length - 1;
+            //hight = map.maps.Length - 1;
         }
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Side")
         {
-           // moveflag = false;
+            // moveflag = false;
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Side")
         {
-           // moveflag = true;
+            // moveflag = true;
         }
     }
 }

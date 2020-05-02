@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class MapCreate : MonoBehaviour
 {
-    public int inblock, outblock;
+    public int inblock,halfblock, outblock;
     public GameObject[] maps;
-    public Dictionary<int, bool> inmap, outmap;
-    public Dictionary<int, Block> intype, outtype;
+    public Dictionary<int, bool> inmap,halfmap, outmap;
+    public Dictionary<int, Block> intype,halftype, outtype;
     private Dictionary<int, bool> rout;
     private Player player;
     private bool endflag;
@@ -16,14 +16,23 @@ public class MapCreate : MonoBehaviour
     void Start()
     {
         sceneChange = GameObject.Find("SceneChange").gameObject.GetComponent<SceneChange>();
+
         inmap = new Dictionary<int, bool>();
+        halfmap = new Dictionary<int, bool>();
         outmap = new Dictionary<int, bool>();
+
         intype = new Dictionary<int, Block>();
+        halftype = new Dictionary<int, Block>();
         outtype = new Dictionary<int, Block>();
+
         rout = new Dictionary<int, bool>();
         for (int i = 0; i < inblock + 1; i++)
         {
             inmap.Add(i, false);
+        }
+        for (int i = 0; i < halfblock + 1; i++)
+        {
+            halfmap.Add(i, false);
         }
         for (int i = 0; i < outblock + 1; i++)
         {
@@ -34,7 +43,7 @@ public class MapCreate : MonoBehaviour
 
             maps[i].GetComponent<Map>().hight = i;
             rout.Add(i, false);
-            GameObject gameObject = Instantiate(maps[i], new Vector3(transform.position.x, i * (-3), transform.position.z), Quaternion.identity);
+            GameObject gameObject = Instantiate(maps[i], new Vector3(transform.position.x, i * (-5), transform.position.z), Quaternion.identity);
             //gameObject.transform.rotation = Quaternion.Euler(0, 109, 0);
             //gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
@@ -49,6 +58,10 @@ public class MapCreate : MonoBehaviour
             for (int z = 0; z<outblock+1; z++)
             {
                 outmap.Add(y * 100 + z, false);
+            }
+            for (int v = 0; v < halfblock + 1; v++)
+            {
+                halfmap.Add(y * 100 + v, false);
             }
         }
     }
@@ -94,6 +107,29 @@ public class MapCreate : MonoBehaviour
                     else
                     {
                         if (!outmap[(y-1) * 100])
+                        {
+                            rout[y] = true;
+                        }
+                    }
+
+                }
+
+            }
+            for (int v = 0; v < halfblock; v++)
+            {
+                if (!halfmap[y * 100 + v])
+                {
+
+                    if (v + 1 < halfblock)
+                    {
+                        if (!halfmap[(y - 1) * 100 + v])
+                        {
+                            rout[y] = true;
+                        }
+                    }
+                    else
+                    {
+                        if (!halfmap[(y - 1) * 100])
                         {
                             rout[y] = true;
                         }

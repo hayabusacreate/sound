@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeMat : MonoBehaviour
+public class ChangeMat1 : MonoBehaviour
 {
     Material mat;
     bool change = false;
@@ -41,6 +41,9 @@ public class ChangeMat : MonoBehaviour
             }
 
         }
+
+        transform.GetComponent<Renderer>().material.SetFloat("_Threshold",block.hp);
+
 
         change = false;
     }

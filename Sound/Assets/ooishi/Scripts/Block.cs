@@ -64,7 +64,8 @@ public class Block : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Maxhp = hp;
+        source = gameObject.GetComponent<AudioSource>();
+
         //mat.color = new Color(mat.color.r, mat.color.g, mat.color.b,0);
         manager = GameObject.Find("Manager").gameObject.GetComponent<Manager>();
         quaternion = this.transform.rotation;
@@ -105,6 +106,7 @@ public class Block : MonoBehaviour
                 hp = sethp;
             }
         }
+        Maxhp = hp;
         count = 0;
         foreach (Transform child in transform)
         {
@@ -323,7 +325,7 @@ public class Block : MonoBehaviour
             }
             if (rightflag && leftflag)
             {
-                source.PlayOneShot(fall);
+                //source.PlayOneShot(fall);
                 fallflag = true;
                 rigidbody.isKinematic = false;
             }
@@ -451,7 +453,7 @@ public class Block : MonoBehaviour
 
             if (rightflag && leftflag)
             {
-                source.PlayOneShot(fall);
+                //source.PlayOneShot(fall);
                 fallflag = true;
                 rigidbody.isKinematic = false;
             }
@@ -579,7 +581,7 @@ public class Block : MonoBehaviour
 
             if (rightflag && leftflag)
             {
-                source.PlayOneShot(fall);
+
                 fallflag = true;
                 rigidbody.isKinematic = false;
             }
@@ -590,6 +592,7 @@ public class Block : MonoBehaviour
 
             if (hight != savehight)
             {
+                source.PlayOneShot(fall);
                 fallflag = false;
                 leftflag = false;
                 rightflag = false;

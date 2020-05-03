@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeMat1 : MonoBehaviour
+public class ChangeMat : MonoBehaviour
 {
     Material mat;
     bool change = false;
@@ -14,10 +14,7 @@ public class ChangeMat1 : MonoBehaviour
     Material HedroMat;
     [SerializeField]
     Material BejitablMat;
-    [SerializeField]
-    Material FishMat;
-    [SerializeField]
-    Material tomatMat;
+
     private Block block;
     // Start is called before the first frame update
     void Start()
@@ -38,24 +35,14 @@ public class ChangeMat1 : MonoBehaviour
             {
                 transform.GetComponent<Renderer>().material = HedroMat;
             }
-            else if(block.block == BlockType.Nomal)
+            else
             {
                 transform.GetComponent<Renderer>().material = BejitablMat;
-            }
-            else if (block.block == BlockType.Fish)
-            {
-                transform.GetComponent<Renderer>().material = tomatMat;
-            }
-            else if (block.block == BlockType.Etc)
-            {
-                transform.GetComponent<Renderer>().material = FishMat;
             }
 
         }
 
-        transform.GetComponent<Renderer>().material.SetFloat("_Threshold",block.hp);
-
-
+        transform.GetComponent<Renderer>().material.SetFloat("_Threshold",block.hp / block.Maxhp);
         change = false;
     }
 

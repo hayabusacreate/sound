@@ -14,7 +14,10 @@ public class ChangeMat : MonoBehaviour
     Material HedroMat;
     [SerializeField]
     Material BejitablMat;
-
+    [SerializeField]
+    Material TomatMat;
+    [SerializeField]
+    Material FishMat;
     private Block block;
     // Start is called before the first frame update
     void Start()
@@ -35,9 +38,17 @@ public class ChangeMat : MonoBehaviour
             {
                 transform.GetComponent<Renderer>().material = HedroMat;
             }
-            else
+            else if(block.block==BlockType.Nomal)
             {
                 transform.GetComponent<Renderer>().material = BejitablMat;
+            }
+            else if (block.block == BlockType.Fish)
+            {
+                transform.GetComponent<Renderer>().material = TomatMat;
+            }
+            else if (block.block == BlockType.Etc)
+            {
+                transform.GetComponent<Renderer>().material = FishMat;
             }
 
         }

@@ -36,9 +36,13 @@ public class Player : MonoBehaviour
     private MapCreate map;
     private Renderer renderer;
     public GameObject takle, jump;
+
+    public AudioClip jumpse, tacklese;
+    private AudioSource source;
     // Start is called before the first frame update
     void Start()
     {
+        source = gameObject.GetComponent<AudioSource>();
         hight = 0;
         radius = inradius;
         changeflag = 0;
@@ -64,6 +68,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && !attackflag)
         {
+            source.PlayOneShot(tacklese);
             startflag = true;
             attackflag = true;
             Instantiate(takle, transform.position, Quaternion.identity);
@@ -349,6 +354,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !jumpflag)
         {
+            source.PlayOneShot(jumpse);
             rigidbody.velocity += new Vector3(0, jumppower, 0);
             Instantiate(jump, transform.position, Quaternion.identity);
             jumpflag = true;

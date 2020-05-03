@@ -823,6 +823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: 0
   hp: 0
+  Maxhp: 0
   speed: 5
   damageflag: 0
   moveflag: 0
@@ -854,8 +855,8 @@ MonoBehaviour:
   alphaMat: {fileID: 2100000, guid: df7b27a096174f240af7cb1bab59b011, type: 2}
   HedroMat: {fileID: 2100000, guid: 544842953161f5441b8e18b9cefd7330, type: 2}
   BejitablMat: {fileID: 2100000, guid: 2e5144121bb083b419a48926630d06bd, type: 2}
+  TomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
   FishMat: {fileID: 2100000, guid: 4a19c4660288b184d8ca7fb1cb1b1f19, type: 2}
-  tomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
 --- !u!82 &869055753002196210
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1964,6 +1965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: 0
   hp: 0
+  Maxhp: 0
   speed: 5
   damageflag: 0
   moveflag: 0
@@ -1995,8 +1997,8 @@ MonoBehaviour:
   alphaMat: {fileID: 2100000, guid: df7b27a096174f240af7cb1bab59b011, type: 2}
   HedroMat: {fileID: 2100000, guid: 544842953161f5441b8e18b9cefd7330, type: 2}
   BejitablMat: {fileID: 2100000, guid: 2e5144121bb083b419a48926630d06bd, type: 2}
+  TomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
   FishMat: {fileID: 2100000, guid: 4a19c4660288b184d8ca7fb1cb1b1f19, type: 2}
-  tomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
 --- !u!82 &6751973909872132231
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2227,6 +2229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: 0
   hp: 0
+  Maxhp: 0
   speed: 5
   damageflag: 0
   moveflag: 0
@@ -2258,8 +2261,8 @@ MonoBehaviour:
   alphaMat: {fileID: 2100000, guid: df7b27a096174f240af7cb1bab59b011, type: 2}
   HedroMat: {fileID: 2100000, guid: 544842953161f5441b8e18b9cefd7330, type: 2}
   BejitablMat: {fileID: 2100000, guid: 2e5144121bb083b419a48926630d06bd, type: 2}
+  TomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
   FishMat: {fileID: 2100000, guid: 4a19c4660288b184d8ca7fb1cb1b1f19, type: 2}
-  tomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
 --- !u!82 &32072336873729731
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2867,6 +2870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: 0
   hp: 0
+  Maxhp: 0
   speed: 5
   damageflag: 0
   moveflag: 0
@@ -2898,8 +2902,8 @@ MonoBehaviour:
   alphaMat: {fileID: 2100000, guid: df7b27a096174f240af7cb1bab59b011, type: 2}
   HedroMat: {fileID: 2100000, guid: 544842953161f5441b8e18b9cefd7330, type: 2}
   BejitablMat: {fileID: 2100000, guid: 2e5144121bb083b419a48926630d06bd, type: 2}
+  TomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
   FishMat: {fileID: 2100000, guid: 4a19c4660288b184d8ca7fb1cb1b1f19, type: 2}
-  tomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
 --- !u!82 &6247235550599057409
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3130,6 +3134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: 1
   hp: 0
+  Maxhp: 0
   speed: 5
   damageflag: 0
   moveflag: 0
@@ -3161,8 +3166,8 @@ MonoBehaviour:
   alphaMat: {fileID: 2100000, guid: df7b27a096174f240af7cb1bab59b011, type: 2}
   HedroMat: {fileID: 2100000, guid: 544842953161f5441b8e18b9cefd7330, type: 2}
   BejitablMat: {fileID: 2100000, guid: 2e5144121bb083b419a48926630d06bd, type: 2}
+  TomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
   FishMat: {fileID: 2100000, guid: 4a19c4660288b184d8ca7fb1cb1b1f19, type: 2}
-  tomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
 --- !u!82 &1502102302444725911
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3582,6 +3587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: 0
   hp: 0
+  Maxhp: 0
   speed: 5
   damageflag: 0
   moveflag: 0
@@ -3613,8 +3619,8 @@ MonoBehaviour:
   alphaMat: {fileID: 2100000, guid: df7b27a096174f240af7cb1bab59b011, type: 2}
   HedroMat: {fileID: 2100000, guid: 544842953161f5441b8e18b9cefd7330, type: 2}
   BejitablMat: {fileID: 2100000, guid: 2e5144121bb083b419a48926630d06bd, type: 2}
+  TomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
   FishMat: {fileID: 2100000, guid: 4a19c4660288b184d8ca7fb1cb1b1f19, type: 2}
-  tomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
 --- !u!82 &4906261542561009143
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3907,6 +3913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: 1
   hp: 0
+  Maxhp: 0
   speed: 5
   damageflag: 0
   moveflag: 0
@@ -3938,8 +3945,8 @@ MonoBehaviour:
   alphaMat: {fileID: 2100000, guid: df7b27a096174f240af7cb1bab59b011, type: 2}
   HedroMat: {fileID: 2100000, guid: 544842953161f5441b8e18b9cefd7330, type: 2}
   BejitablMat: {fileID: 2100000, guid: 2e5144121bb083b419a48926630d06bd, type: 2}
+  TomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
   FishMat: {fileID: 2100000, guid: 4a19c4660288b184d8ca7fb1cb1b1f19, type: 2}
-  tomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
 --- !u!82 &4978789817545421243
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4920,6 +4927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: 1
   hp: 0
+  Maxhp: 0
   speed: 5
   damageflag: 0
   moveflag: 0
@@ -4951,8 +4959,8 @@ MonoBehaviour:
   alphaMat: {fileID: 2100000, guid: df7b27a096174f240af7cb1bab59b011, type: 2}
   HedroMat: {fileID: 2100000, guid: 544842953161f5441b8e18b9cefd7330, type: 2}
   BejitablMat: {fileID: 2100000, guid: 2e5144121bb083b419a48926630d06bd, type: 2}
+  TomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
   FishMat: {fileID: 2100000, guid: 4a19c4660288b184d8ca7fb1cb1b1f19, type: 2}
-  tomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
 --- !u!82 &1402597990454826435
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5245,6 +5253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: 0
   hp: 0
+  Maxhp: 0
   speed: 5
   damageflag: 0
   moveflag: 0
@@ -5276,8 +5285,8 @@ MonoBehaviour:
   alphaMat: {fileID: 2100000, guid: df7b27a096174f240af7cb1bab59b011, type: 2}
   HedroMat: {fileID: 2100000, guid: 544842953161f5441b8e18b9cefd7330, type: 2}
   BejitablMat: {fileID: 2100000, guid: 2e5144121bb083b419a48926630d06bd, type: 2}
+  TomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
   FishMat: {fileID: 2100000, guid: 4a19c4660288b184d8ca7fb1cb1b1f19, type: 2}
-  tomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
 --- !u!82 &2699325926204371468
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5760,6 +5769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: 0
   hp: 0
+  Maxhp: 0
   speed: 5
   damageflag: 0
   moveflag: 0
@@ -5791,8 +5801,8 @@ MonoBehaviour:
   alphaMat: {fileID: 2100000, guid: df7b27a096174f240af7cb1bab59b011, type: 2}
   HedroMat: {fileID: 2100000, guid: 544842953161f5441b8e18b9cefd7330, type: 2}
   BejitablMat: {fileID: 2100000, guid: 2e5144121bb083b419a48926630d06bd, type: 2}
+  TomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
   FishMat: {fileID: 2100000, guid: 4a19c4660288b184d8ca7fb1cb1b1f19, type: 2}
-  tomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
 --- !u!82 &4588902796761513842
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7529,6 +7539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: 0
   hp: 0
+  Maxhp: 0
   speed: 5
   damageflag: 0
   moveflag: 0
@@ -7560,8 +7571,8 @@ MonoBehaviour:
   alphaMat: {fileID: 2100000, guid: df7b27a096174f240af7cb1bab59b011, type: 2}
   HedroMat: {fileID: 2100000, guid: 544842953161f5441b8e18b9cefd7330, type: 2}
   BejitablMat: {fileID: 2100000, guid: 2e5144121bb083b419a48926630d06bd, type: 2}
+  TomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
   FishMat: {fileID: 2100000, guid: 4a19c4660288b184d8ca7fb1cb1b1f19, type: 2}
-  tomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
 --- !u!82 &7869591176692891970
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7918,6 +7929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: 1
   hp: 0
+  Maxhp: 0
   speed: 5
   damageflag: 0
   moveflag: 0
@@ -7949,8 +7961,8 @@ MonoBehaviour:
   alphaMat: {fileID: 2100000, guid: df7b27a096174f240af7cb1bab59b011, type: 2}
   HedroMat: {fileID: 2100000, guid: 544842953161f5441b8e18b9cefd7330, type: 2}
   BejitablMat: {fileID: 2100000, guid: 2e5144121bb083b419a48926630d06bd, type: 2}
+  TomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
   FishMat: {fileID: 2100000, guid: 4a19c4660288b184d8ca7fb1cb1b1f19, type: 2}
-  tomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
 --- !u!82 &4217624151173344265
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8493,6 +8505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: 1
   hp: 0
+  Maxhp: 0
   speed: 5
   damageflag: 0
   moveflag: 0
@@ -8524,8 +8537,8 @@ MonoBehaviour:
   alphaMat: {fileID: 2100000, guid: df7b27a096174f240af7cb1bab59b011, type: 2}
   HedroMat: {fileID: 2100000, guid: 544842953161f5441b8e18b9cefd7330, type: 2}
   BejitablMat: {fileID: 2100000, guid: 2e5144121bb083b419a48926630d06bd, type: 2}
+  TomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
   FishMat: {fileID: 2100000, guid: 4a19c4660288b184d8ca7fb1cb1b1f19, type: 2}
-  tomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
 --- !u!82 &5795718433248912721
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10007,6 +10020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: 1
   hp: 0
+  Maxhp: 0
   speed: 5
   damageflag: 0
   moveflag: 0
@@ -10038,8 +10052,8 @@ MonoBehaviour:
   alphaMat: {fileID: 2100000, guid: df7b27a096174f240af7cb1bab59b011, type: 2}
   HedroMat: {fileID: 2100000, guid: 544842953161f5441b8e18b9cefd7330, type: 2}
   BejitablMat: {fileID: 2100000, guid: 2e5144121bb083b419a48926630d06bd, type: 2}
+  TomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
   FishMat: {fileID: 2100000, guid: 4a19c4660288b184d8ca7fb1cb1b1f19, type: 2}
-  tomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
 --- !u!82 &1869250497208165804
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11390,6 +11404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: 0
   hp: 0
+  Maxhp: 0
   speed: 5
   damageflag: 0
   moveflag: 0
@@ -11421,8 +11436,8 @@ MonoBehaviour:
   alphaMat: {fileID: 2100000, guid: df7b27a096174f240af7cb1bab59b011, type: 2}
   HedroMat: {fileID: 2100000, guid: 544842953161f5441b8e18b9cefd7330, type: 2}
   BejitablMat: {fileID: 2100000, guid: 2e5144121bb083b419a48926630d06bd, type: 2}
+  TomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
   FishMat: {fileID: 2100000, guid: 4a19c4660288b184d8ca7fb1cb1b1f19, type: 2}
-  tomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
 --- !u!82 &1561210163937956885
 AudioSource:
   m_ObjectHideFlags: 0

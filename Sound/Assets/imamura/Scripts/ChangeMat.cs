@@ -42,7 +42,7 @@ public class ChangeMat : MonoBehaviour
 
         }
 
-        transform.GetComponent<Renderer>().material.SetFloat("_Threshold",block.hp / block.Maxhp);
+        transform.GetComponent<Renderer>().material.SetFloat("_Threshold",1.0f - (block.hp / block.Maxhp));
         change = false;
     }
 

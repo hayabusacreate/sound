@@ -18,6 +18,7 @@ public class Block : MonoBehaviour
 {
     public BlockType block;
     public float hp;
+    public float Maxhp;
     private float sethp;
     public int speed;
     private bool hitflag;
@@ -56,9 +57,15 @@ public class Block : MonoBehaviour
     public Rigidbody rigidbody;
 
     private Manager manager;
+    //private Material mat;
+
+    public AudioClip fall;
+    private AudioSource source;
     // Start is called before the first frame update
     void Start()
     {
+        Maxhp = hp;
+        //mat.color = new Color(mat.color.r, mat.color.g, mat.color.b,0);
         manager = GameObject.Find("Manager").gameObject.GetComponent<Manager>();
         quaternion = this.transform.rotation;
         savequaternion = this.transform.rotation;
@@ -316,6 +323,7 @@ public class Block : MonoBehaviour
             }
             if (rightflag && leftflag)
             {
+                source.PlayOneShot(fall);
                 fallflag = true;
                 rigidbody.isKinematic = false;
             }
@@ -443,6 +451,7 @@ public class Block : MonoBehaviour
 
             if (rightflag && leftflag)
             {
+                source.PlayOneShot(fall);
                 fallflag = true;
                 rigidbody.isKinematic = false;
             }
@@ -570,6 +579,7 @@ public class Block : MonoBehaviour
 
             if (rightflag && leftflag)
             {
+                source.PlayOneShot(fall);
                 fallflag = true;
                 rigidbody.isKinematic = false;
             }
@@ -577,6 +587,7 @@ public class Block : MonoBehaviour
 
         if (fallflag)
         {
+
             if (hight != savehight)
             {
                 fallflag = false;

@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 1342869365424659334}
   - component: {fileID: 5784187737138949744}
   m_Layer: 10
-  m_Name: yuka_gaisyu_1_9 1
+  m_Name: half
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -524,6 +524,7 @@ MonoBehaviour:
   rightflag: 0
   leftflag: 0
   rigidbody: {fileID: 0}
+  fall: {fileID: 8300000, guid: 8b47ab215f7dc0b408b4219733c6efe0, type: 3}
 --- !u!114 &5784187737138949744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -539,6 +540,8 @@ MonoBehaviour:
   alphaMat: {fileID: 2100000, guid: df7b27a096174f240af7cb1bab59b011, type: 2}
   HedroMat: {fileID: 2100000, guid: 575b3e9c2801c3947a70918d247b93da, type: 2}
   BejitablMat: {fileID: 2100000, guid: 100ca488dc2a37a4288265f9d7453aca, type: 2}
+  FishMat: {fileID: 0}
+  tomatMat: {fileID: 0}
 --- !u!1 &8082745599452265175
 GameObject:
   m_ObjectHideFlags: 0

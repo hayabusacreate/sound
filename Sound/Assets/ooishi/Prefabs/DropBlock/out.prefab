@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 599903493741409766}
   - component: {fileID: 6361011745696471206}
   m_Layer: 10
-  m_Name: yuka_gaisyu_1_9 (5)
+  m_Name: out
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -587,6 +587,7 @@ MonoBehaviour:
   rightflag: 0
   leftflag: 0
   rigidbody: {fileID: 0}
+  fall: {fileID: 8300000, guid: 8b47ab215f7dc0b408b4219733c6efe0, type: 3}
 --- !u!114 &6361011745696471206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,6 +603,8 @@ MonoBehaviour:
   alphaMat: {fileID: 2100000, guid: df7b27a096174f240af7cb1bab59b011, type: 2}
   HedroMat: {fileID: 2100000, guid: 575b3e9c2801c3947a70918d247b93da, type: 2}
   BejitablMat: {fileID: 2100000, guid: 100ca488dc2a37a4288265f9d7453aca, type: 2}
+  FishMat: {fileID: 0}
+  tomatMat: {fileID: 0}
 --- !u!1 &8374734749850841198
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,6 +674,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5606916813916249737}
     m_Modifications:
+    - target: {fileID: 1705345576723274135, guid: 6faf708b8b54ea743b0284d5beb71694,
+        type: 3}
+      propertyPath: m_Name
+      value: damage
+      objectReference: {fileID: 0}
     - target: {fileID: 1705345576723274132, guid: 6faf708b8b54ea743b0284d5beb71694,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -725,11 +733,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1705345576723274135, guid: 6faf708b8b54ea743b0284d5beb71694,
-        type: 3}
-      propertyPath: m_Name
-      value: damage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6faf708b8b54ea743b0284d5beb71694, type: 3}

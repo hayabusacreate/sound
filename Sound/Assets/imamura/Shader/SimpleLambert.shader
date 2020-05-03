@@ -1,7 +1,11 @@
 ﻿Shader "Custom/SimpleLambert"
 {
+	Properties{
+		_MainTex("Main Texture", 2D) = "white" {}
+	}
     SubShader
     {
+		
         Tags { "RenderType"="Opaque" }
         LOD 200
 
@@ -12,6 +16,8 @@
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 3.0
 
+				   sampler2D _MainTex;
+
         struct Input
         {
             float2 uv_MainTex;
@@ -20,7 +26,7 @@
 
         void surf (Input IN, inout SurfaceOutput o)
         {
-			o.Albedo = fixed4(1, 1, 1, 1);
+			o.Albedo = tex2D(_MainTex, IN.uv_MainTex);
         }
 
 		half4 LightingSimpleLambert(SurfaceOutput s, half3 lightDir, half atten)

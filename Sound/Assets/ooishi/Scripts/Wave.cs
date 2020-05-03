@@ -26,6 +26,8 @@ public class Wave : MonoBehaviour
         {
             GameObject gameObject= Instantiate(wave[count], transform.position, Quaternion.identity);
             gameObject.transform.rotation = Quaternion.Euler(-90,0, (360 / map.inblock) * tyle[count]);
+            gameObject.GetComponent<Block>().tyle = tyle[count];
+            gameObject.GetComponent<Block>().hight = -count-1;
             count++;
             time = 0;
         }

@@ -93,9 +93,17 @@ public class Player : MonoBehaviour
 
     void Move()
     {
+        //Debug.Log("Player" + hight * 100 + (int)(((degree+15) % 360) / (360 / (map.inblock))));
         pos = new Vector3(transform.position.x, 0, transform.position.z) - new Vector3(center.transform.position.x, 0, center.transform.position.z);
         rad = Mathf.Atan2(pos.x, pos.z);
         degree = rad * Mathf.Rad2Deg;
+        if(ren==0)
+        {
+            degree += (360 / (map.inblock));
+        }else if(ren==1)
+        {
+            degree += (360 / (map.outblock));
+        }
         if (degree < 0)
         {
             degree += 360;
@@ -133,24 +141,60 @@ public class Player : MonoBehaviour
         }
         if (ren == 0)
         {
-            if (map.inmap[hight * 100 + (int)(((degree+10)%360) / (360 / (map.inblock)))]&&changeflag==0)
+            if(changeflag==0)
             {
-                moveflag = false;
-            }
-            if (map.inmap[hight * 100 + (int)(((degree - 10)%360) / (360 / (map.inblock)))] && changeflag == 1)
+                if (map.inmap[hight * 100 + (int)(((degree + (360 / (map.inblock) / 2)) % 360) / (360 / (map.inblock)))] && changeflag == 0)
+                {
+                    moveflag = false;
+                }
+            }else if(changeflag==1)
             {
-                moveflag = false;
+                if((degree - (360 / (map.inblock) / 2)) % 360>0)
+                {
+                    if (map.inmap[hight * 100 + (int)((degree - (360 / (map.inblock) / 2) % 360) / (360 / (map.inblock)))] && changeflag == 1)
+                    {
+                        moveflag = false;
+                    }
+                }else
+                {
+                    if (map.inmap[hight * 100 + (int)(((360+degree) - (360 / (map.inblock) / 2) % 360) / (360 / (map.inblock)))] && changeflag == 1)
+                    {
+                        moveflag = false;
+                    }
+                }
+
+
             }
+
+
         }
         else
         {
-            if (map.outmap[hight * 100 + (int)(((degree+10)%360) / (360 / map.outblock))] && changeflag == 0)
+            if (changeflag == 0)
             {
-                moveflag = false;
+                if (map.outmap[hight * 100 + (int)(((degree + (360 / (map.outblock) / 2)) % 360) / (360 / (map.outblock)))] && changeflag == 0)
+                {
+                    moveflag = false;
+                }
             }
-            if (map.outmap[hight * 100 + (int)(((degree - 10)%360) / (360 / map.outblock))] && changeflag == 1)
+            else if (changeflag == 1)
             {
-                moveflag = false;
+                if ((degree - (360 / (map.outblock) / 2)) % 360 > 0)
+                {
+                    if (map.outmap[hight * 100 + (int)((degree - (360 / (map.outblock) / 2) % 360) / (360 / (map.outblock)))] && changeflag == 1)
+                    {
+                        moveflag = false;
+                    }
+                }
+                else
+                {
+                    if (map.inmap[hight * 100 + (int)(((360 + degree) - (360 / (map.outblock) / 2) % 360) / (360 / (map.outblock)))] && changeflag == 1)
+                    {
+                        moveflag = false;
+                    }
+                }
+
+
             }
 
         }

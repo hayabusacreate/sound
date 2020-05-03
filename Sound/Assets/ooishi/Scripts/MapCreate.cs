@@ -31,32 +31,45 @@ public class MapCreate : MonoBehaviour
         {
 
             maps[i].GetComponent<Map>().hight = i;
-            rout[i] = false;
-            GameObject gameObject = Instantiate(maps[i], new Vector3(transform.position.x, i * (-5), transform.position.z), new Quaternion(0, 0.3f, 0, 0));
-            gameObject.transform.rotation = Quaternion.Euler(0, 109, 0);
+            rout.Add(i, false);
+            GameObject gameObject = Instantiate(maps[i], new Vector3(transform.position.x, i * (-3), transform.position.z), Quaternion.identity);
+            //gameObject.transform.rotation = Quaternion.Euler(0, 109, 0);
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         player = GameObject.Find("Player").GetComponent<Player>();
+
+        for(int y=-100;y<0;y++)
+        {
+            for (int x =0; x <inblock+1; x++)
+            {
+                inmap.Add(y * 100 + x, false);
+            }
+            for (int z = 0; z<outblock+1; z++)
+            {
+                outmap.Add(y * 100 + z, false);
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        for (int y = 0; y < maps.Length; y++)
+        for (int y = 1; y < maps.Length; y++)
         {
-            for (int x = 0; x < inblock; x++)
+            for (int x = 0; x < inblock-1; x++)
             {
                 if (!inmap[y * 100 + x])
                 {
                     if (x + 1 < inblock)
                     {
-                        if (!inmap[y * 100 + x + 1])
+                        if (!inmap[(y-1) * 100 + x])
                         {
                             rout[y] = true;
                         }
                     }
                     else
                     {
-                        if (!inmap[y * 100])
+                        if (!inmap[(y-1) * 100])
                         {
                             rout[y] = true;
                         }
@@ -71,14 +84,14 @@ public class MapCreate : MonoBehaviour
 
                     if (z + 1 < outblock)
                     {
-                        if (!outmap[y * 100 + z + 1])
+                        if (!outmap[(y-1) * 100 + z])
                         {
                             rout[y] = true;
                         }
                     }
                     else
                     {
-                        if (!outmap[y * 100])
+                        if (!outmap[(y-1) * 100])
                         {
                             rout[y] = true;
                         }
@@ -88,7 +101,7 @@ public class MapCreate : MonoBehaviour
 
             }
         }
-        for (int i = 0; i < rout.Count; i++)
+        for (int i = 1; i <= rout.Count; i++)
         {
             if (rout[i])
             {

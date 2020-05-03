@@ -30,14 +30,20 @@ public class LinkBlock : MonoBehaviour
     {
         if (!check)
         {
-            block = transform.root.gameObject.transform.gameObject.GetComponent<Block>();
-            check = true;
-            hitblock = transform.root.gameObject.transform.GetComponent<Block>();
+            if (hitblock != transform.root.gameObject.transform.GetComponent<Block>())
+            {
+                block = transform.root.gameObject.transform.gameObject.GetComponent<Block>();
+                check = true;
+                hitblock = transform.root.gameObject.transform.GetComponent<Block>();
+            }
+
         }
+
     }
     // Update is called once per frame
     void Update()
     {
+
         //if(attackflag)
         //{
         //    time += Time.deltaTime;
@@ -51,7 +57,7 @@ public class LinkBlock : MonoBehaviour
         //{
         //    time = 0;
         //}
-        if(playerhit)
+        if (playerhit)
         {
             if (player.attackflag)
             {
@@ -68,15 +74,6 @@ public class LinkBlock : MonoBehaviour
     {
         if(area==HitArea.Side)
         {
-            if (other.transform.tag == "Block")
-            {
-
-                    //other.transform.gameObject.GetComponent<Renderer>().material.color = Color.black;
-                    hitflag = true;
-                    hitblock = other.gameObject.transform.GetComponent<Block>();
-                
-            }
-            else
             if (other.transform.tag == "Player")
             {
                 playerhit = true;
@@ -86,6 +83,22 @@ public class LinkBlock : MonoBehaviour
                 }
             }
         }
+        if (other.transform.tag == "Block")
+        {
+
+            //other.transform.gameObject.GetComponent<Renderer>().material.color = Color.black;
+            hitflag = true;
+            hitblock = other.gameObject.transform.GetComponent<Block>();
+
+        }if(area == HitArea.Up)
+        {
+            if (other.transform.tag == "Block")
+            {
+
+                other.transform.gameObject.GetComponent<Block>().rigidbody.isKinematic = true;
+
+            }
+        }
 
 
     }
@@ -93,16 +106,17 @@ public class LinkBlock : MonoBehaviour
     {
         if(area==HitArea.Side)
         {
-            //if (other.transform.tag == "Block")
-            //{
-            //    hitflag = false;
-            //    hitblock =transform.root.gameObject.transform.GetComponent<Block>();
-            //}else
+
             if (other.transform.tag == "Player")
             {
                 playerhit = false;
                 attackflag = false;
             }
+        }
+        if (other.transform.tag == "Block")
+        {
+            hitflag = false;
+            hitblock = transform.root.gameObject.transform.GetComponent<Block>();
         }
 
     }

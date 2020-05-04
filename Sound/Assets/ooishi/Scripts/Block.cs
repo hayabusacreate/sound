@@ -48,7 +48,7 @@ public class Block : MonoBehaviour
 
     public bool bubbleflag;
     public GameObject kati;
-    public ParticleSystem syuwa;
+    public ParticleSystem syuwa,syuwawa;
 
     private bool moveendflag;
 
@@ -1439,6 +1439,7 @@ if (linkBlocks[1].attackflag)
                         {
                             damageflag = true;
                             syuwa.Play();
+                            syuwawa.Play();
                         }
                     }
                 }
@@ -1450,6 +1451,7 @@ if (linkBlocks[1].attackflag)
                         {
                             damageflag = true;
                             syuwa.Play();
+                            syuwawa.Play();
                         }
                     }
                 }
@@ -1461,6 +1463,7 @@ if (linkBlocks[1].attackflag)
                         {
                             damageflag = true;
                             syuwa.Play();
+                            syuwawa.Play();
                         }
                     }
                     if (mapCreate.outmap[hight * 100 + (int)(z / (360 / mapCreate.outblock))])
@@ -1469,6 +1472,7 @@ if (linkBlocks[1].attackflag)
                         {
                             damageflag = true;
                             syuwa.Play();
+                            syuwawa.Play();
                         }
                     }
                 }
@@ -1484,6 +1488,7 @@ if (linkBlocks[1].attackflag)
             {
                 damageflag = false;
                 syuwa.Stop();
+                syuwawa.Stop();
             }
         }
         else

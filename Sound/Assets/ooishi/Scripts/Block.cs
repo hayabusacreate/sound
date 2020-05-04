@@ -48,7 +48,7 @@ public class Block : MonoBehaviour
 
     public bool bubbleflag;
     public GameObject kati;
-    public ParticleSystem syuwa;
+    public ParticleSystem syuwa,syuwawa;
 
     private bool moveendflag;
 
@@ -61,6 +61,7 @@ public class Block : MonoBehaviour
 
     public AudioClip fall;
     private AudioSource source;
+    private bool particlflag;
     // Start is called before the first frame update
     void Start()
     {
@@ -1312,8 +1313,8 @@ if (linkBlocks[1].attackflag)
                     && mapCreate.intype[hight * 100 + tyle + 1].block == block
                     && mapCreate.intype[hight * 100 + tyle + 1].damageflag)
                 {
-
-                    damageflag = true;
+                    if (!damageflag)
+                        particlflag = true;
 
                 }
             }
@@ -1323,6 +1324,8 @@ if (linkBlocks[1].attackflag)
                     && mapCreate.intype[hight * 100].block == block
                     && mapCreate.intype[hight * 100].damageflag)
                 {
+                    if (!damageflag)
+                        particlflag = true;
                     damageflag = true;
 
                 }
@@ -1333,6 +1336,8 @@ if (linkBlocks[1].attackflag)
                     && mapCreate.intype[hight * 100 + (tyle - 1)].block == block
                     && mapCreate.intype[hight * 100 + (tyle - 1)].damageflag)
                 {
+                    if (!damageflag)
+                        particlflag = true;
                     damageflag = true;
                 }
             }
@@ -1342,6 +1347,8 @@ if (linkBlocks[1].attackflag)
                     && mapCreate.intype[hight * 100 + (mapCreate.inblock - 1)].block == block
                     && mapCreate.intype[hight * 100 + (mapCreate.inblock - 1)].damageflag)
                 {
+                    if (!damageflag)
+                        particlflag = true;
                     damageflag = true;
                 }
             }
@@ -1354,6 +1361,8 @@ if (linkBlocks[1].attackflag)
                     && mapCreate.outtype[hight * 100 + tyle + 1].block == block
                     && mapCreate.outtype[hight * 100 + tyle + 1].damageflag)
                 {
+                    if (!damageflag)
+                        particlflag = true;
                     damageflag = true;
                 }
             }
@@ -1363,6 +1372,8 @@ if (linkBlocks[1].attackflag)
                     && mapCreate.outtype[hight * 100].block == block
                     && mapCreate.outtype[hight * 100].damageflag)
                 {
+                    if (!damageflag)
+                        particlflag = true;
                     damageflag = true;
                 }
             }
@@ -1372,6 +1383,8 @@ if (linkBlocks[1].attackflag)
                     && mapCreate.outtype[hight * 100 + (tyle - 1)].block == block
                     && mapCreate.outtype[hight * 100 + (tyle - 1)].damageflag)
                 {
+                    if (!damageflag)
+                        particlflag = true;
                     damageflag = true;
                 }
             }
@@ -1381,6 +1394,8 @@ if (linkBlocks[1].attackflag)
                     && mapCreate.outtype[hight * 100 + (mapCreate.outblock - 1)].block == block
                     && mapCreate.outtype[hight * 100 + (mapCreate.outblock - 1)].damageflag)
                 {
+                    if (!damageflag)
+                        particlflag = true;
                     damageflag = true;
                 }
             }
@@ -1393,6 +1408,8 @@ if (linkBlocks[1].attackflag)
                     && mapCreate.halftype[hight * 100 + tyle + 1].block == block
                     && mapCreate.halftype[hight * 100 + tyle + 1].damageflag)
                 {
+                    if (!damageflag)
+                        particlflag = true;
                     damageflag = true;
                 }
             }
@@ -1402,6 +1419,8 @@ if (linkBlocks[1].attackflag)
                     && mapCreate.halftype[hight * 100].block == block
                     && mapCreate.halftype[hight * 100].damageflag)
                 {
+                    if (!damageflag)
+                        particlflag = true;
                     damageflag = true;
                 }
             }
@@ -1411,6 +1430,8 @@ if (linkBlocks[1].attackflag)
                     && mapCreate.halftype[hight * 100 + (tyle - 1)].block == block
                     && mapCreate.halftype[hight * 100 + (tyle - 1)].damageflag)
                 {
+                    if (!damageflag)
+                        particlflag = true;
                     damageflag = true;
                 }
             }
@@ -1420,12 +1441,21 @@ if (linkBlocks[1].attackflag)
                     && mapCreate.halftype[hight * 100 + (mapCreate.halfblock - 1)].block == block
                     && mapCreate.halftype[hight * 100 + (mapCreate.halfblock - 1)].damageflag)
                 {
+                    if (!damageflag)
+                        particlflag = true;
                     damageflag = true;
+
                 }
             }
         }
         if (damageflag)
         {
+            if(particlflag)
+            {
+                particlflag = false;
+                syuwa.Play();
+                syuwawa.Play();
+            }
         }
         else
         {
@@ -1437,8 +1467,9 @@ if (linkBlocks[1].attackflag)
                     {
                         if (mapCreate.halftype[hight * 100 + (int)(z / (360 / mapCreate.halfblock))].damageflag)
                         {
+                            if (!damageflag)
+                                particlflag = true;
                             damageflag = true;
-                            syuwa.Play();
                         }
                     }
                 }
@@ -1448,8 +1479,9 @@ if (linkBlocks[1].attackflag)
                     {
                         if (mapCreate.halftype[hight * 100 + (int)(z / (360 / mapCreate.halfblock))].damageflag)
                         {
+                            if (!damageflag)
+                                particlflag = true;
                             damageflag = true;
-                            syuwa.Play();
                         }
                     }
                 }
@@ -1459,16 +1491,18 @@ if (linkBlocks[1].attackflag)
                     {
                         if (mapCreate.intype[hight * 100 + (int)(z / (360 / mapCreate.inblock))].damageflag)
                         {
+                            if (!damageflag)
+                                particlflag = true;
                             damageflag = true;
-                            syuwa.Play();
                         }
                     }
                     if (mapCreate.outmap[hight * 100 + (int)(z / (360 / mapCreate.outblock))])
                     {
                         if (mapCreate.outtype[hight * 100 + (int)(z / (360 / mapCreate.outblock))].damageflag)
                         {
+                            if (!damageflag)
+                                particlflag = true;
                             damageflag = true;
-                            syuwa.Play();
                         }
                     }
                 }
@@ -1483,7 +1517,8 @@ if (linkBlocks[1].attackflag)
             if (damageflag)
             {
                 damageflag = false;
-                syuwa.Stop();
+                syuwa.Pause();
+                syuwawa.Pause();
             }
         }
         else

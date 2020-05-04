@@ -2227,7 +2227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d71f370dadef949b4ed86cb4625326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: 0
+  block: 1
   hp: 0
   Maxhp: 0
   speed: 5
@@ -2868,7 +2868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d71f370dadef949b4ed86cb4625326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: 0
+  block: 3
   hp: 0
   Maxhp: 0
   speed: 5
@@ -4925,7 +4925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d71f370dadef949b4ed86cb4625326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: 0
+  block: 3
   hp: 0
   Maxhp: 0
   speed: 5
@@ -5251,7 +5251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d71f370dadef949b4ed86cb4625326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: 0
+  block: 2
   hp: 0
   Maxhp: 0
   speed: 5
@@ -5767,7 +5767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d71f370dadef949b4ed86cb4625326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: 0
+  block: 1
   hp: 0
   Maxhp: 0
   speed: 5
@@ -7927,7 +7927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d71f370dadef949b4ed86cb4625326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: 1
+  block: 3
   hp: 0
   Maxhp: 0
   speed: 5
@@ -8503,7 +8503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d71f370dadef949b4ed86cb4625326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: 1
+  block: 0
   hp: 0
   Maxhp: 0
   speed: 5
@@ -10018,7 +10018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d71f370dadef949b4ed86cb4625326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: 1
+  block: 2
   hp: 0
   Maxhp: 0
   speed: 5
@@ -10909,7 +10909,7 @@ GameObject:
   - component: {fileID: 6694813047016377455}
   - component: {fileID: 7029467659340996521}
   m_Layer: 0
-  m_Name: kado (4) 4
+  m_Name: 1one
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11402,7 +11402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d71f370dadef949b4ed86cb4625326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: 0
+  block: 2
   hp: 0
   Maxhp: 0
   speed: 5

@@ -34,14 +34,17 @@ public class Player : MonoBehaviour
     private Vector3 pos;
     private float rad, degree;
     private MapCreate map;
-    private Renderer renderer;
+    //private Renderer renderer;
     public GameObject takle, jump;
 
     public AudioClip jumpse, tacklese;
     private AudioSource source;
+
+    private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
+        anim = gameObject.GetComponent<Animator>();
         source = gameObject.GetComponent<AudioSource>();
         hight = 0;
         radius = inradius;
@@ -52,7 +55,7 @@ public class Player : MonoBehaviour
         type = PlayerType.Nomal;
         moveflag = true;
         map = GameObject.Find("MapCreate").GetComponent<MapCreate>();
-        renderer = gameObject.transform.GetComponent<Renderer>();
+        //renderer = gameObject.transform.GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -66,12 +69,17 @@ public class Player : MonoBehaviour
 
     void Attack()
     {
+        if(!attackflag)
+        {
+            anim.SetBool("Tackle", false);
+        }
         if (Input.GetKeyDown(KeyCode.E) && !attackflag)
         {
             source.PlayOneShot(tacklese);
             startflag = true;
             attackflag = true;
             Instantiate(takle, transform.position, Quaternion.identity);
+            anim.SetBool("Tackle", true);
         }
         if (attackflag)
         {
@@ -126,17 +134,20 @@ public class Player : MonoBehaviour
         {
             //changeflag = 0;
             moveflag = false;
+            anim.SetBool("Dash", false);
         }
         if (Input.GetKey(KeyCode.W))
         {
             changeflag = 0;
             moveflag = true;
+            anim.SetBool("Dash", true);
         }
         else
         if (Input.GetKey(KeyCode.S))
         {
             changeflag = 1;
             moveflag = true;
+            anim.SetBool("Dash", true);
 
         }
         if (Input.GetKeyDown(KeyCode.A))
@@ -336,16 +347,16 @@ public class Player : MonoBehaviour
         if (moveflag)
         {
             speed = 3;
-            renderer.material.color = Color.white;
+            //renderer.material.color = Color.white;
         }
         else
         {
             speed = 0;
-            renderer.material.color = Color.white;
+            //renderer.material.color = Color.white;
         }
         if (moveflag && attackflag)
         {
-            renderer.material.color = Color.red;
+            //renderer.material.color = Color.red;
             speed = 3;
         }
     }
@@ -358,6 +369,7 @@ public class Player : MonoBehaviour
             rigidbody.velocity += new Vector3(0, jumppower, 0);
             Instantiate(jump, transform.position, Quaternion.identity);
             jumpflag = true;
+            anim.SetBool("Jump", true);
         }
     }
 
@@ -366,6 +378,7 @@ public class Player : MonoBehaviour
         if (jumpflag)
         {
             jumpflag = false;
+            anim.SetBool("Jump", false);
         }
         if (collision.gameObject.tag == "Block")
         {

@@ -315,9 +315,9 @@ public class Player : MonoBehaviour
 
             if (changeflag == 2)
             {
-                transform.position = Vector3.Lerp(transform.position, invec, 0.1f);
-                if ((transform.position.x >= invec.x && transform.position.x <= invec.x + 0.1f)
-                    && (transform.position.z >= invec.z && transform.position.z <= invec.z + 0.1f))
+                transform.position = Vector3.Lerp(  transform.position, invec, 0.1f);
+                if ((transform.position.x >= invec.x-0.1f || transform.position.x <= invec.x + 0.1f)
+                    && (transform.position.z >= invec.z || transform.position.z <= invec.z ))
                 {
                     rigidbody.isKinematic = false;
                     transform.position = invec;
@@ -328,8 +328,8 @@ public class Player : MonoBehaviour
             else if(changeflag==3)
             {
                 transform.position = Vector3.Lerp(transform.position, outvec, 0.1f);
-                if ((transform.position.z + 0.1f >= outvec.z && transform.position.z <= outvec.z )
-                    && (transform.position.x + 0.1f >= outvec.x && transform.position.x <= outvec.x))
+                if ((transform.position.z  >= outvec.z || transform.position.z <= outvec.z )
+                    && (transform.position.x  >= outvec.x+0.1f || transform.position.x <= outvec.x-0.1f))
                 {
                     rigidbody.isKinematic = false;
                     transform.position = outvec;

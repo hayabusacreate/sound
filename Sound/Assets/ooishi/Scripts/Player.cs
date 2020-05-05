@@ -158,28 +158,32 @@ public class Player : MonoBehaviour
             moveflag = true;
             anim.SetBool("Dash", true);
 
-        }
-        if (Input.GetKeyDown(KeyCode.A))
+        }else
+        if (Input.GetKeyDown(KeyCode.A)&&(changeflag==1||changeflag==0))
         {
             if (ren == 1 && !map.inmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.inblock)))])
             {
+                moveflag = false;
                 changeflag = 2;
             }
             else if (ren == 2 && !map.halfmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.halfblock)))])
             {
+                moveflag = false;
                 changeflag = 2;
             }
 
         }
         else
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) && (changeflag == 1 || changeflag == 0))
         {
             if (ren == 1 && !map.outmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.outblock)))])
             {
+                moveflag = false;
                 changeflag = 3;
             }
             else if (ren == 0 && !map.halfmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.halfblock)))])
             {
+                moveflag = false;
                 changeflag = 3;
             }
         }

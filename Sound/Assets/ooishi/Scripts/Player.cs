@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
     private Animator anim;
 
     public bool flontflag, backflag; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -145,14 +146,14 @@ public class Player : MonoBehaviour
         {
             moveflag = false;
         }
-        if (Input.GetKey(KeyCode.S)&&backflag)
+        if (Input.GetKey(KeyCode.S)&&backflag && (changeflag == 0 || changeflag == 1))
         {
             changeflag = 0;
             moveflag = true;
             anim.SetBool("Dash", true);
         }
         else
-        if (Input.GetKey(KeyCode.W)&&flontflag)
+        if (Input.GetKey(KeyCode.W)&&flontflag&&(changeflag==0||changeflag==1))
         {
             changeflag = 1;
             moveflag = true;
@@ -163,11 +164,13 @@ public class Player : MonoBehaviour
         {
             if (ren == 1 && !map.inmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.inblock)))])
             {
+                rigidbody.isKinematic = true;
                 moveflag = false;
                 changeflag = 2;
             }
             else if (ren == 2 && !map.halfmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.halfblock)))])
             {
+                rigidbody.isKinematic = true;
                 moveflag = false;
                 changeflag = 2;
             }
@@ -178,11 +181,13 @@ public class Player : MonoBehaviour
         {
             if (ren == 1 && !map.outmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.outblock)))])
             {
+                rigidbody.isKinematic = true;
                 moveflag = false;
                 changeflag = 3;
             }
             else if (ren == 0 && !map.halfmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.halfblock)))])
             {
+                rigidbody.isKinematic = true;
                 moveflag = false;
                 changeflag = 3;
             }
@@ -311,9 +316,10 @@ public class Player : MonoBehaviour
             if (changeflag == 2)
             {
                 transform.position = Vector3.Lerp(transform.position, invec, 0.1f);
-                if ((transform.position.x > invec.x && transform.position.x <= invec.x + 0.1f)
-                    || (transform.position.x < invec.x && transform.position.x >= invec.x - 0.1f))
+                if ((transform.position.x >= invec.x && transform.position.x <= invec.x + 0.1f)
+                    && (transform.position.z >= invec.z && transform.position.z <= invec.z + 0.1f))
                 {
+                    rigidbody.isKinematic = false;
                     transform.position = invec;
                     changeflag = 0;
                     ren -=1 ;
@@ -322,9 +328,10 @@ public class Player : MonoBehaviour
             else if(changeflag==3)
             {
                 transform.position = Vector3.Lerp(transform.position, outvec, 0.1f);
-                if ((transform.position.x > outvec.x && transform.position.x <= outvec.x + 0.1f)
-                    || (transform.position.x < outvec.x && transform.position.x >= outvec.x - 0.1f))
+                if ((transform.position.z + 0.1f >= outvec.z && transform.position.z <= outvec.z )
+                    && (transform.position.x + 0.1f >= outvec.x && transform.position.x <= outvec.x))
                 {
+                    rigidbody.isKinematic = false;
                     transform.position = outvec;
                     changeflag = 0;
                     ren += 1;

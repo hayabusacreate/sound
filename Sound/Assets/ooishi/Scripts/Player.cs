@@ -11,7 +11,7 @@ public enum PlayerType
 }
 public class Player : MonoBehaviour
 {
-    public float speed;
+    public float speed,tacklespeed;
     private float radius;
     public float inradius, outradius;
     private float x;
@@ -41,6 +41,8 @@ public class Player : MonoBehaviour
     private AudioSource source;
 
     private Animator anim;
+
+    public bool flontflag, backflag; 
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +58,8 @@ public class Player : MonoBehaviour
         moveflag = true;
         map = GameObject.Find("MapCreate").GetComponent<MapCreate>();
         //renderer = gameObject.transform.GetComponent<Renderer>();
+        flontflag = true;
+        backflag = true;
     }
 
     // Update is called once per frame
@@ -75,6 +79,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.E) && !attackflag)
         {
+
             source.PlayOneShot(tacklese);
             startflag = true;
             attackflag = true;
@@ -88,13 +93,13 @@ public class Player : MonoBehaviour
             {
                 //RotateAround(円運動の中心,進行方向,速度)
                 transform.RotateAround(center.transform.position,
-                transform.up, (speed * 4) / radius);
+                transform.up, tacklespeed / radius);
             }
             else if (changeflag == 1)
             {
                 //RotateAround(円運動の中心,進行方向,速度)
                 transform.RotateAround(center.transform.position,
-                -transform.up, (speed * 4) / radius);
+                -transform.up, tacklespeed / radius);
             }
 
             attacktime += Time.deltaTime;
@@ -136,14 +141,18 @@ public class Player : MonoBehaviour
             moveflag = false;
             anim.SetBool("Dash", false);
         }
-        if (Input.GetKey(KeyCode.W))
+        if(!backflag||!flontflag)
+        {
+            moveflag = false;
+        }
+        if (Input.GetKey(KeyCode.S)&&backflag)
         {
             changeflag = 0;
             moveflag = true;
             anim.SetBool("Dash", true);
         }
         else
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.W)&&flontflag)
         {
             changeflag = 1;
             moveflag = true;

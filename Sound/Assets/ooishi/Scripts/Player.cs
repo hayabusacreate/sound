@@ -42,7 +42,11 @@ public class Player : MonoBehaviour
 
     private Animator anim;
 
-    public bool flontflag, backflag; 
+    public bool flontflag, backflag;
+
+    public bool rightlfag, leftflag;
+
+    public int abouttyle;
 
     // Start is called before the first frame update
     void Start()
@@ -142,12 +146,13 @@ public class Player : MonoBehaviour
             moveflag = false;
             anim.SetBool("Dash", false);
         }
-        if(!backflag||!flontflag)
+        if (!backflag||!flontflag)
         {
             moveflag = false;
         }
         if ((Input.GetKey(KeyCode.S)||Input.GetAxis("Vertical") <-0.8f)&&backflag && (changeflag == 0 || changeflag == 1))
         {
+
             changeflag = 0;
             moveflag = true;
             anim.SetBool("Dash", true);
@@ -162,14 +167,34 @@ public class Player : MonoBehaviour
         }else
         if ((Input.GetKeyDown(KeyCode.A) || Input.GetAxis("Horizontal") < -0.8f) && (changeflag==1||changeflag==0))
         {
-            if (ren == 1 && !map.inmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.inblock)))])
+            if (degree >= 0 && degree < 90)
             {
+                abouttyle = 0;
+            }
+            else if (degree >= 90 && degree < 180)
+            {
+                abouttyle = 1;
+            }
+            else if (degree >= 180 && degree < 270)
+            {
+                abouttyle = 2;
+            }
+            else
+            {
+                abouttyle = 3;
+            }
+            if (ren == 1 && (!map.inmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.inblock)))]||leftflag))
+            {
+                invec = inobj.transform.position;
+                outvec = outobj.transform.position;
                 rigidbody.isKinematic = true;
                 moveflag = false;
                 changeflag = 2;
             }
-            else if (ren == 2 && !map.halfmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.halfblock)))])
+            else if (ren == 2 && (!map.halfmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.halfblock)))]||leftflag))
             {
+                invec = inobj.transform.position;
+                outvec = outobj.transform.position;
                 rigidbody.isKinematic = true;
                 moveflag = false;
                 changeflag = 2;
@@ -179,14 +204,34 @@ public class Player : MonoBehaviour
         else
         if ((Input.GetKeyDown(KeyCode.D) || Input.GetAxis("Horizontal") >0.8f) && (changeflag == 1 || changeflag == 0))
         {
-            if (ren == 1 && !map.outmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.outblock)))])
+            if (degree >= 0 && degree < 90)
             {
+                abouttyle = 0;
+            }
+            else if (degree >= 90 && degree < 180)
+            {
+                abouttyle = 1;
+            }
+            else if (degree >= 180 && degree < 270)
+            {
+                abouttyle = 2;
+            }
+            else
+            {
+                abouttyle = 3;
+            }
+            if (ren == 1 && (!map.outmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.outblock)))]||rightlfag))
+            {
+                invec = inobj.transform.position;
+                outvec = outobj.transform.position;
                 rigidbody.isKinematic = true;
                 moveflag = false;
                 changeflag = 3;
             }
-            else if (ren == 0 && !map.halfmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.halfblock)))])
+            else if (ren == 0 && (!map.halfmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.halfblock)))]||rightlfag))
             {
+                invec = inobj.transform.position;
+                outvec = outobj.transform.position;
                 rigidbody.isKinematic = true;
                 moveflag = false;
                 changeflag = 3;
@@ -309,32 +354,116 @@ public class Player : MonoBehaviour
             invec = inobj.transform.position;
             outvec = outobj.transform.position;
             saveflag = changeflag;
+            if(degree>=0&&degree<90)
+            {
+                abouttyle = 0;
+            }else if(degree>=90&&degree<180)
+            {
+                abouttyle = 1;
+            }else if(degree>=180&&degree<270)
+            {
+                abouttyle = 2;
+            }else
+            {
+                abouttyle = 3;
+            }
         }
         else
         {
 
             if (changeflag == 2)
             {
-                transform.position = Vector3.Lerp(  transform.position, invec, 0.1f);
-                if ((transform.position.x >= invec.x-0.1f || transform.position.x <= invec.x + 0.1f)
-                    && (transform.position.z >= invec.z || transform.position.z <= invec.z ))
+                transform.position = Vector3.Lerp(transform.position, invec, 0.1f);
+                if (abouttyle==0)
                 {
-                    rigidbody.isKinematic = false;
-                    transform.position = invec;
-                    changeflag = 0;
-                    ren -=1 ;
+                    if((transform.position.x >= invec.x-0.1f )
+                    && (transform.position.z < invec.z+0.1f ))
+                    {
+                        rigidbody.isKinematic = false;
+                        transform.position = invec;
+                        changeflag = 0;
+                        ren -= 1;
+                    }
+                }else if(abouttyle==1)
+                {
+                    if ((transform.position.x < invec.x+0.1f)
+                        && (transform.position.z < invec.z+0.1f))
+                    {
+                        rigidbody.isKinematic = false;
+                        transform.position = invec;
+                        changeflag = 0;
+                        ren -= 1;
+                    }
+                }
+                else if(abouttyle==2)
+                {
+                    if ((transform.position.x >= invec.x-0.1f)
+                        && (transform.position.z < invec.z+0.1f))
+                    {
+                        rigidbody.isKinematic = false;
+                        transform.position = invec;
+                        changeflag = 0;
+                        ren -= 1;
+                    }
+                }
+                else if(abouttyle==3)
+                {
+                    if ((transform.position.x >= invec.x-0.1f)
+                         && (transform.position.z >= invec.z-0.1f))
+                    {
+                        rigidbody.isKinematic = false;
+                        transform.position = invec;
+                        changeflag = 0;
+                        ren -= 1;
+                    }
                 }
             }
             else if(changeflag==3)
             {
                 transform.position = Vector3.Lerp(transform.position, outvec, 0.1f);
-                if ((transform.position.z  >= outvec.z || transform.position.z <= outvec.z )
-                    && (transform.position.x  >= outvec.x+0.1f || transform.position.x <= outvec.x-0.1f))
+                if (abouttyle==0)
                 {
-                    rigidbody.isKinematic = false;
-                    transform.position = outvec;
-                    changeflag = 0;
-                    ren += 1;
+                    if ((transform.position.z >= outvec.z-0.1f )
+                        && (transform.position.x < outvec.x + 0.1f) )
+                    {
+                        rigidbody.isKinematic = false;
+                        transform.position = outvec;
+                        changeflag = 0;
+                        ren += 1;
+                    }
+                }
+                else if(abouttyle==1)
+                {
+                    if ((transform.position.z < outvec.z+0.1f)
+                        && (transform.position.x < outvec.x + 0.1f))
+                    {
+                        rigidbody.isKinematic = false;
+                        transform.position = outvec;
+                        changeflag = 0;
+                        ren += 1;
+                    }
+                }
+                else if(abouttyle==2)
+                {
+                    if ((transform.position.z >= outvec.z-0.1f)
+                       && (transform.position.x < outvec.x + 0.1f))
+                    {
+                        rigidbody.isKinematic = false;
+                        transform.position = outvec;
+                        changeflag = 0;
+                        ren += 1;
+                    }
+                }
+                else
+                {
+                    if ((transform.position.z >= outvec.z-0.1f)
+                             && (transform.position.x >= outvec.x - 0.1f))
+                    {
+                        rigidbody.isKinematic = false;
+                        transform.position = outvec;
+                        changeflag = 0;
+                        ren += 1;
+                    }
                 }
             }
 

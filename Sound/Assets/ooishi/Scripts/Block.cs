@@ -1090,7 +1090,7 @@ public class Block : MonoBehaviour
                         mapCreate.halfmap[hight * 100 + tyle] = true;
                         mapCreate.halftype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
                     }
-                    if ((int)((z - 5) / (360 / mapCreate.halfblock)) == mapCreate.halfblock - 2)
+                    if ((int)((z - speed) / (360 / mapCreate.halfblock)) == mapCreate.halfblock - 2)
                     {
                         if (moveendflag)
                         {
@@ -1148,7 +1148,7 @@ public class Block : MonoBehaviour
                     mapCreate.halfmap[hight * 100 + tyle] = true;
                     mapCreate.halftype[hight * 100 + tyle] = gameObject.transform.GetComponent<Block>();
                 }
-                else if ((int)((z - 5) / (360 / mapCreate.halfblock)) == tyle - 1 && tyle != 1)
+                else if ((int)((z - 5) / (360 / mapCreate.halfblock)) == tyle-2 && tyle != 1)
                 {
                     if (moveendflag)
                     {
@@ -1463,46 +1463,138 @@ if (linkBlocks[1].attackflag)
             {
                 if (inout == InOut.In)
                 {
-                    if (mapCreate.halfmap[hight * 100 + (int)(z / (360 / mapCreate.halfblock))])
+                    if (mapCreate.halfmap[hight * 100 + (int)(tyle)])
                     {
-                        if (mapCreate.halftype[hight * 100 + (int)(z / (360 / mapCreate.halfblock))].damageflag)
+                        if (mapCreate.halftype[hight * 100 + (tyle)].damageflag)
                         {
                             if (!damageflag)
                                 particlflag = true;
                             damageflag = true;
                         }
                     }
+                    if(tyle+1<mapCreate.inblock)
+                    {
+                        if (mapCreate.halfmap[hight * 100 + (int)(tyle + 1)])
+                        {
+                            if (mapCreate.halftype[hight * 100 + (tyle + 1)].damageflag)
+                            {
+                                if (!damageflag)
+                                    particlflag = true;
+                                damageflag = true;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (mapCreate.halfmap[hight * 100  ])
+                        {
+                            if (mapCreate.halftype[hight * 100 ].damageflag)
+                            {
+                                if (!damageflag)
+                                    particlflag = true;
+                                damageflag = true;
+                            }
+                        }
+                    }
+
                 }
                 if (inout == InOut.Out)
                 {
-                    if (mapCreate.halfmap[hight * 100 + (int)(z / (360 / mapCreate.halfblock))])
+                    if (mapCreate.halfmap[hight * 100 + tyle])
                     {
-                        if (mapCreate.halftype[hight * 100 + (int)(z / (360 / mapCreate.halfblock))].damageflag)
+                        if (mapCreate.halftype[hight * 100 + tyle].damageflag)
                         {
                             if (!damageflag)
                                 particlflag = true;
                             damageflag = true;
                         }
                     }
+                    if(tyle+1<mapCreate.outblock)
+                    {
+                        if (mapCreate.halfmap[hight * 100 + (tyle + 1)])
+                        {
+                            if (mapCreate.halftype[hight * 100 + (tyle + 1)].damageflag)
+                            {
+                                if (!damageflag)
+                                    particlflag = true;
+                                damageflag = true;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (mapCreate.halfmap[hight * 100 ])
+                        {
+                            if (mapCreate.halftype[hight * 100 ].damageflag)
+                            {
+                                if (!damageflag)
+                                    particlflag = true;
+                                damageflag = true;
+                            }
+                        }
+                    }
+
                 }
                 if (inout == InOut.Half)
                 {
-                    if (mapCreate.inmap[hight * 100 + (int)(z / (360 / mapCreate.inblock))])
+                    if (mapCreate.inmap[hight * 100 + tyle])
                     {
-                        if (mapCreate.intype[hight * 100 + (int)(z / (360 / mapCreate.inblock))].damageflag)
+                        if (mapCreate.intype[hight * 100 + tyle].damageflag)
                         {
                             if (!damageflag)
                                 particlflag = true;
                             damageflag = true;
                         }
                     }
-                    if (mapCreate.outmap[hight * 100 + (int)(z / (360 / mapCreate.outblock))])
+                    if (mapCreate.outmap[hight * 100 + tyle])
                     {
-                        if (mapCreate.outtype[hight * 100 + (int)(z / (360 / mapCreate.outblock))].damageflag)
+                        if (mapCreate.outtype[hight * 100 + tyle].damageflag)
                         {
                             if (!damageflag)
                                 particlflag = true;
                             damageflag = true;
+                        }
+                    }
+                    if (tyle - 1 >= 0)
+                    {
+                        if (mapCreate.inmap[hight * 100 + (tyle-1)])
+                        {
+                            if (mapCreate.intype[hight * 100 + (tyle-1)].damageflag)
+                            {
+                                if (!damageflag)
+                                    particlflag = true;
+                                damageflag = true;
+                            }
+                        }
+                        if (mapCreate.outmap[hight * 100 + (tyle-1)])
+                        {
+                            if (mapCreate.outtype[hight * 100 + (tyle-1)].damageflag)
+                            {
+                                if (!damageflag)
+                                    particlflag = true;
+                                damageflag = true;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (mapCreate.inmap[hight * 100 + (mapCreate.inblock-1)])
+                        {
+                            if (mapCreate.intype[hight * 100 + (mapCreate.inblock - 1)].damageflag)
+                            {
+                                if (!damageflag)
+                                    particlflag = true;
+                                damageflag = true;
+                            }
+                        }
+                        if (mapCreate.outmap[hight * 100 + (mapCreate.outblock - 1)])
+                        {
+                            if (mapCreate.outtype[hight * 100 + (mapCreate.outblock - 1)].damageflag)
+                            {
+                                if (!damageflag)
+                                    particlflag = true;
+                                damageflag = true;
+                            }
                         }
                     }
                 }

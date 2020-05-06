@@ -128,7 +128,7 @@ public class Player : MonoBehaviour
         }
         else if (ren == 1)
         {
-            degree += (360 / (map.halfblock))*2.5f;
+            degree += (360 / (map.halfblock))*-2;
         }else if(ren==2)
         {
             degree += (360 / (map.outblock))*2;

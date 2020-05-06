@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
         {
             anim.SetBool("Tackle", false);
         }
-        if (Input.GetKeyDown(KeyCode.E) && !attackflag)
+        if ((Input.GetKeyDown(KeyCode.E)|| Input.GetKeyDown(KeyCode.JoystickButton1)) && !attackflag)
         {
 
             source.PlayOneShot(tacklese);
@@ -146,21 +146,21 @@ public class Player : MonoBehaviour
         {
             moveflag = false;
         }
-        if (Input.GetKey(KeyCode.S)&&backflag && (changeflag == 0 || changeflag == 1))
+        if ((Input.GetKey(KeyCode.S)||Input.GetAxis("Vertical") <-0.8f)&&backflag && (changeflag == 0 || changeflag == 1))
         {
             changeflag = 0;
             moveflag = true;
             anim.SetBool("Dash", true);
         }
         else
-        if (Input.GetKey(KeyCode.W)&&flontflag&&(changeflag==0||changeflag==1))
+        if ((Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical") >0.8f) && flontflag&&(changeflag==0||changeflag==1))
         {
             changeflag = 1;
             moveflag = true;
             anim.SetBool("Dash", true);
 
         }else
-        if (Input.GetKeyDown(KeyCode.A)&&(changeflag==1||changeflag==0))
+        if ((Input.GetKeyDown(KeyCode.A) || Input.GetAxis("Horizontal") < -0.8f) && (changeflag==1||changeflag==0))
         {
             if (ren == 1 && !map.inmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.inblock)))])
             {
@@ -177,7 +177,7 @@ public class Player : MonoBehaviour
 
         }
         else
-        if (Input.GetKeyDown(KeyCode.D) && (changeflag == 1 || changeflag == 0))
+        if ((Input.GetKeyDown(KeyCode.D) || Input.GetAxis("Horizontal") >0.8f) && (changeflag == 1 || changeflag == 0))
         {
             if (ren == 1 && !map.outmap[hight * 100 + (int)(((degree) % 360) / (360 / (map.outblock)))])
             {
@@ -383,7 +383,7 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !jumpflag)
+        if ((Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown(KeyCode.JoystickButton0)) && !jumpflag)
         {
             source.PlayOneShot(jumpse);
             rigidbody.velocity += new Vector3(0, jumppower, 0);

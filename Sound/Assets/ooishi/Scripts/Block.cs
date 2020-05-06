@@ -1566,7 +1566,7 @@ if (linkBlocks[1].attackflag)
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if (bubbleflag)
         {

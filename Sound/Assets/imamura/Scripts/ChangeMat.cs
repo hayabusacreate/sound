@@ -34,19 +34,19 @@ public class ChangeMat : MonoBehaviour
         }
         else
         {
-            if(block.block==BlockType.Fire)
+            if(block.block==BlockType.Hedro)
             {
                 transform.GetComponent<Renderer>().material = HedroMat;
             }
-            else if(block.block==BlockType.Nomal)
+            else if(block.block==BlockType.Green)
             {
                 transform.GetComponent<Renderer>().material = BejitablMat;
             }
-            else if (block.block == BlockType.Fish)
+            else if (block.block == BlockType.Red)
             {
                 transform.GetComponent<Renderer>().material = TomatMat;
             }
-            else if (block.block == BlockType.Etc)
+            else if (block.block == BlockType.Blue)
             {
                 transform.GetComponent<Renderer>().material = FishMat;
             }

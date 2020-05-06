@@ -531,22 +531,22 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.tag == "Block")
         {
-            if (type != PlayerType.Fire && collision.gameObject.GetComponent<Block>().block == BlockType.Fire)
+            if (type != PlayerType.Fire && collision.gameObject.GetComponent<Block>().block == BlockType.Blue)
             {
                 type = PlayerType.Fire;
                 //block.hp++;
             }
-            if (type != PlayerType.Nomal && collision.gameObject.GetComponent<Block>().block == BlockType.Nomal)
+            if (type != PlayerType.Nomal && collision.gameObject.GetComponent<Block>().block == BlockType.Red)
             {
                 type = PlayerType.Nomal;
                 //block.hp++;
             }
-            if (type != PlayerType.Fish && collision.gameObject.GetComponent<Block>().block == BlockType.Fish)
+            if (type != PlayerType.Fish && collision.gameObject.GetComponent<Block>().block == BlockType.Green)
             {
                 type = PlayerType.Fish;
                 //block.hp++;
             }
-            if (type != PlayerType.Etc && collision.gameObject.GetComponent<Block>().block == BlockType.Etc)
+            if (type != PlayerType.Etc && collision.gameObject.GetComponent<Block>().block == BlockType.Hedro)
             {
                 type = PlayerType.Etc;
                 //block.hp++;

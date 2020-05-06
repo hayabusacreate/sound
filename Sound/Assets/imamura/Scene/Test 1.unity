@@ -770,11 +770,11 @@ MonoBehaviour:
   halfblock: 5
   outblock: 5
   maps:
-  - {fileID: 8858401953452617257, guid: 397072a7067ae12458140cb3556fc1f5, type: 3}
-  - {fileID: 8858401953452617257, guid: 397072a7067ae12458140cb3556fc1f5, type: 3}
-  - {fileID: 8858401953452617257, guid: 397072a7067ae12458140cb3556fc1f5, type: 3}
-  - {fileID: 8858401953452617257, guid: 397072a7067ae12458140cb3556fc1f5, type: 3}
-  - {fileID: 8858401953452617257, guid: 397072a7067ae12458140cb3556fc1f5, type: 3}
+  - {fileID: 8858401953452617257, guid: 1038a116a734e294b9eadeccd539f905, type: 3}
+  - {fileID: 8858401953452617257, guid: 1038a116a734e294b9eadeccd539f905, type: 3}
+  - {fileID: 8858401953452617257, guid: 1038a116a734e294b9eadeccd539f905, type: 3}
+  - {fileID: 8858401953452617257, guid: 1038a116a734e294b9eadeccd539f905, type: 3}
+  - {fileID: 8858401953452617257, guid: 1038a116a734e294b9eadeccd539f905, type: 3}
 --- !u!4 &732174380
 Transform:
   m_ObjectHideFlags: 0
@@ -1259,6 +1259,9 @@ MonoBehaviour:
   tacklese: {fileID: 8300000, guid: ef9303f2609490d4b82304f4262407b7, type: 3}
   flontflag: 0
   backflag: 0
+  rightlfag: 0
+  leftflag: 0
+  abouttyle: 0
 --- !u!136 &1744096415
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2623,6 +2626,9 @@ MonoBehaviour:
   tacklese: {fileID: 8300000, guid: ef9303f2609490d4b82304f4262407b7, type: 3}
   flontflag: 0
   backflag: 0
+  rightlfag: 0
+  leftflag: 0
+  abouttyle: 0
 --- !u!1 &8965410087729928526
 GameObject:
   m_ObjectHideFlags: 0

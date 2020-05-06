@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 7406022642583280969}
   - component: {fileID: 3560230684247556863}
   m_Layer: 10
-  m_Name: yuka_gaisyu_1_9 (1)
+  m_Name: half2
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -195,7 +195,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 01b7df3d3608dd3489269fa24a9227e1, type: 3}
+  - {fileID: 2100000, guid: 450318856cfce154c91c3c61765272f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -277,6 +277,7 @@ MonoBehaviour:
   leftflag: 0
   rigidbody: {fileID: 0}
   fall: {fileID: 8300000, guid: 8b47ab215f7dc0b408b4219733c6efe0, type: 3}
+  effectflag: 0
 --- !u!114 &7406022642583280969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1034,7 +1035,7 @@ GameObject:
   - component: {fileID: 7501885484415161637}
   - component: {fileID: 8771203587280419138}
   m_Layer: 10
-  m_Name: yuka_gaisyu_1_9 (7)
+  m_Name: out2
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1169,6 +1170,7 @@ MonoBehaviour:
   leftflag: 0
   rigidbody: {fileID: 0}
   fall: {fileID: 8300000, guid: 8b47ab215f7dc0b408b4219733c6efe0, type: 3}
+  effectflag: 0
 --- !u!114 &7501885484415161637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1550,7 +1552,7 @@ GameObject:
   - component: {fileID: 4294488957117014442}
   - component: {fileID: 8486529258219111100}
   m_Layer: 10
-  m_Name: yuka_gaisyu_1_9 (2)
+  m_Name: half3
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1603,7 +1605,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 01b7df3d3608dd3489269fa24a9227e1, type: 3}
+  - {fileID: 2100000, guid: 450318856cfce154c91c3c61765272f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1685,6 +1687,7 @@ MonoBehaviour:
   leftflag: 0
   rigidbody: {fileID: 0}
   fall: {fileID: 8300000, guid: 8b47ab215f7dc0b408b4219733c6efe0, type: 3}
+  effectflag: 0
 --- !u!114 &4294488957117014442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2064,7 +2067,7 @@ GameObject:
   - component: {fileID: 238425579061258856}
   - component: {fileID: 2703457967224175825}
   m_Layer: 10
-  m_Name: yuka_gaisyu_1_9 (3)
+  m_Name: half4
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2117,7 +2120,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 01b7df3d3608dd3489269fa24a9227e1, type: 3}
+  - {fileID: 2100000, guid: 450318856cfce154c91c3c61765272f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2199,6 +2202,7 @@ MonoBehaviour:
   leftflag: 0
   rigidbody: {fileID: 0}
   fall: {fileID: 8300000, guid: 8b47ab215f7dc0b408b4219733c6efe0, type: 3}
+  effectflag: 0
 --- !u!114 &238425579061258856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2329,7 +2333,7 @@ GameObject:
   - component: {fileID: 130536848841472419}
   - component: {fileID: 4269160042502927104}
   m_Layer: 9
-  m_Name: yuka_naisyu_1_5 (6)
+  m_Name: in2
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2464,6 +2468,7 @@ MonoBehaviour:
   leftflag: 0
   rigidbody: {fileID: 0}
   fall: {fileID: 8300000, guid: 8b47ab215f7dc0b408b4219733c6efe0, type: 3}
+  effectflag: 0
 --- !u!114 &130536848841472419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3221,7 +3226,7 @@ GameObject:
   - component: {fileID: 1906065016313429969}
   - component: {fileID: 6751973909872132231}
   m_Layer: 10
-  m_Name: yuka_gaisyu_1_9
+  m_Name: half1
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3274,7 +3279,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 01b7df3d3608dd3489269fa24a9227e1, type: 3}
+  - {fileID: 2100000, guid: 450318856cfce154c91c3c61765272f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3356,6 +3361,7 @@ MonoBehaviour:
   leftflag: 0
   rigidbody: {fileID: 0}
   fall: {fileID: 8300000, guid: 8b47ab215f7dc0b408b4219733c6efe0, type: 3}
+  effectflag: 0
 --- !u!114 &1906065016313429969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3486,7 +3492,7 @@ GameObject:
   - component: {fileID: 7760190633269553942}
   - component: {fileID: 2968881570981677940}
   m_Layer: 10
-  m_Name: yuka_gaisyu_1_9 (9)
+  m_Name: out4
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3621,6 +3627,7 @@ MonoBehaviour:
   leftflag: 0
   rigidbody: {fileID: 0}
   fall: {fileID: 8300000, guid: 8b47ab215f7dc0b408b4219733c6efe0, type: 3}
+  effectflag: 0
 --- !u!114 &7760190633269553942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3814,7 +3821,7 @@ GameObject:
   - component: {fileID: 772140449862396175}
   - component: {fileID: 4570399260647803521}
   m_Layer: 10
-  m_Name: yuka_gaisyu_1_9 (4)
+  m_Name: half5
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3867,7 +3874,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 01b7df3d3608dd3489269fa24a9227e1, type: 3}
+  - {fileID: 2100000, guid: 450318856cfce154c91c3c61765272f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3949,6 +3956,7 @@ MonoBehaviour:
   leftflag: 0
   rigidbody: {fileID: 0}
   fall: {fileID: 8300000, guid: 8b47ab215f7dc0b408b4219733c6efe0, type: 3}
+  effectflag: 0
 --- !u!114 &772140449862396175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4268,7 +4276,7 @@ GameObject:
   - component: {fileID: 8902072661229406527}
   - component: {fileID: 1502102302444725911}
   m_Layer: 10
-  m_Name: yuka_gaisyu_1_9 (6)
+  m_Name: out1
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4403,6 +4411,7 @@ MonoBehaviour:
   leftflag: 0
   rigidbody: {fileID: 0}
   fall: {fileID: 8300000, guid: 8b47ab215f7dc0b408b4219733c6efe0, type: 3}
+  effectflag: 0
 --- !u!114 &8902072661229406527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4785,7 +4794,7 @@ GameObject:
   - component: {fileID: 6740128042960220724}
   - component: {fileID: 4906261542561009143}
   m_Layer: 9
-  m_Name: yuka_naisyu_1_5 (5)
+  m_Name: in1
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4920,6 +4929,7 @@ MonoBehaviour:
   leftflag: 0
   rigidbody: {fileID: 0}
   fall: {fileID: 8300000, guid: 8b47ab215f7dc0b408b4219733c6efe0, type: 3}
+  effectflag: 0
 --- !u!114 &6740128042960220724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5299,7 +5309,7 @@ GameObject:
   - component: {fileID: 8126663872997006397}
   - component: {fileID: 1061572438420186736}
   m_Layer: 9
-  m_Name: yuka_naisyu_1_5 (8)
+  m_Name: in4
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5434,6 +5444,7 @@ MonoBehaviour:
   leftflag: 0
   rigidbody: {fileID: 0}
   fall: {fileID: 8300000, guid: 8b47ab215f7dc0b408b4219733c6efe0, type: 3}
+  effectflag: 0
 --- !u!114 &8126663872997006397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5752,7 +5763,7 @@ GameObject:
   - component: {fileID: 3353345199227456410}
   - component: {fileID: 7738382672884664276}
   m_Layer: 9
-  m_Name: yuka_naisyu_1_5 (9)
+  m_Name: in5
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5887,6 +5898,7 @@ MonoBehaviour:
   leftflag: 0
   rigidbody: {fileID: 0}
   fall: {fileID: 8300000, guid: 8b47ab215f7dc0b408b4219733c6efe0, type: 3}
+  effectflag: 0
 --- !u!114 &3353345199227456410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6457,7 +6469,7 @@ GameObject:
   - component: {fileID: 3331053912159864537}
   - component: {fileID: 6734645016472127998}
   m_Layer: 10
-  m_Name: yuka_gaisyu_1_9 (10)
+  m_Name: out5
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6592,6 +6604,7 @@ MonoBehaviour:
   leftflag: 0
   rigidbody: {fileID: 0}
   fall: {fileID: 8300000, guid: 8b47ab215f7dc0b408b4219733c6efe0, type: 3}
+  effectflag: 0
 --- !u!114 &3331053912159864537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7850,7 +7863,7 @@ GameObject:
   - component: {fileID: 1807954166610473116}
   - component: {fileID: 8437465899678469129}
   m_Layer: 10
-  m_Name: yuka_gaisyu_1_9 (8)
+  m_Name: out3
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7985,6 +7998,7 @@ MonoBehaviour:
   leftflag: 0
   rigidbody: {fileID: 0}
   fall: {fileID: 8300000, guid: 8b47ab215f7dc0b408b4219733c6efe0, type: 3}
+  effectflag: 0
 --- !u!114 &1807954166610473116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8743,7 +8757,7 @@ GameObject:
   - component: {fileID: 8848805235992007076}
   - component: {fileID: 4958370456005957171}
   m_Layer: 9
-  m_Name: yuka_naisyu_1_5 (7)
+  m_Name: in3
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8878,6 +8892,7 @@ MonoBehaviour:
   leftflag: 0
   rigidbody: {fileID: 0}
   fall: {fileID: 8300000, guid: 8b47ab215f7dc0b408b4219733c6efe0, type: 3}
+  effectflag: 0
 --- !u!114 &8848805235992007076
 MonoBehaviour:
   m_ObjectHideFlags: 0

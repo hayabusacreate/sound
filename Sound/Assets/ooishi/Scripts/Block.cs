@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 public enum BlockType
 {
-    Nomal,
-    Fire,
-    Fish,
-    Etc,
+    Red,
+    Blue,
+    Green,
+    Hedro,
 }
 public enum InOut
 {
@@ -62,6 +62,8 @@ public class Block : MonoBehaviour
     public AudioClip fall;
     private AudioSource source;
     private bool particlflag;
+
+    public bool effectflag;
     // Start is called before the first frame update
     void Start()
     {
@@ -75,7 +77,7 @@ public class Block : MonoBehaviour
         linkBlocks = new Dictionary<int, LinkBlock>();
         color = gameObject.transform.GetComponent<Renderer>();
         savecolor = color;
-        if (block == BlockType.Nomal)
+        if (block == BlockType.Red)
         {
             sethp = manager.nomalHp;
             if (hp <= sethp)
@@ -83,7 +85,7 @@ public class Block : MonoBehaviour
                 hp = sethp;
             }
         }
-        if (block == BlockType.Fire)
+        if (block == BlockType.Blue)
         {
             sethp = manager.FireHp;
             if (hp <= sethp)
@@ -91,7 +93,7 @@ public class Block : MonoBehaviour
                 hp = sethp;
             }
         }
-        if (block == BlockType.Fish)
+        if (block == BlockType.Green)
         {
             sethp = manager.FishHp;
             if (hp <= sethp)
@@ -99,7 +101,7 @@ public class Block : MonoBehaviour
                 hp = sethp;
             }
         }
-        if (block == BlockType.Etc)
+        if (block == BlockType.Hedro)
         {
             sethp = manager.EtcHp;
             if (hp <= sethp)
@@ -172,14 +174,14 @@ public class Block : MonoBehaviour
             mapCreate.halftype.Add(hight * 100 + tyle, gameObject.GetComponent<Block>());
         }
 
-        if (block == BlockType.Nomal)
-        {
-            color.material.color = Color.green;
-        }
-        else
-        {
-            color.material.color = Color.yellow;
-        }
+        //if (block == BlockType.Nomal)
+        //{
+        //    color.material.color = Color.green;
+        //}
+        //else
+        //{
+        //    color.material.color = Color.yellow;
+        //}
         transform.parent = null;
     }
 
@@ -1453,8 +1455,11 @@ if (linkBlocks[1].attackflag)
             if(particlflag)
             {
                 particlflag = false;
-                syuwa.Play();
-                syuwawa.Play();
+                if(effectflag)
+                {
+                    syuwa.Play();
+                    syuwawa.Play();
+                }
             }
         }
         else
@@ -1601,16 +1606,20 @@ if (linkBlocks[1].attackflag)
             }
         }
 
-        if ((block == BlockType.Nomal && player.type != PlayerType.Nomal)||
-            (block == BlockType.Fire && player.type != PlayerType.Fire) ||
-            (block == BlockType.Fish && player.type != PlayerType.Fish) ||
-            (block == BlockType.Etc && player.type != PlayerType.Etc) || player.hight + 1 != hight)
+        if ((block == BlockType.Red && player.type != PlayerType.Nomal)||
+            (block == BlockType.Blue && player.type != PlayerType.Fire) ||
+            (block == BlockType.Green && player.type != PlayerType.Fish) ||
+            (block == BlockType.Hedro && player.type != PlayerType.Etc) || player.hight + 1 != hight)
         {
             if (damageflag)
             {
                 damageflag = false;
-                syuwa.Pause();
-                syuwawa.Pause();
+                if(effectflag)
+                {
+                    syuwa.Pause();
+                    syuwawa.Pause();
+                }
+
             }
         }
         else

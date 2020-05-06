@@ -903,11 +903,11 @@ MonoBehaviour:
   halfblock: 5
   outblock: 5
   maps:
-  - {fileID: 8858401953452617257, guid: 404d6f7d013cabb4689800b83cd4355a, type: 3}
-  - {fileID: 8858401953452617257, guid: 404d6f7d013cabb4689800b83cd4355a, type: 3}
-  - {fileID: 8858401953452617257, guid: 404d6f7d013cabb4689800b83cd4355a, type: 3}
-  - {fileID: 8858401953452617257, guid: 404d6f7d013cabb4689800b83cd4355a, type: 3}
-  - {fileID: 8858401953452617257, guid: 404d6f7d013cabb4689800b83cd4355a, type: 3}
+  - {fileID: 8858401953452617257, guid: d34e7debde3383e438c305c4a5df59e9, type: 3}
+  - {fileID: 8858401953452617257, guid: d34e7debde3383e438c305c4a5df59e9, type: 3}
+  - {fileID: 8858401953452617257, guid: d34e7debde3383e438c305c4a5df59e9, type: 3}
+  - {fileID: 8858401953452617257, guid: d34e7debde3383e438c305c4a5df59e9, type: 3}
+  - {fileID: 8858401953452617257, guid: d34e7debde3383e438c305c4a5df59e9, type: 3}
 --- !u!4 &732174380
 Transform:
   m_ObjectHideFlags: 0
@@ -2045,10 +2045,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: -3
-  nomalHp: 30
-  FireHp: 30
-  FishHp: 30
-  EtcHp: 30
+  nomalHp: 3
+  FireHp: 3
+  FishHp: 3
+  EtcHp: 3
 --- !u!4 &2057329102
 Transform:
   m_ObjectHideFlags: 0

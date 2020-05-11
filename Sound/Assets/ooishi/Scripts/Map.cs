@@ -16,29 +16,6 @@ public class Map : MonoBehaviour
         intyle = 0;
         outtyle = 0;
         halftyle = 0;
-        foreach (Transform child in transform)
-        {
-            child.GetComponent<Block>().hight = hight;
-            if (child.GetComponent<Block>().inout == InOut.In)
-            {
-                map.inmap.Add(hight * 100 + intyle, true);
-                //child.GetComponent<Block>().tyle = intyle;
-               // intyle++;
-            }
-            else if(child.GetComponent<Block>().inout == InOut.Out)
-            {
-                map.outmap.Add(hight * 100 + outtyle, true);
-                //child.GetComponent<Block>().tyle = outtyle;
-               // outtyle++;
-            }
-            else if (child.GetComponent<Block>().inout == InOut.Half)
-            {
-                map.halfmap.Add(hight * 100 + halftyle, true);
-                //child.GetComponent<Block>().tyle = outtyle;
-                // outtyle++;
-            }
-
-        }
 
     }
 

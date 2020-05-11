@@ -81,6 +81,17 @@ public class LinkBlock : MonoBehaviour
             hitblock = other.gameObject.transform.GetComponent<Block>();
 
         }
+        if (area == HitArea.Side)
+        {
+            if (other.transform.tag == "Player")
+            {
+                playerhit = true;
+                if (other.transform.gameObject.GetComponent<Player>().attackflag)
+                {
+                    attackflag = true;
+                }
+            }
+        }
     }
     private void OnTriggerEnter(Collider other)
     {

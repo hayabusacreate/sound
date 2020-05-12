@@ -11,6 +11,7 @@ public class MapCreate : MonoBehaviour
     public TextAsset[] csvFile;
     private List<string[]> csvDatas = new List<string[]>();
     public int eazy, nomal, hard;
+    public int eazymap, nomalmap, hardmap;
     public int hight, width;
     public GameObject map;
     public int maphight;

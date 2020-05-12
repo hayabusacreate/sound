@@ -12,13 +12,31 @@ public class Map : MonoBehaviour
     private List<string[]> csvDatas = new List<string[]>();
     private int mapnum;
     private int maphight;
+    private int mapchoice;
+    private StringReader reader;
     // Start is called before the first frame update
     void Start()
     {
-
+        
         map = GameObject.Find("MapCreate").GetComponent<MapCreate>();
-        mapnum = Random.Range(0, map.csvFile.Length);
-        StringReader reader = new StringReader(map.csvFile[mapnum].text);
+
+        if(map.maphight<map.eazy)
+        {
+            mapnum = Random.Range(0, map.eazymap);
+            reader = new StringReader(map.csvFile[mapnum].text);
+        }
+        else if(map.maphight < map.nomal)
+        {
+            mapnum = Random.Range(map.eazymap, map.nomalmap);
+             reader = new StringReader(map.csvFile[mapnum].text);
+        }
+        else
+        {
+            mapnum = Random.Range(map.nomalmap, map.csvFile.Length);
+             reader = new StringReader(map.csvFile[mapnum].text);
+        }
+
+
         width = map.width;
         hight = map.hight;
         while (reader.Peek() != -1)

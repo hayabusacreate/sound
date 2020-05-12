@@ -11,51 +11,45 @@ public enum PlayerType
 }
 public class Player : MonoBehaviour
 {
-    public float speed,tacklespeed;
-    private float radius;
-    public float inradius, outradius;
+    public float speed;
     private float x;
     private float z;
-    public GameObject center, inobj, outobj;
-    private Vector3 invec, outvec;
     public int changeflag, saveflag, ren;
     private Rigidbody rigidbody;
     public float jumppower;
     private bool jumpflag;
     public PlayerType type;
     private Block block;
-    public bool attackflag;
-    private float attacktime;
-    public float tackeletime;
     public bool endflag;
     public bool moveflag;
-    public bool startflag;
     public int hight, tyle;
     private Vector3 pos;
     private float rad, degree;
     private MapCreate map;
     //private Renderer renderer;
-    public GameObject takle, jump;
 
-    public AudioClip jumpse, tacklese;
+    public AudioClip jumpse;
     private AudioSource source;
 
     private Animator anim;
 
     public bool flontflag, backflag;
 
-    public bool rightlfag, leftflag;
-
-    public int abouttyle;
-
     public int maphight;
+
+    private bool damageflag;
+
+    public float damagetime;
+    private float savedamege;
+
+    public int hp;
     // Start is called before the first frame update
     void Start()
     {
+        savedamege = damagetime;
         anim = gameObject.GetComponent<Animator>();
         source = gameObject.GetComponent<AudioSource>();
         hight = 0;
-        radius = inradius;
         changeflag = 0;
         saveflag = 0;
         rigidbody = gameObject.transform.GetComponent<Rigidbody>();
@@ -73,6 +67,7 @@ public class Player : MonoBehaviour
     {
         Move();
         Jump();
+        Damage();
         //hight = -(int)transform.position.y;
     }
 
@@ -137,9 +132,27 @@ public class Player : MonoBehaviour
         {
             source.PlayOneShot(jumpse);
             rigidbody.velocity += new Vector3(0, jumppower, 0);
-            Instantiate(jump, transform.position, Quaternion.identity);
             jumpflag = true;
             anim.SetBool("Jump", true);
+        }
+    }
+
+    void Damage()
+    {
+        if(damageflag)
+        {
+            damagetime -= Time.deltaTime;
+        }
+        if(damagetime<0)
+        {
+            hp--;
+            damagetime = savedamege;
+            damageflag = false;
+        }
+
+        if(hp<0)
+        {
+            endflag = true;
         }
     }
 
@@ -163,8 +176,9 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Side")
+        if (other.tag == "Enemy")
         {
+            damageflag = true;   
             // moveflag = false;
         }
     }

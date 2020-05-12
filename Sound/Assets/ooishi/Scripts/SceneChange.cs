@@ -17,10 +17,8 @@ public class SceneChange : MonoBehaviour
     public Scene scene;
     private Player player;
     private float time;
-    public float setTime;
     private Text timeText;
     private Slider slider;
-    public bool clearflag;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +27,7 @@ public class SceneChange : MonoBehaviour
             player=GameObject.Find("Player").GetComponent<Player>();
             timeText = GameObject.Find("Time").GetComponent<Text>();
             slider = GameObject.Find("Slider").GetComponent<Slider>();
-            time = setTime;
+            // 
             //Physics.gravity = new Vector3(0, -5, 0);
             slider.maxValue = time;
         }
@@ -49,19 +47,14 @@ public class SceneChange : MonoBehaviour
 
                 break;
             case Scene.GamePlay:
-                timeText.text = "" + time;
-                time -= Time.deltaTime;
-                slider.value = time;
+                timeText.text = "" + player.transform.position.y;
+                //time -= Time.deltaTime;
+                //slider.value = time;
                 if(time<0)
                 {
-                    if (clearflag)
-                    {
+
                         SceneManager.LoadScene("Clear");
-                    }
-                    else
-                    {
-                        SceneManager.LoadScene("GameOver");
-                    }
+
 
                 }
                 if (player.endflag)

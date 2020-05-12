@@ -11,38 +11,20 @@ public class Block : MonoBehaviour
     public BlockType block;
     public float hp;
     public float Maxhp;
-    private float sethp;
-    public int speed;
     private bool hitflag;
-    private Renderer color, savecolor;
-    private Dictionary<int, Block> blocks;
     private int count;
     public bool damageflag;
     private Player player;
-    public bool moveflag;
-    private GameObject center;
-    private float radius;
     private bool changeflag;
     private MapCreate mapCreate;
-    private bool link;
     public int hight, tyle;
     private Vector3 pos;
-    private float rad, degree;
-    private Quaternion quaternion, savequaternion;
     private float z;
-    private bool savetyle;
     private int change;
-
-    public GameObject bubble;
-    private float bubbletime;
-
-    public bool bubbleflag;
     public GameObject kati;
     public ParticleSystem syuwa,syuwawa;
 
     private bool moveendflag;
-
-    public bool fallflag, noneflag, rightflag, leftflag;
     private int savehight;
     public Rigidbody rigidbody;
 
@@ -61,6 +43,7 @@ public class Block : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Maxhp = hp;
         if(type=="0")
         {
             block = BlockType.Null;
@@ -74,25 +57,12 @@ public class Block : MonoBehaviour
 
         //mat.color = new Color(mat.color.r, mat.color.g, mat.color.b,0);
         manager = GameObject.Find("Manager").gameObject.GetComponent<Manager>();
-        quaternion = this.transform.rotation;
-        savequaternion = this.transform.rotation;
-        blocks = new Dictionary<int, Block>();
-        color = gameObject.transform.GetComponent<Renderer>();
-        savecolor = color;
-        Maxhp = hp;
         count = 0;
-        center = transform.root.gameObject;
         player = GameObject.Find("Player").gameObject.GetComponent<Player>();
         count = 0;
         mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
-
-        quaternion = this.transform.rotation;
         savehight = hight;
         rigidbody = gameObject.GetComponent<Rigidbody>();
-        z = Mathf.Round(quaternion.eulerAngles.y);
-
-            moveflag = false;
-            player.attackflag = false;
             change = 0;
             count = 0;
         
@@ -140,7 +110,6 @@ public class Block : MonoBehaviour
             if (damageflag)
             {
                 hp -= Time.deltaTime;
-                bubbletime += Time.deltaTime;
 
             }
 
@@ -152,13 +121,6 @@ public class Block : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (bubbleflag)
-        {
-            if (collision.gameObject.tag == "Block")
-            {
-                bubbleflag = false;
-            }
-        }
         if (collision.transform.tag == "Player")
         {
             damageflag = true;
@@ -168,9 +130,5 @@ public class Block : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "Bubble")
-        {
-            hp -= 0.05f;
-        }
     }
 }

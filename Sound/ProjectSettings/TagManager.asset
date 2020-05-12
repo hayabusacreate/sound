@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Side
   - Bubble
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - out
   - death
   - option
-  - 
+  - Enemy
   - 
   - 
   - 

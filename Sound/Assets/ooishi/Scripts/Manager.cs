@@ -5,7 +5,6 @@ using UnityEngine;
 public class Manager : MonoBehaviour
 {
     public float gravity;
-    public float nomalHp, FireHp, FishHp, EtcHp;
     // Start is called before the first frame update
     void Start()
     {

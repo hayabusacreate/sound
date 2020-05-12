@@ -61,14 +61,6 @@ public class LinkBlock : MonoBehaviour
         //}
         if (playerhit)
         {
-            if (player.attackflag)
-            {
-                attackflag = true;
-            }
-            else
-            {
-                attackflag = false;
-            }
         }
     }
     private void OnTriggerStay(Collider other)
@@ -86,10 +78,7 @@ public class LinkBlock : MonoBehaviour
             if (other.transform.tag == "Player")
             {
                 playerhit = true;
-                if (other.transform.gameObject.GetComponent<Player>().attackflag)
-                {
-                    attackflag = true;
-                }
+
             }
         }
     }
@@ -100,10 +89,7 @@ public class LinkBlock : MonoBehaviour
             if (other.transform.tag == "Player")
             {
                 playerhit = true;
-                if (other.transform.gameObject.GetComponent<Player>().attackflag)
-                {
-                    attackflag = true;
-                }
+
             }
         }
         if (other.transform.tag == "Block")

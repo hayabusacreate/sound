@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
 
     public int abouttyle;
 
+    public int maphight;
     // Start is called before the first frame update
     void Start()
     {
@@ -99,71 +100,34 @@ public class Player : MonoBehaviour
         else
         if ((Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical") >0.8f) && flontflag&&(changeflag==0||changeflag==1))
         {
+
             changeflag = 1;
             moveflag = true;
             anim.SetBool("Dash", true);
 
         }
- 
-
-        
-        if (changeflag == 0 && !attackflag && moveflag)
+        if(transform.position.x+speed*2<(-map.width+1)|| transform.position.x+-speed*2 > 0)
         {
-            //RotateAround(円運動の中心,進行方向,速度)
-            transform.RotateAround(center.transform.position,
-            transform.up, speed);
-        }
-        else if (changeflag == 1 && !attackflag && moveflag)
-        {
-            //RotateAround(円運動の中心,進行方向,速度)
-            transform.RotateAround(center.transform.position,
-            -transform.up, speed);
-        }
-        else if (changeflag == 2)
-        {
-            radius = inradius;
-        }
-        else if (changeflag == 3)
-        {
-            radius = outradius;
-        }
-
-        if (changeflag == 0 || changeflag == 1)
-        {
-            invec = inobj.transform.position;
-            outvec = outobj.transform.position;
-            saveflag = changeflag;
-            if(degree>=0&&degree<90)
+            moveflag = false;
+            if (changeflag == 0)
             {
-                abouttyle = 0;
-            }else if(degree>=90&&degree<180)
-            {
-                abouttyle = 1;
-            }else if(degree>=180&&degree<270)
-            {
-                abouttyle = 2;
-            }else
-            {
-                abouttyle = 3;
+                transform.position += new Vector3(speed, 0, 0);
             }
-        
-
+            else
+            {
+                transform.position -= new Vector3(speed, 0, 0);
+            }
         }
-
-        if (moveflag)
+        if(moveflag)
         {
-            speed = 3;
-            //renderer.material.color = Color.white;
-        }
-        else
-        {
-            speed = 0;
-            //renderer.material.color = Color.white;
-        }
-        if (moveflag && attackflag)
-        {
-            //renderer.material.color = Color.red;
-            speed = 3;
+            if(changeflag==0)
+            {
+                transform.position -= new Vector3(speed, 0, 0);
+            }
+            else
+            {
+                transform.position += new Vector3(speed, 0, 0);
+            }
         }
     }
 
@@ -188,28 +152,8 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.tag == "Block")
         {
-            if (type != PlayerType.Fire && collision.gameObject.GetComponent<Block>().block == BlockType.Blue)
-            {
-                type = PlayerType.Fire;
-                //block.hp++;
-            }
-            if (type != PlayerType.Nomal && collision.gameObject.GetComponent<Block>().block == BlockType.Red)
-            {
-                type = PlayerType.Nomal;
-                //block.hp++;
-            }
-            if (type != PlayerType.Fish && collision.gameObject.GetComponent<Block>().block == BlockType.Green)
-            {
-                type = PlayerType.Fish;
-                //block.hp++;
-            }
-            if (type != PlayerType.Etc && collision.gameObject.GetComponent<Block>().block == BlockType.Hedro)
-            {
-                type = PlayerType.Etc;
-                //block.hp++;
-            }
             block = collision.gameObject.GetComponent<Block>();
-            //hight = collision.gameObject.GetComponent<Block>().hight-1;
+            hight = collision.gameObject.GetComponent<Block>().maphight;
             tyle = collision.gameObject.GetComponent<Block>().tyle;
         }
         if (collision.gameObject.tag == "Ground")

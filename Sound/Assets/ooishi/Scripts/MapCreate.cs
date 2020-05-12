@@ -5,34 +5,35 @@ using UnityEngine;
 
 public class MapCreate : MonoBehaviour
 {
-    public int inblock,halfblock, outblock;
-    public GameObject[] maps;
     private Player player;
     private bool endflag;
     private SceneChange sceneChange;
-    public TextAsset csvFile;
+    public TextAsset[] csvFile;
     private List<string[]> csvDatas = new List<string[]>();
+    public int eazy, nomal, hard;
+    public int hight, width;
+    public GameObject map;
+    public int maphight;
     // Start is called before the first frame update
     void Start()
     {
-        //csvFile=Resources.Load("")
-        StringReader reader = new StringReader(csvFile.text);
-
-        while(reader.Peek()!=-1)
-        {
-            string line = reader.ReadLine();
-            csvDatas.Add(line.Split(','));
-        }
-        sceneChange = GameObject.Find("SceneChange").gameObject.GetComponent<SceneChange>();
+        maphight = 0;
         player = GameObject.Find("Player").GetComponent<Player>();
+        sceneChange = GameObject.Find("SceneChange").gameObject.GetComponent<SceneChange>();
 
-        Debug.Log(csvDatas[2][2]);
+        Instantiate(map, new Vector3(0, 0, 0), Quaternion.identity);
+        maphight++;
+        //Debug.Log(csvDatas[2][2]);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(csvDatas[3][3]);
+        if(maphight<=player.hight+1)
+        {
+            Instantiate(map, new Vector3(0, hight * maphight, 0), Quaternion.identity);
+            maphight++;
+        }
     }
 }

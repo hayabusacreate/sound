@@ -123,13 +123,6 @@ public class LinkBlock : MonoBehaviour
 
             }
         }
-        if (other.transform.tag == "Ground")
-        {
-
-            //other.transform.gameObject.GetComponent<Block>().rigidbody.isKinematic = true;
-            block.hight = map.maps.Length-1;
-
-        }
 
 
     }

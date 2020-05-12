@@ -22,11 +22,10 @@ public class PlayerHight : MonoBehaviour
     {
         if(other.gameObject.tag=="Ground")
         {
-            player.hight = map.maps.Length - 1;
         }
         if (other.gameObject.tag == "Block")
         {
-            player.hight = other.gameObject.GetComponent<Block>().hight - 1;
+            //player.hight = other.gameObject.GetComponent<Block>().hight - 1;
             player.tyle = other.gameObject.GetComponent<Block>().tyle;
         }
     }

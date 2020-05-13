@@ -1,49 +1,68 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class Map : MonoBehaviour
 {
-    public int hight;
-    private int intyle,halftyle, outtyle;
+    private int hight,width;
     private MapCreate map;
     private bool check;
+    public GameObject block;
+    private List<string[]> csvDatas = new List<string[]>();
+    private int mapnum;
+    private int maphight;
+    private int mapchoice;
+    private StringReader reader;
     // Start is called before the first frame update
     void Start()
     {
-        check = false;
+        
         map = GameObject.Find("MapCreate").GetComponent<MapCreate>();
-        intyle = 0;
-        outtyle = 0;
-        halftyle = 0;
-        foreach (Transform child in transform)
-        {
-            child.GetComponent<Block>().hight = hight;
-            if (child.GetComponent<Block>().inout == InOut.In)
-            {
-                map.inmap.Add(hight * 100 + intyle, true);
-                //child.GetComponent<Block>().tyle = intyle;
-               // intyle++;
-            }
-            else if(child.GetComponent<Block>().inout == InOut.Out)
-            {
-                map.outmap.Add(hight * 100 + outtyle, true);
-                //child.GetComponent<Block>().tyle = outtyle;
-               // outtyle++;
-            }
-            else if (child.GetComponent<Block>().inout == InOut.Half)
-            {
-                map.halfmap.Add(hight * 100 + halftyle, true);
-                //child.GetComponent<Block>().tyle = outtyle;
-                // outtyle++;
-            }
 
+        if(map.maphight<map.eazy)
+        {
+            mapnum = Random.Range(0, map.eazymap);
+            reader = new StringReader(map.csvFile[mapnum].text);
         }
+        else if(map.maphight < map.nomal)
+        {
+            mapnum = Random.Range(map.eazymap, map.nomalmap);
+             reader = new StringReader(map.csvFile[mapnum].text);
+        }
+        else
+        {
+            mapnum = Random.Range(map.nomalmap, map.csvFile.Length);
+             reader = new StringReader(map.csvFile[mapnum].text);
+        }
+
+
+        width = map.width;
+        hight = map.hight;
+        while (reader.Peek() != -1)
+        {
+            string line = reader.ReadLine();
+            csvDatas.Add(line.Split(','));
+        }
+        check = false;
+
+
+        for(int y=0;y<hight;y++)
+        {
+            for(int x=0;x<width; x++)
+            {
+                GameObject gameObject = Instantiate(block, new Vector3(-x,-transform.position.y-y, 0), Quaternion.identity);
+                gameObject.GetComponent<Block>().type = csvDatas[y][x];
+                gameObject.GetComponent<Block>().maphight = map.maphight;
+            }
+        }
+
 
     }
 
     private void FixedUpdate()
     {
+
         //transform.DetachChildren();
     }
     // Update is called once per frame

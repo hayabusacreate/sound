@@ -24,30 +24,11 @@ public class SideCheck : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag=="Block")
-        {
-            if(lr==LR.Right)
-            {
-                player.rightlfag = false;
-            }else
-            {
-                player.leftflag = false;
-            }
-        }
+
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Block")
-        {
-            if (lr == LR.Right)
-            {
-                player.rightlfag = true;
-            }
-            else
-            {
-                player.leftflag = true;
-            }
-        }
+
     }
 }

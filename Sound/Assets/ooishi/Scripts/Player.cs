@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-        if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+        if ((!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A) )|| (Input.GetAxis("Horizontal") < -0.8f&& Input.GetAxis("Horizontal") > 0.8f))
         {
             //changeflag = 0;
             moveflag = false;
@@ -85,7 +85,7 @@ public class Player : MonoBehaviour
         {
             moveflag = false;
         }
-        if ((Input.GetKey(KeyCode.D)||Input.GetAxis("Horizontal") <-0.8f)&&backflag && (changeflag == 0 || changeflag == 1))
+        if ((Input.GetKey(KeyCode.D)||Input.GetAxis("Horizontal") >0.8f)&&backflag && (changeflag == 0 || changeflag == 1))
         {
 
             changeflag = 0;
@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
             anim.SetBool("Dash", true);
         }
         else
-        if ((Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal") >0.8f) && flontflag&&(changeflag==0||changeflag==1))
+        if ((Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal") <-0.8f) && flontflag&&(changeflag==0||changeflag==1))
         {
 
             changeflag = 1;

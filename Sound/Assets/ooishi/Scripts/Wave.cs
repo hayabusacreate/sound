@@ -10,9 +10,12 @@ public class Wave : MonoBehaviour
     private float time;
     private int count;
     private MapCreate map;
+    public GameObject enemy;
+    private GameObject player;
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player");
         map = GameObject.Find("MapCreate").GetComponent<MapCreate>();
         count = 0;
         time = 0;
@@ -22,13 +25,10 @@ public class Wave : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if(time>wavetime&&wave.Length>count)
+        if(time>wavetime)
         {
-            GameObject gameObject= Instantiate(wave[count], transform.position, Quaternion.identity);
-            gameObject.GetComponent<Block>().tyle = tyle[count];
-            gameObject.GetComponent<Block>().hight = -count-1;
-            count++;
             time = 0;
+            Instantiate(enemy, new Vector3(player.transform.position.x + 3, player.transform.position.y + 3, 0), Quaternion.identity);
         }
     }
 }

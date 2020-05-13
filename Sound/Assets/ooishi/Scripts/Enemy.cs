@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     public float speed;
 
     public float hp;
+
+    private bool damageflag;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,10 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(damageflag)
+        {
+            hp -= Time.deltaTime;
+        }
         if(hp<0)
         {
             Destroy(gameObject);
@@ -34,14 +40,24 @@ public class Enemy : MonoBehaviour
             transform.position -= new Vector3(speed, 0, 0);
         }
     }
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag==("Block"))
         {
             if(collision.gameObject.GetComponent<Block>().damageflag)
             {
-                hp -= 0.01f;
+                damageflag = true;
+            }else
+            {
+                damageflag = false;
             }
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == ("Block"))
+        {
+            damageflag = false;
         }
     }
 }

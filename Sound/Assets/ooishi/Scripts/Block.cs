@@ -92,18 +92,6 @@ public class Block : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (damageflag)
-        {
-            if(particlflag)
-            {
-                particlflag = false;
-                if(effectflag)
-                {
-                    syuwa.Play();
-                    syuwawa.Play();
-                }
-            }
-        }
 
 
 

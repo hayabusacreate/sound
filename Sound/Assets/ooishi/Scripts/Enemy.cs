@@ -10,9 +10,12 @@ public class Enemy : MonoBehaviour
     public float hp;
 
     private bool damageflag;
+
+    private Renderer renderer;
     // Start is called before the first frame update
     void Start()
     {
+        renderer = gameObject.GetComponent<Renderer>();
         player = GameObject.Find("Player");
     }
 
@@ -21,7 +24,11 @@ public class Enemy : MonoBehaviour
     {
         if(damageflag)
         {
+            renderer.material.color = Color.red;
             hp -= Time.deltaTime;
+        }else
+        {
+            renderer.material.color = Color.white;
         }
         if(hp<0)
         {

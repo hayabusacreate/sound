@@ -14,12 +14,11 @@ public class Map : MonoBehaviour
     private int maphight;
     private int mapchoice;
     private StringReader reader;
+    private Player player;
     // Start is called before the first frame update
     void Start()
     {
-        
         map = GameObject.Find("MapCreate").GetComponent<MapCreate>();
-
         if(map.maphight<map.eazy)
         {
             mapnum = Random.Range(0, map.eazymap);
@@ -57,17 +56,15 @@ public class Map : MonoBehaviour
             }
         }
 
-
+        Destroy(gameObject);
     }
 
     private void FixedUpdate()
     {
-
         //transform.DetachChildren();
     }
     // Update is called once per frame
     void Update()
     {
-
     }
 }

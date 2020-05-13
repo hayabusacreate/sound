@@ -106,22 +106,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: 0
-  hp: 1
+  hp: 1.2
   Maxhp: 0
-  speed: 0
   damageflag: 0
-  moveflag: 0
   hight: 0
   tyle: 0
-  bubble: {fileID: 1486512290024147863}
-  bubbleflag: 0
   kati: {fileID: 849760662476116852, guid: bece91f61fab56d47ad911a2bce4ffcd, type: 3}
   syuwa: {fileID: 1705345576723274133, guid: 6faf708b8b54ea743b0284d5beb71694, type: 3}
   syuwawa: {fileID: 1705345576723274133, guid: 6faf708b8b54ea743b0284d5beb71694, type: 3}
-  fallflag: 0
-  noneflag: 0
-  rightflag: 0
-  leftflag: 0
   rigidbody: {fileID: 0}
   fall: {fileID: 0}
   effectflag: 0

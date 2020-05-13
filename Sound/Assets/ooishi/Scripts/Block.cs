@@ -119,16 +119,12 @@ public class Block : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.transform.tag == "Player")
-        {
-            damageflag = true;
-            //color.material.color = Color.red;
-        }
-
-    }
-    private void OnTriggerEnter(Collider other)
-    {
+        //if (collision.transform.tag == "Player")
+        //{
+        //    damageflag = true;
+        //    //color.material.color = Color.red;
+        //}
     }
 }

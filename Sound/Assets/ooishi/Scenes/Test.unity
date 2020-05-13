@@ -661,7 +661,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 59.2
+  field of view: 40
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -686,8 +686,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 568552946}
-  m_LocalRotation: {x: -0.000022019069, y: 0.99959385, z: -0.0007726055, w: -0.02848818}
-  m_LocalPosition: {x: 0.66, y: 34.02, z: 11.609999}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -821,17 +821,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606ce4b8624d77b42a66934c0842b242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  csvFile:
-  - {fileID: 4900000, guid: a81b3bab70f1d564ab6f7ea96b67a499, type: 3}
-  - {fileID: 4900000, guid: 7c0f156ff5cef084898ccb86045767af, type: 3}
-  - {fileID: 4900000, guid: 7c0f156ff5cef084898ccb86045767af, type: 3}
-  - {fileID: 4900000, guid: 7c0f156ff5cef084898ccb86045767af, type: 3}
-  - {fileID: 4900000, guid: 7c0f156ff5cef084898ccb86045767af, type: 3}
-  - {fileID: 4900000, guid: 7c0f156ff5cef084898ccb86045767af, type: 3}
-  - {fileID: 4900000, guid: 7c0f156ff5cef084898ccb86045767af, type: 3}
-  - {fileID: 4900000, guid: 7c0f156ff5cef084898ccb86045767af, type: 3}
-  - {fileID: 4900000, guid: 7c0f156ff5cef084898ccb86045767af, type: 3}
-  - {fileID: 4900000, guid: 7c0f156ff5cef084898ccb86045767af, type: 3}
   eazy: 1
   nomal: 5
   hard: 10

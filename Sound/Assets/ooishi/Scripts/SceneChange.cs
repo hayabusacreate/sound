@@ -10,6 +10,7 @@ public enum Scene
     StageSelect,
     GameOver,
     GameCrear,
+    Load
 }
 
 public class SceneChange : MonoBehaviour
@@ -19,6 +20,8 @@ public class SceneChange : MonoBehaviour
     private float time;
     private Text timeText;
     private Slider slider;
+    public int map;
+    public MapCreate mapCreate;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,10 @@ public class SceneChange : MonoBehaviour
             // 
             //Physics.gravity = new Vector3(0, -5, 0);
             slider.maxValue = time;
+        }
+        if (scene == Scene.Load)
+        {
+            mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
         }
     }
 
@@ -83,6 +90,13 @@ public class SceneChange : MonoBehaviour
 
                     SceneManager.LoadScene("Test");
                 }
+                break;
+            case Scene.Load:
+                for(int i=0;i<map;i++)
+                {
+                    mapCreate.LoadMap(Resources.Load("map"+i) as TextAsset,i);
+                }
+                SceneManager.LoadScene("Test");
                 break;
         }
 

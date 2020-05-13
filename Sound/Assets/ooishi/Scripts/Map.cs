@@ -22,17 +22,17 @@ public class Map : MonoBehaviour
         if(map.maphight<map.eazy)
         {
             mapnum = Random.Range(0, map.eazymap);
-            reader = new StringReader(map.csvFile[mapnum].text);
+            reader = new StringReader(map.ReturnMap(mapnum).text);
         }
         else if(map.maphight < map.nomal)
         {
             mapnum = Random.Range(map.eazymap, map.nomalmap);
-             reader = new StringReader(map.csvFile[mapnum].text);
+             reader = new StringReader(map.ReturnMap(mapnum).text);
         }
         else
         {
-            mapnum = Random.Range(map.nomalmap, map.csvFile.Length);
-             reader = new StringReader(map.csvFile[mapnum].text);
+            mapnum = Random.Range(map.nomalmap, map.hardmap);
+             reader = new StringReader(map.ReturnMap(mapnum).text);
         }
 
 

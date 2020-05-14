@@ -1063,8 +1063,8 @@ MonoBehaviour:
   eazy: 1
   nomal: 5
   hard: 10
-  eazymap: 3
-  nomalmap: 3
+  eazymap: 1
+  nomalmap: 2
   hardmap: 3
   hight: 15
   width: 19

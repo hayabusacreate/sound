@@ -43,9 +43,12 @@ public class Player : MonoBehaviour
     private float savedamege;
 
     public int hp;
+    public GameObject[] hps;
+    private int hpcount;
     // Start is called before the first frame update
     void Start()
     {
+        hpcount = 0 ;
         savedamege = damagetime;
         anim = gameObject.GetComponent<Animator>();
         source = gameObject.GetComponent<AudioSource>();
@@ -146,11 +149,13 @@ public class Player : MonoBehaviour
         if(damagetime<0)
         {
             hp--;
+            Destroy(hps[hpcount]);
+            hpcount++;
             damagetime = savedamege;
             damageflag = false;
         }
 
-        if(hp<0)
+        if(hp<=0)
         {
             endflag = true;
         }

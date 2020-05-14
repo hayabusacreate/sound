@@ -29,7 +29,6 @@ public class SceneChange : MonoBehaviour
         {
             player=GameObject.Find("Player").GetComponent<Player>();
             timeText = GameObject.Find("Time").GetComponent<Text>();
-            slider = GameObject.Find("Slider").GetComponent<Slider>();
             // 
             //Physics.gravity = new Vector3(0, -5, 0);
             slider.maxValue = time;
@@ -54,7 +53,7 @@ public class SceneChange : MonoBehaviour
 
                 break;
             case Scene.GamePlay:
-                timeText.text = "" + player.transform.position.y;
+                timeText.text = "高さ" + (int)player.transform.position.y;
                 //time -= Time.deltaTime;
                 //slider.value = time;
                 if(time<0)

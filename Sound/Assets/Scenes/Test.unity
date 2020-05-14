@@ -795,7 +795,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 59.2
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -820,8 +820,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 568552946}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.000024468645, y: 0.9995938, z: -0.0008585562, w: -0.028488178}
+  m_LocalPosition: {x: 0.66, y: 34.15, z: 11.609999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1767,7 +1767,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142071286}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8eec0ca5276724945877438c295b235c, type: 3}
   m_Name: 
@@ -2389,6 +2389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8024037942306255847}
   - component: {fileID: 8024037942311559929}
+  - component: {fileID: 8024037942306287496}
   m_Layer: 14
   m_Name: Sphere.001
   m_TagString: Untagged
@@ -2396,6 +2397,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8024037942306287496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8024037942306287495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1785e1de95c2822409c8d8939bd8061b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interval: 0.1
 --- !u!1 &8024037942306287497
 GameObject:
   m_ObjectHideFlags: 0
@@ -2406,6 +2420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8024037942306255849}
   - component: {fileID: 8024037942311559931}
+  - component: {fileID: 8024037942306287498}
   m_Layer: 14
   m_Name: Sphere
   m_TagString: Untagged
@@ -2413,6 +2428,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8024037942306287498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8024037942306287497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1785e1de95c2822409c8d8939bd8061b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interval: 0.1
 --- !u!1 &8024037942306287499
 GameObject:
   m_ObjectHideFlags: 0
@@ -2423,6 +2451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8024037942306255851}
   - component: {fileID: 8024037942311559933}
+  - component: {fileID: 8024037942306287500}
   m_Layer: 14
   m_Name: Slime
   m_TagString: Untagged
@@ -2430,6 +2459,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8024037942306287500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8024037942306287499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1785e1de95c2822409c8d8939bd8061b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interval: 0.1
 --- !u!1 &8024037942306287501
 GameObject:
   m_ObjectHideFlags: 0
@@ -2973,6 +3015,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8024037942306255825}
   - component: {fileID: 8024037942311559935}
+  - component: {fileID: 8024037942306287602}
   m_Layer: 14
   m_Name: Cube
   m_TagString: Untagged
@@ -2980,6 +3023,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8024037942306287602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8024037942306287601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1785e1de95c2822409c8d8939bd8061b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interval: 0.1
 --- !u!1 &8024037942306287603
 GameObject:
   m_ObjectHideFlags: 0

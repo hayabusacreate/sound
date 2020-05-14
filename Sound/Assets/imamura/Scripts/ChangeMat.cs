@@ -37,7 +37,8 @@ public class ChangeMat : MonoBehaviour
             transform.GetComponent<Renderer>().material = HedroMat;
         }
 
-        transform.GetComponent<Renderer>().material.SetFloat("_Threshold",1.0f - (block.hp / block.Maxhp) - 0.7f);
+        //transform.GetComponent<Renderer>().material.SetFloat("_Threshold",1.0f - (block.hp / block.Maxhp) - 0.7f);
+        transform.GetComponent<Renderer>().material.SetColor("_Color", new Color(1.0f - (block.hp / block.Maxhp) + 0.25f, 0,0,0));
         change = false;
     }
 

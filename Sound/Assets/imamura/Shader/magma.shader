@@ -10,6 +10,7 @@
         _RampTex("Ramp",2D) = " white"{}
 		_BumpMap("Normal Map"  , 2D) = "bump" {}
 		_BumpScale("Normal Scale", Range(0, 1)) = 1.0
+		_Color("Color", Color) = (1,1,1,1)
     }
     SubShader
     {
@@ -38,6 +39,7 @@
             float2 uv_MainTex;
         };
 
+		fixed4 _Color;
 		half _Threshold;
 
 		fixed4 LightingToonRamp(SurfaceOutput s, fixed3 lightDir, fixed atten)
@@ -63,12 +65,12 @@
 			fixed2 uv2 = IN.uv_MainTex;
 			uv2.x -= 0.0* _Time;
 			uv2.y -= 0.0* _Time;
-			fixed4 c1 = tex2D(_MainTex, uv);
-			fixed4 c2 = tex2D(_SubTex, uv);
+			fixed4 c1 = tex2D(_MainTex, uv)*_Color;
+			fixed4 c2 = tex2D(_SubTex, uv) ;
 			fixed4 p = tex2D(_MaskTex, uv2);
 			o.Albedo = lerp(c1, c2, p);
 
-			fixed4 n = tex2D(_BumpMap, uv2);
+			fixed4 n = tex2D(_BumpMap, IN.uv_MainTex);
 
 			o.Normal = UnpackScaleNormal(n, _BumpScale);
         }

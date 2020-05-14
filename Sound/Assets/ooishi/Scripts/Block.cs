@@ -22,7 +22,7 @@ public class Block : MonoBehaviour
     private float z;
     private int change;
     public GameObject kati;
-    public ParticleSystem syuwa,syuwawa;
+    public ParticleSystem syuwa, syuwawa;
 
     private bool moveendflag;
     private int savehight;
@@ -40,11 +40,13 @@ public class Block : MonoBehaviour
     public string type;
 
     public int maphight;
+    public ParticleSystem particle;
+    private bool palrticleflag;
     // Start is called before the first frame update
     void Start()
     {
         Maxhp = hp;
-        if(type=="0")
+        if (type == "0")
         {
             block = BlockType.Null;
             Destroy(gameObject);
@@ -63,9 +65,9 @@ public class Block : MonoBehaviour
         mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
         savehight = hight;
         rigidbody = gameObject.GetComponent<Rigidbody>();
-            change = 0;
-            count = 0;
-        
+        change = 0;
+        count = 0;
+
 
         //if (block == BlockType.Nomal)
         //{
@@ -76,6 +78,7 @@ public class Block : MonoBehaviour
         //    color.material.color = Color.yellow;
         //}
         transform.parent = null;
+        palrticleflag = true;
     }
 
     // Update is called once per frame
@@ -84,7 +87,7 @@ public class Block : MonoBehaviour
         Damage();
 
     }
- 
+
 
     void Damage()
     {
@@ -95,11 +98,16 @@ public class Block : MonoBehaviour
 
 
 
-            if (damageflag)
+        if (damageflag)
+        {
+            hp -= Time.deltaTime;
+            if(palrticleflag)
             {
-                hp -= Time.deltaTime;
-
+                particle.Play();
+                palrticleflag = false;
             }
+
+        }
 
         if (hp < 0)
         {

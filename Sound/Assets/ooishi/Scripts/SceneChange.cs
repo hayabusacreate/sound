@@ -54,7 +54,7 @@ public class SceneChange : MonoBehaviour
 
                 break;
             case Scene.GamePlay:
-                timeText.text = "" + player.transform.position.y;
+                timeText.text = "高さ" + (int)player.transform.position.y;
                 //time -= Time.deltaTime;
                 //slider.value = time;
                 if(time<0)

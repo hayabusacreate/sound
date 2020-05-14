@@ -719,7 +719,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 59.2
+  field of view: 40
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -744,8 +744,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 568552946}
-  m_LocalRotation: {x: -0.000024468645, y: 0.9995938, z: -0.0008585562, w: -0.028488178}
-  m_LocalPosition: {x: 0.66, y: 34.15, z: 11.609999}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2091,7 +2091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wave: []
   tyle: 
-  wavetime: 3
+  wavetime: 100
   enemy: {fileID: 2111695830022788055, guid: 81518cc58155c6f4f916fca50be7fd91, type: 3}
 --- !u!4 &2142071288
 Transform:

@@ -28,13 +28,13 @@ public class Wave : MonoBehaviour
         if(time>wavetime)
         {
             time = 0;
-            if(player.transform.position.x + 3<3)
+            if(player.transform.position.x + 5<5)
             {
-                Instantiate(enemy, new Vector3(player.transform.position.x + 3, player.transform.position.y + 3, 0), Quaternion.identity);
+                Instantiate(enemy, new Vector3(player.transform.position.x + 5, player.transform.position.y + 5, 0), Quaternion.identity);
             }
             else
             {
-                Instantiate(enemy, new Vector3(player.transform.position.x - 3, player.transform.position.y + 3, 0), Quaternion.identity);
+                Instantiate(enemy, new Vector3(player.transform.position.x - 5, player.transform.position.y + 5, 0), Quaternion.identity);
             }
 
         }

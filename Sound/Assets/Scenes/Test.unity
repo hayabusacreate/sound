@@ -1060,12 +1060,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606ce4b8624d77b42a66934c0842b242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eazy: 1
+  eazy: 5
   nomal: 5
-  hard: 10
-  eazymap: 0
-  nomalmap: 1
-  hardmap: 2
+  hard: 5
+  eazymap: 5
+  nomalmap: 5
+  hardmap: 5
   hight: 15
   width: 19
   map: {fileID: 5420315190351271739, guid: 019932f8b9d37f24096bef7fcbf22242, type: 3}

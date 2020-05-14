@@ -1060,12 +1060,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606ce4b8624d77b42a66934c0842b242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eazy: 5
+  eazy: 1
   nomal: 5
-  hard: 5
-  eazymap: 5
-  nomalmap: 5
-  hardmap: 5
+  hard: 10
+  eazymap: 6
+  nomalmap: 6
+  hardmap: 6
   hight: 15
   width: 19
   map: {fileID: 5420315190351271739, guid: 019932f8b9d37f24096bef7fcbf22242, type: 3}
@@ -1774,7 +1774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wave: []
   tyle: 
-  wavetime: 5
+  wavetime: 3
   enemy: {fileID: 2111695830022788055, guid: 81518cc58155c6f4f916fca50be7fd91, type: 3}
 --- !u!4 &2142071288
 Transform:

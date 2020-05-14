@@ -293,7 +293,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: 5
-  map: 3
+  time: 0
+  map: 6
   mapCreate: {fileID: 1678162830}
 --- !u!4 &1187774874
 Transform:

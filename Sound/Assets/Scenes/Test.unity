@@ -1063,9 +1063,9 @@ MonoBehaviour:
   eazy: 1
   nomal: 5
   hard: 10
-  eazymap: 5
-  nomalmap: 5
-  hardmap: 5
+  eazymap: 0
+  nomalmap: 0
+  hardmap: 0
   hight: 15
   width: 19
   map: {fileID: 5420315190351271739, guid: 019932f8b9d37f24096bef7fcbf22242, type: 3}
@@ -1767,7 +1767,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142071286}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8eec0ca5276724945877438c295b235c, type: 3}
   m_Name: 

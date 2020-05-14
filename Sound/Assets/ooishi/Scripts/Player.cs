@@ -156,13 +156,13 @@ public class Player : MonoBehaviour
     {
         if(damageflag)
         {
+            gameObject.layer = 13;
             damagetime -= Time.deltaTime;
         }
         if(damagetime<0)
         {
-            hp--;
-            Destroy(hps[hpcount]);
-            hpcount++;
+            gameObject.layer = 14;
+
             damagetime = savedamege;
             damageflag = false;
         }
@@ -196,7 +196,15 @@ public class Player : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            damageflag = true;   
+
+            if(!damageflag)
+            {
+                damageflag = true;
+                hp--;
+                Destroy(hps[hpcount]);
+                hpcount++;
+            }
+ 
             // moveflag = false;
         }
     }

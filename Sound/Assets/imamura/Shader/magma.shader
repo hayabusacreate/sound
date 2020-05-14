@@ -58,7 +58,7 @@
 				discard;
 			}
 			fixed2 uv = IN.uv_MainTex;
-			uv.x -= 0.0* _Time;
+			uv.x -= 3* _Time;
 			uv.y -= 4* _Time;
 			fixed2 uv2 = IN.uv_MainTex;
 			uv2.x -= 0.0* _Time;

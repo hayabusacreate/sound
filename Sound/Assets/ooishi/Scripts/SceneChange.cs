@@ -17,7 +17,7 @@ public class SceneChange : MonoBehaviour
 {
     public Scene scene;
     private Player player;
-    private float time;
+    public float time;
     private Text timeText;
     private Slider slider;
     public int map;
@@ -31,7 +31,6 @@ public class SceneChange : MonoBehaviour
             timeText = GameObject.Find("Time").GetComponent<Text>();
             // 
             //Physics.gravity = new Vector3(0, -5, 0);
-            slider.maxValue = time;
         }
         if (scene == Scene.Load)
         {

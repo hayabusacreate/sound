@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
 
     public int maphight;
 
-    private bool damageflag;
+    public bool damageflag;
 
     public float damagetime;
     private float savedamege;

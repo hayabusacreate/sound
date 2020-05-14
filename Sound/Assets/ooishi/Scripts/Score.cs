@@ -54,7 +54,7 @@ public class Score : MonoBehaviour
             save = score;
             hight.text = "HighScore" + highscore;
             //セーブされている数値が現在のscoreを超えたらテキストに反映する処理
-            if (highscore <= score)
+            if (highscore >= score)
             {
                 //ハイスコアの更新
                 highscore = score;
@@ -88,7 +88,7 @@ public class Score : MonoBehaviour
                     //    //ranks[i + 1] = save1;
                     //    loopSwap = true;
                     //}
-                    if (PlayerPrefs.GetInt("rank" + i, 0) < PlayerPrefs.GetInt("rank" + (i + 1), 0))
+                    if (PlayerPrefs.GetInt("rank" + i, 0) > PlayerPrefs.GetInt("rank" + (i + 1), 0))
                     {
                         save1 = PlayerPrefs.GetInt("rank" + i, 0);
                         save2 = PlayerPrefs.GetInt("rank" + (i + 1), 0);

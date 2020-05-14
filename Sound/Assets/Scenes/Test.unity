@@ -1063,9 +1063,9 @@ MonoBehaviour:
   eazy: 1
   nomal: 5
   hard: 10
-  eazymap: 6
-  nomalmap: 6
-  hardmap: 6
+  eazymap: 5
+  nomalmap: 5
+  hardmap: 5
   hight: 15
   width: 19
   map: {fileID: 5420315190351271739, guid: 019932f8b9d37f24096bef7fcbf22242, type: 3}

@@ -112,20 +112,7 @@ public class Player : MonoBehaviour
             anim.SetBool("Dash", true);
 
         }
-        if(transform.position.x+speed*2<(-map.width+1)|| transform.position.x+-speed*2 > 0)
-        {
-            moveflag = false;
-            if (changeflag == 0)
-            {
-                //rigidbody.AddForce(speed, 0, 0);
-                transform.position += new Vector3(speed, 0, 0);
-            }
-            else
-            {
-                //rigidbody.AddForce(-speed, 0, 0);
-                transform.position -= new Vector3(speed, 0, 0);
-            }
-        }
+
         if(moveflag)
         {
             if(changeflag==0)
@@ -137,6 +124,20 @@ public class Player : MonoBehaviour
             {
                 rigidbody.AddForce(speed, 0, 0);
                 transform.position += new Vector3(speed, 0, 0);
+            }
+        }
+        if (transform.position.x + speed * 2 < (-map.width + 1) || transform.position.x + -speed * 2 > 0)
+        {
+            moveflag = false;
+            if (changeflag == 0)
+            {
+                //rigidbody.AddForce(speed, 0, 0);
+                transform.position += new Vector3(speed, 0, 0);
+            }
+            else
+            {
+                //rigidbody.AddForce(-speed, 0, 0);
+                transform.position -= new Vector3(speed, 0, 0);
             }
         }
     }

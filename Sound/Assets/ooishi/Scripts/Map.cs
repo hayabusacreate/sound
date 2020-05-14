@@ -26,12 +26,12 @@ public class Map : MonoBehaviour
         }
         else if(map.maphight < map.nomal)
         {
-            mapnum = Random.Range(map.eazymap, map.nomalmap);
+            mapnum = Random.Range(0, map.nomalmap);
              reader = new StringReader(map.ReturnMap(mapnum).text);
         }
         else
         {
-            mapnum = Random.Range(map.nomalmap, map.hardmap);
+            mapnum = Random.Range(0, map.hardmap);
              reader = new StringReader(map.ReturnMap(mapnum).text);
         }
 

@@ -10,6 +10,7 @@
         _RampTex("Ramp",2D) = " white"{}
 		_BumpMap("Normal Map"  , 2D) = "bump" {}
 		_BumpScale("Normal Scale", Range(0, 1)) = 1.0
+		_Alpha("Alpha",Range(0,1)) = 1.0
     }
     SubShader
     {
@@ -18,7 +19,7 @@
 
         CGPROGRAM
         // Physically based Standard lighting model, and enable shadows on all light types
-        #pragma surface surf ToonRamp
+        #pragma surface surf ToonRamp alpha:fade
 
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 3.0
@@ -39,6 +40,7 @@
         };
 
 		half _Threshold;
+		float _Alpha;
 
 		fixed4 LightingToonRamp(SurfaceOutput s, fixed3 lightDir, fixed atten)
 		{
@@ -46,7 +48,7 @@
 			fixed3 ramp = tex2D(_RampTex, fixed2(d, 0.5)).rgb;
 			fixed4 c;
 			c.rgb = s.Albedo * _LightColor0.rgb * ramp;
-			c.a = 0;
+			c.a = _Alpha;
 			return c;
 		}
 
@@ -67,7 +69,7 @@
 			fixed4 c2 = tex2D(_SubTex, uv);
 			fixed4 p = tex2D(_MaskTex, uv2);
 			o.Albedo = lerp(c1, c2, p);
-
+			o.Alpha = c1.a;
 			fixed4 n = tex2D(_BumpMap, uv2);
 
 			o.Normal = UnpackScaleNormal(n, _BumpScale);

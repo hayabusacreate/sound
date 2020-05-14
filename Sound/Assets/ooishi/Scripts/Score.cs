@@ -16,9 +16,12 @@ public class Score : MonoBehaviour
     //ハイスコアを保存するint型
     public static int save, save1, save2, highscore;
     private SceneChange sceneChange;
+    private Player player;
     // Start is called before the first frame update
     void Start()
     {
+
+
         sceneChange = GameObject.Find("SceneChange").GetComponent<SceneChange>();
         text = GetComponent<Text>();
         //ヒエラルキービューからHightScoreというものを探して代入する処理。
@@ -27,6 +30,7 @@ public class Score : MonoBehaviour
         //現在のシーンを調べてGamePlayならsaveを初期化する。
         if (sceneChange.scene == Scene.GamePlay)
         {
+            player = GameObject.Find("Player").GetComponent<Player>();
             save = 0;
         }
         //ゲームが始まってから1度だけランキングを初期生成する処理
@@ -50,6 +54,7 @@ public class Score : MonoBehaviour
     {
         if (sceneChange.scene == Scene.GamePlay)
         {
+            score = (int)player.transform.position.y;
             text.text = "Score" + score;
             save = score;
             hight.text = "HighScore" + highscore;

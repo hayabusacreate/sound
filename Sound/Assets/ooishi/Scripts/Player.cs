@@ -88,9 +88,14 @@ public class Player : MonoBehaviour
         {
             moveflag = false;
         }
+
+        
         if ((Input.GetKey(KeyCode.D)||Input.GetAxis("Horizontal") >0.8f)&&backflag && (changeflag == 0 || changeflag == 1))
         {
-
+            if(!flontflag)
+            {
+                flontflag = true;
+            }
             changeflag = 0;
             moveflag = true;
             anim.SetBool("Dash", true);
@@ -98,7 +103,10 @@ public class Player : MonoBehaviour
         else
         if ((Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal") <-0.8f) && flontflag&&(changeflag==0||changeflag==1))
         {
-
+            if (!backflag)
+            {
+                backflag = true;
+            }
             changeflag = 1;
             moveflag = true;
             anim.SetBool("Dash", true);
@@ -109,10 +117,12 @@ public class Player : MonoBehaviour
             moveflag = false;
             if (changeflag == 0)
             {
+                //rigidbody.AddForce(speed, 0, 0);
                 transform.position += new Vector3(speed, 0, 0);
             }
             else
             {
+                //rigidbody.AddForce(-speed, 0, 0);
                 transform.position -= new Vector3(speed, 0, 0);
             }
         }
@@ -120,10 +130,12 @@ public class Player : MonoBehaviour
         {
             if(changeflag==0)
             {
+                rigidbody.AddForce(-speed, 0, 0);
                 transform.position -= new Vector3(speed, 0, 0);
             }
             else
             {
+                rigidbody.AddForce(speed, 0, 0);
                 transform.position += new Vector3(speed, 0, 0);
             }
         }

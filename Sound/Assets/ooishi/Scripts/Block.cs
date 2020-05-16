@@ -42,6 +42,8 @@ public class Block : MonoBehaviour
     public int maphight;
     public ParticleSystem particle;
     private bool palrticleflag;
+
+    public GameObject enemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,7 +59,7 @@ public class Block : MonoBehaviour
         }
         if (type == "3")
         {
-            block = BlockType.Nomal;
+            Instantiate(enemy, transform.position, Quaternion.identity);
         }
         source = gameObject.GetComponent<AudioSource>();
 

@@ -60,6 +60,7 @@ public class Block : MonoBehaviour
         if (type == "3")
         {
             Instantiate(enemy, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
         source = gameObject.GetComponent<AudioSource>();
 

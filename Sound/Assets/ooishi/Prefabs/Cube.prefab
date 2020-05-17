@@ -121,6 +121,7 @@ MonoBehaviour:
   type: 
   maphight: 0
   particle: {fileID: 8432338172139320709}
+  enemy: {fileID: 2111695830022788055, guid: 81518cc58155c6f4f916fca50be7fd91, type: 3}
 --- !u!114 &2385206143718235896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,11 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95a916c1a58a41943acd7391bfbded40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alphaMat: {fileID: 2100000, guid: df7b27a096174f240af7cb1bab59b011, type: 2}
-  HedroMat: {fileID: 2100000, guid: b9b8b713340d45c47a59371e057c8c8d, type: 2}
-  BejitablMat: {fileID: 2100000, guid: 2e5144121bb083b419a48926630d06bd, type: 2}
-  TomatMat: {fileID: 2100000, guid: b00bf2b710fc8a546b1902568c4e77fa, type: 2}
-  FishMat: {fileID: 2100000, guid: 4a19c4660288b184d8ca7fb1cb1b1f19, type: 2}
 --- !u!1001 &3336178251012992048
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -56,8 +56,8 @@ public class Map : MonoBehaviour
                 gameObject.GetComponent<Block>().type = csvDatas[y][x];
                 gameObject.GetComponent<Block>().maphight = map.maphight;
             }
-            Instantiate(wall, new Vector3(1, transform.position.y - y, 0), Quaternion.identity);
-            Instantiate(wall, new Vector3(-width, transform.position.y - y, 0), Quaternion.identity);
+            Instantiate(wall, new Vector3(1, -transform.position.y - y, 0), Quaternion.identity);
+            Instantiate(wall, new Vector3(-width, -transform.position.y - y, 0), Quaternion.identity);
         }
         Destroy(gameObject);
     }

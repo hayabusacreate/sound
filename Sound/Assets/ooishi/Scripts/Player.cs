@@ -9,6 +9,14 @@ public enum PlayerType
     Fish,
     Etc,
 }
+public enum PlayerMove
+{
+    Down,
+    Up,
+    Right,
+    Left
+}
+
 public class Player : MonoBehaviour
 {
     public float speed;
@@ -31,7 +39,7 @@ public class Player : MonoBehaviour
     public AudioClip jumpse;
     private AudioSource source;
 
-    private Animator anim;
+    public Animator anim;
 
     public bool flontflag, backflag;
 
@@ -45,12 +53,17 @@ public class Player : MonoBehaviour
     public int hp;
     public GameObject[] hps;
     private int hpcount;
+
+    public PlayerMove playerMove;
+
+    private float angle;
     // Start is called before the first frame update
     void Start()
     {
+        jumpflag = true;
+        playerMove = PlayerMove.Down;
         hpcount = 0 ;
         savedamege = damagetime;
-        anim = gameObject.GetComponent<Animator>();
         source = gameObject.GetComponent<AudioSource>();
         hight = 0;
         changeflag = 0;
@@ -89,57 +102,245 @@ public class Player : MonoBehaviour
             moveflag = false;
         }
 
-        
-        if ((Input.GetKey(KeyCode.D)||Input.GetAxis("Horizontal") >0.8f)&&backflag && (changeflag == 0 || changeflag == 1))
+
+        if ((Input.GetKey(KeyCode.D) || Input.GetAxis("Horizontal") > 0.8f) && (changeflag == 0 || changeflag == 1))
         {
-            if(!flontflag)
+
+            if (backflag)
             {
-                flontflag = true;
+                if (!flontflag)
+                {
+                    flontflag = true;
+                }
+                changeflag = 0;
+                moveflag = true;
+                anim.SetBool("Dash", true);
             }
-            changeflag = 0;
-            moveflag = true;
-            anim.SetBool("Dash", true);
+            else
+            {
+                transform.Rotate(0, 0, -5);
+            }
         }
         else
-        if ((Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal") <-0.8f) && flontflag&&(changeflag==0||changeflag==1))
+        if ((Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal") < -0.8f) && (changeflag == 0 || changeflag == 1))
         {
-            if (!backflag)
+            if (flontflag)
             {
-                backflag = true;
+                if (!backflag)
+                {
+                    backflag = true;
+                }
+                changeflag = 1;
+                moveflag = true;
+                anim.SetBool("Dash", true);
             }
-            changeflag = 1;
-            moveflag = true;
-            anim.SetBool("Dash", true);
+            else
+            {
+                transform.Rotate(0, 0, 5);
+            }
 
         }
+        //}else if(Input.GetKey(KeyCode.Q)&&jumpflag)
+        //{
+        //    transform.Rotate(0, 0, -5);
+
+        //}
+        //else if (Input.GetKey(KeyCode.E) && jumpflag)
+        //{
+        //    transform.Rotate(0, 0, 5);
+        //}
+        Quaternion woldangle=transform.localRotation;
+        Vector3 vector3 = woldangle.eulerAngles;
+
+
+        //Debug.Log(transform.rotation.x);
+        //woldangle = Quaternion.Euler(vector3);
+        angle = transform.rotation.eulerAngles.z;
+        if (playerMove == PlayerMove.Down)
+        {
+
+            if(!jumpflag)
+            {
+                if (angle <= 270&&angle>180)
+                {
+                    playerMove = PlayerMove.Right;
+                    flontflag = true;
+                    backflag = true;
+                }
+                else
+                
+                   if (angle >= 90&&angle<180)
+                {
+                    playerMove = PlayerMove.Left;
+                    flontflag = true;
+                    backflag = true;
+                }
+            }
+
+        }
+        if (playerMove == PlayerMove.Up)
+        {
+            if (!jumpflag)
+            {
+                if (angle <= 90 && angle > 0)
+                {
+                    playerMove = PlayerMove.Left;
+                    flontflag = true;
+                    backflag = true;
+                }
+                else
+                if (angle <= 360 && angle > 270)
+                {
+                    playerMove = PlayerMove.Right;
+                    flontflag = true;
+                    backflag = true;
+                }
+            }
+
+        }
+        if (playerMove == PlayerMove.Right)
+        {
+            if (!jumpflag)
+            {
+                if (angle < 90 && angle > 0)
+                {
+                    playerMove = PlayerMove.Down;
+                    flontflag = true;
+                    backflag = true;
+                }
+                else
+                if (angle > 90 && angle < 180)
+                {
+                    playerMove = PlayerMove.Up;
+                    flontflag = true;
+                    backflag = true;
+                }
+            }
+
+        }
+        if (playerMove == PlayerMove.Left)
+        {
+            if (!jumpflag)
+            {
+                if (angle > 180 && angle < 270)
+                {
+                    playerMove = PlayerMove.Up;
+                    flontflag = true;
+                    backflag = true;
+                }
+                if (angle > 0 && angle > 270)
+                {
+                    playerMove = PlayerMove.Down;
+                    flontflag = true;
+                    backflag = true;
+                }
+            }
+
+        }
+
+
+
+        switch (playerMove)
+            {
+                case PlayerMove.Down:
+                    if(moveflag)
+                    {
+                        if (changeflag == 0)
+                        {
+                            rigidbody.AddForce(-speed, 0, 0);
+                            transform.position -= new Vector3(speed, 0, 0);
+                        }
+                        else
+                        {
+                            rigidbody.AddForce(speed, 0, 0);
+                            transform.position += new Vector3(speed, 0, 0);
+                        }
+                    }
+
+                    rigidbody.AddForce(0,-10, 0);
+                    break;
+                case PlayerMove.Up:
+                    if(moveflag)
+                    {
+                        if (changeflag == 0)
+                        {
+                            rigidbody.AddForce(-speed, 0, 0);
+                            transform.position += new Vector3(speed, 0, 0);
+                        }
+                        else
+                        {
+                            rigidbody.AddForce(speed, 0, 0);
+                            transform.position -= new Vector3(speed, 0, 0);
+                        }
+                    }
+
+                    rigidbody.AddForce(0,10, 0);
+                    break;
+                case PlayerMove.Right:
+                    if(moveflag)
+                    {
+                        if (changeflag == 0)
+                        {
+                            rigidbody.AddForce(-speed, 0, 0);
+                            transform.position += new Vector3(0, speed, 0);
+                        }
+                        else
+                        {
+                            rigidbody.AddForce(speed, 0, 0);
+                            transform.position -= new Vector3(0, speed, 0);
+                        }
+                    }
+
+                    rigidbody.AddForce(-10, 0, 0);
+                    break;
+                case PlayerMove.Left:
+                    if(moveflag)
+                    {
+                        if (changeflag == 0)
+                        {
+                            rigidbody.AddForce(-speed, 0, 0);
+                            transform.position -= new Vector3(0, speed, 0);
+                        }
+                        else
+                        {
+                            rigidbody.AddForce(speed, 0, 0);
+                            transform.position += new Vector3(0, speed, 0);
+                        }
+                    }
+
+                    rigidbody.AddForce(10, 0, 0);
+                    break;
+            }
+
+        //if(changeflag==0)
+        //{
+        //    rigidbody.AddForce(-speed, 0, 0);
+        //    transform.position -= new Vector3(speed, 0, 0);
+        //}
+        //else
+        //{
+        //    rigidbody.AddForce(speed, 0, 0);
+        //    transform.position += new Vector3(speed, 0, 0);
+        //}
 
         if(moveflag)
         {
-            if(changeflag==0)
+            if (transform.position.x + speed * 2 < (-map.width + 1) || transform.position.x + -speed * 2 > 0)
             {
-                rigidbody.AddForce(-speed, 0, 0);
-                transform.position -= new Vector3(speed, 0, 0);
-            }
-            else
-            {
-                rigidbody.AddForce(speed, 0, 0);
-                transform.position += new Vector3(speed, 0, 0);
-            }
-        }
-        if (transform.position.x + speed * 2 < (-map.width + 1) || transform.position.x + -speed * 2 > 0)
-        {
-            moveflag = false;
-            if (changeflag == 0)
-            {
-                //rigidbody.AddForce(speed, 0, 0);
-                transform.position += new Vector3(speed, 0, 0);
-            }
-            else
-            {
-                //rigidbody.AddForce(-speed, 0, 0);
-                transform.position -= new Vector3(speed, 0, 0);
+                moveflag = false;
+                if (changeflag == 0)
+                {
+                    //rigidbody.AddForce(speed, 0, 0);
+                    transform.position += new Vector3(speed, 0, 0);
+                }
+                else
+                {
+                    //rigidbody.AddForce(-speed, 0, 0);
+                    transform.position -= new Vector3(speed, 0, 0);
+                }
             }
         }
+
     }
 
     void Jump()

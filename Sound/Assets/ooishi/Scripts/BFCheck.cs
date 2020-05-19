@@ -36,19 +36,30 @@ public class BFCheck : MonoBehaviour
                 player.backflag = false;
             }
         }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Block")
+        if(other.gameObject.tag == "Wall")
         {
             if (bf == BF.Flont)
             {
-                player.flontflag = true;
+                player.flontflag = false;
             }
             else
             {
-                player.backflag = true;
+                player.backflag = false;
             }
         }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        //if (other.gameObject.tag == "Block")
+        //{
+        //    if (bf == BF.Flont)
+        //    {
+        //        player.flontflag = true;
+        //    }
+        //    else
+        //    {
+        //        player.backflag = true;
+        //    }
+        //}
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - Side
   - Bubble
   - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX

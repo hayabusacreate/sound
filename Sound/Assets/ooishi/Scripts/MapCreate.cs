@@ -15,6 +15,8 @@ public class MapCreate : MonoBehaviour
     public int hight, width;
     public GameObject map;
     public int maphight;
+
+    public GameObject wall;
     // Start is called before the first frame update
     void Start()
     {

@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour
             }else
             {
                 damageflag = false;
-                damegeefe.Pause();
+                damegeefe.Stop();
             }
         }
     }
@@ -86,7 +86,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == ("Block"))
         {
             damageflag = false;
-            damegeefe.Pause();
+            damegeefe.Stop();
         }
     }
 }

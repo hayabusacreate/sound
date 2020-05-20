@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-        if ((!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A) )|| (Input.GetAxis("Horizontal") < -0.8f&& Input.GetAxis("Horizontal") > 0.8f))
+        if ((!Input.GetKey(KeyCode.D) || !Input.GetKey(KeyCode.A) )|| (Input.GetAxis("Horizontal") < -0.8f&& Input.GetAxis("Horizontal") > 0.8f))
         {
             //changeflag = 0;
             moveflag = false;
@@ -115,39 +115,55 @@ public class Player : MonoBehaviour
 
         if ((Input.GetKey(KeyCode.D) || Input.GetAxis("Horizontal") > 0.8f) && (changeflag == 0 || changeflag == 1))
         {
-
-            if (backflag)
+            if(skill==PlayerSkill.Gravity)
             {
-                if (!flontflag)
+                if (backflag)
                 {
-                    flontflag = true;
+                    if (!flontflag)
+                    {
+                        flontflag = true;
+                    }
+                    changeflag = 0;
+                    moveflag = true;
+                    anim.SetBool("Dash", true);
                 }
+                else
+                {
+                    transform.Rotate(0, 0, -5);
+                }
+            }else
+            {
                 changeflag = 0;
                 moveflag = true;
                 anim.SetBool("Dash", true);
             }
-            else
-            {
-                transform.Rotate(0, 0, -5);
-            }
+
+
         }
         else
         if ((Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal") < -0.8f) && (changeflag == 0 || changeflag == 1))
         {
-            if (flontflag)
+            if(skill==PlayerSkill.Gravity)
             {
-                if (!backflag)
+                if (flontflag)
                 {
-                    backflag = true;
+                    if (!backflag)
+                    {
+                        backflag = true;
+                    }
+
                 }
+                else
+                {
+                    transform.Rotate(0, 0, 5);
+                }
+            }else
+            {
                 changeflag = 1;
                 moveflag = true;
                 anim.SetBool("Dash", true);
             }
-            else
-            {
-                transform.Rotate(0, 0, 5);
-            }
+
 
         }
         //}else if(Input.GetKey(KeyCode.Q)&&jumpflag)
@@ -319,23 +335,32 @@ public class Player : MonoBehaviour
                     rigidbody.AddForce(10, 0, 0);
                     break;
             }
-        }
-
-
-
-
-
-
-        if (changeflag == 0)
+        }else
         {
-            rigidbody.AddForce(-speed, 0, 0);
-            transform.position -= new Vector3(speed, 0, 0);
+            if(moveflag)
+            {
+                if (changeflag == 0)
+                {
+                    rigidbody.AddForce(-speed, 0, 0);
+                    transform.position -= new Vector3(speed, 0, 0);
+                }
+                else
+                {
+                    rigidbody.AddForce(speed, 0, 0);
+                    transform.position += new Vector3(speed, 0, 0);
+                }
+            }
+
+
+            rigidbody.AddForce(0, -10, 0);
         }
-        else
-        {
-            rigidbody.AddForce(speed, 0, 0);
-            transform.position += new Vector3(speed, 0, 0);
-        }
+
+
+
+
+
+
+
 
         if (moveflag)
         {

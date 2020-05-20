@@ -10,6 +10,7 @@ TagManager:
   - Bubble
   - Enemy
   - Wall
+  - Serch
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - option
   - Enemy
   - Player
-  - 
+  - Serch
   - 
   - 
   - 

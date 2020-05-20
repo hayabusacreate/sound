@@ -17,9 +17,12 @@ public class Map : MonoBehaviour
     private Player player;
 
     public GameObject wall;
+
+    public Dictionary<int, bool> maps;
     // Start is called before the first frame update
     void Start()
     {
+        maps = new Dictionary<int, bool>();
         map = GameObject.Find("MapCreate").GetComponent<MapCreate>();
         if(map.maphight<map.eazy)
         {
@@ -55,6 +58,7 @@ public class Map : MonoBehaviour
                 GameObject gameObject = Instantiate(block, new Vector3(-x,-transform.position.y-y, 0), Quaternion.identity);
                 gameObject.GetComponent<Block>().type = csvDatas[y][x];
                 gameObject.GetComponent<Block>().maphight = map.maphight;
+
             }
             Instantiate(wall, new Vector3(1, -transform.position.y - y, 0), Quaternion.identity);
             Instantiate(wall, new Vector3(-width, -transform.position.y - y, 0), Quaternion.identity);

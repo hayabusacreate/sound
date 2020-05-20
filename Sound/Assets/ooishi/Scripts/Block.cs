@@ -44,6 +44,8 @@ public class Block : MonoBehaviour
     private bool palrticleflag;
 
     public GameObject enemy,hart,jet,fire,gravety;
+
+    public int x, y;
     // Start is called before the first frame update
     void Start()
     {
@@ -148,6 +150,10 @@ public class Block : MonoBehaviour
 
         if (hp < 0)
         {
+            if (player.skill==PlayerSkill.Fire)
+            {
+
+            }
             Destroy(gameObject);
         }
     }

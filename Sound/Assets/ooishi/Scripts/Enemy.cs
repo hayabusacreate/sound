@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EnemyType
+{
+    Nomal,
+    Block,
+    Sneak
+}
+
 public class Enemy : MonoBehaviour
 {
     private GameObject player;
@@ -17,6 +24,8 @@ public class Enemy : MonoBehaviour
 
     public GameObject dethpa;
     public ParticleSystem damegeefe;
+
+    public EnemyType type;
     // Start is called before the first frame update
     void Start()
     {

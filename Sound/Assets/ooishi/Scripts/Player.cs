@@ -164,95 +164,94 @@ public class Player : MonoBehaviour
 
 
         //woldangle = Quaternion.Euler(vector3);
-        angle = transform.rotation.eulerAngles.z;
-        if (playerMove == PlayerMove.Down)
+        if(skill==PlayerSkill.Gravity)
         {
-
-            if(!jumpflag)
+            angle = transform.rotation.eulerAngles.z;
+            if (playerMove == PlayerMove.Down)
             {
-                if (angle <= 270&&angle>180)
-                {
-                    playerMove = PlayerMove.Right;
-                    flontflag = true;
-                    backflag = true;
-                }
-                else
-                
-                   if (angle >= 90&&angle<180)
-                {
-                    playerMove = PlayerMove.Left;
-                    flontflag = true;
-                    backflag = true;
-                }
-            }
 
-        }
-        if (playerMove == PlayerMove.Up)
-        {
-            if (!jumpflag)
+                if (!jumpflag)
+                {
+                    if (angle <= 270 && angle > 180)
+                    {
+                        playerMove = PlayerMove.Right;
+                        flontflag = true;
+                        backflag = true;
+                    }
+                    else
+
+                       if (angle >= 90 && angle < 180)
+                    {
+                        playerMove = PlayerMove.Left;
+                        flontflag = true;
+                        backflag = true;
+                    }
+                }
+
+            }
+            if (playerMove == PlayerMove.Up)
             {
-                if (angle <= 90 && angle > 0)
+                if (!jumpflag)
                 {
-                    playerMove = PlayerMove.Left;
-                    flontflag = true;
-                    backflag = true;
+                    if (angle <= 90 && angle > 0)
+                    {
+                        playerMove = PlayerMove.Left;
+                        flontflag = true;
+                        backflag = true;
+                    }
+                    else
+                    if (angle <= 360 && angle > 270)
+                    {
+                        playerMove = PlayerMove.Right;
+                        flontflag = true;
+                        backflag = true;
+                    }
                 }
-                else
-                if (angle <= 360 && angle > 270)
-                {
-                    playerMove = PlayerMove.Right;
-                    flontflag = true;
-                    backflag = true;
-                }
-            }
 
-        }
-        if (playerMove == PlayerMove.Right)
-        {
-            if (!jumpflag)
+            }
+            if (playerMove == PlayerMove.Right)
             {
-                if (angle < 90 && angle > 0)
+                if (!jumpflag)
                 {
-                    playerMove = PlayerMove.Down;
-                    flontflag = true;
-                    backflag = true;
+                    if (angle < 90 && angle > 0)
+                    {
+                        playerMove = PlayerMove.Down;
+                        flontflag = true;
+                        backflag = true;
+                    }
+                    else
+                    if (angle > 90 && angle < 180)
+                    {
+                        playerMove = PlayerMove.Up;
+                        flontflag = true;
+                        backflag = true;
+                    }
                 }
-                else
-                if (angle > 90 && angle < 180)
-                {
-                    playerMove = PlayerMove.Up;
-                    flontflag = true;
-                    backflag = true;
-                }
-            }
 
-        }
-        if (playerMove == PlayerMove.Left)
-        {
-            if (!jumpflag)
+            }
+            if (playerMove == PlayerMove.Left)
             {
-                if (angle > 180 && angle < 270)
+                if (!jumpflag)
                 {
-                    playerMove = PlayerMove.Up;
-                    flontflag = true;
-                    backflag = true;
+                    if (angle > 180 && angle < 270)
+                    {
+                        playerMove = PlayerMove.Up;
+                        flontflag = true;
+                        backflag = true;
+                    }
+                    if (angle > 0 && angle > 270)
+                    {
+                        playerMove = PlayerMove.Down;
+                        flontflag = true;
+                        backflag = true;
+                    }
                 }
-                if (angle > 0 && angle > 270)
-                {
-                    playerMove = PlayerMove.Down;
-                    flontflag = true;
-                    backflag = true;
-                }
+
             }
-
-        }
-
-
-
-        switch (playerMove)
+            switch (playerMove)
             {
                 case PlayerMove.Down:
-                    if(moveflag)
+                    if (moveflag)
                     {
                         if (changeflag == 0)
                         {
@@ -266,10 +265,10 @@ public class Player : MonoBehaviour
                         }
                     }
 
-                    rigidbody.AddForce(0,-10, 0);
+                    rigidbody.AddForce(0, -10, 0);
                     break;
                 case PlayerMove.Up:
-                    if(moveflag)
+                    if (moveflag)
                     {
                         if (changeflag == 0)
                         {
@@ -283,10 +282,10 @@ public class Player : MonoBehaviour
                         }
                     }
 
-                    rigidbody.AddForce(0,10, 0);
+                    rigidbody.AddForce(0, 10, 0);
                     break;
                 case PlayerMove.Right:
-                    if(moveflag)
+                    if (moveflag)
                     {
                         if (changeflag == 0)
                         {
@@ -303,7 +302,7 @@ public class Player : MonoBehaviour
                     rigidbody.AddForce(-10, 0, 0);
                     break;
                 case PlayerMove.Left:
-                    if(moveflag)
+                    if (moveflag)
                     {
                         if (changeflag == 0)
                         {
@@ -320,19 +319,25 @@ public class Player : MonoBehaviour
                     rigidbody.AddForce(10, 0, 0);
                     break;
             }
+        }
 
-        //if(changeflag==0)
-        //{
-        //    rigidbody.AddForce(-speed, 0, 0);
-        //    transform.position -= new Vector3(speed, 0, 0);
-        //}
-        //else
-        //{
-        //    rigidbody.AddForce(speed, 0, 0);
-        //    transform.position += new Vector3(speed, 0, 0);
-        //}
 
-        if(moveflag)
+
+
+
+
+        if (changeflag == 0)
+        {
+            rigidbody.AddForce(-speed, 0, 0);
+            transform.position -= new Vector3(speed, 0, 0);
+        }
+        else
+        {
+            rigidbody.AddForce(speed, 0, 0);
+            transform.position += new Vector3(speed, 0, 0);
+        }
+
+        if (moveflag)
         {
             if (transform.position.x + speed * 2 < (-map.width + 1) || transform.position.x + -speed * 2 > 0)
             {

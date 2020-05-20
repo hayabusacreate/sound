@@ -412,6 +412,7 @@ public class Player : MonoBehaviour
             {
                 damageflag = true;
                 hp--;
+                hps[hpcount].SetActive(false);
                 Destroy(hps[hpcount]);
                 hpcount++;
             }
@@ -425,6 +426,9 @@ public class Player : MonoBehaviour
                 if(hp<hps.Length)
                 {
                     hp++;
+                    hpcount--;
+                    hps[hpcount].SetActive(true);
+
                 }
             }
             if (other.gameObject.GetComponent<Item>().item == ItemSelect.Gravity)

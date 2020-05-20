@@ -349,7 +349,6 @@ MonoBehaviour:
   width: 0
   map: {fileID: 0}
   maphight: 0
-  wall: {fileID: 0}
 --- !u!4 &1678162831
 Transform:
   m_ObjectHideFlags: 0

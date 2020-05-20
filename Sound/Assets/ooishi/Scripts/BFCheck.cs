@@ -4,7 +4,9 @@ using UnityEngine;
 public enum BF
 {
     Flont,
-    Back
+    Back,
+    Frontdown,
+    Backdown
 }
 
 public class BFCheck : MonoBehaviour
@@ -31,9 +33,17 @@ public class BFCheck : MonoBehaviour
             if(bf==BF.Flont)
             {
                 player.flontflag = false;
-            }else
+            }else if (bf == BF.Back)
             {
                 player.backflag = false;
+            }
+            else if (bf == BF.Backdown)
+            {
+                player.backflag = false;
+            }
+            else if (bf == BF.Frontdown)
+            {
+                player.flontflag = false;
             }
         }
         if(other.gameObject.tag == "Wall")
@@ -42,9 +52,17 @@ public class BFCheck : MonoBehaviour
             {
                 player.flontflag = false;
             }
-            else
+            else if (bf == BF.Back)
             {
                 player.backflag = false;
+            }
+            else if (bf == BF.Backdown)
+            {
+                player.backflag = false;
+            }
+            else if (bf == BF.Frontdown)
+            {
+                player.flontflag = false;
             }
         }
     }

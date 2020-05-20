@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour
         //Debug.Log(renge);
 
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if(collision.gameObject.tag==("Block"))
         {
@@ -74,10 +74,6 @@ public class Enemy : MonoBehaviour
             {
                 damageflag = true;
                 damegeefe.Play();
-            }else
-            {
-                damageflag = false;
-                damegeefe.Stop();
             }
         }
     }

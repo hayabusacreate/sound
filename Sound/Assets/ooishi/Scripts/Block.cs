@@ -43,7 +43,7 @@ public class Block : MonoBehaviour
     public ParticleSystem particle;
     private bool palrticleflag;
 
-    public GameObject enemy;
+    public GameObject enemy,hart,jet,fire,gravety;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +60,36 @@ public class Block : MonoBehaviour
         if (type == "3")
         {
             Instantiate(enemy, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        if (type == "4")
+        {
+            Instantiate(enemy, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        if (type == "5")
+        {
+            Instantiate(enemy, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        if (type == "6")
+        {
+            Instantiate(hart, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        if (type == "7")
+        {
+            Instantiate(fire, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        if (type == "8")
+        {
+            Instantiate(gravety, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        if (type == "9")
+        {
+            Instantiate(jet, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         source = gameObject.GetComponent<AudioSource>();

@@ -17,6 +17,14 @@ public enum PlayerMove
     Left
 }
 
+public enum PlayerSkill
+{
+    Null,
+    Gravity,
+    Fire,
+    Jet,
+}
+
 public class Player : MonoBehaviour
 {
     public float speed;
@@ -41,7 +49,7 @@ public class Player : MonoBehaviour
 
     public Animator anim;
 
-    public bool flontflag, backflag;
+    public bool flontflag, backflag,fbflag,bbflag;
 
     public int maphight;
 
@@ -57,6 +65,8 @@ public class Player : MonoBehaviour
     public PlayerMove playerMove;
 
     private float angle;
+
+    public PlayerSkill skill;
     // Start is called before the first frame update
     void Start()
     {
@@ -153,7 +163,6 @@ public class Player : MonoBehaviour
         Vector3 vector3 = woldangle.eulerAngles;
 
 
-        //Debug.Log(transform.rotation.x);
         //woldangle = Quaternion.Euler(vector3);
         angle = transform.rotation.eulerAngles.z;
         if (playerMove == PlayerMove.Down)
@@ -408,6 +417,28 @@ public class Player : MonoBehaviour
             }
  
             // moveflag = false;
+        }
+        if (other.tag == "Item")
+        {
+            if(other.gameObject.GetComponent<Item>().item==ItemSelect.Hart)
+            {
+                if(hp<hps.Length)
+                {
+                    hp++;
+                }
+            }
+            if (other.gameObject.GetComponent<Item>().item == ItemSelect.Gravity)
+            {
+                skill = PlayerSkill.Gravity;
+            }
+            if (other.gameObject.GetComponent<Item>().item == ItemSelect.Jet)
+            {
+                skill = PlayerSkill.Jet;
+            }
+            if (other.gameObject.GetComponent<Item>().item == ItemSelect.Fire)
+            {
+                skill = PlayerSkill.Fire;
+            }
         }
     }
     private void OnTriggerExit(Collider other)

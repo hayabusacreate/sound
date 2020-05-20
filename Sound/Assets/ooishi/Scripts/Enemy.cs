@@ -14,6 +14,9 @@ public class Enemy : MonoBehaviour
     private Renderer renderer;
 
     private float renge;
+
+    public GameObject dethpa;
+    public ParticleSystem damegeefe;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +30,7 @@ public class Enemy : MonoBehaviour
         if(damageflag)
         {
             renderer.material.color = Color.red;
+
             hp -= Time.deltaTime;
         }else
         {
@@ -34,6 +38,7 @@ public class Enemy : MonoBehaviour
         }
         if(hp<0)
         {
+            Instantiate(dethpa, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         Move();
@@ -68,9 +73,11 @@ public class Enemy : MonoBehaviour
             if(collision.gameObject.GetComponent<Block>().damageflag)
             {
                 damageflag = true;
+                damegeefe.Play();
             }else
             {
                 damageflag = false;
+                damegeefe.Stop();
             }
         }
     }
@@ -79,6 +86,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == ("Block"))
         {
             damageflag = false;
+            damegeefe.Stop();
         }
     }
 }

@@ -121,7 +121,7 @@ MonoBehaviour:
   type: 
   maphight: 0
   particle: {fileID: 8432338172139320709}
-  enemy: {fileID: 2111695830022788055, guid: 81518cc58155c6f4f916fca50be7fd91, type: 3}
+  enemy: {fileID: 6256169778642312821, guid: 9b97dc4ec3cc1b040b4bd1ce836ff23a, type: 3}
   hart: {fileID: 6406946066891464480, guid: 5d342b00ad119d24388ff20727a3e342, type: 3}
   jet: {fileID: 0}
   fire: {fileID: 0}

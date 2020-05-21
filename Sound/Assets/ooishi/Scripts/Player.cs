@@ -491,7 +491,7 @@ public class Player : MonoBehaviour
             block = collision.gameObject.GetComponent<Block>();
             hight = collision.gameObject.GetComponent<Block>().maphight;
             tyle = collision.gameObject.GetComponent<Block>().tyle;
-            collision.gameObject.GetComponent<Block>().damageflag=true;
+            //collision.gameObject.GetComponent<Block>().damageflag=true;
         }
         if (collision.gameObject.tag == "Ground")
         {

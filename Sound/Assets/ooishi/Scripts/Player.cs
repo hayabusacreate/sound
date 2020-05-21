@@ -86,6 +86,8 @@ public class Player : MonoBehaviour
         //renderer = gameObject.transform.GetComponent<Renderer>();
         flontflag = true;
         backflag = true;
+        bbflag = false;
+        fbflag = false;
     }
 
     // Update is called once per frame
@@ -123,15 +125,26 @@ public class Player : MonoBehaviour
                     {
                         flontflag = true;
                     }
-                    changeflag = 0;
-                    moveflag = true;
-                    anim.SetBool("Dash", true);
+                    if(bbflag)
+                    {
+                        transform.Rotate(0, 0, 5);
+                        moveflag = false;
+                    }
+                    else
+                    {
+                        changeflag = 0;
+                        moveflag = true;
+                        anim.SetBool("Dash", true);
+                    }
+
                 }
                 else
                 {
                     transform.Rotate(0, 0, -5);
+                    moveflag = false;
                 }
-            }else
+            }
+            else
             {
                 changeflag = 0;
                 moveflag = true;
@@ -151,13 +164,24 @@ public class Player : MonoBehaviour
                     {
                         backflag = true;
                     }
-
+                    if(fbflag)
+                    {
+                        transform.Rotate(0, 0, -5);
+                        moveflag = false;
+                    }else
+                    {
+                        changeflag = 1;
+                        moveflag = true;
+                        anim.SetBool("Dash", true);
+                    }
                 }
                 else
                 {
+                    moveflag = false;
                     transform.Rotate(0, 0, 5);
                 }
-            }else
+            }
+            else
             {
                 changeflag = 1;
                 moveflag = true;
@@ -183,87 +207,107 @@ public class Player : MonoBehaviour
         if(skill==PlayerSkill.Gravity)
         {
             angle = transform.rotation.eulerAngles.z;
-            if (playerMove == PlayerMove.Down)
-            {
+            //if(moveflag)
+            //{
+            //    if (playerMove == PlayerMove.Down)
+            //    {
 
-                if (!jumpflag)
-                {
-                    if (angle <= 270 && angle > 180)
-                    {
-                        playerMove = PlayerMove.Right;
-                        flontflag = true;
-                        backflag = true;
-                    }
-                    else
+            //        if (!jumpflag)
+            //        {
+            //            if (angle <= 270 && angle > 180)
+            //            {
+            //                playerMove = PlayerMove.Right;
+            //                flontflag = true;
+            //                backflag = true;
+            //                fbflag = false;
+            //                bbflag = false;
+            //            }
+            //            else
 
-                       if (angle >= 90 && angle < 180)
-                    {
-                        playerMove = PlayerMove.Left;
-                        flontflag = true;
-                        backflag = true;
-                    }
-                }
+            //               if (angle >= 90 && angle < 180)
+            //            {
+            //                playerMove = PlayerMove.Left;
+            //                flontflag = true;
+            //                backflag = true;
+            //                fbflag = false;
+            //                bbflag = false;
+            //            }
+            //        }
 
-            }
-            if (playerMove == PlayerMove.Up)
-            {
-                if (!jumpflag)
-                {
-                    if (angle <= 90 && angle > 0)
-                    {
-                        playerMove = PlayerMove.Left;
-                        flontflag = true;
-                        backflag = true;
-                    }
-                    else
-                    if (angle <= 360 && angle > 270)
-                    {
-                        playerMove = PlayerMove.Right;
-                        flontflag = true;
-                        backflag = true;
-                    }
-                }
+            //    }
+            //    if (playerMove == PlayerMove.Up)
+            //    {
+            //        if (!jumpflag)
+            //        {
+            //            if (angle <= 90 && angle > 0)
+            //            {
+            //                playerMove = PlayerMove.Left;
+            //                flontflag = true;
+            //                backflag = true;
+            //                fbflag = false;
+            //                bbflag = false;
+            //            }
+            //            else
+            //            if (angle <= 360 && angle > 270)
+            //            {
+            //                playerMove = PlayerMove.Right;
+            //                flontflag = true;
+            //                backflag = true;
+            //                fbflag = false;
+            //                bbflag = false;
+            //            }
+            //        }
 
-            }
-            if (playerMove == PlayerMove.Right)
-            {
-                if (!jumpflag)
-                {
-                    if (angle < 90 && angle > 0)
-                    {
-                        playerMove = PlayerMove.Down;
-                        flontflag = true;
-                        backflag = true;
-                    }
-                    else
-                    if (angle > 90 && angle < 180)
-                    {
-                        playerMove = PlayerMove.Up;
-                        flontflag = true;
-                        backflag = true;
-                    }
-                }
+            //    }
+            //    if (playerMove == PlayerMove.Right)
+            //    {
+            //        if (!jumpflag)
+            //        {
+            //            if (angle < 90 && angle > 0)
+            //            {
+            //                playerMove = PlayerMove.Down;
+            //                flontflag = true;
+            //                backflag = true;
+            //                fbflag = false;
+            //                bbflag = false;
+            //            }
+            //            else
+            //            if (angle > 90 && angle < 180)
+            //            {
+            //                playerMove = PlayerMove.Up;
+            //                flontflag = true;
+            //                backflag = true;
+            //                fbflag = false;
+            //                bbflag = false;
+            //            }
+            //        }
 
-            }
-            if (playerMove == PlayerMove.Left)
-            {
-                if (!jumpflag)
-                {
-                    if (angle > 180 && angle < 270)
-                    {
-                        playerMove = PlayerMove.Up;
-                        flontflag = true;
-                        backflag = true;
-                    }
-                    if (angle > 0 && angle > 270)
-                    {
-                        playerMove = PlayerMove.Down;
-                        flontflag = true;
-                        backflag = true;
-                    }
-                }
+            //    }
+            //    if (playerMove == PlayerMove.Left)
+            //    {
+            //        if (!jumpflag)
+            //        {
+            //            if (angle > 180 && angle < 270)
+            //            {
+            //                playerMove = PlayerMove.Up;
+            //                flontflag = true;
+            //                backflag = true;
+            //                fbflag = false;
+            //                bbflag = false;
+            //            }
+            //            if (angle > 0 && angle > 270)
+            //            {
+            //                playerMove = PlayerMove.Down;
+            //                flontflag = true;
+            //                backflag = true;
+            //                fbflag = false;
+            //                bbflag = false;
+            //            }
+            //        }
+            //    }
 
-            }
+
+            //}
             switch (playerMove)
             {
                 case PlayerMove.Down:

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Rock
+  m_Name: Ground
   m_Shader: {fileID: 4800000, guid: 85a2de0cd6340c54686ea011cc4883b5, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: ea278b9a278ad184d93f248b0967c36c, type: 3}
+        m_Texture: {fileID: 2800000, guid: ae446204a3e97ef4b8655672ae79ca63, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -36,7 +36,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DisolveTex:
-        m_Texture: {fileID: 2800000, guid: e5ea678ab9eebe84e91c77715b2d3a8b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9887b5585f01cb941967c822835434d1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: e5ea678ab9eebe84e91c77715b2d3a8b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 36fd88c310122c04983af5c4995e5755, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:

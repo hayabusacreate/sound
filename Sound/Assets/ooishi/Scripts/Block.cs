@@ -44,6 +44,10 @@ public class Block : MonoBehaviour
     private bool palrticleflag;
 
     public GameObject enemy,hart,jet,fire,gravety;
+
+    public int x, y;
+
+    public Map map;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +55,8 @@ public class Block : MonoBehaviour
         if (type == "0")
         {
             block = BlockType.Null;
+            map.maps[(y * 1000) + x] = false;
+            Debug.Log(map);
             Destroy(gameObject);
         }
         if (type == "2")
@@ -148,6 +154,40 @@ public class Block : MonoBehaviour
 
         if (hp < 0)
         {
+            if (player.skill==PlayerSkill.Fire)
+            {
+                if(mapCreate.width-1>x+1)
+                {
+                    if (map.maps[y * 1000 + (x + 1)] == true)
+                    {
+
+                        map.maplog[y * 1000 + (x + 1)].GetComponent<Block>().damageflag = true;
+                    }
+                }
+                if(0<x-1)
+                {
+                    if (map.maps[y * 1000 + (x - 1)] == true)
+                    {
+                        map.maplog[y * 1000 + (x - 1)].GetComponent<Block>().damageflag = true;
+                    }
+                }
+                if(mapCreate.hight-1>y+1)
+                {
+                    if (map.maps[(y + 1) * 1000 + x] == true)
+                    {
+                        map.maplog[(y + 1) * 1000 + x].GetComponent<Block>().damageflag = true;
+                    }
+                }
+                if(0<y-1)
+                {
+                    if (map.maps[(y - 1) * 1000 + x] == true)
+                    {
+                        map.maplog[(y - 1) * 1000 + x].GetComponent<Block>().damageflag = true;
+                    }
+                }
+
+            }
+            map.maps[(y * 1000) + x] = false;
             Destroy(gameObject);
         }
     }

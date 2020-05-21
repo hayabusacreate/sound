@@ -17,9 +17,14 @@ public class Map : MonoBehaviour
     private Player player;
 
     public GameObject wall;
+
+    public Dictionary<int, bool> maps;
+    public Dictionary<int, GameObject> maplog;
     // Start is called before the first frame update
     void Start()
     {
+        maps = new Dictionary<int, bool>();
+        maplog = new Dictionary<int, GameObject>();
         map = GameObject.Find("MapCreate").GetComponent<MapCreate>();
         if(map.maphight<map.eazy)
         {
@@ -55,11 +60,17 @@ public class Map : MonoBehaviour
                 GameObject gameObject = Instantiate(block, new Vector3(-x,-transform.position.y-y, 0), Quaternion.identity);
                 gameObject.GetComponent<Block>().type = csvDatas[y][x];
                 gameObject.GetComponent<Block>().maphight = map.maphight;
+                gameObject.GetComponent<Block>().x = x;
+                gameObject.GetComponent<Block>().y = y;
+                maps[(y * 1000) + x] = true;
+                maplog[y * 1000 + x] = gameObject;
+
+                gameObject.GetComponent<Block>().map = this.gameObject.GetComponent<Map>();
             }
             Instantiate(wall, new Vector3(1, -transform.position.y - y, 0), Quaternion.identity);
             Instantiate(wall, new Vector3(-width, -transform.position.y - y, 0), Quaternion.identity);
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     private void FixedUpdate()

@@ -7,31 +7,31 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Custom_sample2
-  m_Shader: {fileID: 4800000, guid: 03818ad4ba1a3c34084e2c3a172edce1, type: 3}
+  m_Name: Toon_Lit
+  m_Shader: {fileID: 4800000, guid: 5d242a58a6d248b458eadf71a774e26c, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _EmissionMap:
-        m_Texture: {fileID: 10307, guid: 0000000000000000f000000000000000, type: 0}
+    - _DispTex:
+        m_Texture: {fileID: 2800000, guid: fd88e71827791114aa4d35b9175f77c0, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Offset: {x: 1, y: 1}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: ae2f0176b935cc64da4ded3e031f6ceb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _RampTex:
-        m_Texture: {fileID: 2800000, guid: 80c44e3ab568c0f4696bbb842b146617, type: 3}
+    - _Ramp:
+        m_Texture: {fileID: 2800000, guid: 65a73aaf64fc26248bcfa365b59d0ff2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats: []
+    m_Floats:
+    - _Displacement: 0.1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0.06006205, b: 5.7358494, a: 1}
+    - _Color: {r: 0.028301895, g: 0.028301895, b: 0.028301895, a: 1}

@@ -1,4 +1,4 @@
-﻿Shader "Custom/hedoroGaishu"
+﻿Shader "Custom/yougan"
 {
     Properties
     {
@@ -11,6 +11,8 @@
 		_BumpMap("Normal Map"  , 2D) = "bump" {}
 		_BumpScale("Normal Scale", Range(0, 1)) = 1.0
 		_Alpha("Alpha",Range(0,1)) = 1.0
+		_EmissionMap("Emission Map", 2D) = "black" {}               //追加
+		[HDR] _EmissionColor("Emission Color", Color) = (0,0,0)    //追加
     }
     SubShader
     {
@@ -33,6 +35,9 @@
 
 		sampler2D _BumpMap;
 		half _BumpScale;
+
+		uniform sampler2D _EmissionMap;
+		float4 _EmissionColor;
 
         struct Input
         {
@@ -73,6 +78,7 @@
 			fixed4 n = tex2D(_BumpMap, uv2);
 
 			o.Normal = UnpackScaleNormal(n, _BumpScale);
+			o.Emission = tex2D(_EmissionMap, IN.uv_MainTex) * _EmissionColor;
         }
         ENDCG
     }

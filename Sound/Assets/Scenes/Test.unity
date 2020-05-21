@@ -353,7 +353,10 @@ MonoBehaviour:
   - {fileID: 387677244}
   - {fileID: 337646624}
   playerMove: 0
-  skill: 2
+  skill: 0
+  jetBallet: {fileID: 155967550943809613, guid: c09395059aea10548bc1f303657c68f1,
+    type: 3}
+  range: 0
 --- !u!4 &203392976
 Transform:
   m_ObjectHideFlags: 0

@@ -67,6 +67,9 @@ public class Player : MonoBehaviour
     private float angle;
 
     public PlayerSkill skill;
+    public GameObject jetBallet;
+    private float jetcount;
+    public float range;
     // Start is called before the first frame update
     void Start()
     {
@@ -434,6 +437,24 @@ public class Player : MonoBehaviour
             rigidbody.velocity += new Vector3(0, jumppower, 0);
             jumpflag = true;
             anim.SetBool("Jump", true);
+        }
+        if(skill==PlayerSkill.Jet)
+        {
+            if(Input.GetKey(KeyCode.Space))
+            {
+                if(range<3)
+                {
+                    rigidbody.velocity += new Vector3(0, jumppower / 20, 0);
+                }
+
+                if(jetcount>0.3f)
+                {
+                    Instantiate(jetBallet, transform.position, Quaternion.identity);
+                    jetcount = 0;
+                }
+
+            }
+            jetcount += Time.deltaTime;
         }
     }
 

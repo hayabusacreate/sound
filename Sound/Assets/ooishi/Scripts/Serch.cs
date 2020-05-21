@@ -20,7 +20,8 @@ public class Serch : MonoBehaviour
     {
         if(other.gameObject.tag=="Player")
         {
-            enemy.SetActive(true);
+            Instantiate(enemy, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 }

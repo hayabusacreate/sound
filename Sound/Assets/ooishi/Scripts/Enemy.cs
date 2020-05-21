@@ -62,16 +62,6 @@ public class Enemy : MonoBehaviour
         {
             transform.position -= new Vector3(speed, 0, 0);
         }
-        renge = Vector3.Distance(transform.position, player.transform.position);
-        if(renge>10)
-        {
-            
-            Destroy(gameObject);
-        }
-        if (renge <- 10)
-        {
-            Destroy(gameObject);
-        }
         //Debug.Log(renge);
 
     }

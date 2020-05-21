@@ -56,7 +56,6 @@ public class Block : MonoBehaviour
         {
             block = BlockType.Null;
             map.maps[(y * 1000) + x] = false;
-            Debug.Log(map);
             Destroy(gameObject);
         }
         if (type == "2")

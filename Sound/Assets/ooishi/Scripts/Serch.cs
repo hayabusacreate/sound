@@ -16,11 +16,12 @@ public class Serch : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if(other.gameObject.tag=="Player")
         {
-            enemy.SetActive(true);
+            Instantiate(enemy, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 }

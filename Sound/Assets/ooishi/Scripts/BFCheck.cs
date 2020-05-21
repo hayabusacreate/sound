@@ -13,6 +13,8 @@ public class BFCheck : MonoBehaviour
 {
     public BF bf;
     private Player player;
+
+    public bool rollflag;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,11 +41,11 @@ public class BFCheck : MonoBehaviour
             }
             else if (bf == BF.Backdown)
             {
-                player.backflag = false;
+                player.bbflag = false;
             }
             else if (bf == BF.Frontdown)
             {
-                player.flontflag = false;
+                player.fbflag = false;
             }
         }
         if(other.gameObject.tag == "Wall")
@@ -58,26 +60,37 @@ public class BFCheck : MonoBehaviour
             }
             else if (bf == BF.Backdown)
             {
-                player.backflag = false;
+                player.bbflag = false;
             }
             else if (bf == BF.Frontdown)
             {
-                player.flontflag = false;
+                player.fbflag = false;
             }
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        //if (other.gameObject.tag == "Block")
-        //{
-        //    if (bf == BF.Flont)
-        //    {
-        //        player.flontflag = true;
-        //    }
-        //    else
-        //    {
-        //        player.backflag = true;
-        //    }
-        //}
+        if (other.gameObject.tag == "Block")
+        {
+            if (bf == BF.Flont)
+            {
+                player.flontflag = true;
+            }
+            else if (bf == BF.Back)
+            {
+                player.backflag = true;
+            }
+        }
+        if (other.gameObject.tag == "Wall")
+        {
+            if (bf == BF.Flont)
+            {
+                player.flontflag = true;
+            }
+            else if (bf == BF.Back)
+            {
+                player.backflag = true;
+            }
+        }
     }
 }

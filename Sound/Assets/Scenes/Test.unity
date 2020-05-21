@@ -353,7 +353,10 @@ MonoBehaviour:
   - {fileID: 387677244}
   - {fileID: 337646624}
   playerMove: 0
-  skill: 0
+  skill: 3
+  jetBallet: {fileID: 155967550943809613, guid: c09395059aea10548bc1f303657c68f1,
+    type: 3}
+  range: 0
 --- !u!4 &203392976
 Transform:
   m_ObjectHideFlags: 0
@@ -887,7 +890,7 @@ Transform:
   m_GameObject: {fileID: 469258368}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0.778, y: 0.45999908, z: 0}
-  m_LocalScale: {x: 0.50000024, y: 0.5, z: 0.50000024}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 203392976}
   m_RootOrder: 0
@@ -905,6 +908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bf: 0
+  rollflag: 0
 --- !u!65 &469258371
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1118,8 +1122,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647483226}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.966, y: 0.45999908, z: 0}
-  m_LocalScale: {x: 0.50000024, y: 0.5, z: 0.50000024}
+  m_LocalPosition: {x: -0.818, y: 0.45999908, z: -0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 203392976}
   m_RootOrder: 1
@@ -1137,6 +1141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bf: 1
+  rollflag: 0
 --- !u!65 &647483229
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1286,8 +1291,8 @@ MonoBehaviour:
   eazymap: 1
   nomalmap: 2
   hardmap: 3
-  hight: 15
-  width: 19
+  hight: 20
+  width: 25
   map: {fileID: 5420315190351271739, guid: 019932f8b9d37f24096bef7fcbf22242, type: 3}
   maphight: 0
 --- !u!4 &732174380
@@ -1332,8 +1337,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 742347870}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.778, y: -0.031, z: 0}
-  m_LocalScale: {x: 0.50000024, y: 0.5, z: 0.50000024}
+  m_LocalPosition: {x: 0.58, y: -0.65, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 203392976}
   m_RootOrder: 3
@@ -1350,7 +1355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac756c696e30ed446b37352c398b35b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bf: 0
+  bf: 2
+  rollflag: 0
 --- !u!65 &742347873
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1833,8 +1839,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1787845438}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.966, y: -0.031000137, z: 0}
-  m_LocalScale: {x: 0.50000024, y: 0.5, z: 0.50000024}
+  m_LocalPosition: {x: -0.7, y: -0.6499996, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 203392976}
   m_RootOrder: 4
@@ -1851,7 +1857,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac756c696e30ed446b37352c398b35b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bf: 1
+  bf: 3
+  rollflag: 0
 --- !u!65 &1787845441
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2266,7 +2273,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142071286}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8eec0ca5276724945877438c295b235c, type: 3}
   m_Name: 

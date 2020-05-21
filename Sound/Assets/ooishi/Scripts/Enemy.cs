@@ -38,12 +38,7 @@ public class Enemy : MonoBehaviour
     {
         if(damageflag)
         {
-            renderer.material.color = Color.red;
-
             hp -= Time.deltaTime;
-        }else
-        {
-            renderer.material.color = Color.white;
         }
         if(hp<0)
         {
@@ -55,13 +50,18 @@ public class Enemy : MonoBehaviour
 
     void Move()
     {
-        if(transform.position.x<player.transform.position.x)
+        if(type==EnemyType.Nomal||type==EnemyType.Block)
         {
-            transform.position += new Vector3(speed, 0, 0);
-        }else if(transform.position.x > player.transform.position.x)
-        {
-            transform.position -= new Vector3(speed, 0, 0);
+            if (transform.position.x < player.transform.position.x)
+            {
+                transform.position += new Vector3(speed, 0, 0);
+            }
+            else if (transform.position.x > player.transform.position.x)
+            {
+                transform.position -= new Vector3(speed, 0, 0);
+            }
         }
+
         //Debug.Log(renge);
 
     }

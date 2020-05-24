@@ -4,7 +4,8 @@ using UnityEngine;
 public enum BlockType
 {
     Null,
-    Nomal
+    Nomal,
+    Goal
 }
 public class Block : MonoBehaviour
 {
@@ -48,9 +49,14 @@ public class Block : MonoBehaviour
     public int x, y;
 
     public Map map;
+    private SceneChange sceneChange;
+
+    private float damegetime;
     // Start is called before the first frame update
     void Start()
     {
+        sceneChange = GameObject.Find("SceneChange").GetComponent<SceneChange>();
+        mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
         Maxhp = hp;
         if (type == "0")
         {
@@ -64,8 +70,7 @@ public class Block : MonoBehaviour
         }
         if (type == "3")
         {
-            Instantiate(enemy, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            block = BlockType.Goal;
         }
         if (type == "4")
         {
@@ -104,7 +109,7 @@ public class Block : MonoBehaviour
         count = 0;
         player = GameObject.Find("Player").gameObject.GetComponent<Player>();
         count = 0;
-        mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
+
         savehight = hight;
         rigidbody = gameObject.GetComponent<Rigidbody>();
         change = 0;
@@ -142,7 +147,15 @@ public class Block : MonoBehaviour
 
         if (damageflag)
         {
-            hp -= Time.deltaTime;
+            if(player.moveflag)
+            {
+                hp -= player.speed;
+            }else
+            {
+                hp = Mathf.RoundToInt(hp);
+            }
+
+
             if(palrticleflag)
             {
                 particle.Play();
@@ -153,40 +166,8 @@ public class Block : MonoBehaviour
 
         if (hp < 0)
         {
-            if (player.skill==PlayerSkill.Fire)
-            {
-                if(mapCreate.width-1>x+1)
-                {
-                    if (map.maps[y * 1000 + (x + 1)] == true)
-                    {
-
-                        map.maplog[y * 1000 + (x + 1)].GetComponent<Block>().damageflag = true;
-                    }
-                }
-                if(0<x-1)
-                {
-                    if (map.maps[y * 1000 + (x - 1)] == true)
-                    {
-                        map.maplog[y * 1000 + (x - 1)].GetComponent<Block>().damageflag = true;
-                    }
-                }
-                if(mapCreate.hight-1>y+1)
-                {
-                    if (map.maps[(y + 1) * 1000 + x] == true)
-                    {
-                        map.maplog[(y + 1) * 1000 + x].GetComponent<Block>().damageflag = true;
-                    }
-                }
-                if(0<y-1)
-                {
-                    if (map.maps[(y - 1) * 1000 + x] == true)
-                    {
-                        map.maplog[(y - 1) * 1000 + x].GetComponent<Block>().damageflag = true;
-                    }
-                }
-
-            }
             map.maps[(y * 1000) + x] = false;
+            mapCreate.blocks--;
             Destroy(gameObject);
         }
     }
@@ -196,6 +177,10 @@ public class Block : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             damageflag = true;
+            if(block==BlockType.Goal)
+            {
+                sceneChange.creaflag = true;
+            }
             //color.material.color = Color.red;
         }
     }

@@ -16,6 +16,10 @@ public class MapCreate : MonoBehaviour
     public GameObject map;
     public int maphight;
 
+    public int blocks;
+    public int maxblock;
+
+    public static int mapnum;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,14 +44,6 @@ public class MapCreate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sceneChange.scene == Scene.GamePlay)
-        {
-            if (maphight <= player.hight + 1)
-            {
-                Instantiate(map, new Vector3(0, hight * maphight, 0), Quaternion.identity);
-                maphight++;
-            }
-        }
 
     }
 
@@ -58,5 +54,14 @@ public class MapCreate : MonoBehaviour
     public void LoadMap(TextAsset a,int b)
     {
         csvFile[b] = a;
+    }
+    public int ReturnMapnum()
+    {
+        return mapnum;
+    }
+
+    public void ChangeMap(int a)
+    {
+        mapnum = a;
     }
 }

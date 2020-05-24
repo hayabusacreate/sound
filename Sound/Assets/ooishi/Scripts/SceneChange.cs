@@ -22,6 +22,12 @@ public class SceneChange : MonoBehaviour
     private Slider slider;
     public int map;
     public MapCreate mapCreate;
+    public bool creaflag;
+    public Text text;
+
+    private int mapnum;
+
+    public int mapcount;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,12 +35,20 @@ public class SceneChange : MonoBehaviour
         {
             player=GameObject.Find("Player").GetComponent<Player>();
             timeText = GameObject.Find("Time").GetComponent<Text>();
+            mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
             // 
             //Physics.gravity = new Vector3(0, -5, 0);
         }
         if (scene == Scene.Load)
         {
             mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
+        }
+        if (scene == Scene.StageSelect)
+        {
+            mapnum = 1;
+            mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
+            mapCreate.ChangeMap(mapnum);
+
         }
     }
 
@@ -52,15 +66,25 @@ public class SceneChange : MonoBehaviour
 
                 break;
             case Scene.GamePlay:
-                timeText.text = "高さ" + (int)player.transform.position.y;
                 //time -= Time.deltaTime;
                 //slider.value = time;
-                if(time<0)
+                if(creaflag)
                 {
+                    if(mapCreate.blocks/mapCreate.maxblock*100<50)
+                    {
 
-                        SceneManager.LoadScene("Clear");
+                    }else if(mapCreate.blocks / mapCreate.maxblock * 100 < 75)
+                    {
 
+                    }
+                    else if (mapCreate.blocks / mapCreate.maxblock * 100 < 100)
+                    {
 
+                    }else
+                    {
+
+                    }
+                    SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
                 }
                 if (player.endflag)
                 {
@@ -69,24 +93,48 @@ public class SceneChange : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.R))
                 {
                     
-                    SceneManager.LoadScene("Test");
+                    SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
                 }
 
                 break;
             case Scene.StageSelect:
+                text.text = "" + mapnum;
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    mapnum++;
+
+                    if(mapnum>mapcount)
+                    {
+                        mapnum = mapcount;
+                    }
+                    mapCreate.ChangeMap(mapnum);
+                }
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    mapnum--;
+                    if(mapnum<1)
+                    {
+                        mapnum = 1;
+                    }
+                    mapCreate.ChangeMap(mapnum);
+                }
+                if (Input.GetKey(KeyCode.Space))
+                {
+                    SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
+                }
                 break;
             case Scene.GameOver:
                 if (Input.GetKeyDown(KeyCode.R))
                 {
 
-                    SceneManager.LoadScene("Test");
+                    SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
                 }
                 break;
             case Scene.GameCrear:
                 if (Input.GetKeyDown(KeyCode.R))
                 {
 
-                    SceneManager.LoadScene("Test");
+                    SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
                 }
                 break;
             case Scene.Load:
@@ -94,7 +142,7 @@ public class SceneChange : MonoBehaviour
                 {
                     mapCreate.LoadMap(Resources.Load("map"+i) as TextAsset,i);
                 }
-                SceneManager.LoadScene("Test");
+                SceneManager.LoadScene("StageSerect");
                 break;
         }
 

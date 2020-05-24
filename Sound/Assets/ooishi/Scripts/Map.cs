@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Map : MonoBehaviour
 {
-    private int hight,width;
+    private int hight, width;
     private MapCreate map;
     private bool check;
     public GameObject block;
@@ -26,21 +26,8 @@ public class Map : MonoBehaviour
         maps = new Dictionary<int, bool>();
         maplog = new Dictionary<int, GameObject>();
         map = GameObject.Find("MapCreate").GetComponent<MapCreate>();
-        if(map.maphight<map.eazy)
-        {
-            mapnum = Random.Range(0, map.eazymap);
-            reader = new StringReader(map.ReturnMap(mapnum).text);
-        }
-        else if(map.maphight < map.nomal)
-        {
-            mapnum = Random.Range(0, map.nomalmap);
-             reader = new StringReader(map.ReturnMap(mapnum).text);
-        }
-        else
-        {
-            mapnum = Random.Range(0, map.hardmap);
-             reader = new StringReader(map.ReturnMap(mapnum).text);
-        }
+
+        reader = new StringReader(map.ReturnMap(map.ReturnMapnum()).text);
 
 
         width = map.width;
@@ -53,11 +40,11 @@ public class Map : MonoBehaviour
         check = false;
 
 
-        for(int y=0;y<hight;y++)
+        for (int y = 0; y < hight; y++)
         {
-            for(int x=0;x<width; x++)
+            for (int x = 0; x < width; x++)
             {
-                GameObject gameObject = Instantiate(block, new Vector3(-x,-transform.position.y-y, 0), Quaternion.identity);
+                GameObject gameObject = Instantiate(block, new Vector3(-x, -transform.position.y - y, 0), Quaternion.identity);
                 gameObject.GetComponent<Block>().type = csvDatas[y][x];
                 gameObject.GetComponent<Block>().maphight = map.maphight;
                 gameObject.GetComponent<Block>().x = x;
@@ -66,10 +53,14 @@ public class Map : MonoBehaviour
                 maplog[y * 1000 + x] = gameObject;
 
                 gameObject.GetComponent<Block>().map = this.gameObject.GetComponent<Map>();
+                map.blocks++;
+                if (csvDatas[y][x] == "0")
+                {
+                    map.blocks--;
+                }
             }
-            Instantiate(wall, new Vector3(1, -transform.position.y - y, 0), Quaternion.identity);
-            Instantiate(wall, new Vector3(-width, -transform.position.y - y, 0), Quaternion.identity);
         }
+        map.maxblock = map.blocks;
         //Destroy(gameObject);
     }
 

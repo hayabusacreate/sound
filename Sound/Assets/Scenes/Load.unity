@@ -296,6 +296,8 @@ MonoBehaviour:
   time: 0
   map: 4
   mapCreate: {fileID: 1678162830}
+  creaflag: 0
+  text: {fileID: 0}
 --- !u!4 &1187774874
 Transform:
   m_ObjectHideFlags: 0
@@ -349,6 +351,8 @@ MonoBehaviour:
   width: 0
   map: {fileID: 0}
   maphight: 0
+  blocks: 0
+  maxblock: 0
 --- !u!4 &1678162831
 Transform:
   m_ObjectHideFlags: 0

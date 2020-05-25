@@ -7,9 +7,11 @@ public class particleScale : MonoBehaviour
     ParticleSystem m_particle;
     float scale;
     // Start is called before the first frame update
+    public float speed = 1;
     void Start()
     {
         scale = 0;
+        speed = 1;
         m_particle = GetComponent<ParticleSystem>();
     }
 
@@ -34,9 +36,12 @@ public class particleScale : MonoBehaviour
         {
             scale = scale + Time.deltaTime + Time.deltaTime;
         }
-        
+
+        var main = m_particle.main;
 
         var sh = m_particle.shape;
+
+        main.startSpeed = speed;
 
         sh.scale = new Vector3(scale, 1, 0);
     }

@@ -14,9 +14,13 @@ public class burned : MonoBehaviour
     
 
     private float distance_two;
+
+    private MapCreate mapCreate;
     // Start is called before the first frame update
     void Start()
     {
+        mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
+        target = mapCreate.goalObj;
         end = target.transform.position;
         pos = transform.position;
     }

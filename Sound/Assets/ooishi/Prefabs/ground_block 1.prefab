@@ -143,7 +143,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2279be7ca66d1f74fb900bd6b5a0e22e, type: 2}
+  - {fileID: 2100000, guid: 244fd5163ca0665439ee8da9b397e364, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -214,6 +214,8 @@ MonoBehaviour:
   pivot: {fileID: 6521882340289182184}
   collider: {fileID: 8428546175891485133}
   text: {fileID: 3327129503665262312}
+  deathPar: {fileID: 8785050961321385270, guid: 586b479994235134f86159f9a793c05c,
+    type: 3}
 --- !u!114 &579203688829210009
 MonoBehaviour:
   m_ObjectHideFlags: 0

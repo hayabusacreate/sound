@@ -20,6 +20,8 @@ public class MapCreate : MonoBehaviour
     public int maxblock;
 
     public static int mapnum;
+
+    public GameObject goalObj;
     // Start is called before the first frame update
     void Start()
     {

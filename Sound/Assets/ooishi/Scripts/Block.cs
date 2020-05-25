@@ -62,6 +62,7 @@ public class Block : MonoBehaviour
 
     private int savehp;
     private int savecount;
+    public GameObject deathPar;
     // Start is called before the first frame update
     void Start()
     {
@@ -85,6 +86,7 @@ public class Block : MonoBehaviour
             block = BlockType.Goal;
             cam.endobj.transform.position = new Vector3(transform.position.x, transform.position.y, 15);
             cam.end.LookAt = transform;
+            mapCreate.goalObj = gameObject;
         }
         if (type == "4")
         {
@@ -186,6 +188,7 @@ public class Block : MonoBehaviour
         {
             map.maps[(yy * 1000) + xx] = false;
             mapCreate.blocks--;
+            Instantiate(deathPar, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         if(player.outrightroll||player.outleftroll)

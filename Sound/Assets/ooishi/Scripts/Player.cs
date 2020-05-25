@@ -57,9 +57,11 @@ public class Player : MonoBehaviour
 
     private Vector3 save;
 
-    private bool inrightroll, inleftroll,outrightroll,outleftroll;
+    public bool inrightroll, inleftroll,outrightroll,outleftroll;
 
     public Vector3 rollObj;
+
+    public ChangeCam cam;
     // Start is called before the first frame update
     void Start()
     {
@@ -449,6 +451,10 @@ public class Player : MonoBehaviour
             tyle = collision.gameObject.GetComponent<Block>().tyle;
             rollObj = collision.gameObject.transform.position;
             //collision.gameObject.GetComponent<Block>().damageflag=true;
+            if(!cam.changeflag)
+            {
+                cam.changeflag = true;
+            }
         }
         if (collision.gameObject.tag == "Ground")
         {

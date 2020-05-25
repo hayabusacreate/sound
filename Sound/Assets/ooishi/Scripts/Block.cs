@@ -52,9 +52,15 @@ public class Block : MonoBehaviour
     private SceneChange sceneChange;
 
     private float damegetime;
+
+    public GameObject pivot;
+
+    public Collider collider;
+    private ChangeCam cam;
     // Start is called before the first frame update
     void Start()
     {
+        cam = GameObject.Find("ChangeCam").GetComponent<ChangeCam>();
         sceneChange = GameObject.Find("SceneChange").GetComponent<SceneChange>();
         mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
         Maxhp = hp;
@@ -71,6 +77,8 @@ public class Block : MonoBehaviour
         if (type == "3")
         {
             block = BlockType.Goal;
+            cam.endobj.transform.position = new Vector3(transform.position.x, transform.position.y, 15);
+            cam.end.LookAt = transform;
         }
         if (type == "4")
         {
@@ -169,6 +177,13 @@ public class Block : MonoBehaviour
             map.maps[(y * 1000) + x] = false;
             mapCreate.blocks--;
             Destroy(gameObject);
+        }
+        if(player.outrightroll||player.outleftroll)
+        {
+            collider.enabled = false;
+        }else
+        {
+            collider.enabled = true;
         }
     }
 

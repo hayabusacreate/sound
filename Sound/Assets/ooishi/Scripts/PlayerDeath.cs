@@ -4,17 +4,26 @@ using UnityEngine;
 
 public class PlayerDeath : MonoBehaviour
 {
-    private Player player;
+    Renderer renderer;
+    private SceneChange sceneChange;
     // Start is called before the first frame update
     void Start()
     {
-        player = gameObject.transform.root.transform.GetComponent<Player>();
+        sceneChange = GameObject.Find("SceneChange").GetComponent<SceneChange>();
+        renderer = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.transform.position.x,player.transform.position.y+1,player.transform.position.z);
+        //if(renderer.isVisible)
+        //{
+        //    sceneChange.endflag = true;
+        //}
+    }
+    private void OnBecameInvisible()
+    {
+        sceneChange.endflag = true;
     }
     private void OnCollisionEnter(Collision collision)
     {

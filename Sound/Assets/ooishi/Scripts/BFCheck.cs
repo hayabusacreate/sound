@@ -48,25 +48,6 @@ public class BFCheck : MonoBehaviour
                 player.fbflag = false;
             }
         }
-        if(other.gameObject.tag == "Wall")
-        {
-            if (bf == BF.Flont)
-            {
-                player.flontflag = false;
-            }
-            else if (bf == BF.Back)
-            {
-                player.backflag = false;
-            }
-            else if (bf == BF.Backdown)
-            {
-                player.bbflag = false;
-            }
-            else if (bf == BF.Frontdown)
-            {
-                player.fbflag = false;
-            }
-        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -80,16 +61,13 @@ public class BFCheck : MonoBehaviour
             {
                 player.backflag = true;
             }
-        }
-        if (other.gameObject.tag == "Wall")
-        {
-            if (bf == BF.Flont)
+            else if (bf == BF.Backdown)
             {
-                player.flontflag = true;
+                player.bbflag = true;
             }
-            else if (bf == BF.Back)
+            else if (bf == BF.Frontdown)
             {
-                player.backflag = true;
+                player.fbflag = true;
             }
         }
     }

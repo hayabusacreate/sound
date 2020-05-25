@@ -28,6 +28,8 @@ public class SceneChange : MonoBehaviour
     private int mapnum;
 
     public int mapcount;
+
+    public bool endflag;
     // Start is called before the first frame update
     void Start()
     {
@@ -95,7 +97,10 @@ public class SceneChange : MonoBehaviour
                     
                     SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
                 }
-
+                if(endflag)
+                {
+                    SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
+                }
                 break;
             case Scene.StageSelect:
                 text.text = "" + mapnum;

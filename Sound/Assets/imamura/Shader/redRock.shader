@@ -55,7 +55,7 @@
         void surf (Input IN, inout SurfaceOutput o)
         {
 			fixed4 m = tex2D(_DisolveTex, IN.uv_MainTex);
-			half g = m.r * 0.2 + m.g * 0.7 + m.b * 0.1;
+			half g = m.r * 0.4 + m.g * 0.7 + m.b * 0.2;
 			if (g < _Threshold) {
 				discard;
 			}

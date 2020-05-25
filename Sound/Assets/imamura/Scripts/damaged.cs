@@ -37,8 +37,8 @@ public class damaged : MonoBehaviour
     {
         while (true)
         {
-            Renderer renderComponent = GetComponent<Renderer>();
-            renderComponent.enabled = !renderComponent.enabled;
+            //Renderer renderComponent = GetComponent<Renderer>();
+            //renderComponent.enabled = !renderComponent.enabled;
             yield return new WaitForSeconds(interval);
         }
     }

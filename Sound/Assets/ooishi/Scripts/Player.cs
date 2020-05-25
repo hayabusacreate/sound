@@ -62,6 +62,9 @@ public class Player : MonoBehaviour
     public Vector3 rollObj;
 
     public ChangeCam cam;
+
+    public int movecount;
+    public Map GetMap;
     // Start is called before the first frame update
     void Start()
     {
@@ -107,7 +110,7 @@ public class Player : MonoBehaviour
         {
             moveflag = false;
         }
-        if ((Input.GetKeyDown(KeyCode.D)) && (changeflag == 0 || changeflag == 1))
+        if ((Input.GetKeyDown(KeyCode.D)) && !moveflag&&!outleftroll&&!inrightroll&&!outrightroll&&!inleftroll)
         {
 
             if (backflag)
@@ -115,6 +118,7 @@ public class Player : MonoBehaviour
                 if(bbflag)
                 {
                     outleftroll = true;
+                    movecount++;
                 }
                 else
                 {
@@ -138,6 +142,7 @@ public class Player : MonoBehaviour
                         {
                             save = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
                         }
+                        movecount++;
                         anim.SetBool("Dash", true);
                     }
                 }
@@ -146,10 +151,11 @@ public class Player : MonoBehaviour
             else
             {
                 inrightroll = true;
+                movecount++;
             }
         }
         else
-        if ((Input.GetKeyDown(KeyCode.A)) && (changeflag == 0 || changeflag == 1))
+        if ((Input.GetKeyDown(KeyCode.A)) && !moveflag && !outleftroll && !inrightroll && !outrightroll && !inleftroll)
         {
 
             if (flontflag)
@@ -157,6 +163,7 @@ public class Player : MonoBehaviour
                 if(fbflag)
                 {
                     outrightroll = true;
+                    movecount++;
                 }
                 else
                 {
@@ -180,6 +187,7 @@ public class Player : MonoBehaviour
                         {
                             save = new Vector3(transform.position.x, transform.position.y+1, transform.position.z);
                         }
+                        movecount++;
                         anim.SetBool("Dash", true);
                     }
                 }
@@ -187,6 +195,7 @@ public class Player : MonoBehaviour
             else
             {
                 inleftroll = true;
+                movecount++;
             }
         }
         //}else if(Input.GetKey(KeyCode.Q)&&jumpflag)
@@ -450,10 +459,34 @@ public class Player : MonoBehaviour
             hight = collision.gameObject.GetComponent<Block>().maphight;
             tyle = collision.gameObject.GetComponent<Block>().tyle;
             rollObj = collision.gameObject.transform.position;
+
+
             //collision.gameObject.GetComponent<Block>().damageflag=true;
-            if(!cam.changeflag)
+            if (!cam.changeflag)
             {
                 cam.changeflag = true;
+                if (GetMap.width > collision.gameObject.GetComponent<Block>().xx + 1)
+                {
+                    if (!GetMap.maps[(collision.gameObject.GetComponent<Block>().yy * 1000) + collision.gameObject.GetComponent<Block>().xx + 1])
+                    {
+                        bbflag = true;
+                    }
+                }
+                else
+                {
+                    bbflag = true;
+                }
+                if (0 < collision.gameObject.GetComponent<Block>().xx - 1)
+                {
+                    if (!GetMap.maps[(collision.gameObject.GetComponent<Block>().yy * 1000) + collision.gameObject.GetComponent<Block>().xx - 1])
+                    {
+                        fbflag = true;
+                    }
+                }
+                else
+                {
+                    fbflag = true;
+                }
             }
         }
         if (collision.gameObject.tag == "Ground")

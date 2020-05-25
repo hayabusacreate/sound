@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 public enum BlockType
 {
     Null,
@@ -46,7 +47,7 @@ public class Block : MonoBehaviour
 
     public GameObject enemy,hart,jet,fire,gravety;
 
-    public int x, y;
+    public int xx, yy;
 
     public Map map;
     private SceneChange sceneChange;
@@ -57,9 +58,14 @@ public class Block : MonoBehaviour
 
     public Collider collider;
     private ChangeCam cam;
+    public Text text;
+
+    private int savehp;
+    private int savecount;
     // Start is called before the first frame update
     void Start()
     {
+        savehp = (int)hp;
         cam = GameObject.Find("ChangeCam").GetComponent<ChangeCam>();
         sceneChange = GameObject.Find("SceneChange").GetComponent<SceneChange>();
         mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
@@ -67,7 +73,7 @@ public class Block : MonoBehaviour
         if (type == "0")
         {
             block = BlockType.Null;
-            map.maps[(y * 1000) + x] = false;
+            map.maps[(yy * 1000) + xx] = false;
             Destroy(gameObject);
         }
         if (type == "2")
@@ -139,8 +145,8 @@ public class Block : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        text.text = "" + (int)hp;
         Damage();
-
     }
 
 
@@ -155,15 +161,19 @@ public class Block : MonoBehaviour
 
         if (damageflag)
         {
-            if(player.moveflag)
+            if(savecount!=player.movecount)
+            {
+                savecount = player.movecount;
+                savehp--;
+            }
+            if(hp>savehp)
             {
                 hp -= player.speed;
-            }else
+            }
+            if(hp<=savehp)
             {
                 hp = Mathf.RoundToInt(hp);
             }
-
-
             if(palrticleflag)
             {
                 particle.Play();
@@ -174,7 +184,7 @@ public class Block : MonoBehaviour
 
         if (hp < 0)
         {
-            map.maps[(y * 1000) + x] = false;
+            map.maps[(yy * 1000) + xx] = false;
             mapCreate.blocks--;
             Destroy(gameObject);
         }
@@ -196,6 +206,7 @@ public class Block : MonoBehaviour
             {
                 sceneChange.creaflag = true;
             }
+            savecount = player.movecount;
             //color.material.color = Color.red;
         }
     }

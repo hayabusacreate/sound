@@ -11,14 +11,20 @@ public class burned : MonoBehaviour
     Vector3 pos;
 
     public float rate;
-    
+
+
+    private MapCreate mapCreate;
+
+    float time;
 
     private float distance_two;
 
-    private MapCreate mapCreate;
+    ParticleSystem part;
+
     // Start is called before the first frame update
     void Start()
     {
+        part = GetComponent<ParticleSystem>();
         mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
         target = mapCreate.goalObj;
         end = target.transform.position;
@@ -29,8 +35,8 @@ public class burned : MonoBehaviour
     void Update()
     {
 
-        
-        
+
+
         
             distance_two = Vector3.Distance(pos, end);
 
@@ -38,15 +44,21 @@ public class burned : MonoBehaviour
 
             rate = rate + Time.deltaTime;
 
-            float present_Location = (rate * 5.0f) / distance_two;
+            float present_Location = (rate * 4.0f) / distance_two;
             transform.position = Vector3.Slerp(pos, end, present_Location);
             
         if(present_Location >= 1)
         {
 
             present_Location = 0;
-            Destroy(gameObject);
+            part.Stop();
+            time += Time.deltaTime;
+        }
 
+        if(time >= 3)
+        {
+
+            Destroy(gameObject);
         }
 
     }

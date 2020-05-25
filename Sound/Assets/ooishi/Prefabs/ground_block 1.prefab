@@ -216,6 +216,7 @@ MonoBehaviour:
   text: {fileID: 3327129503665262312}
   deathPar: {fileID: 8785050961321385270, guid: 586b479994235134f86159f9a793c05c,
     type: 3}
+  material: {fileID: 2100000, guid: 7e21fcf39130612488f612fd71695456, type: 2}
 --- !u!114 &579203688829210009
 MonoBehaviour:
   m_ObjectHideFlags: 0

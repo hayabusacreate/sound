@@ -63,6 +63,7 @@ public class Block : MonoBehaviour
     private int savehp;
     private int savecount;
     public GameObject deathPar;
+    public Material material;
     // Start is called before the first frame update
     void Start()
     {
@@ -87,6 +88,7 @@ public class Block : MonoBehaviour
             cam.endobj.transform.position = new Vector3(transform.position.x, transform.position.y, 15);
             cam.end.LookAt = transform;
             mapCreate.goalObj = gameObject;
+            gameObject.GetComponent<Renderer>().material = material;
         }
         if (type == "4")
         {

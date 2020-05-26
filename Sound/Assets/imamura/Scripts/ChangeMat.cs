@@ -12,6 +12,10 @@ public class ChangeMat : MonoBehaviour
 
     public bool end = false;
 
+    float cl;
+
+    Color color;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +30,12 @@ public class ChangeMat : MonoBehaviour
 
         //transform.GetComponent<Renderer>().material.SetFloat("_Threshold",1.0f - (block.hp / block.Maxhp) - 0.7f);
         transform.GetComponent<Renderer>().material.SetColor("_Color", new Color(1.0f, (block.hp / block.Maxhp), (block.hp / block.Maxhp), 1));
-        if(block.hp <= 0)
+        if(block.hp < 0)
         {
-            th += Time.deltaTime * 0.25f;
+            th += Time.deltaTime * 1f;
+            cl += Time.deltaTime * 5f;
+            color = new Color(cl*2, cl, cl/2, cl);
+            transform.GetComponent<Renderer>().material.SetColor("_EmissionColor", color);
             transform.GetComponent<Renderer>().material.SetFloat("_Threshold", th);
         }
 

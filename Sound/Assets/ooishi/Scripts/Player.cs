@@ -661,28 +661,6 @@ public class Player : MonoBehaviour
             if (!cam.changeflag)
             {
                 cam.changeflag = true;
-                if (GetMap.width > collision.gameObject.GetComponent<Block>().xx + 1)
-                {
-                    if (!GetMap.maps[(collision.gameObject.GetComponent<Block>().yy * 1000) + collision.gameObject.GetComponent<Block>().xx+1 ])
-                    {
-                        bbflag = true;
-                    }
-                }
-                else
-                {
-                    bbflag = true;
-                }
-                if (1 < collision.gameObject.GetComponent<Block>().xx - 1)
-                {
-                    if (!GetMap.maps[(collision.gameObject.GetComponent<Block>().yy * 1000) + collision.gameObject.GetComponent<Block>().xx - 1])
-                    {
-                        fbflag = true;
-                    }
-                }
-                else
-                {
-                    fbflag = true;
-                }
             }
         }
         if (collision.gameObject.tag == "Ground")

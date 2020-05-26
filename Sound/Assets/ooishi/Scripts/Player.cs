@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
     {
         Move();
         //Jump();
-        Damage();
+        //Damage();
         //hight = -(int)transform.position.y;
     }
 
@@ -422,33 +422,34 @@ public class Player : MonoBehaviour
                     rigidbody.AddForce(10, 0, 0);
                 break;
         }
-    }
-
-
-    void Damage()
-    {
-        if (damageflag)
-        {
-            gameObject.layer = 13;
-            damagetime -= Time.deltaTime;
-        }
-        if (damagetime < 0)
-        {
-            gameObject.layer = 14;
-
-            damagetime = savedamege;
-            damageflag = false;
-        }
-
-        if (hp <= 0)
-        {
-            endflag = true;
-        }
-        if(!GetMap.maps[(y*1000)+x])
+        if (!GetMap.maps[(y * 1000) + x])
         {
             jumpflag = true;
         }
     }
+
+
+    //void Damage()
+    //{
+    //    if (damageflag)
+    //    {
+    //        gameObject.layer = 13;
+    //        damagetime -= Time.deltaTime;
+    //    }
+    //    if (damagetime < 0)
+    //    {
+    //        gameObject.layer = 14;
+
+    //        damagetime = savedamege;
+    //        damageflag = false;
+    //    }
+
+    //    if (hp <= 0)
+    //    {
+    //        endflag = true;
+    //    }
+
+    //}
 
     private void OnCollisionEnter(Collision collision)
     {

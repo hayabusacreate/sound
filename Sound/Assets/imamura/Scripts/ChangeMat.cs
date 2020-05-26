@@ -32,7 +32,7 @@ public class ChangeMat : MonoBehaviour
         transform.GetComponent<Renderer>().material.SetColor("_Color", new Color(1.0f, (block.hp / block.Maxhp), (block.hp / block.Maxhp), 1));
         if(block.hp < 0)
         {
-            th += Time.deltaTime * 1f;
+            th += Time.deltaTime * 4f;
             cl += Time.deltaTime * 5f;
             color = new Color(cl*2, cl, cl/2, cl);
             transform.GetComponent<Renderer>().material.SetColor("_EmissionColor", color);

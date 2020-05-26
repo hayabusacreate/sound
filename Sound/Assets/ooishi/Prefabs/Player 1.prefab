@@ -389,6 +389,7 @@ MonoBehaviour:
   saveflag: 0
   ren: 0
   jumppower: 6
+  jumpflag: 0
   endflag: 0
   moveflag: 0
   hight: 0
@@ -573,6 +574,7 @@ GameObject:
   - component: {fileID: 219194370082091122}
   - component: {fileID: 219194370082091121}
   - component: {fileID: 219194370082091120}
+  - component: {fileID: 8887155328243922919}
   m_Layer: 14
   m_Name: Cube
   m_TagString: Player
@@ -652,6 +654,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8887155328243922919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219194370082091126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 745cae1e0418cb64b8a62e03febe3c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &219194370274309826
 GameObject:
   m_ObjectHideFlags: 0

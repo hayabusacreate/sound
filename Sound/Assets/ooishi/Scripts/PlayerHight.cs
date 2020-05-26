@@ -16,7 +16,6 @@ public class PlayerHight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y - 1, player.transform.position.z);
     }
     private void OnTriggerStay(Collider other)
     {
@@ -27,6 +26,16 @@ public class PlayerHight : MonoBehaviour
         {
             //player.hight = other.gameObject.GetComponent<Block>().hight - 1;
             player.tyle = other.gameObject.GetComponent<Block>().tyle;
+            player.jumpflag = false;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Block")
+        {
+            //player.hight = other.gameObject.GetComponent<Block>().hight - 1;
+            player.jumpflag = true;
         }
     }
 }

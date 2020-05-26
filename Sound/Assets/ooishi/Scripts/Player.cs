@@ -14,12 +14,12 @@ public enum PlayerMove
 public class Player : MonoBehaviour
 {
     public float speed;
-    private float x;
-    private float z;
+    private int x;
+    private int y;
     public int changeflag, saveflag, ren;
     private Rigidbody rigidbody;
     public float jumppower;
-    private bool jumpflag;
+    public bool jumpflag;
     private Block block;
     public bool endflag;
     public bool moveflag;
@@ -110,7 +110,7 @@ public class Player : MonoBehaviour
         {
             moveflag = false;
         }
-        if ((Input.GetKeyDown(KeyCode.D)) && !moveflag&&!outleftroll&&!inrightroll&&!outrightroll&&!inleftroll)
+        if ((Input.GetKeyDown(KeyCode.D)) && !moveflag&&!outleftroll&&!inrightroll&&!outrightroll&&!inleftroll && !jumpflag)
         {
 
             if (backflag)
@@ -155,7 +155,7 @@ public class Player : MonoBehaviour
             }
         }
         else
-        if ((Input.GetKeyDown(KeyCode.A)) && !moveflag && !outleftroll && !inrightroll && !outrightroll && !inleftroll)
+        if ((Input.GetKeyDown(KeyCode.A)) && !moveflag && !outleftroll && !inrightroll && !outrightroll && !inleftroll&&!jumpflag)
         {
 
             if (flontflag)
@@ -444,15 +444,14 @@ public class Player : MonoBehaviour
         {
             endflag = true;
         }
+        if(!GetMap.maps[(y*1000)+x])
+        {
+            jumpflag = true;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (jumpflag)
-        {
-            jumpflag = false;
-            anim.SetBool("Jump", false);
-        }
         if (collision.gameObject.tag == "Block")
         {
             block = collision.gameObject.GetComponent<Block>();
@@ -657,6 +656,8 @@ public class Player : MonoBehaviour
                     fbflag = true;
                 }
             }
+            x = collision.gameObject.GetComponent<Block>().xx;
+            y = collision.gameObject.GetComponent<Block>().yy;
             //collision.gameObject.GetComponent<Block>().damageflag=true;
             if (!cam.changeflag)
             {
@@ -672,7 +673,6 @@ public class Player : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-
             if (!damageflag)
             {
                 damageflag = true;
@@ -680,7 +680,6 @@ public class Player : MonoBehaviour
                 Destroy(hps[hpcount]);
                 hpcount++;
             }
-
             // moveflag = false;
         }
         if (other.tag == "Item")

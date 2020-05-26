@@ -193,10 +193,11 @@ public class Block : MonoBehaviour
         {
 
             Instantiate(deathPar, transform.position, Quaternion.identity);
+            map.maps[(yy * 1000) + xx] = false;
         }
         if(mat.end)
         {
-            map.maps[(yy * 1000) + xx] = false;
+
             mapCreate.blocks--;
             Destroy(gameObject);
         }

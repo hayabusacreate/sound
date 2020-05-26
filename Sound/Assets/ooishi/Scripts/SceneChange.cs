@@ -32,9 +32,13 @@ public class SceneChange : MonoBehaviour
     public bool endflag;
 
     public GameObject gold, silver, bronze, over,serect;
+
+    public AudioClip sound1;
+    AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         if(scene==Scene.GamePlay)
         {
             slider = GameObject.Find("Count").GetComponent<Slider>();
@@ -108,7 +112,7 @@ public class SceneChange : MonoBehaviour
                 {
                     SceneManager.LoadScene("GameOver");
                 }
-                if (Input.GetKeyDown(KeyCode.R))
+                if (Input.GetKeyDown(KeyCode.R) || (Input.GetKeyDown("joystick button 3")))
                 {
                     
                     SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
@@ -142,6 +146,7 @@ public class SceneChange : MonoBehaviour
                 if (Input.GetKey(KeyCode.Space) || (Input.GetKeyDown("joystick button 0")))
                 {
                     SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
+                    audio.PlayOneShot(sound1);
                 }
                 break;
             case Scene.GameOver:

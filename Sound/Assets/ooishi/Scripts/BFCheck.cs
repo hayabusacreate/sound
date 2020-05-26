@@ -29,46 +29,46 @@ public class BFCheck : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag=="Block")
-        {
-            //Debug.Log("a");
-            if(bf==BF.Flont)
-            {
-                player.flontflag = false;
-            }else if (bf == BF.Back)
-            {
-                player.backflag = false;
-            }
-            else if (bf == BF.Backdown)
-            {
-                player.bbflag = false;
-            }
-            else if (bf == BF.Frontdown)
-            {
-                player.fbflag = false;
-            }
-        }
+        //if(other.gameObject.tag=="Block")
+        //{
+        //    //Debug.Log("a");
+        //    if(bf==BF.Flont)
+        //    {
+        //        player.flontflag = false;
+        //    }else if (bf == BF.Back)
+        //    {
+        //        player.backflag = false;
+        //    }
+        //    else if (bf == BF.Backdown)
+        //    {
+        //        player.bbflag = false;
+        //    }
+        //    else if (bf == BF.Frontdown)
+        //    {
+        //        player.fbflag = false;
+        //    }
+        //}
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Block")
-        {
-            if (bf == BF.Flont)
-            {
-                player.flontflag = true;
-            }
-            else if (bf == BF.Back)
-            {
-                player.backflag = true;
-            }
-            else if (bf == BF.Backdown)
-            {
-                player.bbflag = true;
-            }
-            else if (bf == BF.Frontdown)
-            {
-                player.fbflag = true;
-            }
-        }
+        //if (other.gameObject.tag == "Block")
+        //{
+        //    if (bf == BF.Flont)
+        //    {
+        //        player.flontflag = true;
+        //    }
+        //    else if (bf == BF.Back)
+        //    {
+        //        player.backflag = true;
+        //    }
+        //    else if (bf == BF.Backdown)
+        //    {
+        //        player.bbflag = true;
+        //    }
+        //    else if (bf == BF.Frontdown)
+        //    {
+        //        player.fbflag = true;
+        //    }
+        //}
     }
 }

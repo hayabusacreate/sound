@@ -65,6 +65,7 @@ public class Player : MonoBehaviour
 
     public int movecount;
     public Map GetMap;
+    public GameObject saveobj;
     // Start is called before the first frame update
     void Start()
     {
@@ -428,7 +429,276 @@ public class Player : MonoBehaviour
             {
                 jumpflag = true;
             }
+            if(!jumpflag)
+            {
+                if (playerMove == PlayerMove.Down)
+                {
+                    if (GetMap.width > saveobj.gameObject.GetComponent<Block>().xx + 1)
+                    {
+                        if (!GetMap.maps[(saveobj.gameObject.GetComponent<Block>().yy * 1000) + saveobj.gameObject.GetComponent<Block>().xx + 1])
+                        {
+                            bbflag = true;
+                        }
+                        else
+                        {
+                            bbflag = false;
+                        }
+                        if (0 <= saveobj.gameObject.GetComponent<Block>().yy - 1)
+                        {
+                            if (!GetMap.maps[((saveobj.gameObject.GetComponent<Block>().yy - 1) * 1000) + saveobj.gameObject.GetComponent<Block>().xx + 1])
+                            {
+                                backflag = true;
+                            }
+                            else
+                            {
+                                backflag = false;
+                            }
+                        }
+                        else
+                        {
+                            backflag = true;
+                        }
+
+                    }
+                    else
+                    {
+                        backflag = true;
+                        bbflag = true;
+                    }
+                    if (0 <= saveobj.gameObject.GetComponent<Block>().xx - 1)
+                    {
+                        if (!GetMap.maps[(saveobj.gameObject.GetComponent<Block>().yy * 1000) + saveobj.gameObject.GetComponent<Block>().xx - 1])
+                        {
+                            fbflag = true;
+                        }
+                        else
+                        {
+                            fbflag = false;
+                        }
+
+                        if (0 <= saveobj.gameObject.GetComponent<Block>().yy - 1)
+                        {
+                            if (!GetMap.maps[((saveobj.gameObject.GetComponent<Block>().yy - 1) * 1000) + saveobj.gameObject.GetComponent<Block>().xx - 1])
+                            {
+                                flontflag = true;
+                            }
+                            else
+                            {
+                                flontflag = false;
+                            }
+                        }
+                        else
+                        {
+                            flontflag = true;
+                        }
+                    }
+                    else
+                    {
+                        flontflag = true;
+                        fbflag = true;
+                    }
+
+                }
+                if (playerMove == PlayerMove.Up)
+                {
+                    if (GetMap.width > saveobj.gameObject.GetComponent<Block>().xx + 1)
+                    {
+                        if (!GetMap.maps[(saveobj.gameObject.GetComponent<Block>().yy * 1000) + saveobj.gameObject.GetComponent<Block>().xx + 1])
+                        {
+                            fbflag = true;
+                        }
+                        else
+                        {
+                            fbflag = false;
+                        }
+                        if (GetMap.hight > saveobj.gameObject.GetComponent<Block>().yy + 1)
+                        {
+                            if (!GetMap.maps[((saveobj.gameObject.GetComponent<Block>().yy + 1) * 1000) + saveobj.gameObject.GetComponent<Block>().xx + 1])
+                            {
+                                flontflag = true;
+                            }
+                            else
+                            {
+                                flontflag = false;
+                            }
+                        }
+                        else
+                        {
+                            flontflag = true;
+                        }
+                    }
+                    else
+                    {
+                        flontflag = true;
+                        fbflag = true;
+                    }
+                    if (0 <= saveobj.gameObject.GetComponent<Block>().xx - 1)
+                    {
+                        if (!GetMap.maps[(saveobj.gameObject.GetComponent<Block>().yy * 1000) + saveobj.gameObject.GetComponent<Block>().xx - 1])
+                        {
+                            bbflag = true;
+                        }
+                        else
+                        {
+                            bbflag = false;
+                        }
+                        if (GetMap.hight > saveobj.gameObject.GetComponent<Block>().yy + 1)
+                        {
+                            if (!GetMap.maps[((saveobj.gameObject.GetComponent<Block>().yy + 1) * 1000) + saveobj.gameObject.GetComponent<Block>().xx - 1])
+                            {
+                                backflag = true;
+                            }
+                            else
+                            {
+                                backflag = false;
+                            }
+                        }
+                        else
+                        {
+                            backflag = true;
+                        }
+                    }
+                    else
+                    {
+                        backflag = true;
+                        bbflag = true;
+                    }
+                }
+
+                if (playerMove == PlayerMove.Right)
+                {
+                    if (GetMap.hight > saveobj.gameObject.GetComponent<Block>().yy + 1)
+                    {
+                        if (!GetMap.maps[((saveobj.gameObject.GetComponent<Block>().yy + 1) * 1000) + saveobj.gameObject.GetComponent<Block>().xx])
+                        {
+                            fbflag = true;
+                        }
+                        else
+                        {
+                            fbflag = false;
+                        }
+                        if (0 <= saveobj.gameObject.GetComponent<Block>().xx - 1)
+                        {
+                            if (!GetMap.maps[((saveobj.gameObject.GetComponent<Block>().yy + 1) * 1000) + saveobj.gameObject.GetComponent<Block>().xx - 1])
+                            {
+                                flontflag = true;
+                            }
+                            else
+                            {
+                                flontflag = false;
+                            }
+                        }
+                        else
+                        {
+                            flontflag = true;
+                        }
+                    }
+                    else
+                    {
+                        flontflag = true;
+                        fbflag = true;
+                    }
+                    if (0 <= saveobj.gameObject.GetComponent<Block>().yy - 1)
+                    {
+                        if (!GetMap.maps[((saveobj.gameObject.GetComponent<Block>().yy - 1) * 1000) + saveobj.gameObject.GetComponent<Block>().xx])
+                        {
+                            bbflag = true;
+                        }
+                        else
+                        {
+                            bbflag = false;
+                        }
+                        if (0 <= saveobj.gameObject.GetComponent<Block>().xx - 1)
+                        {
+                            if (!GetMap.maps[((saveobj.gameObject.GetComponent<Block>().yy - 1) * 1000) + saveobj.gameObject.GetComponent<Block>().xx - 1])
+                            {
+                                backflag = true;
+                            }
+                            else
+                            {
+                                backflag = false;
+                            }
+                        }
+                        else
+                        {
+                            backflag = true;
+                        }
+                    }
+                    else
+                    {
+                        backflag = true;
+                        bbflag = true;
+                    }
+                }
+                if (playerMove == PlayerMove.Left)
+                {
+                    if (GetMap.width > saveobj.gameObject.GetComponent<Block>().yy + 1)
+                    {
+                        if (!GetMap.maps[((saveobj.gameObject.GetComponent<Block>().yy + 1) * 1000) + saveobj.gameObject.GetComponent<Block>().xx])
+                        {
+                            bbflag = true;
+                        }
+                        else
+                        {
+                            bbflag = false;
+                        }
+                        if (GetMap.width > saveobj.gameObject.GetComponent<Block>().xx + 1)
+                        {
+                            if (!GetMap.maps[((saveobj.gameObject.GetComponent<Block>().yy + 1) * 1000) + saveobj.gameObject.GetComponent<Block>().xx + 1])
+                            {
+                                backflag = true;
+                            }
+                            else
+                            {
+                                backflag = false;
+                            }
+                        }
+                        else
+                        {
+                            backflag = true;
+                        }
+                    }
+                    else
+                    {
+                        backflag = true;
+                        bbflag = true;
+                    }
+                    if (0 <= saveobj.gameObject.GetComponent<Block>().yy - 1)
+                    {
+                        if (!GetMap.maps[((saveobj.gameObject.GetComponent<Block>().yy - 1) * 1000) + saveobj.gameObject.GetComponent<Block>().xx])
+                        {
+                            fbflag = true;
+                        }
+                        else
+                        {
+                            fbflag = false;
+                        }
+                        if (GetMap.width > saveobj.gameObject.GetComponent<Block>().xx - 1)
+                        {
+                            if (!GetMap.maps[((saveobj.gameObject.GetComponent<Block>().yy - 1) * 1000) + saveobj.gameObject.GetComponent<Block>().xx - 1])
+                            {
+                                flontflag = true;
+                            }
+                            else
+                            {
+                                flontflag = false;
+                            }
+                        }
+                        else
+                        {
+                            flontflag = true;
+                        }
+                    }
+                    else
+                    {
+                        flontflag = true;
+                        fbflag = true;
+                    }
+                }
+            }
+  
         }
+
 
     }
 
@@ -464,206 +734,7 @@ public class Player : MonoBehaviour
             tyle = collision.gameObject.GetComponent<Block>().tyle;
             //rollObj = collision.gameObject.transform.position;
 
-            if(playerMove==PlayerMove.Down)
-            {
-                if (GetMap.width > collision.gameObject.GetComponent<Block>().xx + 1)
-                {
-                    if (!GetMap.maps[(collision.gameObject.GetComponent<Block>().yy * 1000) + collision.gameObject.GetComponent<Block>().xx+1])
-                    {
-                        bbflag = true;
-                    }
-                    if (0 <= collision.gameObject.GetComponent<Block>().yy - 1)
-                    {
-                        if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy - 1) * 1000) + collision.gameObject.GetComponent<Block>().xx + 1])
-                        {
-                            backflag = true;
-                        }
-                    }
-                    else
-                    {
-                        backflag = true;
-                    }
-
-                }
-                else
-                {
-                    backflag = true;
-                    bbflag = true;
-                }
-                if (0 <= collision.gameObject.GetComponent<Block>().xx - 1)
-                {
-                    if (!GetMap.maps[(collision.gameObject.GetComponent<Block>().yy * 1000) + collision.gameObject.GetComponent<Block>().xx - 1])
-                    {
-                        fbflag = true;
-                    }
-
-                    if (0 <= collision.gameObject.GetComponent<Block>().yy - 1)
-                    {
-                        if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy - 1) * 1000) + collision.gameObject.GetComponent<Block>().xx - 1])
-                        {
-                            flontflag = true;
-                        }
-                    }
-                    else
-                    {
-                        flontflag = true;
-                    }
-                }
-                else
-                {
-                    flontflag = true;
-                    fbflag = true;
-                }
-
-            }
-            if (playerMove == PlayerMove.Up)
-            {
-                if (GetMap.width > collision.gameObject.GetComponent<Block>().xx + 1)
-                {
-                    if (!GetMap.maps[(collision.gameObject.GetComponent<Block>().yy * 1000) + collision.gameObject.GetComponent<Block>().xx+1])
-                    {
-                        fbflag = true;
-                    }
-                    if (GetMap.hight > collision.gameObject.GetComponent<Block>().yy + 1)
-                    {
-                        if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy + 1) * 1000) + collision.gameObject.GetComponent<Block>().xx + 1])
-                        {
-                            flontflag = true;
-                        }
-                    }
-                    else
-                    {
-                        flontflag = true;
-                    }
-                }
-                else
-                {
-                    flontflag = true;
-                    fbflag = true;
-                }
-                if (0 <= collision.gameObject.GetComponent<Block>().xx - 1)
-                {
-                    if (!GetMap.maps[(collision.gameObject.GetComponent<Block>().yy * 1000) + collision.gameObject.GetComponent<Block>().xx - 1])
-                    {
-                        bbflag = true;
-                    }
-                    if (GetMap.hight > collision.gameObject.GetComponent<Block>().yy + 1)
-                    {
-                        if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy + 1) * 1000) + collision.gameObject.GetComponent<Block>().xx - 1])
-                        {
-                            backflag = true;
-                        }
-                    }
-                    else
-                    {
-                        backflag = true;
-                    }
-                }
-                else
-                {
-                    backflag = true;
-                    bbflag = true;
-                }
-            }
-             
-            if (playerMove == PlayerMove.Right)
-            {
-                if (GetMap.hight > collision.gameObject.GetComponent<Block>().yy + 1)
-                {
-                    if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy+1) * 1000) + collision.gameObject.GetComponent<Block>().xx])
-                    {
-                        fbflag = true;
-                    }
-                    if (0 <= collision.gameObject.GetComponent<Block>().xx - 1)
-                    {
-                        if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy + 1) * 1000) + collision.gameObject.GetComponent<Block>().xx - 1])
-                        {
-                            flontflag = true;
-                        }
-                    }
-                    else
-                    {
-                        flontflag = true;
-                    }
-                }
-                else
-                {
-                    flontflag = true;
-                    fbflag = true;
-                }
-                if (0 <= collision.gameObject.GetComponent<Block>().yy - 1)
-                {
-                    if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy-1) * 1000) + collision.gameObject.GetComponent<Block>().xx])
-                    {
-                        bbflag = true;
-                    }
-                    if (0 <= collision.gameObject.GetComponent<Block>().xx - 1)
-                    {
-                        if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy - 1) * 1000) + collision.gameObject.GetComponent<Block>().xx - 1])
-                        {
-                            backflag = true;
-                        }
-                    }
-                    else
-                    {
-                        backflag = true;
-                    }
-                }
-                else
-                {
-                    backflag = true;
-                    bbflag = true;
-                }
-            }
-            if (playerMove == PlayerMove.Left)
-            {
-                if (GetMap.hight > collision.gameObject.GetComponent<Block>().yy + 1)
-                {
-                    if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy + 1) * 1000) + collision.gameObject.GetComponent<Block>().xx])
-                    {
-                        bbflag = true;
-                    }
-                    if (GetMap.width > collision.gameObject.GetComponent<Block>().xx + 1)
-                    {
-                        if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy + 1) * 1000) + collision.gameObject.GetComponent<Block>().xx + 1])
-                        {
-                            backflag = true;
-                        }
-                    }
-                    else
-                    {
-                        backflag = true;
-                    }
-                }
-                else
-                {
-                    backflag = true;
-                    bbflag = true;
-                }
-                if (GetMap.hight > collision.gameObject.GetComponent<Block>().yy + 1)
-                {
-                    if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy + 1) * 1000) + collision.gameObject.GetComponent<Block>().xx])
-                    {
-                        fbflag = true;
-                    }
-                    if (GetMap.width > collision.gameObject.GetComponent<Block>().xx + 1)
-                    {
-                        if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy + 1) * 1000) + collision.gameObject.GetComponent<Block>().xx + 1])
-                        {
-                            flontflag = true;
-                        }
-                    }
-                    else
-                    {
-                        flontflag = true;
-                    }
-                }
-                else
-                {
-                    flontflag = true;
-                    fbflag = true;
-                }
-            }
+  
             x = collision.gameObject.GetComponent<Block>().xx;
             y = collision.gameObject.GetComponent<Block>().yy;
             //collision.gameObject.GetComponent<Block>().damageflag=true;

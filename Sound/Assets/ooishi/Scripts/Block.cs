@@ -193,13 +193,22 @@ public class Block : MonoBehaviour
             Instantiate(deathPar, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
-        if(player.outrightroll||player.outleftroll)
+        if(block==BlockType.Goal)
         {
             collider.enabled = false;
         }else
         {
-            collider.enabled = true;
+            if (player.outrightroll || player.outleftroll)
+            {
+                collider.enabled = false;
+            }
+            else
+            {
+                collider.enabled = true;
+            }
+
         }
+
     }
 
     private void OnTriggerEnter(Collider collision)

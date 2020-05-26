@@ -36,7 +36,6 @@ public class SceneChange : MonoBehaviour
         if(scene==Scene.GamePlay)
         {
             player=GameObject.Find("Player").GetComponent<Player>();
-            timeText = GameObject.Find("Time").GetComponent<Text>();
             mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
             // 
             //Physics.gravity = new Vector3(0, -5, 0);

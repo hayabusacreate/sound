@@ -680,7 +680,7 @@ public class Player : MonoBehaviour
                 }
                 if (playerMove == PlayerMove.Left)
                 {
-                    if (GetMap.width > saveobj.gameObject.GetComponent<Block>().yy + 1)
+                    if (GetMap.hight > saveobj.gameObject.GetComponent<Block>().yy + 1)
                     {
                         if (!GetMap.maps[((saveobj.gameObject.GetComponent<Block>().yy + 1) * 1000) + saveobj.gameObject.GetComponent<Block>().xx])
                         {

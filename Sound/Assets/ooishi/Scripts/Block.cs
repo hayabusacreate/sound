@@ -179,14 +179,7 @@ public class Block : MonoBehaviour
 
         }
 
-        if (hp < 0)
-        {
 
-            Instantiate(deathPar, transform.position, Quaternion.identity);
-            map.maps[(yy * 1000) + xx] = false;
-            capsule.enabled = false;
-            collider.enabled = false;
-        }
         if(mat.end)
         {
 
@@ -207,6 +200,14 @@ public class Block : MonoBehaviour
                 collider.enabled = true;
             }
 
+        }
+        if (hp < 0)
+        {
+
+            Instantiate(deathPar, transform.position, Quaternion.identity);
+            map.maps[(yy * 1000) + xx] = false;
+            capsule.enabled = false;
+            collider.enabled = false;
         }
 
     }

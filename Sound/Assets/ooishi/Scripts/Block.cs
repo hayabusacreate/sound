@@ -66,9 +66,12 @@ public class Block : MonoBehaviour
     public Material material;
 
     private ChangeMat mat;
+
+    private CapsuleCollider capsule;
     // Start is called before the first frame update
     void Start()
     {
+        capsule = GetComponent<CapsuleCollider>();
         mat = GetComponent<ChangeMat>();
         savehp = (int)hp;
         cam = GameObject.Find("ChangeCam").GetComponent<ChangeCam>();
@@ -135,16 +138,6 @@ public class Block : MonoBehaviour
         rigidbody = gameObject.GetComponent<Rigidbody>();
         change = 0;
         count = 0;
-
-
-        //if (block == BlockType.Nomal)
-        //{
-        //    color.material.color = Color.green;
-        //}
-        //else
-        //{
-        //    color.material.color = Color.yellow;
-        //}
         transform.parent = null;
         palrticleflag = true;
     }
@@ -163,9 +156,6 @@ public class Block : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-
-
         if (damageflag)
         {
             if(savecount!=player.movecount)
@@ -194,6 +184,7 @@ public class Block : MonoBehaviour
 
             Instantiate(deathPar, transform.position, Quaternion.identity);
             map.maps[(yy * 1000) + xx] = false;
+            capsule.enabled = false;
         }
         if(mat.end)
         {

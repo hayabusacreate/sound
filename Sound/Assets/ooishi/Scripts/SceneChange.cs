@@ -35,6 +35,8 @@ public class SceneChange : MonoBehaviour
 
     public AudioClip sound1;
     AudioSource audio;
+
+    private bool ui;
     // Start is called before the first frame update
     void Start()
     {
@@ -103,6 +105,18 @@ public class SceneChange : MonoBehaviour
                         SceneManager.LoadScene("StageSerect");
                     }
 
+                }
+                if(Input.GetKeyDown(KeyCode.I))
+                {
+                    ui = true;
+                }
+                if(ui)
+                {
+                    over.SetActive(false);
+                    bronze.SetActive(false);
+                    silver.SetActive(false);
+                    gold.SetActive(false);
+                    serect.SetActive(false);
                 }
                 if (Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown("joystick button 7")))
                 {

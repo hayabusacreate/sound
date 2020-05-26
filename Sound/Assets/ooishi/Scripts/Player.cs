@@ -455,7 +455,7 @@ public class Player : MonoBehaviour
 
     //}
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "Block")
         {
@@ -472,31 +472,34 @@ public class Player : MonoBehaviour
                     {
                         bbflag = true;
                     }
-                    if(GetMap.hight > collision.gameObject.GetComponent<Block>().yy + 1)
+                    if (0 <= collision.gameObject.GetComponent<Block>().yy - 1)
                     {
-                        if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy+1) * 1000) + collision.gameObject.GetComponent<Block>().xx + 1])
+                        if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy - 1) * 1000) + collision.gameObject.GetComponent<Block>().xx + 1])
                         {
                             backflag = true;
                         }
-                    }else
+                    }
+                    else
                     {
                         backflag = true;
                     }
+
                 }
                 else
                 {
                     backflag = true;
                     bbflag = true;
                 }
-                if (0 < collision.gameObject.GetComponent<Block>().xx - 1)
+                if (0 <= collision.gameObject.GetComponent<Block>().xx - 1)
                 {
                     if (!GetMap.maps[(collision.gameObject.GetComponent<Block>().yy * 1000) + collision.gameObject.GetComponent<Block>().xx - 1])
                     {
                         fbflag = true;
                     }
-                    if (GetMap.hight > collision.gameObject.GetComponent<Block>().yy + 1)
+
+                    if (0 <= collision.gameObject.GetComponent<Block>().yy - 1)
                     {
-                        if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy + 1) * 1000) + collision.gameObject.GetComponent<Block>().xx - 1])
+                        if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy - 1) * 1000) + collision.gameObject.GetComponent<Block>().xx - 1])
                         {
                             flontflag = true;
                         }
@@ -521,9 +524,9 @@ public class Player : MonoBehaviour
                     {
                         fbflag = true;
                     }
-                    if (0 < collision.gameObject.GetComponent<Block>().yy - 1)
+                    if (GetMap.hight > collision.gameObject.GetComponent<Block>().yy + 1)
                     {
-                        if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy - 1) * 1000) + collision.gameObject.GetComponent<Block>().xx + 1])
+                        if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy + 1) * 1000) + collision.gameObject.GetComponent<Block>().xx + 1])
                         {
                             flontflag = true;
                         }
@@ -538,15 +541,15 @@ public class Player : MonoBehaviour
                     flontflag = true;
                     fbflag = true;
                 }
-                if (0 < collision.gameObject.GetComponent<Block>().xx - 1)
+                if (0 <= collision.gameObject.GetComponent<Block>().xx - 1)
                 {
                     if (!GetMap.maps[(collision.gameObject.GetComponent<Block>().yy * 1000) + collision.gameObject.GetComponent<Block>().xx - 1])
                     {
                         bbflag = true;
                     }
-                    if (0 < collision.gameObject.GetComponent<Block>().yy - 1)
+                    if (GetMap.hight > collision.gameObject.GetComponent<Block>().yy + 1)
                     {
-                        if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy - 1) * 1000) + collision.gameObject.GetComponent<Block>().xx - 1])
+                        if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy + 1) * 1000) + collision.gameObject.GetComponent<Block>().xx - 1])
                         {
                             backflag = true;
                         }
@@ -571,7 +574,7 @@ public class Player : MonoBehaviour
                     {
                         fbflag = true;
                     }
-                    if (0 < collision.gameObject.GetComponent<Block>().xx - 1)
+                    if (0 <= collision.gameObject.GetComponent<Block>().xx - 1)
                     {
                         if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy + 1) * 1000) + collision.gameObject.GetComponent<Block>().xx - 1])
                         {
@@ -588,13 +591,13 @@ public class Player : MonoBehaviour
                     flontflag = true;
                     fbflag = true;
                 }
-                if (0 < collision.gameObject.GetComponent<Block>().yy - 1)
+                if (0 <= collision.gameObject.GetComponent<Block>().yy - 1)
                 {
                     if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy-1) * 1000) + collision.gameObject.GetComponent<Block>().xx])
                     {
                         bbflag = true;
                     }
-                    if (0 < collision.gameObject.GetComponent<Block>().xx - 1)
+                    if (0 <= collision.gameObject.GetComponent<Block>().xx - 1)
                     {
                         if (!GetMap.maps[((collision.gameObject.GetComponent<Block>().yy - 1) * 1000) + collision.gameObject.GetComponent<Block>().xx - 1])
                         {

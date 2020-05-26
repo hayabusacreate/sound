@@ -64,9 +64,12 @@ public class Block : MonoBehaviour
     private int savecount;
     public GameObject deathPar;
     public Material material;
+
+    private ChangeMat mat;
     // Start is called before the first frame update
     void Start()
     {
+        mat = GetComponent<ChangeMat>();
         savehp = (int)hp;
         cam = GameObject.Find("ChangeCam").GetComponent<ChangeCam>();
         sceneChange = GameObject.Find("SceneChange").GetComponent<SceneChange>();
@@ -191,6 +194,9 @@ public class Block : MonoBehaviour
             map.maps[(yy * 1000) + xx] = false;
             mapCreate.blocks--;
             Instantiate(deathPar, transform.position, Quaternion.identity);
+        }
+        if(mat.end)
+        {
             Destroy(gameObject);
         }
         if(block==BlockType.Goal)

@@ -67,9 +67,11 @@ public class Player : MonoBehaviour
     public Map GetMap;
     public GameObject saveobj;
     private float savepos;
+
     // Start is called before the first frame update
     void Start()
     {
+
         jumpflag = true;
         playerMove = PlayerMove.Down;
         hpcount = 0;

@@ -145,7 +145,15 @@ public class Block : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = "" + (int)hp;
+        if(block==BlockType.Nomal)
+        {
+            text.text = "" + (int)hp;
+        }
+        else
+        {
+            text.text = "";
+        }
+
         Damage();
     }
 

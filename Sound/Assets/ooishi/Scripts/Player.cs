@@ -242,6 +242,7 @@ public class Player : MonoBehaviour
                 outleftroll = false;
                 inleftroll = false;
                 moveflag = false;
+                Physics.gravity = new Vector3(10, 0, 0);
             }
             if (angle < 270 && angle > 180)
             {
@@ -251,6 +252,7 @@ public class Player : MonoBehaviour
                 inrightroll = false;
                 playerMove = PlayerMove.Right;
                 moveflag = false;
+                Physics.gravity = new Vector3(-10, 0, 0);
             }
         }
         if (playerMove == PlayerMove.Up)
@@ -264,6 +266,7 @@ public class Player : MonoBehaviour
                 inleftroll = false;
 
                 moveflag = false;
+                Physics.gravity = new Vector3(-10, 0, 0);
             }
             if (angle < 90 && angle > 0)
             {
@@ -273,6 +276,7 @@ public class Player : MonoBehaviour
                 inrightroll = false;
                 playerMove = PlayerMove.Left;
                 moveflag = false;
+                Physics.gravity = new Vector3(10, 0, 0);
             }
         }
         if (playerMove == PlayerMove.Right)
@@ -285,6 +289,7 @@ public class Player : MonoBehaviour
                 outrightroll = false;
                 inrightroll = false;
                 moveflag = false;
+                Physics.gravity = new Vector3(0, 10, 0);
             }
             if (angle < 90 && angle > 0)
             {
@@ -294,6 +299,7 @@ public class Player : MonoBehaviour
                 inleftroll = false;
                 playerMove = PlayerMove.Down;
                 moveflag = false;
+                Physics.gravity = new Vector3(0, -10, 0);
             }
         }
         if (playerMove == PlayerMove.Left)
@@ -307,6 +313,7 @@ public class Player : MonoBehaviour
                 outrightroll = false;
                 inrightroll = false;
                 moveflag = false;
+                Physics.gravity = new Vector3(0, -10, 0);
             }
             if (angle <= 180 && angle >= 175)
             {
@@ -316,6 +323,7 @@ public class Player : MonoBehaviour
                 inleftroll = false;
                 playerMove = PlayerMove.Up;
                 moveflag = false;
+                Physics.gravity = new Vector3(0, 10, 0);
             }
         }
         switch (playerMove)
@@ -345,8 +353,8 @@ public class Player : MonoBehaviour
                     }
                 }
                 savepos = transform.position.x;
-                if(!inrightroll&&!inleftroll&&!outrightroll&&!outleftroll)
-                rigidbody.AddForce(0, -10, 0);
+                //if(!inrightroll&&!inleftroll&&!outrightroll&&!outleftroll)
+                //rigidbody.AddForce(0, -10, 0);
                 if (jumpflag)
                 {
                     transform.position =new Vector3(savepos,transform.position.y,transform.position.z);
@@ -375,8 +383,12 @@ public class Player : MonoBehaviour
                     }
                 }
                 savepos = transform.position.x;
-                if (!inrightroll && !inleftroll && !outrightroll && !outleftroll)
-                    rigidbody.AddForce(0, 10, 0);
+                //if (!inrightroll && !inleftroll && !outrightroll && !outleftroll)
+                //{
+                //    rigidbody.AddForce(0, 10, 0);
+
+                //}
+
                 if (jumpflag)
                 {
                     transform.position = new Vector3(savepos, transform.position.y, transform.position.z);
@@ -406,8 +418,8 @@ public class Player : MonoBehaviour
                     }
                 }
                 savepos = transform.position.y;
-                if (!inrightroll && !inleftroll && !outrightroll && !outleftroll)
-                    rigidbody.AddForce(-10, 0, 0);
+                //if (!inrightroll && !inleftroll && !outrightroll && !outleftroll)
+                //    rigidbody.AddForce(-10, 0, 0);
                 if (jumpflag)
                 {
                     transform.position = new Vector3( transform.position.x,savepos, transform.position.z);
@@ -437,13 +449,21 @@ public class Player : MonoBehaviour
                     }
                 }
                 savepos = transform.position.y;
-                if (!inrightroll && !inleftroll && !outrightroll && !outleftroll)
-                    rigidbody.AddForce(10, 0, 0);
+                //if (!inrightroll && !inleftroll && !outrightroll && !outleftroll)
+                //    rigidbody.AddForce(10, 0, 0);
                 if (jumpflag)
                 {
                     transform.position = new Vector3(transform.position.x, savepos, transform.position.z);
                 }
                 break;
+        }
+        if (!inrightroll && !inleftroll && !outrightroll && !outleftroll)
+        {
+            rigidbody.useGravity = true;
+        }
+        else
+        {
+            rigidbody.useGravity = false;
         }
         if (cam.changeflag)
         {

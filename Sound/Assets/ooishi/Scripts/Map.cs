@@ -60,6 +60,10 @@ public class Map : MonoBehaviour
                 {
                     map.blocks--;
                 }
+                if (csvDatas[y][x] == "3")
+                {
+                    map.blocks--;
+                }
             }
         }
         map.maxblock = map.blocks;

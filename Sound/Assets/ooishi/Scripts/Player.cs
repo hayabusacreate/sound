@@ -67,11 +67,11 @@ public class Player : MonoBehaviour
     public Map GetMap;
     public GameObject saveobj;
     private float savepos;
-
+    private SceneChange sceneChange;
     // Start is called before the first frame update
     void Start()
     {
-
+        sceneChange = GameObject.Find("SceneChange").GetComponent<SceneChange>();
         jumpflag = true;
         playerMove = PlayerMove.Down;
         hpcount = 0;
@@ -95,7 +95,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+        if(!sceneChange.creaflag)
+        {
+            Move();
+        }
+
         //Jump();
         //Damage();
         //hight = -(int)transform.position.y;

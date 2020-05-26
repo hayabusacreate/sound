@@ -30,13 +30,18 @@ public class SceneChange : MonoBehaviour
     public int mapcount;
 
     public bool endflag;
+
+    public GameObject gold, silver, bronze, over,serect;
     // Start is called before the first frame update
     void Start()
     {
         if(scene==Scene.GamePlay)
         {
+            slider = GameObject.Find("Count").GetComponent<Slider>();
             player=GameObject.Find("Player").GetComponent<Player>();
             mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
+            slider.minValue = 0;
+            slider.maxValue = 100;
             // 
             //Physics.gravity = new Vector3(0, -5, 0);
         }
@@ -68,24 +73,32 @@ public class SceneChange : MonoBehaviour
                 break;
             case Scene.GamePlay:
                 //time -= Time.deltaTime;
-                //slider.value = time;
+                slider.value = (((float)mapCreate.maxblock - (float)mapCreate.blocks) / (float)mapCreate.maxblock)*100;
+
                 if(creaflag)
                 {
-                    if(mapCreate.blocks/mapCreate.maxblock*100<50)
+                    if((((float)mapCreate.maxblock - (float)mapCreate.blocks) / (float)mapCreate.maxblock) * 100 < 50)
                     {
-
-                    }else if(mapCreate.blocks / mapCreate.maxblock * 100 < 75)
-                    {
-
+                        over.SetActive(true);
                     }
-                    else if (mapCreate.blocks / mapCreate.maxblock * 100 < 100)
+                    else if((((float)mapCreate.maxblock - (float)mapCreate.blocks) / (float)mapCreate.maxblock) * 100 < 75)
                     {
-
-                    }else
-                    {
-
+                        bronze.SetActive(true);
                     }
-                    SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
+                    else if ((((float)mapCreate.maxblock - (float)mapCreate.blocks) / (float)mapCreate.maxblock) * 100 < 100)
+                    {
+                        silver.SetActive(true);
+                    }
+                    else
+                    {
+                        gold.SetActive(true);
+                    }
+                    serect.SetActive(true);
+                    if(Input.GetKeyDown(KeyCode.Space))
+                    {
+                        SceneManager.LoadScene("StageSerect");
+                    }
+
                 }
                 if (player.endflag)
                 {

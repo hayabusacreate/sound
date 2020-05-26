@@ -191,12 +191,13 @@ public class Block : MonoBehaviour
 
         if (hp < 0)
         {
-            map.maps[(yy * 1000) + xx] = false;
-            mapCreate.blocks--;
+
             Instantiate(deathPar, transform.position, Quaternion.identity);
         }
         if(mat.end)
         {
+            map.maps[(yy * 1000) + xx] = false;
+            mapCreate.blocks--;
             Destroy(gameObject);
         }
         if(block==BlockType.Goal)

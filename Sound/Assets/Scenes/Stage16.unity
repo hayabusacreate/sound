@@ -889,6 +889,11 @@ MonoBehaviour:
   text: {fileID: 0}
   mapcount: 0
   endflag: 0
+  gold: {fileID: 0}
+  silver: {fileID: 0}
+  bronze: {fileID: 0}
+  over: {fileID: 0}
+  serect: {fileID: 0}
 --- !u!1 &1669111455
 GameObject:
   m_ObjectHideFlags: 0

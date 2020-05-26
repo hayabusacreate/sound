@@ -28,6 +28,7 @@ public class PlayerHight : MonoBehaviour
             player.tyle = other.gameObject.GetComponent<Block>().tyle;
             player.jumpflag = false;
             player.rollObj = other.gameObject.transform.position;
+            player.saveobj = other.gameObject;
         }
     }
 

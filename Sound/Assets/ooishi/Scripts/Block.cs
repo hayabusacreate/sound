@@ -185,6 +185,7 @@ public class Block : MonoBehaviour
             Instantiate(deathPar, transform.position, Quaternion.identity);
             map.maps[(yy * 1000) + xx] = false;
             capsule.enabled = false;
+            collider.enabled = false;
         }
         if(mat.end)
         {

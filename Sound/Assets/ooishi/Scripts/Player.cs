@@ -422,10 +422,14 @@ public class Player : MonoBehaviour
                     rigidbody.AddForce(10, 0, 0);
                 break;
         }
-        if (!GetMap.maps[(y * 1000) + x])
+        if (cam.changeflag)
         {
-            jumpflag = true;
+            if (!GetMap.maps[(y * 1000) + x])
+            {
+                jumpflag = true;
+            }
         }
+
     }
 
 
@@ -458,7 +462,7 @@ public class Player : MonoBehaviour
             block = collision.gameObject.GetComponent<Block>();
             hight = collision.gameObject.GetComponent<Block>().maphight;
             tyle = collision.gameObject.GetComponent<Block>().tyle;
-            rollObj = collision.gameObject.transform.position;
+            //rollObj = collision.gameObject.transform.position;
 
             if(playerMove==PlayerMove.Down)
             {

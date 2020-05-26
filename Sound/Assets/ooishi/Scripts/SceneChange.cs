@@ -94,11 +94,15 @@ public class SceneChange : MonoBehaviour
                         gold.SetActive(true);
                     }
                     serect.SetActive(true);
-                    if(Input.GetKeyDown(KeyCode.Space))
+                    if(Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown("joystick button 0")))
                     {
                         SceneManager.LoadScene("StageSerect");
                     }
 
+                }
+                if (Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown("joystick button 7")))
+                {
+                    SceneManager.LoadScene("StageSerect");
                 }
                 if (player.endflag)
                 {
@@ -116,7 +120,7 @@ public class SceneChange : MonoBehaviour
                 break;
             case Scene.StageSelect:
                 text.text = "" + mapnum;
-                if (Input.GetKeyDown(KeyCode.D))
+                if (Input.GetKeyDown(KeyCode.D) || (Input.GetKeyDown("joystick button 5")))
                 {
                     mapnum++;
 
@@ -126,7 +130,7 @@ public class SceneChange : MonoBehaviour
                     }
                     mapCreate.ChangeMap(mapnum);
                 }
-                if (Input.GetKeyDown(KeyCode.A))
+                if (Input.GetKeyDown(KeyCode.A) || (Input.GetKeyDown("joystick button 4")))
                 {
                     mapnum--;
                     if(mapnum<1)
@@ -135,7 +139,7 @@ public class SceneChange : MonoBehaviour
                     }
                     mapCreate.ChangeMap(mapnum);
                 }
-                if (Input.GetKey(KeyCode.Space))
+                if (Input.GetKey(KeyCode.Space) || (Input.GetKeyDown("joystick button 0")))
                 {
                     SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
                 }

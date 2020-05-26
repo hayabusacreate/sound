@@ -112,7 +112,7 @@ public class Player : MonoBehaviour
         {
             moveflag = false;
         }
-        if ((Input.GetKeyDown(KeyCode.D)) && !moveflag&&!outleftroll&&!inrightroll&&!outrightroll&&!inleftroll && !jumpflag)
+        if ((Input.GetKey(KeyCode.D)) && !moveflag&&!outleftroll&&!inrightroll&&!outrightroll&&!inleftroll && !jumpflag)
         {
 
             if (backflag)
@@ -157,7 +157,7 @@ public class Player : MonoBehaviour
             }
         }
         else
-        if ((Input.GetKeyDown(KeyCode.A)) && !moveflag && !outleftroll && !inrightroll && !outrightroll && !inleftroll&&!jumpflag)
+        if ((Input.GetKey(KeyCode.A)) && !moveflag && !outleftroll && !inrightroll && !outrightroll && !inleftroll&&!jumpflag)
         {
 
             if (flontflag)
@@ -695,9 +695,9 @@ public class Player : MonoBehaviour
                         {
                             fbflag = false;
                         }
-                        if (GetMap.width > saveobj.gameObject.GetComponent<Block>().xx - 1)
+                        if (GetMap.width > saveobj.gameObject.GetComponent<Block>().xx +1)
                         {
-                            if (!GetMap.maps[((saveobj.gameObject.GetComponent<Block>().yy - 1) * 1000) + saveobj.gameObject.GetComponent<Block>().xx - 1])
+                            if (!GetMap.maps[((saveobj.gameObject.GetComponent<Block>().yy - 1) * 1000) + saveobj.gameObject.GetComponent<Block>().xx + 1])
                             {
                                 flontflag = true;
                             }

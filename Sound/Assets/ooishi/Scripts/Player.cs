@@ -66,6 +66,7 @@ public class Player : MonoBehaviour
     public int movecount;
     public Map GetMap;
     public GameObject saveobj;
+    private float savepos;
     // Start is called before the first frame update
     void Start()
     {
@@ -320,6 +321,7 @@ public class Player : MonoBehaviour
         switch (playerMove)
         {
             case PlayerMove.Down:
+
                 if (moveflag)
                 {
                     if (changeflag == 0)
@@ -342,9 +344,14 @@ public class Player : MonoBehaviour
 
                     }
                 }
+                savepos = transform.position.x;
                 if(!inrightroll&&!inleftroll&&!outrightroll&&!outleftroll)
                 rigidbody.AddForce(0, -10, 0);
-                break;
+                if (jumpflag)
+                {
+                    transform.position =new Vector3(savepos,transform.position.y,transform.position.z);
+                }
+                    break;
             case PlayerMove.Up:
                 if (moveflag)
                 {
@@ -367,8 +374,13 @@ public class Player : MonoBehaviour
                         }
                     }
                 }
+                savepos = transform.position.x;
                 if (!inrightroll && !inleftroll && !outrightroll && !outleftroll)
                     rigidbody.AddForce(0, 10, 0);
+                if (jumpflag)
+                {
+                    transform.position = new Vector3(savepos, transform.position.y, transform.position.z);
+                }
                 break;
             case PlayerMove.Right:
                 if (moveflag)
@@ -393,8 +405,13 @@ public class Player : MonoBehaviour
 
                     }
                 }
+                savepos = transform.position.y;
                 if (!inrightroll && !inleftroll && !outrightroll && !outleftroll)
                     rigidbody.AddForce(-10, 0, 0);
+                if (jumpflag)
+                {
+                    transform.position = new Vector3( transform.position.x,savepos, transform.position.z);
+                }
                 break;
             case PlayerMove.Left:
                 if (moveflag)
@@ -419,8 +436,13 @@ public class Player : MonoBehaviour
                         }
                     }
                 }
+                savepos = transform.position.y;
                 if (!inrightroll && !inleftroll && !outrightroll && !outleftroll)
                     rigidbody.AddForce(10, 0, 0);
+                if (jumpflag)
+                {
+                    transform.position = new Vector3(transform.position.x, savepos, transform.position.z);
+                }
                 break;
         }
         if (cam.changeflag)

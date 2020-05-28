@@ -516,7 +516,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 10ba8d9124f423e4c8fe6159a0f91bd7, type: 2}
+  - {fileID: 2100000, guid: 235f9737113e8ff439e311e8c162ea13, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -898,7 +898,7 @@ MonoBehaviour:
   mapCreate: {fileID: 0}
   creaflag: 0
   text: {fileID: 327865658}
-  mapcount: 7
+  mapcount: 20
   endflag: 0
   gold: {fileID: 0}
   silver: {fileID: 0}

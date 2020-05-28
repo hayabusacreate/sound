@@ -898,7 +898,7 @@ MonoBehaviour:
   mapCreate: {fileID: 0}
   creaflag: 0
   text: {fileID: 327865658}
-  mapcount: 20
+  mapcount: 50
   endflag: 0
   gold: {fileID: 0}
   silver: {fileID: 0}

@@ -68,9 +68,11 @@ public class Block : MonoBehaviour
     private ChangeMat mat;
 
     private CapsuleCollider capsule;
+    private SEManager sEManager;
     // Start is called before the first frame update
     void Start()
     {
+        sEManager = GameObject.Find("SEManager").GetComponent<SEManager>();
         capsule = GetComponent<CapsuleCollider>();
         mat = GetComponent<ChangeMat>();
         savehp = (int)hp;
@@ -211,7 +213,10 @@ public class Block : MonoBehaviour
         }
         if (hp < 0)
         {
-
+            if(capsule.enabled)
+            {
+                sEManager.pon = true;
+            }
             Instantiate(deathPar, transform.position, Quaternion.identity);
             map.maps[(yy * 1000) + xx] = false;
             capsule.enabled = false;
@@ -226,6 +231,7 @@ public class Block : MonoBehaviour
         {
             Debug.Log(collision.gameObject.name);
             damageflag = true;
+
             if(block==BlockType.Goal)
             {
                 sceneChange.creaflag = true;

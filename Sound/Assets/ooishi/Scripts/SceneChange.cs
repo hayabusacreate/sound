@@ -37,9 +37,12 @@ public class SceneChange : MonoBehaviour
     AudioSource audio;
 
     private bool ui;
+    private float count;
+    public GameObject endobj;
     // Start is called before the first frame update
     void Start()
     {
+
         audio = GetComponent<AudioSource>();
         if(scene==Scene.GamePlay)
         {
@@ -132,6 +135,11 @@ public class SceneChange : MonoBehaviour
                     SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
                 }
                 if(endflag)
+                {
+                    count++;
+                    endobj.SetActive(true);
+                }
+                if(count>60)
                 {
                     SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
                 }

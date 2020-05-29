@@ -224,6 +224,7 @@ public class Block : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
+            Debug.Log(collision.gameObject.name);
             damageflag = true;
             if(block==BlockType.Goal)
             {

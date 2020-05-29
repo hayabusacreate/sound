@@ -90,6 +90,8 @@ public class Player : MonoBehaviour
         bbflag = false;
         fbflag = false;
         save = transform.position;
+        Debug.Log(save);
+        transform.position = save;
     }
 
     // Update is called once per frame
@@ -98,6 +100,7 @@ public class Player : MonoBehaviour
         if(!sceneChange.creaflag)
         {
             Move();
+            //transform.position = save;
         }
 
         //Jump();
@@ -789,6 +792,8 @@ public class Player : MonoBehaviour
             if (!cam.changeflag)
             {
                 cam.changeflag = true;
+                rigidbody.constraints = RigidbodyConstraints.None;
+                rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
             }
         }
         if (collision.gameObject.tag == "Ground")

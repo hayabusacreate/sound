@@ -40,7 +40,7 @@ public class wipeCircle : MonoBehaviour
         }
         else if (gameObject.name == "Close" && value >= 0)
         {
-            value = value - Time.deltaTime;
+            value = value - Time.deltaTime*2;
             wipeMat.SetFloat("_Radius", value);
             Debug.Log(wipeMat);
         }

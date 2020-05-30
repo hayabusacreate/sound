@@ -6,10 +6,12 @@
 		_MainTex("Albedo (RGB)", 2D) = "white" {}
 		_Glossiness("Smoothness", Range(0,1)) = 0.5
 		_Metallic("Metallic", Range(0,1)) = 0.0
+				_EmissionMap("Emission Map", 2D) = "black" {}
+		[HDR] _EmissionColor("Emission Color", Color) = (0,0,0)
 	}
 		SubShader
 		{
-			Tags { "Queue" = "Transparent" "RenderType" = "Transparent" }
+			Tags { "Queue" = "Geometry+2" "RenderType" = "Transparent" }
 
 			Stencil {
 				Ref 1
@@ -22,6 +24,8 @@
 			#pragma target 3.0
 
 			sampler2D _MainTex;
+		uniform sampler2D _EmissionMap;
+		float4 _EmissionColor;
 
 			struct Input
 			{
@@ -46,6 +50,7 @@
 				o.Metallic = _Metallic;
 				o.Smoothness = _Glossiness;
 				o.Alpha = c.a;
+				o.Emission = tex2D(_EmissionMap, IN.uv_MainTex) * _EmissionColor;
 			}
 			ENDCG
 		}

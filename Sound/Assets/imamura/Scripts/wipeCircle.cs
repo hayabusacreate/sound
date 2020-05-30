@@ -34,7 +34,7 @@ public class wipeCircle : MonoBehaviour
         //}
         if (gameObject.name == "Open" && value <= 2)
         {
-            value = value + Time.deltaTime;
+            value = value + Time.deltaTime*2;
             wipeMat.SetFloat("_Radius", value);
             Debug.Log(wipeMat);
         }

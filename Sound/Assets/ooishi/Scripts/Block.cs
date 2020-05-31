@@ -6,7 +6,9 @@ public enum BlockType
 {
     Null,
     Nomal,
-    Goal
+    Goal,
+    NonBreak,
+    Ice
 }
 public class Block : MonoBehaviour
 {
@@ -100,13 +102,13 @@ public class Block : MonoBehaviour
         }
         if (type == "4")
         {
-            Instantiate(enemy, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            block = BlockType.NonBreak;
+
         }
         if (type == "5")
         {
-            Instantiate(enemy, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            block = BlockType.Ice;
+            hp = 4;
         }
         if (type == "6")
         {
@@ -189,7 +191,14 @@ public class Block : MonoBehaviour
 
         }
 
-
+        if(block==BlockType.Ice)
+        {
+            if(hp<=3)
+            {
+                type = "2";
+                block = BlockType.Ice;
+            }
+        }
         if(mat.end)
         {
 
@@ -230,6 +239,7 @@ public class Block : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             Debug.Log(collision.gameObject.name);
+            if(block==BlockType.Nomal|| block == BlockType.Ice)
             damageflag = true;
 
             if(block==BlockType.Goal)

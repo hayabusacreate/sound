@@ -68,6 +68,8 @@ public class Player : MonoBehaviour
     public GameObject saveobj;
     private float savepos;
     private SceneChange sceneChange;
+
+    private string type;
     // Start is called before the first frame update
     void Start()
     {
@@ -346,8 +348,15 @@ public class Player : MonoBehaviour
                         transform.position -= new Vector3(speed, 0, 0);
                         if (transform.position.x <= save.x)
                         {
-                            transform.position = new Vector3(save.x, transform.position.y, transform.position.z);
-                            moveflag = false;
+                            if(type=="5")
+                            {
+                                save.x = save.x - 1;
+                            }else
+                            {
+                                transform.position = new Vector3(save.x, transform.position.y, transform.position.z);
+                                moveflag = false;
+                            }
+
                         }
                     }
                     else
@@ -355,8 +364,15 @@ public class Player : MonoBehaviour
                         transform.position += new Vector3(speed, 0, 0);
                         if (transform.position.x >= save.x)
                         {
-                            transform.position = new Vector3(save.x, transform.position.y, transform.position.z);
-                            moveflag = false;
+                            if(type=="5")
+                            {
+                                save.x = save.x + 1;
+                            }else
+                            {
+                                transform.position = new Vector3(save.x, transform.position.y, transform.position.z);
+                                moveflag = false;
+                            }
+
                         }
 
                     }
@@ -377,8 +393,15 @@ public class Player : MonoBehaviour
                         transform.position += new Vector3(speed, 0, 0);
                         if (transform.position.x >= save.x)
                         {
-                            transform.position = new Vector3(save.x, transform.position.y, transform.position.z);
-                            moveflag = false;
+                            if (type == "5")
+                            {
+                                save.x = save.x + 1;
+                            }
+                            else
+                            {
+                                transform.position = new Vector3(save.x, transform.position.y, transform.position.z);
+                                moveflag = false;
+                            }
                         }
                     }
                     else
@@ -386,8 +409,15 @@ public class Player : MonoBehaviour
                         transform.position -= new Vector3(speed, 0, 0);
                         if (transform.position.x <= save.x)
                         {
-                            transform.position = new Vector3(save.x, transform.position.y, transform.position.z);
-                            moveflag = false;
+                            if (type == "5")
+                            {
+                                save.x = save.x - 1;
+                            }
+                            else
+                            {
+                                transform.position = new Vector3(save.x, transform.position.y, transform.position.z);
+                                moveflag = false;
+                            }
                         }
                     }
                 }
@@ -411,8 +441,15 @@ public class Player : MonoBehaviour
                         transform.position += new Vector3(0, speed, 0);
                         if (transform.position.y >= save.y)
                         {
-                            transform.position = new Vector3(transform.position.x, save.y, transform.position.z);
-                            moveflag = false;
+                            if(type=="5")
+                            {
+                                save.y = save.y + 1;
+                            }else
+                            {
+                                transform.position = new Vector3(transform.position.x, save.y, transform.position.z);
+                                moveflag = false;
+                            }
+
                         }
                     }
                     else
@@ -442,8 +479,15 @@ public class Player : MonoBehaviour
                         transform.position -= new Vector3(0, speed, 0);
                         if (transform.position.y <= save.y)
                         {
-                            transform.position = new Vector3(transform.position.x, save.y, transform.position.z);
-                            moveflag = false;
+                            if (type == "5")
+                            {
+                                save.y = save.y - 1;
+                            }
+                            else
+                            {
+                                transform.position = new Vector3(transform.position.x, save.y, transform.position.z);
+                                moveflag = false;
+                            }
                         }
                     }
                     else
@@ -452,8 +496,15 @@ public class Player : MonoBehaviour
                         transform.position += new Vector3(0, speed, 0);
                         if (transform.position.y >= save.y)
                         {
-                            transform.position = new Vector3(transform.position.x, save.y, transform.position.z);
-                            moveflag = false;
+                            if (type == "5")
+                            {
+                                save.y = save.y + 1;
+                            }
+                            else
+                            {
+                                transform.position = new Vector3(transform.position.x, save.y, transform.position.z);
+                                moveflag = false;
+                            }
                         }
                     }
                 }
@@ -795,6 +846,7 @@ public class Player : MonoBehaviour
                 rigidbody.constraints = RigidbodyConstraints.None;
                 rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
             }
+            type = collision.gameObject.GetComponent<Block>().type;
         }
         if (collision.gameObject.tag == "Ground")
         {

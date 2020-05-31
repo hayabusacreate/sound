@@ -64,6 +64,10 @@ public class Map : MonoBehaviour
                 {
                     map.blocks--;
                 }
+                if (csvDatas[y][x] == "4")
+                {
+                    map.blocks--;
+                }
             }
         }
         map.maxblock = map.blocks;

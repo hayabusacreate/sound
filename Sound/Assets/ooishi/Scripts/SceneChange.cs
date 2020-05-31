@@ -85,7 +85,10 @@ public class SceneChange : MonoBehaviour
         switch (scene)
         {
             case Scene.Title:
-
+                if (Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown("joystick button 7")))
+                {
+                    SceneManager.LoadScene("StageSerect");
+                }
                 break;
             case Scene.GamePlay:
                 //time -= Time.deltaTime;
@@ -252,7 +255,7 @@ public class SceneChange : MonoBehaviour
                 {
                     mapCreate.LoadMap(Resources.Load("map"+i) as TextAsset,i);
                 }
-                SceneManager.LoadScene("StageSerect");
+                SceneManager.LoadScene("Title");
                 break;
         }
 

@@ -40,12 +40,15 @@ public class SceneChange : MonoBehaviour
     private float count;
     public GameObject endobj;
     public GameObject[] stages;
+    public GameObject[] scs;
     private int stagenum;
     public GameObject pl;
+    private float scale;
+    private bool inout;
     // Start is called before the first frame update
     void Start()
     {
-
+        inout = true;
         audio = GetComponent<AudioSource>();
         if(scene==Scene.GamePlay)
         {
@@ -150,12 +153,38 @@ public class SceneChange : MonoBehaviour
                 break;
             case Scene.StageSelect:
                 text.text = "" + mapnum;
-                if(stagenum==mapnum)
+                if (inout)
                 {
+                    if (scale <= 1)
+                    {
+                        scale += 10*Time.deltaTime;
+                    }
+                    scs[mapnum].transform.localScale = new Vector3(scale, scale, scale);
+                }
+                else
+                {
+                    if (scale >= 0)
+                    {
+                        scale -= 10 * Time.deltaTime;
+                    }
+                    if (mapnum < stagenum)
+                    {
+                        scs[mapnum+1].transform.localScale = new Vector3(scale, scale, scale);
+                    }
+                    else
+                    {
+                        scs[mapnum-1].transform.localScale = new Vector3(scale, scale, scale);
+                    }
+
+                }
+                if (stagenum==mapnum)
+                {
+
+
                     if (Input.GetKeyDown(KeyCode.D) || (Input.GetKeyDown("joystick button 5")))
                     {
                         mapnum++;
-
+                        inout = false;
                         if (mapnum > mapcount)
                         {
                             mapnum = mapcount;
@@ -164,6 +193,7 @@ public class SceneChange : MonoBehaviour
                     }
                     if (Input.GetKeyDown(KeyCode.A) || (Input.GetKeyDown("joystick button 4")))
                     {
+                        inout = false;
                         mapnum--;
                         if (mapnum < 1)
                         {
@@ -178,13 +208,15 @@ public class SceneChange : MonoBehaviour
                         pl.transform.position = Vector3.Lerp(pl.transform.position, stages[mapnum].transform.position, 0.1f);
                         if(pl.transform.position.x-0.1f<= stages[mapnum].transform.position.x)
                         {
-                            stagenum=mapnum;
+                            inout = true;
+                            stagenum =mapnum;
                         }
                     }else
                     {
                         pl.transform.position = Vector3.Lerp(pl.transform.position, stages[mapnum].transform.position, 0.1f);
                         if (pl.transform.position.x + 0.1f >= stages[mapnum].transform.position.x)
                         {
+                            inout = true;
                             stagenum = mapnum;
                         }
                     }

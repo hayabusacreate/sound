@@ -39,6 +39,9 @@ public class SceneChange : MonoBehaviour
     private bool ui;
     private float count;
     public GameObject endobj;
+    public GameObject[] stages;
+    private int stagenum;
+    public GameObject pl;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +64,7 @@ public class SceneChange : MonoBehaviour
         if (scene == Scene.StageSelect)
         {
             mapnum = 1;
+            stagenum = 1;
             mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
             mapCreate.ChangeMap(mapnum);
 
@@ -146,25 +150,46 @@ public class SceneChange : MonoBehaviour
                 break;
             case Scene.StageSelect:
                 text.text = "" + mapnum;
-                if (Input.GetKeyDown(KeyCode.D) || (Input.GetKeyDown("joystick button 5")))
+                if(stagenum==mapnum)
                 {
-                    mapnum++;
+                    if (Input.GetKeyDown(KeyCode.D) || (Input.GetKeyDown("joystick button 5")))
+                    {
+                        mapnum++;
 
-                    if(mapnum>mapcount)
-                    {
-                        mapnum = mapcount;
+                        if (mapnum > mapcount)
+                        {
+                            mapnum = mapcount;
+                        }
+                        mapCreate.ChangeMap(mapnum);
                     }
-                    mapCreate.ChangeMap(mapnum);
-                }
-                if (Input.GetKeyDown(KeyCode.A) || (Input.GetKeyDown("joystick button 4")))
+                    if (Input.GetKeyDown(KeyCode.A) || (Input.GetKeyDown("joystick button 4")))
+                    {
+                        mapnum--;
+                        if (mapnum < 1)
+                        {
+                            mapnum = 1;
+                        }
+                        mapCreate.ChangeMap(mapnum);
+                    }
+                }else
                 {
-                    mapnum--;
-                    if(mapnum<1)
+                    if(mapnum<stagenum)
                     {
-                        mapnum = 1;
+                        pl.transform.position = Vector3.Lerp(pl.transform.position, stages[mapnum].transform.position, 0.5f);
+                        if(pl.transform.position.x-0.1f<= stages[mapnum].transform.position.x)
+                        {
+                            stagenum=mapnum;
+                        }
+                    }else
+                    {
+                        pl.transform.position = Vector3.Lerp(pl.transform.position, stages[mapnum].transform.position, 0.5f);
+                        if (pl.transform.position.x + 0.1f >= stages[mapnum].transform.position.x)
+                        {
+                            stagenum = mapnum;
+                        }
                     }
-                    mapCreate.ChangeMap(mapnum);
                 }
+
                 if (Input.GetKey(KeyCode.Space) || (Input.GetKeyDown("joystick button 0")))
                 {
                     SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());

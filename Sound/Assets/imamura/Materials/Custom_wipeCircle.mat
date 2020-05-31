@@ -25,5 +25,5 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Length: 0
-    - _Radius: 0.0013663835
+    - _Radius: 0.0000000047131485
     m_Colors: []

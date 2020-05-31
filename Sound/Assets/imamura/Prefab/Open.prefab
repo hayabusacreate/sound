@@ -44,3 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wipeMat: {fileID: 2100000, guid: 9a38ddc0b0d8e724f95e4b760d043c18, type: 2}
+  point1: 0.7
+  point2: 0.3
+  speed1: 10
+  speed2: 10
+  speed3: 10

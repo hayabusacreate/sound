@@ -129,7 +129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &228530956
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -19171,6 +19171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c976a400c36c3479adf65cb97ce705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
 --- !u!1 &1595885403
 GameObject:
   m_ObjectHideFlags: 0
@@ -24546,6 +24547,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: jouhatu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801905640865366726, guid: 42b9a8a400f6bc04e8d3f5fa9c68306e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4801905640865366721, guid: 42b9a8a400f6bc04e8d3f5fa9c68306e,
         type: 3}

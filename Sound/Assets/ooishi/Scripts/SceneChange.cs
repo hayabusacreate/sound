@@ -175,14 +175,14 @@ public class SceneChange : MonoBehaviour
                 {
                     if(mapnum<stagenum)
                     {
-                        pl.transform.position = Vector3.Lerp(pl.transform.position, stages[mapnum].transform.position, 0.5f);
+                        pl.transform.position = Vector3.Lerp(pl.transform.position, stages[mapnum].transform.position, 0.1f);
                         if(pl.transform.position.x-0.1f<= stages[mapnum].transform.position.x)
                         {
                             stagenum=mapnum;
                         }
                     }else
                     {
-                        pl.transform.position = Vector3.Lerp(pl.transform.position, stages[mapnum].transform.position, 0.5f);
+                        pl.transform.position = Vector3.Lerp(pl.transform.position, stages[mapnum].transform.position, 0.1f);
                         if (pl.transform.position.x + 0.1f >= stages[mapnum].transform.position.x)
                         {
                             stagenum = mapnum;

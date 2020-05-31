@@ -229,19 +229,19 @@ public class Player : MonoBehaviour
         angle = transform.rotation.eulerAngles.z;
         if (inrightroll)
         {
-            transform.Rotate(0, 0, -5);
+            transform.Rotate(0, 0, -10);
         }
         if (inleftroll)
         {
-            transform.Rotate(0, 0, +5);
+            transform.Rotate(0, 0, +10);
         }
         if (outrightroll)
         {
-            transform.RotateAround(rollObj, -transform.forward, 100*Time.deltaTime);
+            transform.RotateAround(rollObj, -transform.forward, 300*Time.deltaTime);
         }
         if (outleftroll)
         {
-            transform.RotateAround(rollObj, transform.forward, 100*Time.deltaTime);
+            transform.RotateAround(rollObj, transform.forward, 300*Time.deltaTime);
         }
         if (playerMove == PlayerMove.Down)
         {

@@ -158,7 +158,12 @@ public class SceneChange : MonoBehaviour
                     if (scale <= 1)
                     {
                         scale += 10*Time.deltaTime;
+                        if(scale>1)
+                        {
+                            scale = 1;
+                        }
                     }
+                    
                     scs[mapnum].transform.localScale = new Vector3(scale, scale, scale);
                 }
                 else

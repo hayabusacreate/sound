@@ -13,12 +13,16 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: 4000
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: 0acf347a1fdd962409bac3c3640efc02, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -27,4 +31,5 @@ Material:
     - _Glossiness: 0.5
     - _Metallic: 0
     m_Colors:
-    - _Color: {r: 0, g: 0.55521584, b: 0.764151, a: 0.6431373}
+    - _Color: {r: 0, g: 0.55521584, b: 0.764151, a: 0.3372549}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}

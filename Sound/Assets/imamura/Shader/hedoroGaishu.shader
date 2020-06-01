@@ -68,17 +68,17 @@
 			uv.x -= 0.4* _Time;
 			uv.y -= 0.0* _Time;
 			fixed2 uv2 = IN.uv_MainTex;
-			uv2.x -= 0.5* _Time;
+			uv2.x -= 0.0* _Time;
 			uv2.y -= 0.0* _Time;
-			fixed4 c1 = tex2D(_MainTex, uv);
-			fixed4 c2 = tex2D(_SubTex, uv);
-			fixed4 p = tex2D(_MaskTex, uv2);
+			fixed4 c1 = tex2D(_MainTex, uv2);
+			fixed4 c2 = tex2D(_SubTex, uv2);
+			fixed4 p = tex2D(_MaskTex, uv);
 			o.Albedo = lerp(c1, c2, p);
 			o.Alpha = c1.a;
 			fixed4 n = tex2D(_BumpMap, uv2);
 
 			o.Normal = UnpackScaleNormal(n, _BumpScale);
-			o.Emission = tex2D(_EmissionMap, IN.uv_MainTex) * _EmissionColor;
+			o.Emission = tex2D(_EmissionMap, uv) * _EmissionColor;
         }
         ENDCG
     }

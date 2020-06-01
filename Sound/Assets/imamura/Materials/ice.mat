@@ -7,50 +7,42 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: yougan
-  m_Shader: {fileID: 4800000, guid: 16e098b1d10e83d46a6c99fdf90d9f1e, type: 3}
+  m_Name: ice
+  m_Shader: {fileID: 4800000, guid: 2c0229f10f695fc4a91ee193b9fa8fd8, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: b6bf085fc0215f243aa37fd016a58e17, type: 3}
+        m_Texture: {fileID: 2800000, guid: add69e1e90fc00243a3576fd0b0fa117, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DisolveTex:
-        m_Texture: {fileID: 2800000, guid: 52d6d5c433658064a936545f5a495511, type: 3}
+        m_Texture: {fileID: 2800000, guid: fd88e71827791114aa4d35b9175f77c0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 30a3dc9419c665f4e9b70532bcf84f39, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9acd6ef57759d8b42958327612293917, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: df9ca01cd1d382740a35df61bbc215fe, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MaskTex:
-        m_Texture: {fileID: 2800000, guid: 30a3dc9419c665f4e9b70532bcf84f39, type: 3}
+        m_Texture: {fileID: 2800000, guid: 24467004c2f994049a254c8cb0830a7f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RampTex:
         m_Texture: {fileID: 2800000, guid: 80c44e3ab568c0f4696bbb842b146617, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SubTex:
-        m_Texture: {fileID: 2800000, guid: 097cb02bb70a96d43bd330bfda201da5, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Alpha: 1
-    - _BumpScale: 0
+    - _Alpha: 0
+    - _BumpScale: 1
     - _Threshold: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.8117647, g: 0.6117647, b: 0.101960786, a: 1}
+    - _Color: {r: 0.6745283, g: 1, b: 0.9383486, a: 1}
+    - _EmissionColor: {r: 0.48584908, g: 1, b: 0.96169066, a: 1}

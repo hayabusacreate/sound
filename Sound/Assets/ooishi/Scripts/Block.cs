@@ -131,13 +131,11 @@ public class Block : MonoBehaviour
             Destroy(gameObject);
         }
         source = gameObject.GetComponent<AudioSource>();
-
         //mat.color = new Color(mat.color.r, mat.color.g, mat.color.b,0);
         manager = GameObject.Find("Manager").gameObject.GetComponent<Manager>();
         count = 0;
         player = GameObject.Find("Player").gameObject.GetComponent<Player>();
         count = 0;
-
         savehight = hight;
         rigidbody = gameObject.GetComponent<Rigidbody>();
         change = 0;
@@ -188,12 +186,11 @@ public class Block : MonoBehaviour
                 particle.Play();
                 palrticleflag = false;
             }
-
         }
 
         if(block==BlockType.Ice)
         {
-            if(hp<=3)
+            if(hp<3)
             {
                 type = "2";
                 block = BlockType.Ice;
@@ -201,7 +198,6 @@ public class Block : MonoBehaviour
         }
         if(mat.end)
         {
-
             mapCreate.blocks--;
             Destroy(gameObject);
         }
@@ -218,7 +214,6 @@ public class Block : MonoBehaviour
             {
                 collider.enabled = true;
             }
-
         }
         if (hp < 0)
         {
@@ -231,7 +226,6 @@ public class Block : MonoBehaviour
             capsule.enabled = false;
             collider.enabled = false;
         }
-
     }
 
     private void OnTriggerEnter(Collider collision)

@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
 
     private Vector3 save;
 
-    public bool inrightroll, inleftroll,outrightroll,outleftroll;
+    public bool inrightroll, inleftroll, outrightroll, outleftroll;
 
     public Vector3 rollObj;
 
@@ -92,14 +92,13 @@ public class Player : MonoBehaviour
         bbflag = false;
         fbflag = false;
         save = transform.position;
-        Debug.Log(save);
         transform.position = save;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!sceneChange.creaflag)
+        if (!sceneChange.creaflag)
         {
             Move();
             //transform.position = save;
@@ -118,24 +117,47 @@ public class Player : MonoBehaviour
         {
             //moveflag = false;
         }
-
-        if (transform.position == save && (!inrightroll || !inleftroll))
+        if (((Input.GetKeyDown(KeyCode.D)) || (Input.GetKeyDown("joystick button 5"))) && !moveflag && !outleftroll && !inrightroll && !outrightroll && !inleftroll && !jumpflag)
         {
-            moveflag = false;
-        }
-        if (((Input.GetKeyDown(KeyCode.D))||(Input.GetKeyDown("joystick button 5"))) && !moveflag&&!outleftroll&&!inrightroll&&!outrightroll&&!inleftroll && !jumpflag)
-        {
-
             if (backflag)
             {
-                if(bbflag)
+                if (bbflag)
                 {
-                    outleftroll = true;
-                    movecount++;
+                    if (type == "5")
+                    {
+                        if (!moveflag && !outleftroll && !inrightroll)
+                        {
+                            changeflag = 0;
+                            moveflag = true;
+                            if (playerMove == PlayerMove.Down)
+                            {
+                                save = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+                            }
+                            if (playerMove == PlayerMove.Up)
+                            {
+                                save = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+                            }
+                            if (playerMove == PlayerMove.Right)
+                            {
+                                save = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                            }
+                            if (playerMove == PlayerMove.Left)
+                            {
+                                save = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                            }
+                            movecount++;
+                            anim.SetBool("Dash", true);
+                        }
+                    }
+                    else
+                    {
+                        outleftroll = true;
+                        movecount++;
+                    }
                 }
                 else
                 {
-                    if (!moveflag&&!outleftroll&&!inrightroll)
+                    if (!moveflag && !outleftroll && !inrightroll)
                     {
                         changeflag = 0;
                         moveflag = true;
@@ -159,7 +181,6 @@ public class Player : MonoBehaviour
                         anim.SetBool("Dash", true);
                     }
                 }
-
             }
             else
             {
@@ -168,23 +189,52 @@ public class Player : MonoBehaviour
             }
         }
         else
-        if (((Input.GetKeyDown(KeyCode.A)) || (Input.GetKeyDown("joystick button 4"))) && !moveflag && !outleftroll && !inrightroll && !outrightroll && !inleftroll&&!jumpflag)
+        if (((Input.GetKeyDown(KeyCode.A)) || (Input.GetKeyDown("joystick button 4"))) && !moveflag && !outleftroll && !inrightroll && !outrightroll && !inleftroll && !jumpflag)
         {
-
             if (flontflag)
             {
-                if(fbflag)
+                if (fbflag)
                 {
-                    outrightroll = true;
-                    movecount++;
+                    if (type == "5")
+                    {
+                        if (!moveflag && !outrightroll && !inleftroll)
+                        {
+                            changeflag = 1;
+                            moveflag = true;
+                            if (playerMove == PlayerMove.Down)
+                            {
+                                save = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+                            }
+                            if (playerMove == PlayerMove.Up)
+                            {
+                                save = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+                            }
+                            if (playerMove == PlayerMove.Right)
+                            {
+                                save = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                            }
+                            if (playerMove == PlayerMove.Left)
+                            {
+                                save = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                            }
+                            movecount++;
+                            anim.SetBool("Dash", true);
+                        }
+                    }
+                    else
+                    {
+                        outrightroll = true;
+                        movecount++;
+                    }
+
                 }
                 else
                 {
-                    if (!moveflag&&!outrightroll&&!inleftroll)
+                    if (!moveflag && !outrightroll && !inleftroll)
                     {
                         changeflag = 1;
                         moveflag = true;
-                        if(playerMove==PlayerMove.Down)
+                        if (playerMove == PlayerMove.Down)
                         {
                             save = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
                         }
@@ -194,11 +244,11 @@ public class Player : MonoBehaviour
                         }
                         if (playerMove == PlayerMove.Right)
                         {
-                            save = new Vector3(transform.position.x , transform.position.y-1, transform.position.z);
+                            save = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
                         }
                         if (playerMove == PlayerMove.Left)
                         {
-                            save = new Vector3(transform.position.x, transform.position.y+1, transform.position.z);
+                            save = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
                         }
                         movecount++;
                         anim.SetBool("Dash", true);
@@ -237,11 +287,11 @@ public class Player : MonoBehaviour
         }
         if (outrightroll)
         {
-            transform.RotateAround(rollObj, -transform.forward, 300*Time.deltaTime);
+            transform.RotateAround(rollObj, -transform.forward, 300 * Time.deltaTime);
         }
         if (outleftroll)
         {
-            transform.RotateAround(rollObj, transform.forward, 300*Time.deltaTime);
+            transform.RotateAround(rollObj, transform.forward, 300 * Time.deltaTime);
         }
         if (playerMove == PlayerMove.Down)
         {
@@ -249,7 +299,7 @@ public class Player : MonoBehaviour
             {
                 playerMove = PlayerMove.Left;
                 angle = 90;
-                transform.localEulerAngles = new Vector3(0,0,angle);
+                transform.localEulerAngles = new Vector3(0, 0, angle);
                 outleftroll = false;
                 inleftroll = false;
                 moveflag = false;
@@ -346,12 +396,23 @@ public class Player : MonoBehaviour
                     if (changeflag == 0)
                     {
                         transform.position -= new Vector3(speed, 0, 0);
-                        if (transform.position.x <= save.x)
+                        if (transform.position.x < save.x)
                         {
-                            if(type=="5")
+                            if (type == "5")
                             {
-                                save.x = save.x - 1;
-                            }else
+                                if (!jumpflag)
+                                {
+                                    save = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+                                    moveflag = true;
+                                }
+                                else
+                                {
+                                    transform.position = new Vector3(save.x, transform.position.y, transform.position.z);
+                                    moveflag = false;
+                                }
+
+                            }
+                            else
                             {
                                 transform.position = new Vector3(save.x, transform.position.y, transform.position.z);
                                 moveflag = false;
@@ -362,12 +423,23 @@ public class Player : MonoBehaviour
                     else
                     {
                         transform.position += new Vector3(speed, 0, 0);
-                        if (transform.position.x >= save.x)
+                        if (transform.position.x > save.x)
                         {
-                            if(type=="5")
+                            if (type == "5")
                             {
-                                save.x = save.x + 1;
-                            }else
+                                if (!jumpflag)
+                                {
+                                    moveflag = true;
+                                    save = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+                                }
+                                else
+                                {
+                                    transform.position = new Vector3(save.x, transform.position.y, transform.position.z);
+                                    moveflag = false;
+                                }
+
+                            }
+                            else
                             {
                                 transform.position = new Vector3(save.x, transform.position.y, transform.position.z);
                                 moveflag = false;
@@ -382,42 +454,66 @@ public class Player : MonoBehaviour
                 //rigidbody.AddForce(0, -10, 0);
                 if (jumpflag)
                 {
-                    transform.position =new Vector3(savepos,transform.position.y,transform.position.z);
+                    transform.position = new Vector3(savepos, transform.position.y, transform.position.z);
                 }
-                    break;
+                break;
             case PlayerMove.Up:
                 if (moveflag)
                 {
                     if (changeflag == 0)
                     {
                         transform.position += new Vector3(speed, 0, 0);
-                        if (transform.position.x >= save.x)
+                        if (transform.position.x > save.x)
                         {
                             if (type == "5")
                             {
-                                save.x = save.x + 1;
+                                if (!jumpflag)
+                                {
+                                    moveflag = true;
+                                    save = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+                                }
+                                else
+                                {
+                                    transform.position = new Vector3(save.x, transform.position.y, transform.position.z);
+                                    moveflag = false;
+                                }
+
                             }
                             else
                             {
                                 transform.position = new Vector3(save.x, transform.position.y, transform.position.z);
                                 moveflag = false;
                             }
+
                         }
+
                     }
+
                     else
                     {
                         transform.position -= new Vector3(speed, 0, 0);
-                        if (transform.position.x <= save.x)
+                        if (transform.position.x < save.x)
                         {
                             if (type == "5")
                             {
-                                save.x = save.x - 1;
+                                if (!jumpflag)
+                                {
+                                    save = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+                                    moveflag = true;
+                                }
+                                else
+                                {
+                                    transform.position = new Vector3(save.x, transform.position.y, transform.position.z);
+                                    moveflag = false;
+                                }
+
                             }
                             else
                             {
                                 transform.position = new Vector3(save.x, transform.position.y, transform.position.z);
                                 moveflag = false;
                             }
+
                         }
                     }
                 }
@@ -439,12 +535,23 @@ public class Player : MonoBehaviour
                     if (changeflag == 0)
                     {
                         transform.position += new Vector3(0, speed, 0);
-                        if (transform.position.y >= save.y)
+                        if (transform.position.y > save.y)
                         {
-                            if(type=="5")
+                            if (type == "5")
                             {
-                                save.y = save.y + 1;
-                            }else
+                                if (!jumpflag)
+                                {
+                                    moveflag = true;
+                                    save = new Vector3(transform.position.x, transform.position.y+1, transform.position.z);
+                                }
+                                else
+                                {
+                                    transform.position = new Vector3(transform.position.x, save.y, transform.position.z);
+                                    moveflag = false;
+                                }
+
+                            }
+                            else
                             {
                                 transform.position = new Vector3(transform.position.x, save.y, transform.position.z);
                                 moveflag = false;
@@ -455,10 +562,27 @@ public class Player : MonoBehaviour
                     else
                     {
                         transform.position -= new Vector3(0, speed, 0);
-                        if (transform.position.y <= save.y)
+                        if (transform.position.y < save.y)
                         {
-                            transform.position = new Vector3(transform.position.x, save.y, transform.position.z);
-                            moveflag = false;
+                            if (type == "5")
+                            {
+                                if (!jumpflag)
+                                {
+                                    moveflag = true;
+                                    save = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                                }
+                                else
+                                {
+                                    transform.position = new Vector3(transform.position.x, save.y, transform.position.z);
+                                    moveflag = false;
+                                }
+
+                            }
+                            else
+                            {
+                                transform.position = new Vector3(transform.position.x, save.y, transform.position.z);
+                                moveflag = false;
+                            }
                         }
 
                     }
@@ -468,7 +592,7 @@ public class Player : MonoBehaviour
                 //    rigidbody.AddForce(-10, 0, 0);
                 if (jumpflag)
                 {
-                    transform.position = new Vector3( transform.position.x,savepos, transform.position.z);
+                    transform.position = new Vector3(transform.position.x, savepos, transform.position.z);
                 }
                 break;
             case PlayerMove.Left:
@@ -477,11 +601,21 @@ public class Player : MonoBehaviour
                     if (changeflag == 0)
                     {
                         transform.position -= new Vector3(0, speed, 0);
-                        if (transform.position.y <= save.y)
+                        if (transform.position.y < save.y)
                         {
                             if (type == "5")
                             {
-                                save.y = save.y - 1;
+                                if (!jumpflag)
+                                {
+                                    moveflag = true;
+                                    save = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                                }
+                                else
+                                {
+                                    transform.position = new Vector3(transform.position.x, save.y, transform.position.z);
+                                    moveflag = false;
+                                }
+
                             }
                             else
                             {
@@ -494,17 +628,28 @@ public class Player : MonoBehaviour
                     {
 
                         transform.position += new Vector3(0, speed, 0);
-                        if (transform.position.y >= save.y)
+                        if (transform.position.y > save.y)
                         {
                             if (type == "5")
                             {
-                                save.y = save.y + 1;
+                                if (!jumpflag)
+                                {
+                                    moveflag = true;
+                                    save = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                                }
+                                else
+                                {
+                                    transform.position = new Vector3(transform.position.x, save.y, transform.position.z);
+                                    moveflag = false;
+                                }
+
                             }
                             else
                             {
                                 transform.position = new Vector3(transform.position.x, save.y, transform.position.z);
                                 moveflag = false;
                             }
+
                         }
                     }
                 }
@@ -531,7 +676,7 @@ public class Player : MonoBehaviour
             {
                 jumpflag = true;
             }
-            if(!jumpflag)
+            if (!jumpflag)
             {
                 if (playerMove == PlayerMove.Down)
                 {
@@ -775,7 +920,7 @@ public class Player : MonoBehaviour
                         {
                             fbflag = false;
                         }
-                        if (GetMap.width > saveobj.gameObject.GetComponent<Block>().xx +1)
+                        if (GetMap.width > saveobj.gameObject.GetComponent<Block>().xx + 1)
                         {
                             if (!GetMap.maps[((saveobj.gameObject.GetComponent<Block>().yy - 1) * 1000) + saveobj.gameObject.GetComponent<Block>().xx + 1])
                             {
@@ -798,9 +943,12 @@ public class Player : MonoBehaviour
                     }
                 }
             }
-  
-        }
 
+        }
+        //if (transform.position == save && (!inrightroll || !inleftroll))
+        //{
+        //    moveflag = false;
+        //}
 
     }
 
@@ -836,7 +984,7 @@ public class Player : MonoBehaviour
             tyle = collision.gameObject.GetComponent<Block>().tyle;
             //rollObj = collision.gameObject.transform.position;
 
-  
+
             x = collision.gameObject.GetComponent<Block>().xx;
             y = collision.gameObject.GetComponent<Block>().yy;
             //collision.gameObject.GetComponent<Block>().damageflag=true;

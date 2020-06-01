@@ -66,11 +66,16 @@ public class SceneChange : MonoBehaviour
         }
         if (scene == Scene.StageSelect)
         {
-            mapnum = 1;
-            stagenum = 1;
             mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
+            mapnum = mapCreate.ReturnMapnum();
+            stagenum = mapCreate.ReturnMapnum();
+            if (mapnum==0)
+            {
+                mapnum = 1;
+                stagenum = 1;
+            }
+            pl.transform.position = new Vector3(mapnum*5, pl.transform.position.y, pl.transform.position.z);
             mapCreate.ChangeMap(mapnum);
-
         }
     }
 
@@ -117,7 +122,6 @@ public class SceneChange : MonoBehaviour
                     {
                         SceneManager.LoadScene("StageSerect");
                     }
-
                 }
                 if(Input.GetKeyDown(KeyCode.I))
                 {
@@ -141,7 +145,6 @@ public class SceneChange : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.R) || (Input.GetKeyDown("joystick button 3")))
                 {
-                    
                     SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
                 }
                 if(endflag)
@@ -166,7 +169,6 @@ public class SceneChange : MonoBehaviour
                             scale = 1;
                         }
                     }
-                    
                     scs[mapnum].transform.localScale = new Vector3(scale, scale, scale);
                 }
                 else
@@ -183,12 +185,9 @@ public class SceneChange : MonoBehaviour
                     {
                         scs[mapnum-1].transform.localScale = new Vector3(scale, scale, scale);
                     }
-
                 }
                 if (stagenum==mapnum)
                 {
-
-
                     if (Input.GetKeyDown(KeyCode.D) || (Input.GetKeyDown("joystick button 5")))
                     {
                         mapnum++;
@@ -229,7 +228,6 @@ public class SceneChange : MonoBehaviour
                         }
                     }
                 }
-
                 if (Input.GetKey(KeyCode.Space) || (Input.GetKeyDown("joystick button 0")))
                 {
                     SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
@@ -239,14 +237,12 @@ public class SceneChange : MonoBehaviour
             case Scene.GameOver:
                 if (Input.GetKeyDown(KeyCode.R))
                 {
-
                     SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
                 }
                 break;
             case Scene.GameCrear:
                 if (Input.GetKeyDown(KeyCode.R))
                 {
-
                     SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
                 }
                 break;
@@ -258,6 +254,5 @@ public class SceneChange : MonoBehaviour
                 SceneManager.LoadScene("Title");
                 break;
         }
-
     }
 }

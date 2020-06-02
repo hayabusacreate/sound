@@ -3,7 +3,7 @@
 	_MainTex("Texture", 2D) = "white"{}
 	_Color("Color", Color) = (1,1,1,1)
 		_DisolveTex("DisolveTex (RGB)", 2D) = "white" {}
-		_Threshold("Threshold", Range(0,1)) = 0.0
+		_Threshold("Threshold", Range(0,1)) = 1.0
 			_BumpMap("Normal Map"  , 2D) = "bump" {}
 		_BumpScale("Normal Scale", Range(0, 1)) = 1.0
 			_EmissionMap("Emission Map", 2D) = "black" {}

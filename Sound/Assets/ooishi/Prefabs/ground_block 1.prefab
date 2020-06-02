@@ -219,7 +219,7 @@ MonoBehaviour:
   deathPar: {fileID: 8785050961321385270, guid: 586b479994235134f86159f9a793c05c,
     type: 3}
   material: {fileID: 2100000, guid: 7e21fcf39130612488f612fd71695456, type: 2}
-  boom: {fileID: 8785050961321385270, guid: 586b479994235134f86159f9a793c05c, type: 3}
+  boom: {fileID: 8645759680144107556, guid: 1d025d9afb07d1f4d8e2a615f7f9d0f8, type: 3}
 --- !u!114 &579203688829210009
 MonoBehaviour:
   m_ObjectHideFlags: 0

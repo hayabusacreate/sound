@@ -254,10 +254,17 @@ public class Block : MonoBehaviour
             if(block==BlockType.Goal)
             {
                 sceneChange.creaflag = true;
-                Instantiate(boom, transform.position, Quaternion.identity);
             }
             savecount = player.movecount;
             //color.material.color = Color.red;
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (block == BlockType.Goal&& sceneChange.creaflag)
+        {
+            Instantiate(boom, transform.position, Quaternion.identity);
         }
     }
 }

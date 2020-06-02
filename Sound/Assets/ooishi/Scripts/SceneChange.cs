@@ -45,7 +45,6 @@ public class SceneChange : MonoBehaviour
     public GameObject pl;
     private float scale;
     private bool inout;
-    public bool gameover;
     // Start is called before the first frame update
     void Start()
     {
@@ -91,7 +90,7 @@ public class SceneChange : MonoBehaviour
         switch (scene)
         {
             case Scene.Title:
-                if (Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown("joystick button 7")))
+                if (Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown("joystick button 0")))
                 {
                     SceneManager.LoadScene("StageSerect");
                 }

@@ -1707,7 +1707,7 @@ PrefabInstance:
     - target: {fileID: 8858910762493299474, guid: b01a87c95c81aef40aad41ef13f63b79,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4087972261431738218, guid: b01a87c95c81aef40aad41ef13f63b79,
         type: 3}
@@ -1717,7 +1717,7 @@ PrefabInstance:
     - target: {fileID: 4656729372190920815, guid: b01a87c95c81aef40aad41ef13f63b79,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b01a87c95c81aef40aad41ef13f63b79, type: 3}
@@ -2069,7 +2069,6 @@ MonoBehaviour:
   stages: []
   scs: []
   pl: {fileID: 0}
-  gameover: 0
 --- !u!1 &1646933136
 GameObject:
   m_ObjectHideFlags: 0

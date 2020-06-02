@@ -42,8 +42,8 @@ public class ChangeMat : MonoBehaviour
         }
         if (block.type != "3")
         {
-            transform.GetComponent<Renderer>().material.SetColor("_EmissionColor", new Color(0.0f, 0.4f, 0.8f, 1));
-            transform.GetComponent<Renderer>().material.SetColor("_Color", new Color(0.0f, 0.4f, 0.8f, 1));
+            transform.GetComponent<Renderer>().material.SetColor("_EmissionColor", new Color(0.6f, 0.2f, 0.8f, 1));
+            transform.GetComponent<Renderer>().material.SetColor("_Color", new Color(0.6f, 0.2f, 0.8f, 1));
         }
         //transform.GetComponent<Renderer>().material.SetColor("_EmissionColor", new Color(0.2f, 0.2f, 0.2f, 1));
         //transform.GetComponent<Renderer>().material.SetColor("_Color", new Color(0.2f, 0.2f, 0.2f, 1));
@@ -81,8 +81,8 @@ public class ChangeMat : MonoBehaviour
                     transform.GetChild(num).gameObject.GetComponent<Renderer>().material.SetFloat("_Threshold", th2+=Time.deltaTime);
                 }
                 
-                transform.GetComponent<Renderer>().material.SetColor("_EmissionColor", new Color(0.0f, 0.4f, 0.8f, 1));
-                transform.GetComponent<Renderer>().material.SetColor("_Color", new Color(0.0f, 0.4f, 0.8f, 1));
+                transform.GetComponent<Renderer>().material.SetColor("_EmissionColor", new Color(0.6f, 0.2f, 0.8f, 1));
+                transform.GetComponent<Renderer>().material.SetColor("_Color", new Color(0.6f, 0.2f, 0.8f, 1));
             }
             else if (block.hp == 2)
             {

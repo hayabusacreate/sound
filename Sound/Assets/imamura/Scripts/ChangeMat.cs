@@ -51,7 +51,14 @@ public class ChangeMat : MonoBehaviour
             {
                 transform.GetChild(num).gameObject.GetComponent<Renderer>().material.SetFloat("_Threshold",0);
             }
-            if (block.hp == 3)
+            if (block.hp <= 3)
+            {
+                if (th2 <= 1)
+                {
+                    transform.GetChild(num).gameObject.GetComponent<Renderer>().material.SetFloat("_Threshold", th2 += Time.deltaTime);
+                }
+            }
+                if (block.hp == 3)
             {
                 if(th2 <= 1)
                 {

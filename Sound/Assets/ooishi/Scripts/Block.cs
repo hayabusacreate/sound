@@ -196,7 +196,7 @@ public class Block : MonoBehaviour
 
         if(block==BlockType.Ice)
         {
-            if(hp<3)
+            if(hp=<3)
             {
                 type = "2";
                 block = BlockType.Nomal;

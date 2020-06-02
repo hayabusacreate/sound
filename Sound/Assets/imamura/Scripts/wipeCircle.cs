@@ -73,7 +73,6 @@ public class wipeCircle : MonoBehaviour
             }
             else if(one == true && two == false)
             {
-                Debug.Log(value);
                 value = Mathf.Lerp(value, point2, Time.deltaTime * speed2);
                 wipeMat.SetFloat("_Radius", value);
                 if (value >= (point2 - 0.1f))

@@ -73,9 +73,11 @@ public class Block : MonoBehaviour
     private SEManager sEManager;
 
     public GameObject boom;
+    private bool desth;
     // Start is called before the first frame update
     void Start()
     {
+        desth = false;
         sEManager = GameObject.Find("SEManager").GetComponent<SEManager>();
         capsule = GetComponent<CapsuleCollider>();
         mat = GetComponent<ChangeMat>();
@@ -200,7 +202,7 @@ public class Block : MonoBehaviour
         }
         if(mat.end)
         {
-            mapCreate.blocks--;
+            //mapCreate.blocks--;
             Destroy(gameObject);
         }
         if(block==BlockType.Goal)
@@ -215,6 +217,18 @@ public class Block : MonoBehaviour
             else
             {
                 collider.enabled = true;
+            }
+        }
+        if(!sceneChange.creaflag)
+        {
+            if(hp==0)
+            {
+                if(!desth)
+                {
+                    mapCreate.blocks--;
+                    desth = true;
+                }
+
             }
         }
         if (hp < 0)

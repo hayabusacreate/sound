@@ -196,7 +196,7 @@ public class Block : MonoBehaviour
 
         if(block==BlockType.Ice)
         {
-            hp = Mathf.RoundToInt(hp);
+            //hp = Mathf.RoundToInt(hp);
             if (hp<=2)
             {
                 type = "2";

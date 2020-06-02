@@ -29,8 +29,8 @@ public class ChangeMat : MonoBehaviour
         block = gameObject.GetComponent<Block>();
         mat = GetComponent<Material>();
         transform.GetChild(num).gameObject.GetComponent<Renderer>().material.SetFloat("_Threshold", 1);
-        transform.GetComponent<Renderer>().material.SetColor("_EmissionColor", new Color(0.2f, 0.2f, 0.2f, 1));
-        transform.GetComponent<Renderer>().material.SetColor("_Color", new Color(0.2f, 0.2f, 0.2f, 1));
+        //transform.GetComponent<Renderer>().material.SetColor("_EmissionColor", new Color(0.2f, 0.2f, 0.2f, 1));
+        //transform.GetComponent<Renderer>().material.SetColor("_Color", new Color(0.2f, 0.2f, 0.2f, 1));
     }
 
     // Update is called once per frame
@@ -44,13 +44,21 @@ public class ChangeMat : MonoBehaviour
         //transform.GetComponent<Renderer>().material.SetFloat("_Threshold",1.0f - (block.hp / block.Maxhp) - 0.7f);
         //transform.GetComponent<Renderer>().material.SetColor("_Color", new Color(1.0f, (block.hp / block.Maxhp), (block.hp / block.Maxhp), 1));
 
+        
         if (block.type != "3")
         {
             if(block.type == "5" && th2 <= 1)
             {
                 transform.GetChild(num).gameObject.GetComponent<Renderer>().material.SetFloat("_Threshold",0);
             }
-            if (block.hp == 3)
+            if (block.hp <= 3)
+            {
+                if (th2 <= 1)
+                {
+                    transform.GetChild(num).gameObject.GetComponent<Renderer>().material.SetFloat("_Threshold", th2 += Time.deltaTime);
+                }
+            }
+                if (block.hp == 3)
             {
                 if(th2 <= 1)
                 {

@@ -112,7 +112,9 @@ public class Block : MonoBehaviour
         if (type == "5")
         {
             block = BlockType.Ice;
+            Maxhp = 4;
             hp = 4;
+            savehp = 4;
         }
         if (type == "6")
         {
@@ -197,7 +199,7 @@ public class Block : MonoBehaviour
             if(hp<3)
             {
                 type = "2";
-                block = BlockType.Ice;
+                block = BlockType.Nomal;
             }
         }
         if(mat.end)

@@ -6,6 +6,8 @@ public class PlayerDeath : MonoBehaviour
 {
     Renderer renderer;
     private SceneChange sceneChange;
+
+    public GameObject boom;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,7 @@ public class PlayerDeath : MonoBehaviour
     private void OnBecameInvisible()
     {
         sceneChange.endflag = true;
+        Instantiate(boom, transform.position, Quaternion.identity);
     }
     private void OnCollisionEnter(Collision collision)
     {

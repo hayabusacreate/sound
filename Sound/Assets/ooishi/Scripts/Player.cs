@@ -70,6 +70,8 @@ public class Player : MonoBehaviour
     private SceneChange sceneChange;
 
     private string type;
+
+    private float count;
     // Start is called before the first frame update
     void Start()
     {
@@ -98,7 +100,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!sceneChange.creaflag)
+        count += Time.deltaTime;
+        if (!sceneChange.creaflag||count>2)
         {
             Move();
             //transform.position = save;
@@ -387,6 +390,10 @@ public class Player : MonoBehaviour
                 Physics.gravity = new Vector3(0, 10, 0);
             }
         }
+        //if(!moveflag)
+        //{
+        //    transform.position=new Vector3()
+        //}
         switch (playerMove)
         {
             case PlayerMove.Down:

@@ -45,6 +45,8 @@ public class SceneChange : MonoBehaviour
     public GameObject pl;
     private float scale;
     private bool inout;
+
+    public GameObject boom, bitya;
     // Start is called before the first frame update
     void Start()
     {
@@ -101,21 +103,13 @@ public class SceneChange : MonoBehaviour
 
                 if(creaflag)
                 {
-                    if((((float)mapCreate.maxblock - (float)mapCreate.blocks) / (float)mapCreate.maxblock) * 100 < 50)
+                    if ((((float)mapCreate.maxblock - (float)mapCreate.blocks) / (float)mapCreate.maxblock) * 100 ==100)
                     {
-                        over.SetActive(true);
-                    }
-                    else if((((float)mapCreate.maxblock - (float)mapCreate.blocks) / (float)mapCreate.maxblock) * 100 < 75)
-                    {
-                        bronze.SetActive(true);
-                    }
-                    else if ((((float)mapCreate.maxblock - (float)mapCreate.blocks) / (float)mapCreate.maxblock) * 100 < 100)
-                    {
-                        silver.SetActive(true);
+                        gold.SetActive(true);
                     }
                     else
                     {
-                        gold.SetActive(true);
+                        over.SetActive(true);
                     }
                     serect.SetActive(true);
                     if(Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown("joystick button 0")))

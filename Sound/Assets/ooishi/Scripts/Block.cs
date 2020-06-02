@@ -71,6 +71,8 @@ public class Block : MonoBehaviour
 
     private CapsuleCollider capsule;
     private SEManager sEManager;
+
+    public GameObject boom;
     // Start is called before the first frame update
     void Start()
     {
@@ -232,13 +234,13 @@ public class Block : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            Debug.Log(collision.gameObject.name);
             if(block==BlockType.Nomal|| block == BlockType.Ice)
             damageflag = true;
 
             if(block==BlockType.Goal)
             {
                 sceneChange.creaflag = true;
+                Instantiate(boom, transform.position, Quaternion.identity);
             }
             savecount = player.movecount;
             //color.material.color = Color.red;

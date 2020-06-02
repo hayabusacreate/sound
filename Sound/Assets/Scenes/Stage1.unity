@@ -1371,6 +1371,12 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 162202803}
+    - target: {fileID: 219194369290811800, guid: 03859da981e5d314f86d73e797a7c0c6,
+        type: 3}
+      propertyPath: boom
+      value: 
+      objectReference: {fileID: 7092607215661202781, guid: cf6c0b7001f4ee44ca41909cd7078913,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03859da981e5d314f86d73e797a7c0c6, type: 3}
 --- !u!4 &1149165817 stripped
@@ -2061,7 +2067,10 @@ MonoBehaviour:
   sound1: {fileID: 0}
   endobj: {fileID: 1362992724}
   stages: []
+  scs: []
   pl: {fileID: 0}
+  boom: {fileID: 0}
+  bitya: {fileID: 0}
 --- !u!1 &1646933136
 GameObject:
   m_ObjectHideFlags: 0

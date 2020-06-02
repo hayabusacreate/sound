@@ -418,7 +418,7 @@ public class Player : MonoBehaviour
                         transform.position -= new Vector3(speed, 0, 0);
                         if (transform.position.x < save.x)
                         {
-                            if (type == "5")
+                            if (type == "5"&&backflag)
                             {
                                 if (!jumpflag)
                                 {
@@ -445,7 +445,7 @@ public class Player : MonoBehaviour
                         transform.position += new Vector3(speed, 0, 0);
                         if (transform.position.x > save.x)
                         {
-                            if (type == "5")
+                            if (type == "5" && flontflag)
                             {
                                 if (!jumpflag)
                                 {
@@ -485,7 +485,7 @@ public class Player : MonoBehaviour
                         transform.position += new Vector3(speed, 0, 0);
                         if (transform.position.x > save.x)
                         {
-                            if (type == "5")
+                            if (type == "5" && backflag)
                             {
                                 if (!jumpflag)
                                 {
@@ -514,7 +514,7 @@ public class Player : MonoBehaviour
                         transform.position -= new Vector3(speed, 0, 0);
                         if (transform.position.x < save.x)
                         {
-                            if (type == "5")
+                            if (type == "5" && flontflag)
                             {
                                 if (!jumpflag)
                                 {
@@ -557,7 +557,7 @@ public class Player : MonoBehaviour
                         transform.position += new Vector3(0, speed, 0);
                         if (transform.position.y > save.y)
                         {
-                            if (type == "5")
+                            if (type == "5"&&backflag)
                             {
                                 if (!jumpflag)
                                 {
@@ -584,7 +584,7 @@ public class Player : MonoBehaviour
                         transform.position -= new Vector3(0, speed, 0);
                         if (transform.position.y < save.y)
                         {
-                            if (type == "5")
+                            if (type == "5" && flontflag)
                             {
                                 if (!jumpflag)
                                 {
@@ -623,7 +623,7 @@ public class Player : MonoBehaviour
                         transform.position -= new Vector3(0, speed, 0);
                         if (transform.position.y < save.y)
                         {
-                            if (type == "5")
+                            if (type == "5" && backflag)
                             {
                                 if (!jumpflag)
                                 {
@@ -650,7 +650,7 @@ public class Player : MonoBehaviour
                         transform.position += new Vector3(0, speed, 0);
                         if (transform.position.y > save.y)
                         {
-                            if (type == "5")
+                            if (type == "5" &&flontflag)
                             {
                                 if (!jumpflag)
                                 {

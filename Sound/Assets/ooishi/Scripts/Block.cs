@@ -221,7 +221,7 @@ public class Block : MonoBehaviour
         }
         if(!sceneChange.creaflag)
         {
-            if(hp==0)
+            if(hp<0)
             {
                 if(!desth)
                 {

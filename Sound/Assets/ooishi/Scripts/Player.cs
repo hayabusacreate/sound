@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         count += Time.deltaTime;
-        if (!sceneChange.creaflag||count>2)
+        if (!sceneChange.creaflag&&count>2)
         {
             Move();
             //transform.position = save;

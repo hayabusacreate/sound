@@ -8,8 +8,10 @@ public class ChangeMat : MonoBehaviour
     
     private Block block;
 
+    //溶岩解け
     float th;
-
+    
+    //氷解け
     float th2;
 
     public bool end = false;
@@ -44,7 +46,12 @@ public class ChangeMat : MonoBehaviour
         //transform.GetComponent<Renderer>().material.SetFloat("_Threshold",1.0f - (block.hp / block.Maxhp) - 0.7f);
         //transform.GetComponent<Renderer>().material.SetColor("_Color", new Color(1.0f, (block.hp / block.Maxhp), (block.hp / block.Maxhp), 1));
 
-        
+        if (block.type == "4")
+        {
+            transform.GetComponent<Renderer>().material.SetColor("_EmissionColor", new Color(0.2f, 0.2f, 0.2f, 1));
+            transform.GetComponent<Renderer>().material.SetColor("_Color", new Color(0.2f, 0.2f, 0.2f, 1));
+        }
+
         if (block.type != "3")
         {
             if(block.type == "5" && th2 <= 1)
@@ -65,8 +72,8 @@ public class ChangeMat : MonoBehaviour
                     transform.GetChild(num).gameObject.GetComponent<Renderer>().material.SetFloat("_Threshold", th2+=Time.deltaTime);
                 }
                 
-                transform.GetComponent<Renderer>().material.SetColor("_EmissionColor", new Color(0.2f, 0.2f, 0.2f, 1));
-                transform.GetComponent<Renderer>().material.SetColor("_Color", new Color(0.2f, 0.2f, 0.2f, 1));
+                transform.GetComponent<Renderer>().material.SetColor("_EmissionColor", new Color(0.0f, 0.4f, 0.8f, 1));
+                transform.GetComponent<Renderer>().material.SetColor("_Color", new Color(0.0f, 0.4f, 0.8f, 1));
             }
             else if (block.hp == 2)
             {

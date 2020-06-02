@@ -45,8 +45,6 @@ public class SceneChange : MonoBehaviour
     public GameObject pl;
     private float scale;
     private bool inout;
-
-    public GameObject boom, bitya;
     // Start is called before the first frame update
     void Start()
     {

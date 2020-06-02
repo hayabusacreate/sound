@@ -244,7 +244,7 @@ public class Block : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerStay(Collider collision)
     {
         if (collision.transform.tag == "Player")
         {

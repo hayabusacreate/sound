@@ -72,6 +72,8 @@ public class Player : MonoBehaviour
     private string type;
 
     private float count;
+
+    private Vector3 saveposs;
     // Start is called before the first frame update
     void Start()
     {
@@ -116,6 +118,18 @@ public class Player : MonoBehaviour
 
     void Move()
     {
+        if(!moveflag&&!jumpflag&&(!inleftroll && !inrightroll && !outleftroll && !outrightroll))
+        {
+            if(playerMove==PlayerMove.Down|| playerMove == PlayerMove.Up)
+            {
+                saveposs = new Vector3(Mathf.Round(transform.position.x), transform.position.y, Mathf.Round(transform.position.z));
+
+            }else
+            {
+                saveposs = new Vector3(transform.position.x, Mathf.Round(transform.position.y), Mathf.Round(transform.position.z));
+            }
+            transform.position = Vector3.Lerp(transform.position,saveposs,1);
+        }
         if (!backflag || !flontflag)
         {
             //moveflag = false;
@@ -278,7 +292,6 @@ public class Player : MonoBehaviour
 
 
         //woldangle = Quaternion.Euler(vector3);
-
         angle = transform.rotation.eulerAngles.z;
         if (inrightroll)
         {
@@ -294,7 +307,7 @@ public class Player : MonoBehaviour
         }
         if (outleftroll)
         {
-            transform.RotateAround(rollObj, transform.forward, 300 * Time.deltaTime);
+            transform.RotateAround(rollObj, transform.forward,300 * Time.deltaTime);
         }
         if (playerMove == PlayerMove.Down)
         {
@@ -1000,6 +1013,8 @@ public class Player : MonoBehaviour
                 cam.changeflag = true;
                 rigidbody.constraints = RigidbodyConstraints.None;
                 rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+                saveposs = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), Mathf.Round(transform.position.z));
+                transform.position = saveposs;
             }
             type = collision.gameObject.GetComponent<Block>().type;
         }

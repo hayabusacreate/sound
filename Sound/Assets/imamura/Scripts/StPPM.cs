@@ -10,17 +10,23 @@ public class StPPM : MonoBehaviour
     [SerializeField]
     GameObject ppc;
 
+    [SerializeField]
+    GameObject Canvas;
+
     PostProcessVolume m_Volume;
 
     bool lumino;
 
-    public float val = 1;
+    public float val;
 
     public float aiueo;
 
     void Start()
     {
-        //Invoke("FixDOF", 1f);
+        val = 8;
+        var ae = ScriptableObject.CreateInstance<AutoExposure>();
+        ae.keyValue.Override(val);
+        ae.maxLuminance.Override(-val);
     }
 
     void Update()
@@ -30,26 +36,25 @@ public class StPPM : MonoBehaviour
         ae.maxLuminance.Override(-val);
 
         m_Volume = PostProcessManager.instance.QuickVolume(gameObject.layer, 1f, ae);
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            lumino = true;
-        }
+        
+        lumino = true;
 
-        if(lumino == true && val <= aiueo)
+        if(lumino == true && val >= aiueo)
         {
             ae.enabled.Override(true);
             ae.keyValue.Override(val);
             ae.maxLuminance.Override(-val+2);
 
-            val += Time.deltaTime*2;
+            val -= Time.deltaTime*2;
         }
         
-        if(val >= aiueo)
+        if(val <= aiueo)
         {
             ae.enabled.Override(true);
             val = aiueo;
             ae.keyValue.Override(val);
             ae.maxLuminance.Override(-val);
+            Canvas.SetActive(true);
         }
 
     }

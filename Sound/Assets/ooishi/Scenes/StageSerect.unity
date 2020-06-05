@@ -1711,7 +1711,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &338178065
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4248,7 +4248,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 761751311}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 33
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 0
@@ -6652,6 +6652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1376901199}
   - component: {fileID: 1376901198}
+  - component: {fileID: 1376901200}
   m_Layer: 0
   m_Name: PPC
   m_TagString: Untagged
@@ -6671,7 +6672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 04c74f21bd60c6249b0cba47dfbca9d9, type: 2}
+  sharedProfile: {fileID: 11400000, guid: c1754ef64b14a7a4898b3879c31e9e74, type: 2}
   isGlobal: 1
   blendDistance: 0
   weight: 1
@@ -6690,6 +6691,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1376901200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376901197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291b35c137edc3e4ea952634a6fb64a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ppc: {fileID: 1376901197}
+  Canvas: {fileID: 338178064}
+  val: 8
+  aiueo: 1
 --- !u!1001 &1380459486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11866,7 +11883,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 20bb0e975d759274196800f328867ac5, type: 2}
+  - {fileID: 2100000, guid: b202d9d6f05574e4889c050c689aa874, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

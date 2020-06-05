@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
     private float savepos;
     private SceneChange sceneChange;
 
-    private string type;
+    public string type;
 
     private float count;
 
@@ -538,7 +538,7 @@ public class Player : MonoBehaviour
             rigidbody.useGravity = false;
         }
 
-        if (transform.position == save && (!inrightroll || !inleftroll))
+        if (transform.position == save && (!inrightroll || !inleftroll)&&type!="5")
         {
             moveflag = false;
         }
@@ -1035,7 +1035,7 @@ public class Player : MonoBehaviour
                 saveposs = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), Mathf.Round(transform.position.z));
                 transform.position = saveposs;
             }
-            type = collision.gameObject.GetComponent<Block>().type;
+            //type = collision.gameObject.GetComponent<Block>().type;
         }
         if (collision.gameObject.tag == "Ground")
         {

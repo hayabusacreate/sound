@@ -29,6 +29,8 @@ public class titleEffect : MonoBehaviour
 
     public float aiueo;
 
+    float delay = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,7 +71,7 @@ public class titleEffect : MonoBehaviour
         {
             ae.enabled.Override(true);
             ae.keyValue.Override(val);
-            ae.maxLuminance.Override(-val + 2);
+            ae.maxLuminance.Override(-val+2);
 
             val += Time.deltaTime * 2;
         }
@@ -84,7 +86,11 @@ public class titleEffect : MonoBehaviour
 
         if (val >= aiueo)
         {
-            exEnd = true;
+            delay += Time.deltaTime;
+            if(delay >= 0.5f)
+            {
+                exEnd = true;
+            }
         }
     }
 }

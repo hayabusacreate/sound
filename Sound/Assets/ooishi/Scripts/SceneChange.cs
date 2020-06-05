@@ -49,13 +49,18 @@ public class SceneChange : MonoBehaviour
 
     public GameObject key,pad;
     string[] CacheJoystickNames;
+    private titleEffect titleEffect;
     // Start is called before the first frame update
     void Start()
     {
         CacheJoystickNames = Input.GetJoystickNames();
         inout = true;
         audio = GetComponent<AudioSource>();
-        if(scene==Scene.GamePlay)
+        if (scene == Scene.Title)
+        {
+            titleEffect = GameObject.Find("PPC").GetComponent<titleEffect>();
+        }
+        if (scene==Scene.GamePlay)
         {
             slider = GameObject.Find("Count").GetComponent<Slider>();
             player=GameObject.Find("Player").GetComponent<Player>();
@@ -95,7 +100,7 @@ public class SceneChange : MonoBehaviour
         switch (scene)
         {
             case Scene.Title:
-                if (Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown("joystick button 0")))
+                if (titleEffect.exEnd)
                 {
                     SceneManager.LoadScene("StageSerect");
                 }

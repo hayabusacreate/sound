@@ -6,14 +6,16 @@ public class titleEffect : MonoBehaviour
 {
     [SerializeField]
     GameObject shell;
+    
 
-    Color EColor;
+    public Color EColor;
 
     bool cColor;
 
     public bool exEnd;
 
     float cl;
+    public float intensity;
 
     // Start is called before the first frame update
     void Start()
@@ -34,12 +36,12 @@ public class titleEffect : MonoBehaviour
             if (cl <= 1)
             {
                 cl += Time.deltaTime;
-                EColor = new Color(cl, cl - 0.4f, cl - 0.7f);
+                EColor = new Color(cl, cl - 0.7f, cl - 0.9f);
             }
-            shell.GetComponent<Renderer>().material.SetColor("_EmissionColor", EColor);
+            shell.GetComponent<Renderer>().material.SetColor("_EmissionColor", EColor* intensity);
         }
 
-        if(cl >= 1)
+            if (cl >= 1)
         {
             exEnd = true;
         }

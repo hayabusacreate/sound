@@ -7,13 +7,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: magma
-  m_Shader: {fileID: 4800000, guid: 2cda36ea19bdf3848bd044f1ea8dd7f5, type: 3}
+  m_Name: bgMagmaM
+  m_Shader: {fileID: 4800000, guid: ae067ef7dd4d6f74fafc7aa5c4e4928d, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -45,7 +45,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: df9ca01cd1d382740a35df61bbc215fe, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 0.7, y: 2}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
         m_Texture: {fileID: 2800000, guid: 30a3dc9419c665f4e9b70532bcf84f39, type: 3}

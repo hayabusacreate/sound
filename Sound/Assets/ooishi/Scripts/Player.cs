@@ -565,10 +565,10 @@ public class Player : MonoBehaviour
         //}
         Quaternion woldangle = transform.localRotation;
         Vector3 vector3 = woldangle.eulerAngles;
-
-
         //woldangle = Quaternion.Euler(vector3);
         angle = transform.rotation.eulerAngles.z;
+        angle = Mathf.RoundToInt(angle);
+        transform.localEulerAngles = new Vector3(0, 0, angle);
         if (inrightroll)
         {
             transform.Rotate(0, 0, -10);
@@ -587,13 +587,15 @@ public class Player : MonoBehaviour
         }
         if (playerMove == PlayerMove.Down)
         {
-            if (angle >= 90 && angle < 180)
+            if (angle > 90 && angle < 180)
             {
                 playerMove = PlayerMove.Left;
                 angle = 90;
                 transform.localEulerAngles = new Vector3(0, 0, angle);
                 outleftroll = false;
                 inleftroll = false;
+                outrightroll = false;
+                inrightroll = false;
                 moveflag = false;
                 Physics.gravity = new Vector3(10, 0, 0);
             }
@@ -601,6 +603,8 @@ public class Player : MonoBehaviour
             {
                 angle = 270;
                 transform.localEulerAngles = new Vector3(0, 0, angle);
+                outleftroll = false;
+                inleftroll = false;
                 outrightroll = false;
                 inrightroll = false;
                 playerMove = PlayerMove.Right;
@@ -610,13 +614,15 @@ public class Player : MonoBehaviour
         }
         if (playerMove == PlayerMove.Up)
         {
-            if (angle <= 360 && angle > 270)
+            if (angle < 360 && angle > 270)
             {
                 playerMove = PlayerMove.Right;
                 angle = 270;
                 transform.localEulerAngles = new Vector3(0, 0, angle);
                 outleftroll = false;
                 inleftroll = false;
+                outrightroll = false;
+                inrightroll = false;
 
                 moveflag = false;
                 Physics.gravity = new Vector3(-10, 0, 0);
@@ -625,6 +631,8 @@ public class Player : MonoBehaviour
             {
                 angle = 90;
                 transform.localEulerAngles = new Vector3(0, 0, angle);
+                outleftroll = false;
+                inleftroll = false;
                 outrightroll = false;
                 inrightroll = false;
                 playerMove = PlayerMove.Left;
@@ -634,22 +642,26 @@ public class Player : MonoBehaviour
         }
         if (playerMove == PlayerMove.Right)
         {
-            if (angle >= 180 && angle <= 185)
+            if (angle > 170 && angle <= 180)
             {
                 playerMove = PlayerMove.Up;
-                angle = -179;
+                angle = 180;
                 transform.localEulerAngles = new Vector3(0, 0, angle);
+                outleftroll = false;
+                inleftroll = false;
                 outrightroll = false;
                 inrightroll = false;
                 moveflag = false;
                 Physics.gravity = new Vector3(0, 10, 0);
             }
-            if (angle < 90 && angle > 0)
+            if (angle <= 10 || angle >= 350)
             {
                 angle = 0;
                 transform.localEulerAngles = new Vector3(0, 0, angle);
                 outleftroll = false;
                 inleftroll = false;
+                outrightroll = false;
+                inrightroll = false;
                 playerMove = PlayerMove.Down;
                 moveflag = false;
                 Physics.gravity = new Vector3(0, -10, 0);
@@ -657,23 +669,27 @@ public class Player : MonoBehaviour
         }
         if (playerMove == PlayerMove.Left)
         {
-            if (angle >= 0 && angle > 270)
+            if (angle >= 350 || angle <= 10)
             {
 
                 playerMove = PlayerMove.Down;
                 angle = 0;
                 transform.localEulerAngles = new Vector3(0, 0, angle);
+                outleftroll = false;
+                inleftroll = false;
                 outrightroll = false;
                 inrightroll = false;
                 moveflag = false;
                 Physics.gravity = new Vector3(0, -10, 0);
             }
-            if (angle <= 180 && angle >= 175)
+            if (angle <= 190 && angle > 170)
             {
-                angle = 181;
+                angle = 180;
                 transform.localEulerAngles = new Vector3(0, 0, angle);
                 outleftroll = false;
                 inleftroll = false;
+                outrightroll = false;
+                inrightroll = false;
                 playerMove = PlayerMove.Up;
                 moveflag = false;
                 Physics.gravity = new Vector3(0, 10, 0);

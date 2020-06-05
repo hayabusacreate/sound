@@ -1804,6 +1804,8 @@ MonoBehaviour:
   stages: []
   scs: []
   pl: {fileID: 0}
+  key: {fileID: 0}
+  pad: {fileID: 0}
 --- !u!4 &1798548774
 Transform:
   m_ObjectHideFlags: 0
@@ -2354,4 +2356,4 @@ MonoBehaviour:
   exEnd: 0
   intensity: 4
   ppc: {fileID: 2094779223}
-  aiueo: 8
+  aiueo: 4

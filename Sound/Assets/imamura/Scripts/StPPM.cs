@@ -21,6 +21,8 @@ public class StPPM : MonoBehaviour
 
     public float aiueo;
 
+    static bool once = false;
+
     void Start()
     {
         val = 8;
@@ -31,30 +33,34 @@ public class StPPM : MonoBehaviour
 
     void Update()
     {
-        var ae = ScriptableObject.CreateInstance<AutoExposure>();
-        ae.keyValue.Override(val);
-        ae.maxLuminance.Override(-val);
-
-        m_Volume = PostProcessManager.instance.QuickVolume(gameObject.layer, 1f, ae);
-        
-        lumino = true;
-
-        if(lumino == true && val >= aiueo)
+        if (once == false)
         {
-            ae.enabled.Override(true);
-            ae.keyValue.Override(val);
-            ae.maxLuminance.Override(-val+2);
-
-            val -= Time.deltaTime*2;
-        }
-        
-        if(val <= aiueo)
-        {
-            ae.enabled.Override(true);
-            val = aiueo;
+            var ae = ScriptableObject.CreateInstance<AutoExposure>();
             ae.keyValue.Override(val);
             ae.maxLuminance.Override(-val);
-            Canvas.SetActive(true);
+
+            m_Volume = PostProcessManager.instance.QuickVolume(gameObject.layer, 1f, ae);
+
+            lumino = true;
+
+            if (lumino == true && val >= aiueo)
+            {
+                ae.enabled.Override(true);
+                ae.keyValue.Override(val);
+                ae.maxLuminance.Override(-val + 2);
+
+                val -= Time.deltaTime * 2;
+            }
+
+            if (val <= aiueo)
+            {
+                ae.enabled.Override(true);
+                val = aiueo;
+                ae.keyValue.Override(val);
+                ae.maxLuminance.Override(-val);
+                Canvas.SetActive(true);
+                once = true;
+            }
         }
 
     }

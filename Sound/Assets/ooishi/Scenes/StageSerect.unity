@@ -6705,7 +6705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ppc: {fileID: 1376901197}
   Canvas: {fileID: 338178064}
-  val: 8
+  val: 2
   aiueo: 1
 --- !u!1001 &1380459486
 PrefabInstance:

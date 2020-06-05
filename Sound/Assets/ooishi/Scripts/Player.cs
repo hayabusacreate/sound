@@ -134,7 +134,7 @@ public class Player : MonoBehaviour
         {
             //moveflag = false;
         }
-        if (((Input.GetKeyDown(KeyCode.D)) || (Input.GetKeyDown("joystick button 5"))) && !moveflag && !outleftroll && !inrightroll && !outrightroll && !inleftroll && !jumpflag)
+        if (((Input.GetKey(KeyCode.D)) || (Input.GetKeyDown("joystick button 5"))) && !moveflag && !outleftroll && !inrightroll && !outrightroll && !inleftroll && !jumpflag)
         {
             if (backflag)
             {
@@ -206,7 +206,7 @@ public class Player : MonoBehaviour
             }
         }
         else
-        if (((Input.GetKeyDown(KeyCode.A)) || (Input.GetKeyDown("joystick button 4"))) && !moveflag && !outleftroll && !inrightroll && !outrightroll && !inleftroll && !jumpflag)
+        if (((Input.GetKey(KeyCode.A)) || (Input.GetKeyDown("joystick button 4"))) && !moveflag && !outleftroll && !inrightroll && !outrightroll && !inleftroll && !jumpflag)
         {
             if (flontflag)
             {

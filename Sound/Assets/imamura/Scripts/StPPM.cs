@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
-public class TitlePPM : MonoBehaviour
+public class StPPM : MonoBehaviour
 {
 
     // Post Process Volume がついているGameObject

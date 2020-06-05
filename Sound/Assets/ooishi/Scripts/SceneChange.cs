@@ -181,7 +181,7 @@ public class SceneChange : MonoBehaviour
                 }
                 if (stagenum==mapnum)
                 {
-                    if (Input.GetKeyDown(KeyCode.D) || (Input.GetKeyDown("joystick button 5")))
+                    if (Input.GetKey(KeyCode.D) || (Input.GetKey("joystick button 5")))
                     {
                         mapnum++;
                         inout = false;
@@ -191,7 +191,7 @@ public class SceneChange : MonoBehaviour
                         }
                         mapCreate.ChangeMap(mapnum);
                     }
-                    if (Input.GetKeyDown(KeyCode.A) || (Input.GetKeyDown("joystick button 4")))
+                    if (Input.GetKey(KeyCode.A) || (Input.GetKey("joystick button 4")))
                     {
                         inout = false;
                         mapnum--;

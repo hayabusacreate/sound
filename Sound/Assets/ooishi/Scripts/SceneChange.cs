@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -45,9 +46,13 @@ public class SceneChange : MonoBehaviour
     public GameObject pl;
     private float scale;
     private bool inout;
+
+    public GameObject key,pad;
+    string[] CacheJoystickNames;
     // Start is called before the first frame update
     void Start()
     {
+        CacheJoystickNames = Input.GetJoystickNames();
         inout = true;
         audio = GetComponent<AudioSource>();
         if(scene==Scene.GamePlay)
@@ -146,7 +151,7 @@ public class SceneChange : MonoBehaviour
                 }
                 break;
             case Scene.StageSelect:
-                text.text = "" + mapnum;
+        text.text = "" + mapnum;
                 if (inout)
                 {
                     if (scale <= 1)

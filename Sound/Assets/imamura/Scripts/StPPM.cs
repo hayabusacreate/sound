@@ -21,6 +21,8 @@ public class StPPM : MonoBehaviour
 
     public float aiueo;
 
+    public bool still = false;
+
     static bool once = false;
 
     void Start()
@@ -29,6 +31,10 @@ public class StPPM : MonoBehaviour
         var ae = ScriptableObject.CreateInstance<AutoExposure>();
         ae.keyValue.Override(val);
         ae.maxLuminance.Override(-val);
+        if (once == true)
+        {
+            still = true;
+        }
     }
 
     void Update()
@@ -47,7 +53,7 @@ public class StPPM : MonoBehaviour
             {
                 ae.enabled.Override(true);
                 ae.keyValue.Override(val);
-                ae.maxLuminance.Override(-val + 2);
+                ae.maxLuminance.Override(-val + 6);
 
                 val -= Time.deltaTime * 2;
             }
@@ -60,8 +66,10 @@ public class StPPM : MonoBehaviour
                 ae.maxLuminance.Override(-val);
                 Canvas.SetActive(true);
                 once = true;
+                still = true;
             }
         }
+
 
     }
 

@@ -2353,3 +2353,5 @@ MonoBehaviour:
   EColor: {r: 0, g: 0, b: 0, a: 0}
   exEnd: 0
   intensity: 4
+  ppc: {fileID: 2094779223}
+  aiueo: 8

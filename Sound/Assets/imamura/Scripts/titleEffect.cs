@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class titleEffect : MonoBehaviour
 {
@@ -17,10 +18,25 @@ public class titleEffect : MonoBehaviour
     float cl;
     public float intensity;
 
+    [SerializeField]
+    GameObject ppc;
+
+    PostProcessVolume m_Volume;
+
+    bool lumino;
+
+    float val = 1;
+
+    public float aiueo;
+
     // Start is called before the first frame update
     void Start()
     {
         //shell.GetComponent<Renderer>().material
+        val = 1;
+        var ae = ScriptableObject.CreateInstance<AutoExposure>();
+        ae.keyValue.Override(val);
+        ae.maxLuminance.Override(-val);
     }
 
     // Update is called once per frame
@@ -29,6 +45,7 @@ public class titleEffect : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.A))
         {
             cColor = true;
+            lumino = true;
         }
 
         if(cColor == true)
@@ -41,7 +58,31 @@ public class titleEffect : MonoBehaviour
             shell.GetComponent<Renderer>().material.SetColor("_EmissionColor", EColor* intensity);
         }
 
-            if (cl >= 1)
+        var ae = ScriptableObject.CreateInstance<AutoExposure>();
+        ae.keyValue.Override(val);
+        ae.maxLuminance.Override(-val);
+
+        m_Volume = PostProcessManager.instance.QuickVolume(gameObject.layer, 1f, ae);
+        
+
+        if (lumino == true && val <= aiueo)
+        {
+            ae.enabled.Override(true);
+            ae.keyValue.Override(val);
+            ae.maxLuminance.Override(-val + 2);
+
+            val += Time.deltaTime * 2;
+        }
+
+        if (val >= aiueo)
+        {
+            ae.enabled.Override(true);
+            val = aiueo;
+            ae.keyValue.Override(val);
+            ae.maxLuminance.Override(-val);
+        }
+
+        if (val >= aiueo)
         {
             exEnd = true;
         }

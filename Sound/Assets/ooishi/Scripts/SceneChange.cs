@@ -41,7 +41,7 @@ public class SceneChange : MonoBehaviour
     private float count;
     public GameObject endobj;
     public GameObject[] stages;
-    public GameObject[] scs;
+    public ScsScale[] scs;
     private int stagenum;
     public GameObject pl;
     private float scale;
@@ -157,32 +157,17 @@ public class SceneChange : MonoBehaviour
                 break;
             case Scene.StageSelect:
         text.text = "" + mapnum;
-                if (inout)
+                for(int i=0;i<scs.Length;i++)
                 {
-                    if (scale <= 1)
+                    if (i == mapnum)
                     {
-                        scale += 10*Time.deltaTime;
-                        if(scale>1)
-                        {
-                            scale = 1;
-                        }
-                    }
-                    scs[mapnum].transform.localScale = new Vector3(scale, scale, scale);
-                }
-                else
-                {
-                    if (scale >= 0)
-                    {
-                        scale -= 10 * Time.deltaTime;
-                    }
-                    if (mapnum < stagenum)
-                    {
-                        scs[mapnum+1].transform.localScale = new Vector3(scale, scale, scale);
+                        scs[i].inout = true;
                     }
                     else
                     {
-                        scs[mapnum-1].transform.localScale = new Vector3(scale, scale, scale);
+                        scs[i].inout = false;
                     }
+
                 }
                 if (stagenum==mapnum)
                 {
@@ -195,7 +180,7 @@ public class SceneChange : MonoBehaviour
                             mapnum = mapcount;
                         }
                         mapCreate.ChangeMap(mapnum);
-                    }
+                    }else
                     if (Input.GetKey(KeyCode.A) || (Input.GetKey("joystick button 4")))
                     {
                         inout = false;

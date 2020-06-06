@@ -39,7 +39,7 @@ public class SceneChange : MonoBehaviour
 
     private bool ui;
     private float count;
-    public GameObject endobj;
+    public GameObject endobj,startobj;
     public static Dictionary<int,bool> clear=new Dictionary<int, bool>();
     public  GameObject[] stages;
     public ScsScale[] scs;
@@ -51,6 +51,8 @@ public class SceneChange : MonoBehaviour
     public GameObject key,pad;
     string[] CacheJoystickNames;
     private titleEffect titleEffect;
+    public static bool title;
+    private bool clearflag;
     // Start is called before the first frame update
     void Start()
     {
@@ -78,6 +80,7 @@ public class SceneChange : MonoBehaviour
         }
         if (scene == Scene.StageSelect)
         {
+            
             for(int i=1;i<stages.Length;i++)
             {
                 stages[i].GetComponent<StageClear>().ChangeFlag(clear[i]);
@@ -92,6 +95,14 @@ public class SceneChange : MonoBehaviour
             }
             pl.transform.position = new Vector3(mapnum*5, pl.transform.position.y, pl.transform.position.z);
             mapCreate.ChangeMap(mapnum);
+            if(title)
+            {
+                startobj.SetActive(true);
+            }
+            if(!title)
+            {
+                title = true;
+            }
         }
     }
 
@@ -120,13 +131,21 @@ public class SceneChange : MonoBehaviour
                     if ((((float)mapCreate.maxblock - (float)mapCreate.blocks) / (float)mapCreate.maxblock) * 100 ==100)
                     {
                         gold.SetActive(true);
-                        clear[mapCreate.ReturnMapnum()] = true; 
+                        clear[mapCreate.ReturnMapnum()] = true;
+                        serect.SetActive(true);
+                        if (Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown("joystick button 0")))
+                        {
+                            clearflag = true;
+                            count = 0;
+                            endflag = true;
+                        }
                     }
-                    serect.SetActive(true);
-                    if(Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown("joystick button 0")))
+                    else
                     {
-                        SceneManager.LoadScene("StageSerect");
+                        endflag = true;
                     }
+
+
                 }
                 if(Input.GetKeyDown(KeyCode.I))
                 {
@@ -142,7 +161,8 @@ public class SceneChange : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown("joystick button 7")))
                 {
-                    SceneManager.LoadScene("StageSerect");
+                    endflag = true;
+
                 }
                 if (player.endflag)
                 {
@@ -159,7 +179,15 @@ public class SceneChange : MonoBehaviour
                 }
                 if(count>60)
                 {
-                    SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
+                    if(clearflag)
+                    {
+                        SceneManager.LoadScene("StageSerect");
+                    }
+                    else
+                    {
+                        SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
+                    }
+
                 }
                 break;
             case Scene.StageSelect:
@@ -220,8 +248,17 @@ public class SceneChange : MonoBehaviour
                 }
                 if (Input.GetKey(KeyCode.Space) || (Input.GetKeyDown("joystick button 0")))
                 {
-                    SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
+                    endflag = true;
                     audio.PlayOneShot(sound1);
+                }
+                if (endflag)
+                {
+                    count++;
+                    endobj.SetActive(true);
+                }
+                if (count > 60)
+                {
+                    SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
                 }
                 break;
             case Scene.GameOver:

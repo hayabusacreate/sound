@@ -40,7 +40,8 @@ public class SceneChange : MonoBehaviour
     private bool ui;
     private float count;
     public GameObject endobj;
-    public GameObject[] stages;
+    public static Dictionary<int,bool> clear=new Dictionary<int, bool>();
+    public  GameObject[] stages;
     public ScsScale[] scs;
     private int stagenum;
     public GameObject pl;
@@ -72,10 +73,15 @@ public class SceneChange : MonoBehaviour
         }
         if (scene == Scene.Load)
         {
+            
             mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
         }
         if (scene == Scene.StageSelect)
         {
+            for(int i=1;i<stages.Length;i++)
+            {
+                stages[i].GetComponent<StageClear>().ChangeFlag(clear[i]);
+            }
             mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
             mapnum = mapCreate.ReturnMapnum();
             stagenum = mapCreate.ReturnMapnum();
@@ -114,6 +120,7 @@ public class SceneChange : MonoBehaviour
                     if ((((float)mapCreate.maxblock - (float)mapCreate.blocks) / (float)mapCreate.maxblock) * 100 ==100)
                     {
                         gold.SetActive(true);
+                        clear[mapCreate.ReturnMapnum()] = true; 
                     }
                     serect.SetActive(true);
                     if(Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown("joystick button 0")))
@@ -233,6 +240,7 @@ public class SceneChange : MonoBehaviour
                 for(int i=0;i<map;i++)
                 {
                     mapCreate.LoadMap(Resources.Load("map"+i) as TextAsset,i);
+                    clear[i] = false;
                 }
                 SceneManager.LoadScene("Title");
                 break;

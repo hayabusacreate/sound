@@ -37,7 +37,7 @@ public class titleEffect : MonoBehaviour
         //shell.GetComponent<Renderer>().material
         val = 1;
         var ae = ScriptableObject.CreateInstance<AutoExposure>();
-        ae.keyValue.Override(val);
+        ae.keyValue.Override(val+5);
         ae.maxLuminance.Override(-val);
     }
 
@@ -70,7 +70,7 @@ public class titleEffect : MonoBehaviour
         if (lumino == true && val <= aiueo)
         {
             ae.enabled.Override(true);
-            ae.keyValue.Override(val);
+            ae.keyValue.Override(val-0.3f);
             ae.maxLuminance.Override(-val+2);
 
             val += Time.deltaTime * 2;

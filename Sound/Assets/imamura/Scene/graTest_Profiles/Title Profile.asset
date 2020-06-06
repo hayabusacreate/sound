@@ -91,22 +91,22 @@ MonoBehaviour:
     value: 0
   color:
     overrideState: 1
-    value: {r: 0, g: 0, b: 0, a: 1}
+    value: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 1}
   center:
     overrideState: 1
-    value: {x: 0.5, y: 0.5}
+    value: {x: 0.5, y: 0.87}
   intensity:
     overrideState: 1
-    value: 0.237
+    value: 0.69
   smoothness:
     overrideState: 1
     value: 1
   roundness:
     overrideState: 1
-    value: 1
+    value: 0
   rounded:
     overrideState: 0
-    value: 1
+    value: 0
   mask:
     overrideState: 1
     value: {fileID: 2800000, guid: a73efa09cd8814a41ab906d402eaf5fc, type: 3}

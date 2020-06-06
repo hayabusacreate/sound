@@ -13,6 +13,9 @@ public class StPPM : MonoBehaviour
     [SerializeField]
     GameObject Canvas;
 
+    [SerializeField]
+    GameObject Canvas2;
+
     PostProcessVolume m_Volume;
 
     bool lumino;
@@ -34,6 +37,8 @@ public class StPPM : MonoBehaviour
         if (once == true)
         {
             still = true;
+            Canvas.SetActive(true);
+            Canvas2.SetActive(true);
         }
     }
 
@@ -65,6 +70,7 @@ public class StPPM : MonoBehaviour
                 ae.keyValue.Override(val);
                 ae.maxLuminance.Override(-val);
                 Canvas.SetActive(true);
+                Canvas2.SetActive(true);
                 once = true;
                 still = true;
             }

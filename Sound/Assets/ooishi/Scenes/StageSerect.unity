@@ -6705,8 +6705,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ppc: {fileID: 1376901197}
   Canvas: {fileID: 338178064}
+  Canvas2: {fileID: 1908236505}
   val: 2
   aiueo: 1
+  still: 0
 --- !u!1001 &1380459486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9088,7 +9090,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1908236506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11951,7 +11953,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f9d3b48df564dc14c93ed469d7dc85ef, type: 2}
+  - {fileID: 2100000, guid: e554a7b353aa4534788fe8801a22882f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

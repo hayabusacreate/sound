@@ -161,6 +161,8 @@ public class SceneChange : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown("joystick button 7")))
                 {
+                    clearflag = true;
+                    count = 0;
                     endflag = true;
 
                 }

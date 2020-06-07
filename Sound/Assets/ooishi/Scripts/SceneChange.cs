@@ -54,6 +54,7 @@ public class SceneChange : MonoBehaviour
     public static bool title;
     private bool clearflag;
     private GameObject UI;
+    private GameObject hinoko;
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +67,8 @@ public class SceneChange : MonoBehaviour
         }
         if (scene==Scene.GamePlay)
         {
+            hinoko = GameObject.Find("hinoko");
+            hinoko.SetActive(false);
             slider = GameObject.Find("Count").GetComponent<Slider>();
             player=GameObject.Find("Player").GetComponent<Player>();
             mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
@@ -131,6 +134,7 @@ public class SceneChange : MonoBehaviour
                     count++;
                     endobj.SetActive(true);
                     UI.SetActive(false);
+
                 }
                 else
                 {
@@ -141,6 +145,7 @@ public class SceneChange : MonoBehaviour
                 {
                     if ((((float)mapCreate.maxblock - (float)mapCreate.blocks) / (float)mapCreate.maxblock) * 100 ==100)
                     {
+                        hinoko.SetActive(true);
                         gold.SetActive(true);
                         clear[mapCreate.ReturnMapnum()] = true;
                         serect.SetActive(true);

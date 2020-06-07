@@ -148,7 +148,7 @@ public class SceneChange : MonoBehaviour
                         hinoko.SetActive(true);
                         gold.SetActive(true);
                         clear[mapCreate.ReturnMapnum()] = true;
-                        serect.SetActive(true);
+                        //serect.SetActive(true);
                         if (Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown("joystick button 0")))
                         {
                             clearflag = true;

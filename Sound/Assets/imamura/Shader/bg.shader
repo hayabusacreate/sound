@@ -3,8 +3,8 @@
     Properties
     {
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
-		_SubTex("Sub Texture", 2D) = "white" {}
-		_MaskTex("Mask Texture", 2D) = "white" {}
+		//_SubTex("Sub Texture", 2D) = "white" {}
+		//_MaskTex("Mask Texture", 2D) = "white" {}
 		_DisolveTex("DisolveTex (RGB)", 2D) = "white" {}
 		_Threshold("Threshold", Range(0,1)) = 0.0
         _RampTex("Ramp",2D) = " white"{}
@@ -26,8 +26,8 @@
 
         sampler2D _MainTex;
 
-	sampler2D _SubTex;
-	sampler2D _MaskTex;
+	//sampler2D _SubTex;
+	//sampler2D _MaskTex;
 	sampler2D _DisolveTex;
 		sampler2D _RampTex;
 
@@ -59,7 +59,7 @@
 			if (g < _Threshold) {
 				discard;
 			}
-			fixed2 uv = IN.uv_MainTex;
+			/*fixed2 uv = IN.uv_MainTex;
 			uv.x += 2.5* _Time;
 			uv.y -= 4* _Time;
 			fixed2 uv2 = IN.uv_MainTex;
@@ -67,8 +67,8 @@
 			uv2.y -= 0.0* _Time;
 			fixed4 c1 = tex2D(_MainTex, uv2)*_Color;
 			fixed4 c2 = tex2D(_SubTex, uv)*_Color;
-			fixed4 p = tex2D(_MaskTex, uv2);
-			o.Albedo = lerp(c1, c2, p);
+			fixed4 p = tex2D(_MaskTex, uv2);*/
+			o.Albedo = tex2D(_MainTex,IN.uv_MainTex)*_Color;
 
 			fixed4 n = tex2D(_BumpMap, IN.uv_MainTex);
 

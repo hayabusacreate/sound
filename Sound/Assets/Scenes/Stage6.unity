@@ -1062,7 +1062,7 @@ MonoBehaviour:
   eazymap: 1
   nomalmap: 2
   hardmap: 3
-  hight: 5
+  hight: 4
   width: 5
   map: {fileID: 5420315190351271739, guid: 019932f8b9d37f24096bef7fcbf22242, type: 3}
   maphight: 0
@@ -2066,9 +2066,12 @@ MonoBehaviour:
   serect: {fileID: 2116237576}
   sound1: {fileID: 0}
   endobj: {fileID: 1362992724}
+  startobj: {fileID: 0}
   stages: []
   scs: []
   pl: {fileID: 0}
+  key: {fileID: 0}
+  pad: {fileID: 0}
 --- !u!1 &1646933136
 GameObject:
   m_ObjectHideFlags: 0

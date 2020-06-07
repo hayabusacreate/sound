@@ -53,6 +53,7 @@ public class SceneChange : MonoBehaviour
     private titleEffect titleEffect;
     public static bool title;
     private bool clearflag;
+    private GameObject UI;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,7 +71,8 @@ public class SceneChange : MonoBehaviour
             mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
             slider.minValue = 0;
             slider.maxValue = 100;
-            // 
+            UI = GameObject.Find("AA");
+
             //Physics.gravity = new Vector3(0, -5, 0);
         }
         if (scene == Scene.Load)
@@ -124,9 +126,18 @@ public class SceneChange : MonoBehaviour
                 break;
             case Scene.GamePlay:
                 //time -= Time.deltaTime;
-                slider.value = (((float)mapCreate.maxblock - (float)mapCreate.blocks) / (float)mapCreate.maxblock)*100;
+                if (endflag)
+                {
+                    count++;
+                    endobj.SetActive(true);
+                    UI.SetActive(false);
+                }
+                else
+                {
+                    slider.value = (((float)mapCreate.maxblock - (float)mapCreate.blocks) / (float)mapCreate.maxblock) * 100;
+                }
 
-                if(creaflag)
+                if (creaflag)
                 {
                     if ((((float)mapCreate.maxblock - (float)mapCreate.blocks) / (float)mapCreate.maxblock) * 100 ==100)
                     {
@@ -174,11 +185,7 @@ public class SceneChange : MonoBehaviour
                 {
                     SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
                 }
-                if(endflag)
-                {
-                    count++;
-                    endobj.SetActive(true);
-                }
+
                 if(count>60)
                 {
                     if(clearflag)

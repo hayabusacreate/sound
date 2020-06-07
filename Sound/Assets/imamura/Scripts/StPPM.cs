@@ -58,7 +58,7 @@ public class StPPM : MonoBehaviour
             {
                 ae.enabled.Override(true);
                 ae.keyValue.Override(val);
-                ae.maxLuminance.Override(-val + 6);
+                ae.maxLuminance.Override(-val + 5);
 
                 val -= Time.deltaTime * 2;
             }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2111114357823571625}
   - component: {fileID: 2111114357823571630}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2111114357823571631}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.4296341, y: -2.1229162, z: 10.488517}
-  m_LocalScale: {x: 100, y: 100, z: 1000}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 50, y: 30, z: 30}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 268d6f8c5f752e24a901657c5ccb00be, type: 2}
+  - {fileID: 2100000, guid: 54dae767571bdc04096613a20e840dd4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

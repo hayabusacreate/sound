@@ -10,10 +10,17 @@ public class WaterPos : MonoBehaviour
     Material mat;
 
     bool turned;
+
+    SceneChange sc;
+
+    float value;
+
     // Start is called before the first frame update
     void Start()
     {
         camera = GameObject.Find("CM vcam2");
+        sc = GameObject.Find("SceneChange").GetComponent<SceneChange>();
+        value = 0;
     }
 
     // Update is called once per frame
@@ -25,6 +32,16 @@ public class WaterPos : MonoBehaviour
         {
             transform.Rotate(0, 180, 0);
             turned = true;
+        }
+
+        if(sc.creaflag == true)
+        {
+            value += Time.deltaTime;
+            //gameObject.GetComponent<Renderer>().material.SetFloat("_Threshold", value);
+            foreach(Transform child in transform)
+            {
+                child.GetComponent<Renderer>().material.SetFloat("_Threshold", value);
+            }
         }
     }
 }

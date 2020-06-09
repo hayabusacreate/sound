@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
     private float savepos;
     private SceneChange sceneChange;
 
-    private string type;
+    public string type;
 
     private float count;
 
@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         count += Time.deltaTime;
-        if (!sceneChange.creaflag&&count>2)
+        if ((!sceneChange.creaflag) && count > 2||moveflag)
         {
             Move();
             //transform.position = save;
@@ -118,181 +118,12 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-        if(!moveflag&&!jumpflag&&(!inleftroll && !inrightroll && !outleftroll && !outrightroll))
-        {
-            if(playerMove==PlayerMove.Down|| playerMove == PlayerMove.Up)
-            {
-                saveposs = new Vector3(Mathf.Round(transform.position.x), transform.position.y, Mathf.Round(transform.position.z));
-
-            }else
-            {
-                saveposs = new Vector3(transform.position.x, Mathf.Round(transform.position.y), Mathf.Round(transform.position.z));
-            }
-            transform.position = Vector3.Lerp(transform.position,saveposs,1);
-        }
-        if (!backflag || !flontflag)
-        {
-            //moveflag = false;
-        }
-        if (((Input.GetKeyDown(KeyCode.D)) || (Input.GetKeyDown("joystick button 5"))) && !moveflag && !outleftroll && !inrightroll && !outrightroll && !inleftroll && !jumpflag)
-        {
-            if (backflag)
-            {
-                if (bbflag)
-                {
-                    if (type == "5")
-                    {
-                        if (!moveflag && !outleftroll && !inrightroll)
-                        {
-                            changeflag = 0;
-                            moveflag = true;
-                            if (playerMove == PlayerMove.Down)
-                            {
-                                save = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
-                            }
-                            if (playerMove == PlayerMove.Up)
-                            {
-                                save = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
-                            }
-                            if (playerMove == PlayerMove.Right)
-                            {
-                                save = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-                            }
-                            if (playerMove == PlayerMove.Left)
-                            {
-                                save = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
-                            }
-                            movecount++;
-                            anim.SetBool("Dash", true);
-                        }
-                    }
-                    else
-                    {
-                        outleftroll = true;
-                        movecount++;
-                    }
-                }
-                else
-                {
-                    if (!moveflag && !outleftroll && !inrightroll)
-                    {
-                        changeflag = 0;
-                        moveflag = true;
-                        if (playerMove == PlayerMove.Down)
-                        {
-                            save = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
-                        }
-                        if (playerMove == PlayerMove.Up)
-                        {
-                            save = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
-                        }
-                        if (playerMove == PlayerMove.Right)
-                        {
-                            save = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-                        }
-                        if (playerMove == PlayerMove.Left)
-                        {
-                            save = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
-                        }
-                        movecount++;
-                        anim.SetBool("Dash", true);
-                    }
-                }
-            }
-            else
-            {
-                inrightroll = true;
-                movecount++;
-            }
-        }
-        else
-        if (((Input.GetKeyDown(KeyCode.A)) || (Input.GetKeyDown("joystick button 4"))) && !moveflag && !outleftroll && !inrightroll && !outrightroll && !inleftroll && !jumpflag)
-        {
-            if (flontflag)
-            {
-                if (fbflag)
-                {
-                    if (type == "5")
-                    {
-                        if (!moveflag && !outrightroll && !inleftroll)
-                        {
-                            changeflag = 1;
-                            moveflag = true;
-                            if (playerMove == PlayerMove.Down)
-                            {
-                                save = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
-                            }
-                            if (playerMove == PlayerMove.Up)
-                            {
-                                save = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
-                            }
-                            if (playerMove == PlayerMove.Right)
-                            {
-                                save = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
-                            }
-                            if (playerMove == PlayerMove.Left)
-                            {
-                                save = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-                            }
-                            movecount++;
-                            anim.SetBool("Dash", true);
-                        }
-                    }
-                    else
-                    {
-                        outrightroll = true;
-                        movecount++;
-                    }
-
-                }
-                else
-                {
-                    if (!moveflag && !outrightroll && !inleftroll)
-                    {
-                        changeflag = 1;
-                        moveflag = true;
-                        if (playerMove == PlayerMove.Down)
-                        {
-                            save = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
-                        }
-                        if (playerMove == PlayerMove.Up)
-                        {
-                            save = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
-                        }
-                        if (playerMove == PlayerMove.Right)
-                        {
-                            save = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
-                        }
-                        if (playerMove == PlayerMove.Left)
-                        {
-                            save = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-                        }
-                        movecount++;
-                        anim.SetBool("Dash", true);
-                    }
-                }
-            }
-            else
-            {
-                inleftroll = true;
-                movecount++;
-            }
-        }
-        //}else if(Input.GetKey(KeyCode.Q)&&jumpflag)
-        //{
-        //    transform.Rotate(0, 0, -5);
-
-        //}
-        //else if (Input.GetKey(KeyCode.E) && jumpflag)
-        //{
-        //    transform.Rotate(0, 0, 5);
-        //}
         Quaternion woldangle = transform.localRotation;
         Vector3 vector3 = woldangle.eulerAngles;
-
-
         //woldangle = Quaternion.Euler(vector3);
         angle = transform.rotation.eulerAngles.z;
+        angle = Mathf.RoundToInt(angle);
+        transform.localEulerAngles = new Vector3(0, 0, angle);
         if (inrightroll)
         {
             transform.Rotate(0, 0, -10);
@@ -307,17 +138,19 @@ public class Player : MonoBehaviour
         }
         if (outleftroll)
         {
-            transform.RotateAround(rollObj, transform.forward,300 * Time.deltaTime);
+            transform.RotateAround(rollObj, transform.forward, 300 * Time.deltaTime);
         }
         if (playerMove == PlayerMove.Down)
         {
-            if (angle >= 90 && angle < 180)
+            if (angle > 90 && angle < 180)
             {
                 playerMove = PlayerMove.Left;
                 angle = 90;
                 transform.localEulerAngles = new Vector3(0, 0, angle);
                 outleftroll = false;
                 inleftroll = false;
+                outrightroll = false;
+                inrightroll = false;
                 moveflag = false;
                 Physics.gravity = new Vector3(10, 0, 0);
             }
@@ -325,6 +158,8 @@ public class Player : MonoBehaviour
             {
                 angle = 270;
                 transform.localEulerAngles = new Vector3(0, 0, angle);
+                outleftroll = false;
+                inleftroll = false;
                 outrightroll = false;
                 inrightroll = false;
                 playerMove = PlayerMove.Right;
@@ -334,13 +169,15 @@ public class Player : MonoBehaviour
         }
         if (playerMove == PlayerMove.Up)
         {
-            if (angle <= 360 && angle > 270)
+            if (angle < 360 && angle > 270)
             {
                 playerMove = PlayerMove.Right;
                 angle = 270;
                 transform.localEulerAngles = new Vector3(0, 0, angle);
                 outleftroll = false;
                 inleftroll = false;
+                outrightroll = false;
+                inrightroll = false;
 
                 moveflag = false;
                 Physics.gravity = new Vector3(-10, 0, 0);
@@ -349,6 +186,8 @@ public class Player : MonoBehaviour
             {
                 angle = 90;
                 transform.localEulerAngles = new Vector3(0, 0, angle);
+                outleftroll = false;
+                inleftroll = false;
                 outrightroll = false;
                 inrightroll = false;
                 playerMove = PlayerMove.Left;
@@ -358,22 +197,26 @@ public class Player : MonoBehaviour
         }
         if (playerMove == PlayerMove.Right)
         {
-            if (angle >= 180 && angle <= 185)
+            if (angle > 170 && angle <= 180)
             {
                 playerMove = PlayerMove.Up;
-                angle = -179;
+                angle = 180;
                 transform.localEulerAngles = new Vector3(0, 0, angle);
+                outleftroll = false;
+                inleftroll = false;
                 outrightroll = false;
                 inrightroll = false;
                 moveflag = false;
                 Physics.gravity = new Vector3(0, 10, 0);
             }
-            if (angle < 90 && angle > 0)
+            if (angle <= 10 || angle >= 350)
             {
                 angle = 0;
                 transform.localEulerAngles = new Vector3(0, 0, angle);
                 outleftroll = false;
                 inleftroll = false;
+                outrightroll = false;
+                inrightroll = false;
                 playerMove = PlayerMove.Down;
                 moveflag = false;
                 Physics.gravity = new Vector3(0, -10, 0);
@@ -381,23 +224,27 @@ public class Player : MonoBehaviour
         }
         if (playerMove == PlayerMove.Left)
         {
-            if (angle >= 0 && angle > 270)
+            if (angle >= 350 || angle <= 10)
             {
 
                 playerMove = PlayerMove.Down;
                 angle = 0;
                 transform.localEulerAngles = new Vector3(0, 0, angle);
+                outleftroll = false;
+                inleftroll = false;
                 outrightroll = false;
                 inrightroll = false;
                 moveflag = false;
                 Physics.gravity = new Vector3(0, -10, 0);
             }
-            if (angle <= 180 && angle >= 175)
+            if (angle <= 190 && angle > 170)
             {
-                angle = 181;
+                angle = 180;
                 transform.localEulerAngles = new Vector3(0, 0, angle);
                 outleftroll = false;
                 inleftroll = false;
+                outrightroll = false;
+                inrightroll = false;
                 playerMove = PlayerMove.Up;
                 moveflag = false;
                 Physics.gravity = new Vector3(0, 10, 0);
@@ -418,7 +265,7 @@ public class Player : MonoBehaviour
                         transform.position -= new Vector3(speed, 0, 0);
                         if (transform.position.x < save.x)
                         {
-                            if (type == "5"&&backflag)
+                            if (type == "5" && backflag)
                             {
                                 if (!jumpflag)
                                 {
@@ -557,12 +404,12 @@ public class Player : MonoBehaviour
                         transform.position += new Vector3(0, speed, 0);
                         if (transform.position.y > save.y)
                         {
-                            if (type == "5"&&backflag)
+                            if (type == "5" && backflag)
                             {
                                 if (!jumpflag)
                                 {
                                     moveflag = true;
-                                    save = new Vector3(transform.position.x, transform.position.y+1, transform.position.z);
+                                    save = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
                                 }
                                 else
                                 {
@@ -650,7 +497,7 @@ public class Player : MonoBehaviour
                         transform.position += new Vector3(0, speed, 0);
                         if (transform.position.y > save.y)
                         {
-                            if (type == "5" &&flontflag)
+                            if (type == "5" && flontflag)
                             {
                                 if (!jumpflag)
                                 {
@@ -689,6 +536,11 @@ public class Player : MonoBehaviour
         else
         {
             rigidbody.useGravity = false;
+        }
+
+        if (transform.position == save && (!inrightroll || !inleftroll)&&type!="5")
+        {
+            moveflag = false;
         }
         if (cam.changeflag)
         {
@@ -965,10 +817,177 @@ public class Player : MonoBehaviour
             }
 
         }
-        //if (transform.position == save && (!inrightroll || !inleftroll))
+        if (!moveflag && !jumpflag && (!inleftroll && !inrightroll && !outleftroll && !outrightroll))
+        {
+            if (playerMove == PlayerMove.Down || playerMove == PlayerMove.Up)
+            {
+                saveposs = new Vector3(Mathf.Round(transform.position.x), transform.position.y, Mathf.Round(transform.position.z));
+
+            }
+            else
+            {
+                saveposs = new Vector3(transform.position.x, Mathf.Round(transform.position.y), Mathf.Round(transform.position.z));
+            }
+            transform.position = Vector3.Lerp(transform.position, saveposs, 1);
+        }
+        if (!backflag || !flontflag)
+        {
+            //moveflag = false;
+        }
+        if (((Input.GetKey(KeyCode.D)) || (Input.GetKey("joystick button 5"))) && !moveflag && !outleftroll && !inrightroll && !outrightroll && !inleftroll && !jumpflag)
+        {
+            if (backflag)
+            {
+                if (bbflag)
+                {
+                    if (type == "5")
+                    {
+                        if (!moveflag && !outleftroll && !inrightroll)
+                        {
+                            changeflag = 0;
+                            moveflag = true;
+                            if (playerMove == PlayerMove.Down)
+                            {
+                                save = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+                            }
+                            if (playerMove == PlayerMove.Up)
+                            {
+                                save = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+                            }
+                            if (playerMove == PlayerMove.Right)
+                            {
+                                save = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                            }
+                            if (playerMove == PlayerMove.Left)
+                            {
+                                save = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                            }
+                            movecount++;
+                            anim.SetBool("Dash", true);
+                        }
+                    }
+                    else
+                    {
+                        outleftroll = true;
+                        movecount++;
+                    }
+                }
+                else
+                {
+                    if (!moveflag && !outleftroll && !inrightroll)
+                    {
+                        changeflag = 0;
+                        moveflag = true;
+                        if (playerMove == PlayerMove.Down)
+                        {
+                            save = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+                        }
+                        if (playerMove == PlayerMove.Up)
+                        {
+                            save = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+                        }
+                        if (playerMove == PlayerMove.Right)
+                        {
+                            save = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                        }
+                        if (playerMove == PlayerMove.Left)
+                        {
+                            save = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                        }
+                        movecount++;
+                        anim.SetBool("Dash", true);
+                    }
+                }
+            }
+            else
+            {
+                inrightroll = true;
+                movecount++;
+            }
+        }
+        else
+        if (((Input.GetKey(KeyCode.A)) || (Input.GetKey("joystick button 4"))) && !moveflag && !outleftroll && !inrightroll && !outrightroll && !inleftroll && !jumpflag)
+        {
+            if (flontflag)
+            {
+                if (fbflag)
+                {
+                    if (type == "5")
+                    {
+                        if (!moveflag && !outrightroll && !inleftroll)
+                        {
+                            changeflag = 1;
+                            moveflag = true;
+                            if (playerMove == PlayerMove.Down)
+                            {
+                                save = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+                            }
+                            if (playerMove == PlayerMove.Up)
+                            {
+                                save = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+                            }
+                            if (playerMove == PlayerMove.Right)
+                            {
+                                save = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                            }
+                            if (playerMove == PlayerMove.Left)
+                            {
+                                save = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                            }
+                            movecount++;
+                            anim.SetBool("Dash", true);
+                        }
+                    }
+                    else
+                    {
+                        outrightroll = true;
+                        movecount++;
+                    }
+
+                }
+                else
+                {
+                    if (!moveflag && !outrightroll && !inleftroll)
+                    {
+                        changeflag = 1;
+                        moveflag = true;
+                        if (playerMove == PlayerMove.Down)
+                        {
+                            save = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+                        }
+                        if (playerMove == PlayerMove.Up)
+                        {
+                            save = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+                        }
+                        if (playerMove == PlayerMove.Right)
+                        {
+                            save = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                        }
+                        if (playerMove == PlayerMove.Left)
+                        {
+                            save = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                        }
+                        movecount++;
+                        anim.SetBool("Dash", true);
+                    }
+                }
+            }
+            else
+            {
+                inleftroll = true;
+                movecount++;
+            }
+        }
+        //}else if(Input.GetKey(KeyCode.Q)&&jumpflag)
         //{
-        //    moveflag = false;
+        //    transform.Rotate(0, 0, -5);
+
         //}
+        //else if (Input.GetKey(KeyCode.E) && jumpflag)
+        //{
+        //    transform.Rotate(0, 0, 5);
+        //}
+
 
     }
 
@@ -1016,7 +1035,7 @@ public class Player : MonoBehaviour
                 saveposs = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), Mathf.Round(transform.position.z));
                 transform.position = saveposs;
             }
-            type = collision.gameObject.GetComponent<Block>().type;
+            //type = collision.gameObject.GetComponent<Block>().type;
         }
         if (collision.gameObject.tag == "Ground")
         {

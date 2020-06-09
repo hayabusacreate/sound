@@ -31,5 +31,5 @@ Material:
     - _Glossiness: 0.5
     - _Metallic: 0
     m_Colors:
-    - _Color: {r: 0, g: 0.55521584, b: 0.764151, a: 0.3372549}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 0.16078432}
+    - _EmissionColor: {r: 4.5412054, g: 4.5412054, b: 4.5412054, a: 1}

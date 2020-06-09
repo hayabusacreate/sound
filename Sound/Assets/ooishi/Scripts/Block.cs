@@ -201,6 +201,7 @@ public class Block : MonoBehaviour
             {
                 type = "2";
                 block = BlockType.Nomal;
+                sEManager.ice = true;
             }
         }
         if(mat.end)

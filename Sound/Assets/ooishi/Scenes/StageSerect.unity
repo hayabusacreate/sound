@@ -3234,7 +3234,7 @@ PrefabInstance:
     - target: {fileID: 8071367011005608380, guid: f8d72dd908bbf4741a9e9778ebf580b1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 131.2
+      value: 117.67
       objectReference: {fileID: 0}
     - target: {fileID: 8071367011005608380, guid: f8d72dd908bbf4741a9e9778ebf580b1,
         type: 3}
@@ -3298,6 +3298,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8d72dd908bbf4741a9e9778ebf580b1, type: 3}
+--- !u!1 &606179881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5700229157433603789, guid: f8d72dd908bbf4741a9e9778ebf580b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 606179880}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &610567159
 GameObject:
   m_ObjectHideFlags: 0
@@ -4106,7 +4112,7 @@ PrefabInstance:
     - target: {fileID: 8071367011005608380, guid: f8d72dd908bbf4741a9e9778ebf580b1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 136.2
+      value: 122.67
       objectReference: {fileID: 0}
     - target: {fileID: 8071367011005608380, guid: f8d72dd908bbf4741a9e9778ebf580b1,
         type: 3}
@@ -7253,7 +7259,7 @@ PrefabInstance:
     - target: {fileID: 7577797358291607548, guid: 5481b6875cdca85499ea9aa3581dc98a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 112.63
+      value: 132.8
       objectReference: {fileID: 0}
     - target: {fileID: 7577797358291607548, guid: 5481b6875cdca85499ea9aa3581dc98a,
         type: 3}
@@ -7807,7 +7813,7 @@ PrefabInstance:
     - target: {fileID: 8071367011005608380, guid: f8d72dd908bbf4741a9e9778ebf580b1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 126.2
+      value: 112.67
       objectReference: {fileID: 0}
     - target: {fileID: 8071367011005608380, guid: f8d72dd908bbf4741a9e9778ebf580b1,
         type: 3}
@@ -7871,6 +7877,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8d72dd908bbf4741a9e9778ebf580b1, type: 3}
+--- !u!1 &1531166428 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5700229157433603789, guid: f8d72dd908bbf4741a9e9778ebf580b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1531166427}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1542649605
 GameObject:
   m_ObjectHideFlags: 0
@@ -10071,7 +10083,7 @@ MonoBehaviour:
   mapCreate: {fileID: 0}
   creaflag: 0
   text: {fileID: 327865658}
-  mapcount: 21
+  mapcount: 23
   endflag: 0
   gold: {fileID: 0}
   silver: {fileID: 0}
@@ -10104,6 +10116,8 @@ MonoBehaviour:
   - {fileID: 1056887355}
   - {fileID: 90478947}
   - {fileID: 1565383403}
+  - {fileID: 1531166428}
+  - {fileID: 606179881}
   scs:
   - {fileID: 533321411}
   - {fileID: 533321411}

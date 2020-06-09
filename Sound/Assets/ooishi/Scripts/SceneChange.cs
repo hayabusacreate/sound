@@ -55,6 +55,7 @@ public class SceneChange : MonoBehaviour
     private bool clearflag;
     private GameObject UI;
     private GameObject hinoko;
+    private float count2;
     // Start is called before the first frame update
     void Start()
     {
@@ -103,6 +104,7 @@ public class SceneChange : MonoBehaviour
             if(title)
             {
                 startobj.SetActive(true);
+                count2 = 10;
             }
             if(!title)
             {
@@ -205,6 +207,7 @@ public class SceneChange : MonoBehaviour
                 }
                 break;
             case Scene.StageSelect:
+                count2+=Time.deltaTime;
         text.text = "" + mapnum;
                 for(int i=0;i<scs.Length;i++)
                 {
@@ -218,62 +221,69 @@ public class SceneChange : MonoBehaviour
                     }
 
                 }
-                if (stagenum==mapnum)
+                if(count2>5)
                 {
-                    if (Input.GetKey(KeyCode.D) || (Input.GetKey("joystick button 5")))
+                    if (stagenum == mapnum)
                     {
-                        mapnum++;
-                        inout = false;
-                        if (mapnum > mapcount)
+                        if (Input.GetKey(KeyCode.D) || (Input.GetKey("joystick button 5")))
                         {
-                            mapnum = mapcount;
+                            mapnum++;
+                            inout = false;
+                            if (mapnum > mapcount)
+                            {
+                                mapnum = mapcount;
+                            }
+                            mapCreate.ChangeMap(mapnum);
                         }
-                        mapCreate.ChangeMap(mapnum);
-                    }else
-                    if (Input.GetKey(KeyCode.A) || (Input.GetKey("joystick button 4")))
-                    {
-                        inout = false;
-                        mapnum--;
-                        if (mapnum < 1)
+                        else
+                        if (Input.GetKey(KeyCode.A) || (Input.GetKey("joystick button 4")))
                         {
-                            mapnum = 1;
-                        }
-                        mapCreate.ChangeMap(mapnum);
-                    }
-                }else
-                {
-                    if(mapnum<stagenum)
-                    {
-                        pl.transform.position = Vector3.Lerp(pl.transform.position, stages[mapnum].transform.position, 0.1f);
-                        if(pl.transform.position.x-0.1f<= stages[mapnum].transform.position.x)
-                        {
-                            inout = true;
-                            stagenum =mapnum;
-                        }
-                    }else
-                    {
-                        pl.transform.position = Vector3.Lerp(pl.transform.position, stages[mapnum].transform.position, 0.1f);
-                        if (pl.transform.position.x + 0.1f >= stages[mapnum].transform.position.x)
-                        {
-                            inout = true;
-                            stagenum = mapnum;
+                            inout = false;
+                            mapnum--;
+                            if (mapnum < 1)
+                            {
+                                mapnum = 1;
+                            }
+                            mapCreate.ChangeMap(mapnum);
                         }
                     }
+                    else
+                    {
+                        if (mapnum < stagenum)
+                        {
+                            pl.transform.position = Vector3.Lerp(pl.transform.position, stages[mapnum].transform.position, 0.1f);
+                            if (pl.transform.position.x - 0.1f <= stages[mapnum].transform.position.x)
+                            {
+                                inout = true;
+                                stagenum = mapnum;
+                            }
+                        }
+                        else
+                        {
+                            pl.transform.position = Vector3.Lerp(pl.transform.position, stages[mapnum].transform.position, 0.1f);
+                            if (pl.transform.position.x + 0.1f >= stages[mapnum].transform.position.x)
+                            {
+                                inout = true;
+                                stagenum = mapnum;
+                            }
+                        }
+                    }
+                    if (Input.GetKey(KeyCode.Space) || (Input.GetKeyDown("joystick button 0")))
+                    {
+                        endflag = true;
+                        audio.PlayOneShot(sound1);
+                    }
+                    if (endflag)
+                    {
+                        count++;
+                        endobj.SetActive(true);
+                    }
+                    if (count > 60)
+                    {
+                        SceneManager.LoadScene("NewStage" + mapCreate.ReturnMapnum());
+                    }
                 }
-                if (Input.GetKey(KeyCode.Space) || (Input.GetKeyDown("joystick button 0")))
-                {
-                    endflag = true;
-                    audio.PlayOneShot(sound1);
-                }
-                if (endflag)
-                {
-                    count++;
-                    endobj.SetActive(true);
-                }
-                if (count > 60)
-                {
-                    SceneManager.LoadScene("NewStage" + mapCreate.ReturnMapnum());
-                }
+ 
                 break;
             case Scene.GameOver:
                 if (Input.GetKeyDown(KeyCode.R))

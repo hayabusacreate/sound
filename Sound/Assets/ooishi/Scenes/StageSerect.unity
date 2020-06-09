@@ -3234,7 +3234,7 @@ PrefabInstance:
     - target: {fileID: 8071367011005608380, guid: f8d72dd908bbf4741a9e9778ebf580b1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 117.67
+      value: 114.8
       objectReference: {fileID: 0}
     - target: {fileID: 8071367011005608380, guid: f8d72dd908bbf4741a9e9778ebf580b1,
         type: 3}
@@ -3296,6 +3296,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 2848299984660357344, guid: f8d72dd908bbf4741a9e9778ebf580b1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b1adeb101d9a8147a7a2464ab82019d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8d72dd908bbf4741a9e9778ebf580b1, type: 3}
 --- !u!1 &606179881 stripped
@@ -4112,7 +4117,7 @@ PrefabInstance:
     - target: {fileID: 8071367011005608380, guid: f8d72dd908bbf4741a9e9778ebf580b1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 122.67
+      value: 147
       objectReference: {fileID: 0}
     - target: {fileID: 8071367011005608380, guid: f8d72dd908bbf4741a9e9778ebf580b1,
         type: 3}
@@ -4201,7 +4206,7 @@ PrefabInstance:
     - target: {fileID: 7577797358291607548, guid: 5481b6875cdca85499ea9aa3581dc98a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.1
+      value: -4.7
       objectReference: {fileID: 0}
     - target: {fileID: 7577797358291607548, guid: 5481b6875cdca85499ea9aa3581dc98a,
         type: 3}
@@ -4253,6 +4258,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7577797358291607538, guid: 5481b6875cdca85499ea9aa3581dc98a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 611b09838d073e6459a8e637c23b374e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5481b6875cdca85499ea9aa3581dc98a, type: 3}
 --- !u!1001 &715823917
@@ -7264,7 +7274,7 @@ PrefabInstance:
     - target: {fileID: 7577797358291607548, guid: 5481b6875cdca85499ea9aa3581dc98a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 132.8
+      value: 124.99
       objectReference: {fileID: 0}
     - target: {fileID: 7577797358291607548, guid: 5481b6875cdca85499ea9aa3581dc98a,
         type: 3}
@@ -7316,6 +7326,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7577797358291607538, guid: 5481b6875cdca85499ea9aa3581dc98a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 611b09838d073e6459a8e637c23b374e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5481b6875cdca85499ea9aa3581dc98a, type: 3}
 --- !u!1001 &1389247497
@@ -7818,7 +7833,7 @@ PrefabInstance:
     - target: {fileID: 8071367011005608380, guid: f8d72dd908bbf4741a9e9778ebf580b1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 112.67
+      value: 109.8
       objectReference: {fileID: 0}
     - target: {fileID: 8071367011005608380, guid: f8d72dd908bbf4741a9e9778ebf580b1,
         type: 3}
@@ -10174,7 +10189,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ef40efd4b5a405341b2b5151e818e88f, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
@@ -12849,7 +12864,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2b1adeb101d9a8147a7a2464ab82019d, type: 2}
+      objectReference: {fileID: 2100000, guid: bd8f11d1c8fd8b54791d518df0b9fa0f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8d72dd908bbf4741a9e9778ebf580b1, type: 3}
 --- !u!1 &5269676878049768581

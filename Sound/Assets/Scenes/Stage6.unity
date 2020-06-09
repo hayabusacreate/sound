@@ -767,7 +767,7 @@ MonoBehaviour:
   nomalmap: 2
   hardmap: 3
   hight: 4
-  width: 5
+  width: 4
   map: {fileID: 5420315190351271739, guid: 019932f8b9d37f24096bef7fcbf22242, type: 3}
   maphight: 0
   blocks: 0

@@ -8,6 +8,8 @@
 		_Metallic("Metallic", Range(0,1)) = 0.0
 				_EmissionMap("Emission Map", 2D) = "black" {}
 		[HDR] _EmissionColor("Emission Color", Color) = (0,0,0)
+		_DisolveTex("DisolveTex (RGB)", 2D) = "white" {}
+		_Threshold("Threshold", Range(0,1)) = 0.0
 	}
 		SubShader
 		{
@@ -26,7 +28,8 @@
 			sampler2D _MainTex;
 		uniform sampler2D _EmissionMap;
 		float4 _EmissionColor;
-
+		sampler2D _DisolveTex;
+		half _Threshold;
 			struct Input
 			{
 				float2 uv_MainTex;
@@ -45,6 +48,11 @@
 
 			void surf(Input IN, inout SurfaceOutputStandard o)
 			{
+				fixed4 m = tex2D(_DisolveTex, IN.uv_MainTex);
+				half g = m.r * 0.2 + m.g * 0.7 + m.b * 0.1;
+				if (g < _Threshold) {
+					discard;
+				}
 				fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
 				o.Albedo = c.rgb;
 				o.Metallic = _Metallic;

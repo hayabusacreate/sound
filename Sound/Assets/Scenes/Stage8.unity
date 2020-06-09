@@ -901,8 +901,8 @@ MonoBehaviour:
   eazymap: 1
   nomalmap: 2
   hardmap: 3
-  hight: 1
-  width: 8
+  hight: 3
+  width: 3
   map: {fileID: 5420315190351271739, guid: 019932f8b9d37f24096bef7fcbf22242, type: 3}
   maphight: 0
   blocks: 0
@@ -1826,7 +1826,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   se: {fileID: 6919592531867242722, guid: fac338226aba75749a206aa849ad0638, type: 3}
+  iceobj: {fileID: 3186133534366867191, guid: dfa9f2904acc1d54f93d52ee948c382b, type: 3}
   pon: 0
+  ice: 0
 --- !u!4 &1750314388
 Transform:
   m_ObjectHideFlags: 0

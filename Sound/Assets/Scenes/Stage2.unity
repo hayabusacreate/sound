@@ -1831,7 +1831,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   se: {fileID: 6919592531867242722, guid: fac338226aba75749a206aa849ad0638, type: 3}
+  iceobj: {fileID: 3186133534366867191, guid: dfa9f2904acc1d54f93d52ee948c382b, type: 3}
   pon: 0
+  ice: 0
 --- !u!4 &1750314388
 Transform:
   m_ObjectHideFlags: 0

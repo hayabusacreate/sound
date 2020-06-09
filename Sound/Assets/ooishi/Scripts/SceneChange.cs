@@ -188,7 +188,7 @@ public class SceneChange : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.R) || (Input.GetKeyDown("joystick button 3")))
                 {
-                    SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
+                    SceneManager.LoadScene("NewStage" + mapCreate.ReturnMapnum());
                 }
 
                 if(count>60)
@@ -199,7 +199,7 @@ public class SceneChange : MonoBehaviour
                     }
                     else
                     {
-                        SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
+                        SceneManager.LoadScene("NewStage" + mapCreate.ReturnMapnum());
                     }
 
                 }
@@ -272,25 +272,25 @@ public class SceneChange : MonoBehaviour
                 }
                 if (count > 60)
                 {
-                    SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
+                    SceneManager.LoadScene("NewStage" + mapCreate.ReturnMapnum());
                 }
                 break;
             case Scene.GameOver:
                 if (Input.GetKeyDown(KeyCode.R))
                 {
-                    SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
+                    SceneManager.LoadScene("NewStage" + mapCreate.ReturnMapnum());
                 }
                 break;
             case Scene.GameCrear:
                 if (Input.GetKeyDown(KeyCode.R))
                 {
-                    SceneManager.LoadScene("Stage" + mapCreate.ReturnMapnum());
+                    SceneManager.LoadScene("NewStage" + mapCreate.ReturnMapnum());
                 }
                 break;
             case Scene.Load:
                 for(int i=0;i<map;i++)
                 {
-                    mapCreate.LoadMap(Resources.Load("map"+i) as TextAsset,i);
+                    mapCreate.LoadMap(Resources.Load("new map"+i) as TextAsset,i);
                     clear[i] = false;
                 }
                 SceneManager.LoadScene("Title");

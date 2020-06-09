@@ -362,6 +362,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ground_block
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fcd925f4653023c4b9aab787501797e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fcd925f4653023c4b9aab787501797e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.36
@@ -392,7 +396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fcd925f4653023c4b9aab787501797e7, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fcd925f4653023c4b9aab787501797e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -429,7 +433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: fcd925f4653023c4b9aab787501797e7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fcd925f4653023c4b9aab787501797e7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -602,6 +606,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: boom
       objectReference: {fileID: 0}
+    - target: {fileID: 8645759680144107556, guid: 1d025d9afb07d1f4d8e2a615f7f9d0f8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8645759680144107559, guid: 1d025d9afb07d1f4d8e2a615f7f9d0f8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -670,6 +679,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: magma_slime
       objectReference: {fileID: 0}
+    - target: {fileID: 100044, guid: 1e11ab3f887ac784db90094e29c193ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: 1e11ab3f887ac784db90094e29c193ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.05
@@ -700,7 +713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: 1e11ab3f887ac784db90094e29c193ca, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: 1e11ab3f887ac784db90094e29c193ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -742,6 +755,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 0cfb60f58202efd4fbd768361ea14bfd, type: 3}
       propertyPath: m_Name
       value: crystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0cfb60f58202efd4fbd768361ea14bfd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0cfb60f58202efd4fbd768361ea14bfd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1093,7 +1110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: fcd925f4653023c4b9aab787501797e7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fcd925f4653023c4b9aab787501797e7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6325,7 +6342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1919236750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6368,6 +6385,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: water
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434257354337625552, guid: 4b25e2fe8ddd24a42b43537612cceff6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8682059805239970107, guid: 4b25e2fe8ddd24a42b43537612cceff6,
         type: 3}
@@ -6961,7 +6983,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &26723561748609201
 PrefabInstance:
@@ -6974,6 +6996,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: aqua_small_slime
+      objectReference: {fileID: 0}
+    - target: {fileID: 26723562279139576, guid: 2377688d9d6c15f4bbb8c0bbfb751ad7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 26723562278642904, guid: 2377688d9d6c15f4bbb8c0bbfb751ad7,
         type: 3}
@@ -7013,7 +7040,7 @@ PrefabInstance:
     - target: {fileID: 26723562278642904, guid: 2377688d9d6c15f4bbb8c0bbfb751ad7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 26723562278642904, guid: 2377688d9d6c15f4bbb8c0bbfb751ad7,
         type: 3}
@@ -7227,6 +7254,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ice
       objectReference: {fileID: 0}
+    - target: {fileID: 6509571402559708346, guid: 4d6c6d0a5f61af04f97eb846039d52a1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6509571402559602842, guid: 4d6c6d0a5f61af04f97eb846039d52a1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7295,6 +7327,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Particle System
+      objectReference: {fileID: 0}
+    - target: {fileID: 8492368466306016726, guid: 0d4a17d333e65f1468465b7943736f16,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8492368466306016731, guid: 0d4a17d333e65f1468465b7943736f16,
         type: 3}

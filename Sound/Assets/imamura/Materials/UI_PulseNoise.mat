@@ -31,7 +31,7 @@ Material:
     - _Amount: 0.24
     - _ColorMask: 15
     - _Cutoff: 0.5
-    - _Ratio: 0.54
+    - _Ratio: 0
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilOp: 0
@@ -40,6 +40,7 @@ Material:
     - _UTIme: 5
     - _UTime: 100
     - _UseUIAlphaClip: 0
+    - _Value: 20
     - _XA: 102
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

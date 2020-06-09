@@ -1801,6 +1801,7 @@ MonoBehaviour:
   serect: {fileID: 0}
   sound1: {fileID: 0}
   endobj: {fileID: 0}
+  startobj: {fileID: 0}
   stages: []
   scs: []
   pl: {fileID: 0}
@@ -2179,13 +2180,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889760023}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 64.74}
   m_LocalScale: {x: 16, y: 1, z: 9}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
 --- !u!1001 &2056353414
 PrefabInstance:
   m_ObjectHideFlags: 0

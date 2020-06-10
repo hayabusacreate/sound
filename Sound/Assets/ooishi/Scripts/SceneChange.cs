@@ -167,7 +167,7 @@ public class SceneChange : MonoBehaviour
             case Scene.GamePlay:
                 //time -= Time.deltaTime;
 
-                if(deathcount>5)
+                if(deathcount>3)
                 {
                     hintobj.SetActive(true);
                     if(hintflag)
@@ -273,7 +273,7 @@ public class SceneChange : MonoBehaviour
                     }
 
                 }
-                if (count2 > 5)
+                if (count2 > 1)
                 {
                     if (stagenum == mapnum)
                     {
@@ -303,7 +303,7 @@ public class SceneChange : MonoBehaviour
                     {
                         if (mapnum < stagenum)
                         {
-                            pl.transform.position -= new Vector3(Time.deltaTime * 10, 0, 0);
+                            pl.transform.position -= new Vector3(Time.deltaTime * 15, 0, 0);
                                 //Vector3.Lerp(pl.transform.position, stages[mapnum].transform.position, Time.deltaTime*5);
                             if (pl.transform.position.x - 0.1f <= stages[mapnum].transform.position.x)
                             {
@@ -313,7 +313,7 @@ public class SceneChange : MonoBehaviour
                         }
                         else
                         {
-                            pl.transform.position += new Vector3(Time.deltaTime * 10, 0, 0);
+                            pl.transform.position += new Vector3(Time.deltaTime * 15, 0, 0);
                             //Vector3.Lerp(pl.transform.position, stages[mapnum].transform.position, Time.deltaTime*5);
                             if (pl.transform.position.x + 0.1f >= stages[mapnum].transform.position.x)
                             {

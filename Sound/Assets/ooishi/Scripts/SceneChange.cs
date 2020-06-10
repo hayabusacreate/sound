@@ -109,6 +109,7 @@ public class SceneChange : MonoBehaviour
             }
             if (!title)
             {
+                startobj.SetActive(true);
                 title = true;
             }
         }

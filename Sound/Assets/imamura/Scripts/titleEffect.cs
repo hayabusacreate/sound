@@ -69,19 +69,19 @@ public class titleEffect : MonoBehaviour
 
         if (lumino == true && val <= aiueo)
         {
-            ae.enabled.Override(true);
-            ae.keyValue.Override(val-0.3f);
-            ae.maxLuminance.Override(-val+2);
+           // ae.enabled.Override(true);
+           // ae.keyValue.Override(val-0.3f);
+            //ae.maxLuminance.Override(-val+2);
 
             val += Time.deltaTime * 2;
         }
 
         if (val >= aiueo)
         {
-            ae.enabled.Override(true);
+           // ae.enabled.Override(true);
             val = aiueo;
-            ae.keyValue.Override(val);
-            ae.maxLuminance.Override(-val);
+           // ae.keyValue.Override(val);
+           // ae.maxLuminance.Override(-val);
         }
 
         if (val >= aiueo)

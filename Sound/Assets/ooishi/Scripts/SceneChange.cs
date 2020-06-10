@@ -225,7 +225,7 @@ public class SceneChange : MonoBehaviour
                 {
                     if (stagenum == mapnum)
                     {
-                        if (Input.GetKey(KeyCode.D) || (Input.GetKey("joystick button 5")))
+                        if ((Input.GetKey(KeyCode.D) || (Input.GetKey("joystick button 5")))&&!endflag)
                         {
                             mapnum++;
                             inout = false;
@@ -236,7 +236,7 @@ public class SceneChange : MonoBehaviour
                             mapCreate.ChangeMap(mapnum);
                         }
                         else
-                        if (Input.GetKey(KeyCode.A) || (Input.GetKey("joystick button 4")))
+                        if ((Input.GetKey(KeyCode.A) || (Input.GetKey("joystick button 4"))) && !endflag)
                         {
                             inout = false;
                             mapnum--;
@@ -251,7 +251,7 @@ public class SceneChange : MonoBehaviour
                     {
                         if (mapnum < stagenum)
                         {
-                            pl.transform.position = Vector3.Lerp(pl.transform.position, stages[mapnum].transform.position, 0.1f);
+                            pl.transform.position = Vector3.Lerp(pl.transform.position, stages[mapnum].transform.position, Time.deltaTime);
                             if (pl.transform.position.x - 0.1f <= stages[mapnum].transform.position.x)
                             {
                                 inout = true;
@@ -260,7 +260,7 @@ public class SceneChange : MonoBehaviour
                         }
                         else
                         {
-                            pl.transform.position = Vector3.Lerp(pl.transform.position, stages[mapnum].transform.position, 0.1f);
+                            pl.transform.position = Vector3.Lerp(pl.transform.position, stages[mapnum].transform.position, Time.deltaTime);
                             if (pl.transform.position.x + 0.1f >= stages[mapnum].transform.position.x)
                             {
                                 inout = true;

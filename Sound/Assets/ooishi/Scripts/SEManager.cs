@@ -8,6 +8,10 @@ public class SEManager : MonoBehaviour
     public GameObject iceobj;
     public bool pon;
     public bool ice;
+    public bool juu;
+    public bool ban;
+    private float volume;
+    public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,5 +31,29 @@ public class SEManager : MonoBehaviour
             Instantiate(iceobj, transform.position, Quaternion.identity);
             ice = false;
         }
+        if(juu)
+        {
+            if(ban)
+            {
+                volume+= Time.deltaTime*10;
+                ban = false;
+                if(volume>1)
+                {
+                    volume = 1;
+                }
+            }
+            if (volume > 0.3f)
+            {
+                volume -= Time.deltaTime/10;
+            }
+        }
+        else
+        {
+            if(volume>0)
+            {
+                volume -= Time.deltaTime/10;
+            }
+        }
+        audioSource.volume = volume;
     }
 }

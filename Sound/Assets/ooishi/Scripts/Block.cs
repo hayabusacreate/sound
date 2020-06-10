@@ -174,7 +174,8 @@ public class Block : MonoBehaviour
         }
         if (damageflag)
         {
-            if(savecount!=player.movecount)
+            sEManager.juu = true;
+            if (savecount!=player.movecount)
             {
                 savecount = player.movecount;
                 savehp--;
@@ -191,6 +192,7 @@ public class Block : MonoBehaviour
             {
                 particle.Play();
                 palrticleflag = false;
+                sEManager.ban = true;
             }
         }
 
@@ -240,6 +242,7 @@ public class Block : MonoBehaviour
             if(capsule.enabled)
             {
                 sEManager.pon = true;
+                sEManager.juu = false;
             }
             Instantiate(deathPar, transform.position, Quaternion.identity);
             map.maps[(yy * 1000) + xx] = false;

@@ -3554,7 +3554,7 @@ Transform:
   m_Children:
   - {fileID: 1565904058}
   m_Father: {fileID: 2045770408}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!64 &533321408
 MeshCollider:
@@ -4477,7 +4477,7 @@ PrefabInstance:
     - target: {fileID: 3504798098503084073, guid: 972eaf3a86ce27344a3c7cf300fdbf35,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3504798098503084073, guid: 972eaf3a86ce27344a3c7cf300fdbf35,
         type: 3}
@@ -7681,7 +7681,7 @@ PrefabInstance:
     - target: {fileID: 4816967832217120777, guid: d2925d390f2cb5b46bf12ff3c1832a84,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4816967832217120777, guid: d2925d390f2cb5b46bf12ff3c1832a84,
         type: 3}
@@ -11965,6 +11965,8 @@ MonoBehaviour:
   pl: {fileID: 5269676878049768581}
   key: {fileID: 0}
   pad: {fileID: 0}
+  hintobj: {fileID: 0}
+  scsobj: {fileID: 0}
 --- !u!4 &1938094712
 Transform:
   m_ObjectHideFlags: 0
@@ -12987,9 +12989,9 @@ Transform:
   m_Children:
   - {fileID: 1682064348}
   - {fileID: 674215824}
-  - {fileID: 533321407}
   - {fileID: 1233007509}
   - {fileID: 686095033}
+  - {fileID: 533321407}
   - {fileID: 1990582924}
   - {fileID: 1502541523}
   - {fileID: 134092488}

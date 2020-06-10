@@ -56,6 +56,10 @@ public class SceneChange : MonoBehaviour
     private GameObject UI;
     private GameObject hinoko;
     private float count2;
+    private static int deathcount;
+    private static bool hintflag;
+    public GameObject hintobj;
+    public ScsScale scsobj;
     // Start is called before the first frame update
     void Start()
     {
@@ -87,7 +91,7 @@ public class SceneChange : MonoBehaviour
         }
         if (scene == Scene.StageSelect)
         {
-
+            deathcount = 0;
             for (int i = 1; i < stages.Length; i++)
             {
                 stages[i].GetComponent<StageClear>().ChangeFlag(clear[i]);
@@ -163,6 +167,26 @@ public class SceneChange : MonoBehaviour
             case Scene.GamePlay:
                 //time -= Time.deltaTime;
 
+                if(deathcount>5)
+                {
+                    hintobj.SetActive(true);
+                    if(hintflag)
+                    {
+                        if (Input.GetKeyDown(KeyCode.H) || (Input.GetKeyDown("joystick button 6")))
+                        {
+                            hintflag = false;
+                            scsobj.inout = false;
+                        }
+                    }else
+                    {
+                        if (Input.GetKeyDown(KeyCode.H) || (Input.GetKeyDown("joystick button 6")))
+                        {
+                            hintflag = true;
+                            scsobj.inout = true;
+                        }
+                    }
+
+                }
                 if (endflag)
                 {
                     count++;
@@ -220,7 +244,6 @@ public class SceneChange : MonoBehaviour
                 {
                     SceneManager.LoadScene("NewStage" + mapCreate.ReturnMapnum());
                 }
-
                 if (count > 60)
                 {
                     if (clearflag)
@@ -230,6 +253,7 @@ public class SceneChange : MonoBehaviour
                     else
                     {
                         SceneManager.LoadScene("NewStage" + mapCreate.ReturnMapnum());
+                        deathcount++;
                     }
 
                 }

@@ -32,23 +32,23 @@ public class SceneChange : MonoBehaviour
 
     public bool endflag;
 
-    public GameObject gold, silver, bronze, over,serect;
+    public GameObject gold, silver, bronze, over, serect;
 
     public AudioClip sound1;
     AudioSource audio;
 
     private bool ui;
     private float count;
-    public GameObject endobj,startobj;
-    public static Dictionary<int,bool> clear=new Dictionary<int, bool>();
-    public  GameObject[] stages;
+    public GameObject endobj, startobj;
+    public static Dictionary<int, bool> clear = new Dictionary<int, bool>();
+    public GameObject[] stages;
     public ScsScale[] scs;
     private int stagenum;
     public GameObject pl;
     private float scale;
     private bool inout;
 
-    public GameObject key,pad;
+    public GameObject key, pad;
     string[] CacheJoystickNames;
     private titleEffect titleEffect;
     public static bool title;
@@ -65,13 +65,14 @@ public class SceneChange : MonoBehaviour
         if (scene == Scene.Title)
         {
             titleEffect = GameObject.Find("PPC").GetComponent<titleEffect>();
+            UI = GameObject.Find("AA");
         }
-        if (scene==Scene.GamePlay)
+        if (scene == Scene.GamePlay)
         {
             hinoko = GameObject.Find("hinoko");
             hinoko.SetActive(false);
             slider = GameObject.Find("Count").GetComponent<Slider>();
-            player=GameObject.Find("Player").GetComponent<Player>();
+            player = GameObject.Find("Player").GetComponent<Player>();
             mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
             slider.minValue = 0;
             slider.maxValue = 100;
@@ -81,32 +82,32 @@ public class SceneChange : MonoBehaviour
         }
         if (scene == Scene.Load)
         {
-            
+
             mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
         }
         if (scene == Scene.StageSelect)
         {
-            
-            for(int i=1;i<stages.Length;i++)
+
+            for (int i = 1; i < stages.Length; i++)
             {
                 stages[i].GetComponent<StageClear>().ChangeFlag(clear[i]);
             }
             mapCreate = GameObject.Find("MapCreate").GetComponent<MapCreate>();
             mapnum = mapCreate.ReturnMapnum();
             stagenum = mapCreate.ReturnMapnum();
-            if (mapnum==0)
+            if (mapnum == 0)
             {
                 mapnum = 1;
                 stagenum = 1;
             }
-            pl.transform.position = new Vector3(mapnum*5, pl.transform.position.y, pl.transform.position.z);
+            pl.transform.position = new Vector3(mapnum * 5, pl.transform.position.y, pl.transform.position.z);
             mapCreate.ChangeMap(mapnum);
-            if(title)
+            if (title)
             {
                 startobj.SetActive(true);
                 count2 = 10;
             }
-            if(!title)
+            if (!title)
             {
                 title = true;
             }
@@ -124,13 +125,19 @@ public class SceneChange : MonoBehaviour
         switch (scene)
         {
             case Scene.Title:
+                if (Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown("joystick button 7")))
+                {
+                    clearflag = true;
+                    count = 0;
+                    endflag = true;
+
+                }
                 if (titleEffect.exEnd)
                 {
-                    SceneManager.LoadScene("StageSerect");
+                    //SceneManager.LoadScene("StageSerect");
+                    //endflag = true;
+
                 }
-                break;
-            case Scene.GamePlay:
-                //time -= Time.deltaTime;
                 if (endflag)
                 {
                     count++;
@@ -138,14 +145,26 @@ public class SceneChange : MonoBehaviour
                     UI.SetActive(false);
 
                 }
-                else
+                if (count > 60)
                 {
-                    slider.value = (((float)mapCreate.maxblock - (float)mapCreate.blocks) / (float)mapCreate.maxblock) * 100;
+                    SceneManager.LoadScene("StageSerect");
+
+                }
+                break;
+            case Scene.GamePlay:
+                //time -= Time.deltaTime;
+
+                if (endflag)
+                {
+                    count++;
+                    endobj.SetActive(true);
+                    UI.SetActive(false);
+
                 }
 
                 if (creaflag)
                 {
-                    if ((((float)mapCreate.maxblock - (float)mapCreate.blocks) / (float)mapCreate.maxblock) * 100 ==100)
+                    if ((((float)mapCreate.maxblock - (float)mapCreate.blocks) / (float)mapCreate.maxblock) * 100 == 100)
                     {
                         hinoko.SetActive(true);
                         gold.SetActive(true);
@@ -165,11 +184,11 @@ public class SceneChange : MonoBehaviour
 
 
                 }
-                if(Input.GetKeyDown(KeyCode.I))
+                if (Input.GetKeyDown(KeyCode.I))
                 {
                     ui = true;
                 }
-                if(ui)
+                if (ui)
                 {
                     over.SetActive(false);
                     bronze.SetActive(false);
@@ -193,9 +212,9 @@ public class SceneChange : MonoBehaviour
                     SceneManager.LoadScene("NewStage" + mapCreate.ReturnMapnum());
                 }
 
-                if(count>60)
+                if (count > 60)
                 {
-                    if(clearflag)
+                    if (clearflag)
                     {
                         SceneManager.LoadScene("StageSerect");
                     }
@@ -207,9 +226,9 @@ public class SceneChange : MonoBehaviour
                 }
                 break;
             case Scene.StageSelect:
-                count2+=Time.deltaTime;
-        text.text = "" + mapnum;
-                for(int i=0;i<scs.Length;i++)
+                count2 += Time.deltaTime;
+                text.text = "" + mapnum;
+                for (int i = 0; i < scs.Length; i++)
                 {
                     if (i == mapnum)
                     {
@@ -221,11 +240,11 @@ public class SceneChange : MonoBehaviour
                     }
 
                 }
-                if(count2>5)
+                if (count2 > 5)
                 {
                     if (stagenum == mapnum)
                     {
-                        if ((Input.GetKey(KeyCode.D) || (Input.GetKey("joystick button 5")))&&!endflag)
+                        if ((Input.GetKey(KeyCode.D) || (Input.GetKey("joystick button 5"))) && !endflag)
                         {
                             mapnum++;
                             inout = false;
@@ -283,7 +302,7 @@ public class SceneChange : MonoBehaviour
                         SceneManager.LoadScene("NewStage" + mapCreate.ReturnMapnum());
                     }
                 }
- 
+
                 break;
             case Scene.GameOver:
                 if (Input.GetKeyDown(KeyCode.R))
@@ -298,9 +317,9 @@ public class SceneChange : MonoBehaviour
                 }
                 break;
             case Scene.Load:
-                for(int i=0;i<map;i++)
+                for (int i = 0; i < map; i++)
                 {
-                    mapCreate.LoadMap(Resources.Load("new map"+i) as TextAsset,i);
+                    mapCreate.LoadMap(Resources.Load("new map" + i) as TextAsset, i);
                     clear[i] = false;
                 }
                 SceneManager.LoadScene("Title");

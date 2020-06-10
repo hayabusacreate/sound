@@ -155,7 +155,7 @@ public class Block : MonoBehaviour
     {
         if(block==BlockType.Nomal)
         {
-            text.text = "" + (int)hp;
+            text.text = "" + ((int)hp+1);
         }
         else
         {

@@ -23,7 +23,8 @@ public class getFill : MonoBehaviour
         cooldown.material.SetFloat("_Ratio", 0);
         value= 0;
         a = 0;
-}
+        //var ae = ScriptableObject.CreateInstance<AutoExposure>();
+    }
 
     // Update is called once per frame
     void Update()

@@ -126,7 +126,7 @@ public class Player : MonoBehaviour
         transform.localEulerAngles = new Vector3(0, 0, angle);
         if (inrightroll)
         {
-            transform.Rotate(0, 0, -10);
+            transform.Rotate(0, 0, -10 );
         }
         if (inleftroll)
         {
@@ -262,7 +262,7 @@ public class Player : MonoBehaviour
                 {
                     if (changeflag == 0)
                     {
-                        transform.position -= new Vector3(speed, 0, 0);
+                        transform.position -= new Vector3(Time.deltaTime * speed, 0, 0);
                         if (transform.position.x < save.x)
                         {
                             if (type == "5" && backflag)
@@ -289,7 +289,7 @@ public class Player : MonoBehaviour
                     }
                     else
                     {
-                        transform.position += new Vector3(speed, 0, 0);
+                        transform.position += new Vector3(Time.deltaTime * speed, 0, 0);
                         if (transform.position.x > save.x)
                         {
                             if (type == "5" && flontflag)
@@ -428,7 +428,7 @@ public class Player : MonoBehaviour
                     }
                     else
                     {
-                        transform.position -= new Vector3(0, speed, 0);
+                        transform.position -= new Vector3(0, Time.deltaTime * speed, 0);
                         if (transform.position.y < save.y)
                         {
                             if (type == "5" && flontflag)
@@ -494,7 +494,7 @@ public class Player : MonoBehaviour
                     else
                     {
 
-                        transform.position += new Vector3(0, speed, 0);
+                        transform.position += new Vector3(0, Time.deltaTime * speed, 0);
                         if (transform.position.y > save.y)
                         {
                             if (type == "5" && flontflag)

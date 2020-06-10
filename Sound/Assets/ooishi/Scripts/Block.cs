@@ -181,7 +181,7 @@ public class Block : MonoBehaviour
             }
             if(hp>savehp)
             {
-                hp -= player.speed;
+                hp -= Time.deltaTime*player.speed;
             }
             if(hp<=savehp)
             {

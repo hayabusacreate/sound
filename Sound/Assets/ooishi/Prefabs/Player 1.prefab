@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b761d4de03375b445ad5653895dafa46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 5
   changeflag: 0
   saveflag: 0
   ren: 0
@@ -88,6 +88,7 @@ MonoBehaviour:
   movecount: 0
   GetMap: {fileID: 0}
   saveobj: {fileID: 0}
+  type: 
 --- !u!82 &219194369829825064
 AudioSource:
   m_ObjectHideFlags: 0

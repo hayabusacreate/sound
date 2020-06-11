@@ -74,6 +74,7 @@ public class Block : MonoBehaviour
 
     public GameObject boom;
     private bool desth;
+    public GameObject right, left, up, down;
     // Start is called before the first frame update
     void Start()
     {
@@ -190,7 +191,23 @@ public class Block : MonoBehaviour
             }
             if(palrticleflag)
             {
-                particle.Play();
+                if(player.playerMove==PlayerMove.Down)
+                {
+                    down.SetActive(true);
+                }
+                if (player.playerMove == PlayerMove.Up)
+                {
+                    up.SetActive(true);
+                }
+                if (player.playerMove == PlayerMove.Right)
+                {
+                    right.SetActive(true);
+                }
+                if (player.playerMove == PlayerMove.Left)
+                {
+                    left.SetActive(true);
+                }
+                //particle.Play();
                 palrticleflag = false;
                 sEManager.ban = true;
             }

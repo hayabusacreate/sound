@@ -8270,8 +8270,8 @@ MonoBehaviour:
   ppc: {fileID: 1376901197}
   Canvas: {fileID: 338178064}
   Canvas2: {fileID: 1908236505}
-  val: 2
-  aiueo: 0.65
+  val: 0.2
+  aiueo: 0.1
   still: 0
 --- !u!1001 &1380459486
 PrefabInstance:

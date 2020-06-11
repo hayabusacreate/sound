@@ -30,7 +30,7 @@ public class StPPM : MonoBehaviour
 
     void Start()
     {
-        val = 8;
+        val = 1f;
         var ae = ScriptableObject.CreateInstance<AutoExposure>();
         ae.keyValue.Override(val);
         ae.maxLuminance.Override(-val);

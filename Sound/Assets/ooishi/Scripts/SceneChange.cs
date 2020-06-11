@@ -174,14 +174,14 @@ public class SceneChange : MonoBehaviour
                     hintobj.SetActive(true);
                     if(hintflag)
                     {
-                        if (Input.GetKeyDown(KeyCode.H) || (Input.GetKeyDown("joystick button 6")))
+                        if (Input.GetKeyDown(KeyCode.H) || (Input.GetKeyDown("joystick button 3")))
                         {
                             hintflag = false;
                             scsobj.inout = false;
                         }
                     }else
                     {
-                        if (Input.GetKeyDown(KeyCode.H) || (Input.GetKeyDown("joystick button 6")))
+                        if (Input.GetKeyDown(KeyCode.H) || (Input.GetKeyDown("joystick button 3")))
                         {
                             hintflag = true;
                             scsobj.inout = true;
@@ -235,7 +235,7 @@ public class SceneChange : MonoBehaviour
                     gold.SetActive(false);
                     serect.SetActive(false);
                 }
-                if (Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown("joystick button 7")))
+                if (Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown("joystick button 6")))
                 {
                     clearflag = true;
                     count = 0;
@@ -246,7 +246,7 @@ public class SceneChange : MonoBehaviour
                 {
                     SceneManager.LoadScene("GameOver");
                 }
-                if (Input.GetKeyDown(KeyCode.R) || (Input.GetKeyDown("joystick button 3")))
+                if (Input.GetKeyDown(KeyCode.R) || (Input.GetKeyDown("joystick button 7")))
                 {
                     SceneManager.LoadScene("NewStage" + mapCreate.ReturnMapnum());
                 }

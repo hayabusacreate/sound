@@ -2037,6 +2037,7 @@ GameObject:
   - component: {fileID: 999077909347842950}
   - component: {fileID: 6848656890921223269}
   - component: {fileID: 8493696509082987727}
+  - component: {fileID: 3311796834745795675}
   m_Layer: 5
   m_Name: Text (4)
   m_TagString: Untagged
@@ -2105,6 +2106,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: hint
+--- !u!114 &3311796834745795675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5820858099942651217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8ac2b3f33994b4ba15b407faeeef36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
 --- !u!1 &7387222448253095653
 GameObject:
   m_ObjectHideFlags: 0

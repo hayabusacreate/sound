@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6578020270950832564}
   - component: {fileID: 6578020270950832565}
   - component: {fileID: 6578020270950832566}
-  - component: {fileID: 2742155761083203063}
   m_Layer: 0
   m_Name: yukaFire
   m_TagString: Untagged
@@ -117,7 +116,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 0.2
-      minScalar: 0.3
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -168,9 +167,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startSpeed:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0.2
-      minScalar: 5
+      minMaxState: 3
+      scalar: 0.3
+      minScalar: 0.8
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -606,8 +605,8 @@ ParticleSystem:
     rotation3D: 0
     gravityModifier:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: -0.3
+      minMaxState: 0
+      scalar: 0
       minScalar: -0.5
       maxCurve:
         serializedVersion: 2
@@ -666,7 +665,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0, y: -0.5, z: -0.35}
+    m_Position: {x: 0, y: 0, z: 0.45}
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 0}
     placementMode: 0
@@ -4708,16 +4707,3 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &2742155761083203063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6578020270950832567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32c976a400c36c3479adf65cb97ce705, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1

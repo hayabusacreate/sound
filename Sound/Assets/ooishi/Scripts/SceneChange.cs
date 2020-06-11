@@ -192,6 +192,10 @@ public class SceneChange : MonoBehaviour
                     count++;
                     endobj.SetActive(true);
                     UI.SetActive(false);
+                    if(!clearflag)
+                    {
+                        player.anim.SetTrigger("Death");
+                    }
 
                 }
 

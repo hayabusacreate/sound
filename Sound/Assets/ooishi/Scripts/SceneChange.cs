@@ -328,8 +328,13 @@ public class SceneChange : MonoBehaviour
                     }
                     if (Input.GetKey(KeyCode.Space) || (Input.GetKeyDown("joystick button 0")))
                     {
+                        if(!endflag)
+                        {
+                            audio.PlayOneShot(sound1);
+                        }
                         endflag = true;
-                        audio.PlayOneShot(sound1);
+
+                        
                     }
                     if (endflag)
                     {

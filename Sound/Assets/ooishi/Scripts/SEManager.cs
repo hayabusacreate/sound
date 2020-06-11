@@ -42,7 +42,7 @@ public class SEManager : MonoBehaviour
                     volume = 1;
                 }
             }
-            if (volume > 0.3f)
+            if (volume > 0.8f)
             {
                 volume -= Time.deltaTime/10;
             }

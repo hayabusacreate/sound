@@ -81,7 +81,9 @@ public class SceneChange : MonoBehaviour
             slider.minValue = 0;
             slider.maxValue = 100;
             UI = GameObject.Find("AA");
-
+            mapcount = 22;
+            mapnum = mapCreate.ReturnMapnum();
+            stagenum = mapCreate.ReturnMapnum();
             //Physics.gravity = new Vector3(0, -5, 0);
         }
         if (scene == Scene.Load)
@@ -138,7 +140,7 @@ public class SceneChange : MonoBehaviour
         switch (scene)
         {
             case Scene.Title:
-                if (Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown("joystick button 7")))
+                if (Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown("joystick button 0")))
                 {
                     clearflag = true;
                     count = 0;
@@ -238,7 +240,7 @@ public class SceneChange : MonoBehaviour
                     clearflag = true;
                     count = 0;
                     endflag = true;
-
+                    mapnum = mapcount;
                 }
                 if (player.endflag)
                 {
@@ -252,7 +254,19 @@ public class SceneChange : MonoBehaviour
                 {
                     if (clearflag)
                     {
-                        SceneManager.LoadScene("StageSerect");
+                        mapnum++;
+                        inout = false;
+                        if (mapnum > mapcount)
+                        {
+                            mapnum = mapcount;
+                            SceneManager.LoadScene("StageSerect");
+                        }else
+                        {
+                            deathcount = 0;
+                            mapCreate.ChangeMap(mapnum);
+                            SceneManager.LoadScene("NewStage" + mapCreate.ReturnMapnum());
+                        }
+
                     }
                     else
                     {

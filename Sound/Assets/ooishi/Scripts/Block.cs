@@ -261,6 +261,7 @@ public class Block : MonoBehaviour
             if(block==BlockType.Goal)
             {
                 sceneChange.creaflag = true;
+               player.anim.SetTrigger("Death");
             }
             savecount = player.movecount;
             //color.material.color = Color.red;

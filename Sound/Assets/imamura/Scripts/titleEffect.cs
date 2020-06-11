@@ -7,7 +7,9 @@ public class titleEffect : MonoBehaviour
 {
     [SerializeField]
     GameObject shell;
-    
+
+    [SerializeField]
+    Material wipeMat;
 
     public Color EColor;
 
@@ -39,6 +41,7 @@ public class titleEffect : MonoBehaviour
         var ae = ScriptableObject.CreateInstance<AutoExposure>();
         ae.keyValue.Override(val+5);
         ae.maxLuminance.Override(-val);
+        wipeMat.SetFloat("_Radius", 2);
     }
 
     // Update is called once per frame

@@ -74,6 +74,8 @@ public class Player : MonoBehaviour
     private float count;
 
     private Vector3 saveposs;
+    public GameObject lr;
+    private float stoptime;
     // Start is called before the first frame update
     void Start()
     {
@@ -834,8 +836,20 @@ public class Player : MonoBehaviour
         {
             //moveflag = false;
         }
+        if(!moveflag)
+        {
+            stoptime +=Time.deltaTime;
+        }
+        if(stoptime>3)
+        {
+            lr.SetActive(true);
+        }else
+        {
+            lr.SetActive(false);
+        }
         if (((Input.GetKey(KeyCode.D)) || (Input.GetKey("joystick button 5"))) && !moveflag && !outleftroll && !inrightroll && !outrightroll && !inleftroll && !jumpflag)
         {
+            stoptime = 0;
             if (backflag)
             {
                 if (bbflag)
@@ -908,6 +922,7 @@ public class Player : MonoBehaviour
         else
         if (((Input.GetKey(KeyCode.A)) || (Input.GetKey("joystick button 4"))) && !moveflag && !outleftroll && !inrightroll && !outrightroll && !inleftroll && !jumpflag)
         {
+            stoptime = 0;
             if (flontflag)
             {
                 if (fbflag)

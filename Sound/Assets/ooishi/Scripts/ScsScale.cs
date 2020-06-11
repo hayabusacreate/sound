@@ -18,7 +18,7 @@ public class ScsScale : MonoBehaviour
     {
         if(inout)
         {
-            if (scale <= 1)
+            if (scale <= 0.75f)
             {
                 scale += 10 * Time.deltaTime;
                 if (scale > 1)

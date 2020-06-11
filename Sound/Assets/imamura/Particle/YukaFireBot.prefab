@@ -9444,6 +9444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  par: {fileID: 4165279381225929387}
 --- !u!1 &1551912141243248195
 GameObject:
   m_ObjectHideFlags: 0
@@ -14167,6 +14168,7 @@ MonoBehaviour:
   speed: 1
   botLeft: {fileID: 1551912140968792689}
   botRight: {fileID: 4099297988319473033}
+  par: {fileID: 4165279381225929387}
 --- !u!1 &1551912142199894404
 GameObject:
   m_ObjectHideFlags: 0
@@ -18890,6 +18892,7 @@ MonoBehaviour:
   speed: 1
   botLeft: {fileID: 1551912140968792689}
   botRight: {fileID: 4099297988319473033}
+  par: {fileID: 4165279381225929387}
 --- !u!1 &4099297988319473033
 GameObject:
   m_ObjectHideFlags: 0
@@ -23611,6 +23614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  par: {fileID: 4165279381225929387}
 --- !u!1 &4165279381225929387
 GameObject:
   m_ObjectHideFlags: 0
@@ -23626,7 +23630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4165279381225929386
 Transform:
   m_ObjectHideFlags: 0

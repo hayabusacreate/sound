@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6898014365761203037
 Transform:
   m_ObjectHideFlags: 0
@@ -4756,6 +4756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  par: {fileID: 6898014365761203036}
 --- !u!1 &8358082624859156941
 GameObject:
   m_ObjectHideFlags: 0
@@ -9479,6 +9480,7 @@ MonoBehaviour:
   speed: 1
   botLeft: {fileID: 8358082624101982323}
   botRight: {fileID: 9071307532842020994}
+  par: {fileID: 6898014365761203036}
 --- !u!1 &8358082625084687238
 GameObject:
   m_ObjectHideFlags: 0
@@ -14202,6 +14204,7 @@ MonoBehaviour:
   speed: 1
   botLeft: {fileID: 8358082624101982323}
   botRight: {fileID: 9071307532842020994}
+  par: {fileID: 6898014365761203036}
 --- !u!1 &8358082625359675316
 GameObject:
   m_ObjectHideFlags: 0
@@ -23646,3 +23649,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  par: {fileID: 6898014365761203036}

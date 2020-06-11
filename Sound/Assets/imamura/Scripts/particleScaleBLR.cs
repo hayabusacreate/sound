@@ -16,6 +16,7 @@ public class particleScaleBLR : MonoBehaviour
 
     bool done;
 
+    [SerializeField]
     GameObject par;
 
     void Start()
@@ -24,7 +25,6 @@ public class particleScaleBLR : MonoBehaviour
         speed = 1;
         m_particle = transform.GetComponent<ParticleSystem>();
         pos = transform.position;
-        par = transform.root.gameObject;
     }
 
     // Update is called once per frame

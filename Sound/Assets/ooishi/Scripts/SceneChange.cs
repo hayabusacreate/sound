@@ -208,7 +208,7 @@ public class SceneChange : MonoBehaviour
                     if ((((float)mapCreate.maxblock - (float)mapCreate.blocks) / (float)mapCreate.maxblock) * 100 == 100)
                     {
                         hinoko.SetActive(true);
-                        gold.SetActive(true);
+
                         clear[mapCreate.ReturnMapnum()] = true;
                         allflag = true;
                         //serect.SetActive(true);
@@ -222,6 +222,9 @@ public class SceneChange : MonoBehaviour
                         if(allflag)
                         {
                             allobj.SetActive(true);
+                        }else
+                        {
+                            gold.SetActive(true);
                         }
                         if (Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown("joystick button 0")))
                         {

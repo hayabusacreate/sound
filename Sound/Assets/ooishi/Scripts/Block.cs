@@ -287,7 +287,7 @@ public class Block : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (block == BlockType.Goal&& sceneChange.creaflag)
+        if (block == BlockType.Goal&& (((float)mapCreate.maxblock - (float)mapCreate.blocks) / (float)mapCreate.maxblock) * 100 == 100)
         {
             Instantiate(boom, transform.position, Quaternion.identity);
         }

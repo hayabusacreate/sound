@@ -2708,7 +2708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shell: {fileID: 861926682}
-  wipeMat: {fileID: 2100000, guid: 9a38ddc0b0d8e724f95e4b760d043c18, type: 2}
+  wipeMat: {fileID: 2100000, guid: cbc7f1ec18bdc264098f7a5c20c68092, type: 2}
   EColor: {r: 0, g: 0, b: 0, a: 0}
   exEnd: 0
   intensity: 4

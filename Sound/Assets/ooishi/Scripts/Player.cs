@@ -76,6 +76,7 @@ public class Player : MonoBehaviour
     private Vector3 saveposs;
     public GameObject lr;
     private float stoptime;
+    public GameObject inrollObj;
     // Start is called before the first frame update
     void Start()
     {
@@ -128,11 +129,13 @@ public class Player : MonoBehaviour
         transform.localEulerAngles = new Vector3(0, 0, angle);
         if (inrightroll)
         {
-            transform.Rotate(0, 0, -10 );
+            //transform.Rotate(0, 0, -10 );
+            transform.RotateAround(inrollObj.transform.position, -transform.forward, 300 * Time.deltaTime);
         }
         if (inleftroll)
         {
-            transform.Rotate(0, 0, +10);
+            //transform.Rotate(0, 0, +10);
+            transform.RotateAround(inrollObj.transform.position, transform.forward, 300 * Time.deltaTime);
         }
         if (outrightroll)
         {

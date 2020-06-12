@@ -184,6 +184,7 @@ MonoBehaviour:
   saveobj: {fileID: 0}
   type: 
   lr: {fileID: 3995249326177309582}
+  inrollObj: {fileID: 32793881348165476}
 --- !u!82 &219194369829825064
 AudioSource:
   m_ObjectHideFlags: 0

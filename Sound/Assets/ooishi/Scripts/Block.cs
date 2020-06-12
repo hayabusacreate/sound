@@ -233,7 +233,7 @@ public class Block : MonoBehaviour
             collider.enabled = false;
         }else
         {
-            if (player.outrightroll || player.outleftroll)
+            if (player.outrightroll || player.outleftroll || player.inleftroll || player.inrightroll)
             {
                 collider.enabled = false;
             }

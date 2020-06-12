@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StUI
+  m_Name: TitleBG 2
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHABLEND_ON _EMISSION
   m_LightmapFlags: 1
@@ -41,13 +41,13 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 3dff3622321acd9448255d85b76a86ea, type: 3}
+        m_Texture: {fileID: 2800000, guid: 47816d35979814a478c05bcd3825114b, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Offset: {x: 0, y: -0.5}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 0dae3bf8a7009c54a82c6877bc43938b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 47816d35979814a478c05bcd3825114b, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Offset: {x: 0, y: -0.5}
     - _MaskTex:
         m_Texture: {fileID: 2800000, guid: 02dc82dc848e2234d9333b7be4b9c831, type: 3}
         m_Scale: {x: 0, y: 1}
@@ -78,7 +78,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 2

@@ -6,7 +6,8 @@
 		_Color("Tint", Color) = (1,1,1,1)
 		_Color2("Tint2", Color) = (1,1,1,1)
 		_MaskTex("Mask Texture", 2D) = "white" {}
-
+		_SpeedX("SpeedX",Float) = 0.4
+		_SpeedY("SpeedY",Float) = 0
 		[Toggle(UNITY_UI_ALPHACLIP)] _UseUIAlphaClip("Use Alpha Clip", Float) = 0
 	}
 
@@ -66,6 +67,8 @@
 				fixed4 _TextureSampleAdd;
 				float4 _ClipRect;
 				float4 _MainTex_ST;
+				float _SpeedX;
+				float _SpeedY;
 
 				v2f vert(appdata_t v)
 				{
@@ -84,11 +87,8 @@
 				fixed4 frag(v2f IN) : SV_Target
 				{
 					fixed2 uv = IN.texcoord;
-			uv.x -= 0.4* _Time;
-			uv.y -= 0.0* _Time;
-			fixed2 uv2 = IN.texcoord;
-			uv2.x -= 0.0* _Time;
-			uv2.y -= 0.0* _Time;
+			uv.x -= _SpeedX * _Time;
+			uv.y -= _SpeedY * _Time;
 			fixed4 c1 = _Color;
 			fixed4 c2 = _Color2;
 			fixed4 p = tex2D(_MaskTex, uv);

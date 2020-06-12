@@ -5574,7 +5574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a8377700be8454dbe2222df16b63a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wipeCircle: {fileID: 2100000, guid: 9a38ddc0b0d8e724f95e4b760d043c18, type: 2}
+  wipeCircle: {fileID: 2100000, guid: cbc7f1ec18bdc264098f7a5c20c68092, type: 2}
 --- !u!1 &777659236
 GameObject:
   m_ObjectHideFlags: 0
@@ -13765,6 +13765,7 @@ MonoBehaviour:
   pad: {fileID: 0}
   hintobj: {fileID: 0}
   scsobj: {fileID: 0}
+  allobj: {fileID: 0}
 --- !u!4 &1938094712
 Transform:
   m_ObjectHideFlags: 0

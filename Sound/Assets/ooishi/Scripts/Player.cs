@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
     public GameObject[] hps;
     private int hpcount;
 
-    public PlayerMove playerMove;
+    public PlayerMove playerMove,playerMsave;
 
     private float angle;
 
@@ -882,6 +882,23 @@ public class Player : MonoBehaviour
                     }
                     else
                     {
+
+                        if (playerMove == PlayerMove.Down)
+                        {
+                            playerMsave = PlayerMove.Left;
+                        }else
+                        if (playerMove == PlayerMove.Up)
+                        {
+                            playerMsave = PlayerMove.Right;
+                        }else
+                        if (playerMove == PlayerMove.Right)
+                        {
+                            playerMsave = PlayerMove.Down;
+                        }else
+                        if (playerMove == PlayerMove.Left)
+                        {
+                            playerMsave = PlayerMove.Up;
+                        }
                         outleftroll = true;
                         movecount++;
                     }
@@ -915,6 +932,22 @@ public class Player : MonoBehaviour
             }
             else
             {
+                if (playerMove == PlayerMove.Down)
+                {
+                    playerMsave = PlayerMove.Right;
+                }else
+                if (playerMove == PlayerMove.Up)
+                {
+                    playerMsave = PlayerMove.Left;
+                }else
+                if (playerMove == PlayerMove.Right)
+                {
+                    playerMsave = PlayerMove.Up;
+                }else
+                if (playerMove == PlayerMove.Left)
+                {
+                    playerMsave = PlayerMove.Down;
+                }
                 inrightroll = true;
                 movecount++;
             }
@@ -957,6 +990,23 @@ public class Player : MonoBehaviour
                     {
                         outrightroll = true;
                         movecount++;
+                        if (playerMove == PlayerMove.Down)
+                        {
+                            playerMsave = PlayerMove.Right;
+                        }else
+                        if (playerMove == PlayerMove.Up)
+                        {
+                            playerMsave = PlayerMove.Left;
+                        }else
+                        if (playerMove == PlayerMove.Right)
+                        {
+                            playerMsave = PlayerMove.Up;
+                        }else
+                        if (playerMove == PlayerMove.Left)
+                        {
+                            playerMsave = PlayerMove.Down;
+                        }
+
                     }
 
                 }
@@ -991,7 +1041,42 @@ public class Player : MonoBehaviour
             {
                 inleftroll = true;
                 movecount++;
+                if (playerMove == PlayerMove.Down)
+                {
+                    playerMsave = PlayerMove.Left;
+                }else
+                if (playerMove == PlayerMove.Up)
+                {
+                    playerMsave = PlayerMove.Right;
+                }else
+                if (playerMove == PlayerMove.Right)
+                {
+                    playerMsave = PlayerMove.Down;
+                }else
+                if (playerMove == PlayerMove.Left)
+                {
+                    playerMsave = PlayerMove.Up;
+                }
             }
+        }
+        if (playerMsave == PlayerMove.Down)
+        {
+            Physics.gravity = new Vector3(0, -10, 0);
+        }
+        else
+if (playerMsave == PlayerMove.Up)
+        {
+            Physics.gravity = new Vector3(0, +10, 0);
+        }
+        else
+if (playerMsave == PlayerMove.Right)
+        {
+            Physics.gravity = new Vector3(-10, 0, 0);
+        }
+        else
+if (playerMsave == PlayerMove.Left)
+        {
+            Physics.gravity = new Vector3(10, 0, 0);
         }
         //}else if(Input.GetKey(KeyCode.Q)&&jumpflag)
         //{

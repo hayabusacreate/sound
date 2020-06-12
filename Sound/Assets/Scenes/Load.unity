@@ -306,6 +306,15 @@ MonoBehaviour:
   over: {fileID: 0}
   serect: {fileID: 0}
   sound1: {fileID: 0}
+  endobj: {fileID: 0}
+  startobj: {fileID: 0}
+  stages: []
+  scs: []
+  pl: {fileID: 0}
+  key: {fileID: 0}
+  pad: {fileID: 0}
+  hintobj: {fileID: 0}
+  scsobj: {fileID: 0}
 --- !u!4 &1187774874
 Transform:
   m_ObjectHideFlags: 0

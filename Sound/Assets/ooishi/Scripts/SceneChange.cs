@@ -83,7 +83,7 @@ public class SceneChange : MonoBehaviour
             slider.minValue = 0;
             slider.maxValue = 100;
             UI = GameObject.Find("AA");
-            mapcount = 22;
+            mapcount = 20;
             mapnum = mapCreate.ReturnMapnum();
             stagenum = mapCreate.ReturnMapnum();
             //Physics.gravity = new Vector3(0, -5, 0);
@@ -210,8 +210,9 @@ public class SceneChange : MonoBehaviour
                         hinoko.SetActive(true);
                         gold.SetActive(true);
                         clear[mapCreate.ReturnMapnum()] = true;
+                        allflag = true;
                         //serect.SetActive(true);
-                        for(int i=0;i<clear.Count;i++)
+                        for (int i=1;i<clear.Count;i++)
                         {
                             if(!clear[i])
                             {

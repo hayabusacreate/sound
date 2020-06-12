@@ -1225,6 +1225,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: hanabiEmit
       objectReference: {fileID: 0}
+    - target: {fileID: 2733656023391098142, guid: cb9fb8148fb56ca47b0b37727223f769,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2733656023391098128, guid: cb9fb8148fb56ca47b0b37727223f769,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1699,7 +1704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1512164782
 Transform:
   m_ObjectHideFlags: 0

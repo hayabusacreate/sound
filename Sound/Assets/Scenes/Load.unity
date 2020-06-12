@@ -294,7 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: 5
   time: 0
-  map: 51
+  map: 21
   mapCreate: {fileID: 1678162830}
   creaflag: 0
   text: {fileID: 0}
@@ -315,6 +315,7 @@ MonoBehaviour:
   pad: {fileID: 0}
   hintobj: {fileID: 0}
   scsobj: {fileID: 0}
+  allobj: {fileID: 0}
 --- !u!4 &1187774874
 Transform:
   m_ObjectHideFlags: 0

@@ -38,10 +38,6 @@ public class Blink : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            change = true;
-        }
         if (change == false)
         {
             if (thisObjType == ObjType.IMAGE)

@@ -62,6 +62,7 @@ public class SceneChange : MonoBehaviour
     public ScsScale scsobj;
     private bool allflag;
     public GameObject allobj;
+    private wipeTex wipe;
     // Start is called before the first frame update
     void Start()
     {
@@ -96,6 +97,8 @@ public class SceneChange : MonoBehaviour
         if (scene == Scene.StageSelect)
         {
             UI = GameObject.Find("AA");
+            UI.SetActive(false);
+            wipe = startobj.GetComponent<wipeTex>();
             deathcount = 0;
             for (int i = 1; i < stages.Length; i++)
             {
@@ -297,6 +300,10 @@ public class SceneChange : MonoBehaviour
             case Scene.StageSelect:
                 count2 += Time.deltaTime;
                 text.text = "" + mapnum;
+                if(wipe.opened&&!endflag)
+                {
+                    UI.SetActive(true);
+                }
                 for (int i = 0; i < scs.Length; i++)
                 {
                     if (i == mapnum)

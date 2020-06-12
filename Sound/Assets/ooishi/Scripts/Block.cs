@@ -60,7 +60,7 @@ public class Block : MonoBehaviour
 
     public Collider collider;
     private ChangeCam cam;
-    public Text text;
+    //public Text text;
 
     private int savehp;
     private int savecount;
@@ -75,6 +75,7 @@ public class Block : MonoBehaviour
     public GameObject boom;
     private bool desth;
     public GameObject right, left, up, down;
+    public GameObject[] num;
     // Start is called before the first frame update
     void Start()
     {
@@ -154,13 +155,26 @@ public class Block : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(block==BlockType.Nomal)
+        if(block==BlockType.Nomal||block==BlockType.Ice)
         {
-            text.text = "" + ((int)hp+1);
+            //num[(int)hp+1].SetActive(true);
+            for (int i = 0; i < Maxhp+2; i++)
+            {
+                if (i ==(int)hp+1)
+                {
+                    num[i].SetActive(true);
+                }
+                else
+                {
+                    num[i].SetActive(false);
+                }
+
+            }
+            //text.text = "" + ((int)hp+1);
         }
         else
         {
-            text.text = "";
+            //text.text = "";
         }
 
         Damage();

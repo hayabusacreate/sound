@@ -77,6 +77,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   playerMove: 0
+  playerMsave: 0
   jetBallet: {fileID: 155967550943809613, guid: c09395059aea10548bc1f303657c68f1,
     type: 3}
   range: 0
@@ -496,7 +497,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 2000
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &7421366378061294525
 MonoBehaviour:

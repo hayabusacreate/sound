@@ -95,6 +95,7 @@ public class SceneChange : MonoBehaviour
         }
         if (scene == Scene.StageSelect)
         {
+            UI = GameObject.Find("AA");
             deathcount = 0;
             for (int i = 1; i < stages.Length; i++)
             {
@@ -359,6 +360,7 @@ public class SceneChange : MonoBehaviour
                     }
                     if (Input.GetKey(KeyCode.Space) || (Input.GetKeyDown("joystick button 0")))
                     {
+                        UI.SetActive(false);
                         if(!endflag)
                         {
                             audio.PlayOneShot(sound1);

@@ -7,11 +7,10 @@ public class wipeTex : MonoBehaviour
     [SerializeField]
     Material wipeMat;
 
-    float value;
-
-    public float point1, point2,speed1,speed2, speed3, max, min;
+    public float value,point1, point2,speed1,speed2, speed3, max, min;
 
     bool one, two;
+    public bool opened,closed;
 
     void Start()
     {
@@ -28,6 +27,8 @@ public class wipeTex : MonoBehaviour
 
         one = false;
         two = false;
+        opened = false;
+        closed = false;
     }
 
     // Update is called once per frame
@@ -86,6 +87,16 @@ public class wipeTex : MonoBehaviour
                 wipeMat.SetFloat("_Radius", value);
             }
         }
+
+        if (value >= max && one == true && two == true)
+        {
+            closed = true;
+        }
+        else if(value <= max && one == true && two == true)
+        {
+            opened = true;
+        }
+
 
     }
 }

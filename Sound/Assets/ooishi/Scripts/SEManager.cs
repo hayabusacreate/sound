@@ -31,29 +31,29 @@ public class SEManager : MonoBehaviour
             Instantiate(iceobj, transform.position, Quaternion.identity);
             ice = false;
         }
-        if(juu)
-        {
-            if(ban)
-            {
-                volume+= Time.deltaTime*10;
-                ban = false;
-                if(volume>1)
-                {
-                    volume = 1;
-                }
-            }
-            if (volume > 0.8f)
-            {
-                volume -= Time.deltaTime/10;
-            }
-        }
-        else
-        {
-            if(volume>0)
-            {
-                volume -= Time.deltaTime/10;
-            }
-        }
-        audioSource.volume = volume;
+        //if(juu)
+        //{
+        //    if(ban)
+        //    {
+        //        volume+= Time.deltaTime*10;
+        //        ban = false;
+        //        if(volume>1)
+        //        {
+        //            volume = 1;
+        //        }
+        //    }
+        //    if (volume > 0.8f)
+        //    {
+        //        volume -= Time.deltaTime/10;
+        //    }
+        //}
+        //else
+        //{
+        //    if(volume>0)
+        //    {
+        //        volume -= Time.deltaTime/10;
+        //    }
+        //}
+        //audioSource.volume = volume;
     }
 }

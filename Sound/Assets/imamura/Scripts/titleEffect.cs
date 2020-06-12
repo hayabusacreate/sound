@@ -41,7 +41,7 @@ public class titleEffect : MonoBehaviour
         var ae = ScriptableObject.CreateInstance<AutoExposure>();
         ae.keyValue.Override(val+5);
         ae.maxLuminance.Override(-val);
-        wipeMat.SetFloat("_Radius", 2);
+        wipeMat.SetFloat("_Radius", -1);
     }
 
     // Update is called once per frame

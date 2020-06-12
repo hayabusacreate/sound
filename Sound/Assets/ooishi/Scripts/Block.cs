@@ -191,19 +191,19 @@ public class Block : MonoBehaviour
             }
             if(palrticleflag)
             {
-                if(player.playerMove==PlayerMove.Down)
+                if(player.playerMsave==PlayerMove.Down)
                 {
                     down.SetActive(true);
                 }
-                if (player.playerMove == PlayerMove.Up)
+                if (player.playerMsave == PlayerMove.Up)
                 {
                     up.SetActive(true);
                 }
-                if (player.playerMove == PlayerMove.Right)
+                if (player.playerMsave == PlayerMove.Right)
                 {
                     right.SetActive(true);
                 }
-                if (player.playerMove == PlayerMove.Left)
+                if (player.playerMsave == PlayerMove.Left)
                 {
                     left.SetActive(true);
                 }

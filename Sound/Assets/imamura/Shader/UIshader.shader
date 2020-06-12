@@ -60,8 +60,6 @@
 				};
 
 				sampler2D _MainTex;
-				sampler2D _SubTex;
-				sampler2D _SubTex2;
 				sampler2D _MaskTex;
 				fixed4 _Color;
 				fixed4 _Color2;

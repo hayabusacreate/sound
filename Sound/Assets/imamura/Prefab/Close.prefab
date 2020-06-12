@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4816967832217120777}
   - component: {fileID: 4816967832217120790}
+  - component: {fileID: 7046077508787133651}
   m_Layer: 0
   m_Name: Close
   m_TagString: Untagged
@@ -49,3 +50,23 @@ MonoBehaviour:
   speed1: 8
   speed2: 5
   speed3: 8
+--- !u!114 &7046077508787133651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816967832217120791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28511e62ae5aee9478869a05ca9f60e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wipeMat: {fileID: 2100000, guid: cbc7f1ec18bdc264098f7a5c20c68092, type: 2}
+  point1: 0
+  point2: 0
+  speed1: 0
+  speed2: 0
+  speed3: 0
+  max: 0
+  min: 0

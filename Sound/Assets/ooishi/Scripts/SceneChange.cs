@@ -60,6 +60,8 @@ public class SceneChange : MonoBehaviour
     private static bool hintflag;
     public GameObject hintobj;
     public ScsScale scsobj;
+    private bool allflag;
+    public GameObject allobj;
     // Start is called before the first frame update
     void Start()
     {
@@ -209,6 +211,17 @@ public class SceneChange : MonoBehaviour
                         gold.SetActive(true);
                         clear[mapCreate.ReturnMapnum()] = true;
                         //serect.SetActive(true);
+                        for(int i=0;i<clear.Count;i++)
+                        {
+                            if(!clear[i])
+                            {
+                                allflag = false;
+                            }
+                        }
+                        if(allflag)
+                        {
+                            allobj.SetActive(true);
+                        }
                         if (Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown("joystick button 0")))
                         {
                             clearflag = true;

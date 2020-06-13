@@ -1,4 +1,4 @@
-﻿Shader "Custom/shell"
+﻿Shader "Custom/GamingShell"
 {
 	Properties
 	{
@@ -10,9 +10,7 @@
 		_RampTex("Ramp",2D) = " white"{}
 		_BumpMap("Normal Map"  , 2D) = "bump" {}
 		_BumpScale("Normal Scale", Range(0, 1)) = 1.0
-		_Alpha("Alpha",Range(0,1)) = 1.0
-		_EmissionMap("Emission Map", 2D) = "black" {}               
-		[HDR] _EmissionColor("Emission Color", Color) = (0,0,0)    
+		_Alpha("Alpha",Range(0,1)) = 1.0            
 		_Color("Color", Color) = (1,1,1,1)
 	}
 		SubShader
@@ -67,8 +65,8 @@
 					discard;
 				}
 				fixed2 uv = IN.uv_MainTex;
-				uv.x -= 0.8* _Time;
-				uv.y -= 1.6* _Time;
+				uv.x -= 2.4* _Time;
+				uv.y -= 4.8* _Time;
 				fixed2 uv2 = IN.uv_MainTex;
 				uv2.x -= 0.0* _Time;
 				uv2.y -= 0.0* _Time;
@@ -80,7 +78,7 @@
 				fixed4 n = tex2D(_BumpMap, uv2);
 
 				o.Normal = UnpackScaleNormal(n, _BumpScale);
-				o.Emission = tex2D(_EmissionMap, uv2) * _EmissionColor;
+				o.Emission = tex2D(_MaskTex, uv2) * c2;
 			}
 			ENDCG
 		}

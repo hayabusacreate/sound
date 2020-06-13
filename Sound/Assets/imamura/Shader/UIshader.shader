@@ -9,7 +9,6 @@
 		_SpeedX("SpeedX",Float) = 0.4
 		_SpeedY("SpeedY",Float) = 0
 		[Toggle(UNITY_UI_ALPHACLIP)] _UseUIAlphaClip("Use Alpha Clip", Float) = 0
-		Colorize("Colorize", Range(0.0, 1.0)) = 1
 	}
 
 		SubShader
@@ -70,7 +69,6 @@
 				float4 _MainTex_ST;
 				float _SpeedX;
 				float _SpeedY;
-				float Colorize;
 				v2f vert(appdata_t v)
 				{
 					v2f OUT;

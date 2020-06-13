@@ -60,7 +60,7 @@ public class SceneChange : MonoBehaviour
     private static bool hintflag;
     public GameObject hintobj;
     public ScsScale scsobj;
-    private bool allflag;
+    public bool allflag;
     public GameObject allobj;
     private wipeTex wipe;
     // Start is called before the first frame update
@@ -96,6 +96,15 @@ public class SceneChange : MonoBehaviour
         }
         if (scene == Scene.StageSelect)
         {
+            allflag = true;
+            //serect.SetActive(true);
+            for (int i = 1; i < clear.Count; i++)
+            {
+                if (!clear[i])
+                {
+                    allflag = false;
+                }
+            }
             UI = GameObject.Find("AA");
             UI.SetActive(false);
             wipe = startobj.GetComponent<wipeTex>();

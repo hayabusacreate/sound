@@ -77,6 +77,15 @@ public class SceneChange : MonoBehaviour
         }
         if (scene == Scene.GamePlay)
         {
+            allflag = true;
+            //serect.SetActive(true);
+            for (int i = 1; i < clear.Count; i++)
+            {
+                if (!clear[i])
+                {
+                    allflag = false;
+                }
+            }
             hinoko = GameObject.Find("hinoko");
             hinoko.SetActive(false);
             slider = GameObject.Find("Count").GetComponent<Slider>();

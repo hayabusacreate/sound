@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Custom_hedoro
-  m_Shader: {fileID: 4800000, guid: d2cadcfddbb5c0749aa340f2a0892658, type: 3}
+  m_Shader: {fileID: 4800000, guid: 1559ec73e74d01143a7e7b0cc12fc166, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0

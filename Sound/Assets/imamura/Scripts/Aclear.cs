@@ -16,7 +16,6 @@ public class Aclear : MonoBehaviour
     [SerializeField]
     Material gSlime;
 
-    [SerializeField]
     GameObject sc;
 
     Material shellMat;
@@ -29,6 +28,7 @@ public class Aclear : MonoBehaviour
     {
         shellMat = shell.GetComponent<Renderer>().material;
         slimeMat = slime.GetComponent<Renderer>().material;
+        sc = GameObject.Find("SceneChange");
     }
 
     // Update is called once per frame

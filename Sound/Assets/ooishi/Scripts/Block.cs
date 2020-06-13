@@ -76,6 +76,7 @@ public class Block : MonoBehaviour
     private bool desth;
     public GameObject right, left, up, down;
     public GameObject[] num;
+    private bool boomfrag;
     // Start is called before the first frame update
     void Start()
     {
@@ -301,8 +302,9 @@ public class Block : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (block == BlockType.Goal&& (((float)mapCreate.maxblock - (float)mapCreate.blocks) / (float)mapCreate.maxblock) * 100 == 100)
+        if (block == BlockType.Goal&& (((float)mapCreate.maxblock - (float)mapCreate.blocks) / (float)mapCreate.maxblock) * 100 == 100&&!boomfrag)
         {
+            boomfrag = true;
             Instantiate(boom, transform.position, Quaternion.identity);
         }
     }

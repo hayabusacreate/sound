@@ -63,6 +63,7 @@ public class SceneChange : MonoBehaviour
     public bool allflag;
     public GameObject allobj;
     private wipeTex wipe;
+    public GameObject special;
     // Start is called before the first frame update
     void Start()
     {
@@ -104,6 +105,14 @@ public class SceneChange : MonoBehaviour
                 {
                     allflag = false;
                 }
+            }
+            if (allflag)
+            {
+                special.SetActive(true);
+            }
+            else
+            {
+                special.SetActive(false);
             }
             UI = GameObject.Find("AA");
             UI.SetActive(false);

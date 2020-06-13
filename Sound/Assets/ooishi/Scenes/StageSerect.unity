@@ -13784,6 +13784,7 @@ GameObject:
   - component: {fileID: 1376901199}
   - component: {fileID: 1376901198}
   - component: {fileID: 1376901200}
+  - component: {fileID: 1376901201}
   m_Layer: 0
   m_Name: PPC
   m_TagString: Untagged
@@ -13840,6 +13841,23 @@ MonoBehaviour:
   val: 0.2
   aiueo: 0.1
   still: 0
+--- !u!114 &1376901201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376901197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76fc55f7795d93e4294329debe1792a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shell: {fileID: 2772736111910149306}
+  slime: {fileID: 2772736111910149312}
+  gShell: {fileID: 2100000, guid: 20ea1edf700ae914e963129fd4c6ce03, type: 2}
+  gSlime: {fileID: 2100000, guid: cef94339da4b73941866c00b4cbb3eac, type: 2}
+  sc: {fileID: 1938094710}
 --- !u!1001 &1380459486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19865,6 +19883,7 @@ MonoBehaviour:
   scsobj: {fileID: 0}
   allflag: 0
   allobj: {fileID: 0}
+  special: {fileID: 348025593}
 --- !u!4 &1938094712
 Transform:
   m_ObjectHideFlags: 0
